@@ -108,22 +108,24 @@
 
 <p>💬 <strong>WhatsApp Orders:</strong> +91 9495679851</p>
 
-<p>✉️ <strong>Email:</strong> Sales@krizpia.com</p><a class="btn gold" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20know%20about%20your%20snack%20products" target="_blank">Chat on WhatsApp</a></div><form class="form" onsubmit="sendWhatsApp(event)">
-  <input id="name" type="text" placeholder="Your Name" required>
-  <input id="phone" type="text" placeholder="Phone Number" required>
+<p>✉️ <strong>Email:</strong> Sales@krizpia.com</p><a class="btn gold" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20know%20about%20your%20snack%20products" target="_blank">Chat on WhatsApp</a></div><script>
+function sendWhatsApp(event){
+  event.preventDefault();
 
-  <select id="product">
-    <option>Traditional Kuzhalappam</option>
-    <option>Spicy Kuzhalappam</option>
-    <option>Sweet Kuzhalappam</option>
-    <option>Thatta</option>
-    <option>All Products</option>
-  </select>
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const product = document.getElementById('product').value;
+  const message = document.getElementById('message').value;
 
-  <textarea id="message" placeholder="Your message / quantity required"></textarea>
+  const text =
+    `Hi Krizpia, my name is ${name}. Phone: ${phone}. I am interested in ${product}. Message: ${message}`;
 
-  <button class="btn gold" type="submit">Send Enquiry</button>
-</form> </div></section>
+  window.open(
+    'https://wa.me/919495679851?text=' + encodeURIComponent(text),
+    '_blank'
+  );
+}
+</script> </div></section>
   </main>
   <a class="whatsapp" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank">WhatsApp</a>
   <footer class="footer"><img src="krizpia-logo.png" alt="Krizpia logo"><p class="product-line">Traditional Kuzhalappam • Spicy Kuzhalappam • Sweet Kuzhalappam • Thatta</p><p class="tagline">Krizpia – Crispy • Crunchy • Authentic</p><p>Contact: +91 9495679851</p>
