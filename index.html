@@ -131,7 +131,16 @@ function sendWhatsApp(event){
   <footer class="footer"><img src="krizpia-logo.png" alt="Krizpia logo"><p class="product-line">Traditional Kuzhalappam • Spicy Kuzhalappam • Sweet Kuzhalappam • Thatta</p><p class="tagline">Krizpia – Crispy • Crunchy • Authentic</p><p>Contact: +91 9495679851</p>
   <p>Email: Sales@krizpia.com</p></footer>
   <script>
-    function sendWhatsApp(){const name=document.getElementById('name').value;const phone=document.getElementById('phone').value;const product=document.getElementById('product').value;const message=document.getElementById('message').value;const text=`Hi Krizpia, my name is ${name}. Phone: ${phone}. I am interested in ${product}. Message: ${message}`;window.open('https://wa.me/919495679851?text='+encodeURIComponent(text),'_blank');}
-  </script>
+    function sendWhatsApp(){event.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const product = document.getElementById('product').value;
+    const message = document.getElementById('message').value;
+
+    const text = `Hi Krizpia, my name is ${name}. Phone: ${phone}. I am interested in ${product}. Message: ${message}`;
+    window.open('https://wa.me/919495679851?text=' + encodeURIComponent(text), '_blank');
+  }
+</script>
 </body>
 </html>
