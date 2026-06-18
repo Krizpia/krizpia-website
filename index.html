@@ -370,6 +370,34 @@ section{
 .brand img:hover {
   transform: scale(1.08);
 }
+.hero img {
+  animation: floatImage 3s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+.card {
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.whatsapp {
+  animation: pulseWhatsApp 1.5s infinite;
+}
+
+@keyframes pulseWhatsApp {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
   </style>
 </head>
 <body>
