@@ -523,6 +523,57 @@
         <img class="reveal delay-1" src="spicy-kuzhalappam.PNG" alt="Spicy Kuzhalappam close up" loading="lazy">
         <img class="reveal delay-2" src="sweet-kuzhalappam.PNG" alt="Sweet Kuzhalappam close up" loading="lazy">
         <img class="reveal delay-3" src="thatta-photo.PNG" alt="Thatta close up" loading="lazy">
+<Style>
+/* Product Gallery Animation */
+
+.gallery-grid img{
+    width: 100%;
+    border-radius: 20px;
+    transition: all 0.5s ease;
+}
+
+.gallery-grid .gallery-item{
+    overflow: hidden;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+}
+
+/* Hover Effect */
+.gallery-item:hover{
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.gallery-item:hover img{
+    transform: scale(1.12);
+}
+
+/* Floating Animation */
+.gallery-item{
+    animation: float 4s ease-in-out infinite;
+}
+
+.gallery-item:nth-child(2){
+    animation-delay: 0.5s;
+}
+
+.gallery-item:nth-child(3){
+    animation-delay: 1s;
+}
+
+.gallery-item:nth-child(4){
+    animation-delay: 1.5s;
+}
+
+@keyframes float {
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-8px);
+    }
+}
+</Style>
       </div>
     </section>
 
