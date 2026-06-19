@@ -13,10 +13,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Krizpia | Authentic Kerala Snacks</title>
   <meta name="description" content="Krizpia delivers authentic Kerala snack varieties made with quality ingredients, traditional recipes, and a passion for great taste." />
-
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
     :root{
       --bg:#ffffff;
       --soft:#f7f7f5;
@@ -30,7 +28,6 @@
       --shadow:0 18px 50px rgba(0,0,0,.09);
       --radius:24px;
     }
-
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
@@ -42,7 +39,6 @@
     }
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
-
     header{
       position:sticky;
       top:0;
@@ -51,7 +47,6 @@
       backdrop-filter:blur(12px);
       border-bottom:1px solid var(--border);
     }
-
     nav{
       max-width:1200px;
       margin:auto;
@@ -60,7 +55,6 @@
       justify-content:space-between;
       align-items:center;
     }
-
     .brand img{height:58px;transition:.3s ease}
     .brand img:hover{transform:scale(1.06)}
 
@@ -82,7 +76,6 @@
       transition:.3s ease;
     }
     .links a:hover::after{width:100%}
-
     .hero{
       max-width:1200px;
       margin:auto;
@@ -92,7 +85,6 @@
       gap:45px;
       align-items:center;
     }
-
     .eyebrow{
       display:inline-flex;
       padding:8px 15px;
@@ -104,7 +96,6 @@
       letter-spacing:.3px;
       margin-bottom:18px;
     }
-
     .hero h1{
       font-size:clamp(40px,6vw,68px);
       line-height:1.05;
@@ -112,14 +103,12 @@
       font-weight:900;
       margin-bottom:18px;
     }
-
     .hero p{
       color:var(--muted);
       font-size:18px;
       max-width:620px;
       margin-bottom:32px;
     }
-
     .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
     .btn{
       display:inline-flex;
@@ -139,7 +128,6 @@
     .btn.gold,.btn.dark{background:var(--black);color:#fff}
     .btn.outline{background:#fff;color:var(--black)}
     .btn:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,.16)}
-
     .hero-visual{
       position:relative;
       border-radius:32px;
@@ -155,7 +143,6 @@
       border-radius:24px;
       animation:floatImage 4s ease-in-out infinite;
     }
-
     .badge{
       position:absolute;
       left:28px;
@@ -167,7 +154,6 @@
       font-weight:900;
       box-shadow:0 12px 25px rgba(0,0,0,.12);
     }
-
     section{max-width:1200px;margin:auto;padding:76px 20px}
     .section-title{text-align:center;max-width:820px;margin:0 auto 42px}
     .section-title h2,.about-text h2,.order h2,.why-title{
@@ -180,7 +166,6 @@
     }
     .section-title p,.about-text p,.order p,.card p,.card li,.why-card p{color:var(--muted)}
     .gold-line{width:82px;height:4px;background:var(--black);border-radius:10px;margin:18px auto 0}
-
     .products{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -200,7 +185,6 @@
     .card h3{font-size:21px;line-height:1.25;margin-bottom:10px;font-weight:900}
     .card ul{padding-left:18px;margin-top:12px}
     .card li{margin-bottom:6px;font-size:14px}
-
     .about{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -209,7 +193,6 @@
     }
     .about img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%;height:410px;object-fit:cover}
     .about-text p{font-size:17px;margin-bottom:24px}
-
     .why-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
@@ -225,7 +208,6 @@
     }
     .why-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(0,0,0,.08)}
     .why-card h3{font-size:18px;font-weight:900;margin-bottom:6px}
-
     .process{
       background:var(--soft);
       border-radius:32px;
@@ -265,7 +247,6 @@
     .process-step:nth-child(5) .process-icon{animation-delay:.8s}
     .process-step h3{font-size:16px;margin-bottom:6px;font-weight:900}
     .process-step p{font-size:13px;color:var(--muted)}
-
     .gallery{
       display:grid;
       grid-template-columns:repeat(4,1fr);
@@ -280,7 +261,6 @@
       transition:.3s ease;
     }
     .gallery img:hover{transform:scale(1.03)}
-
     .order{
       background:var(--soft);
       border:1px solid var(--border);
@@ -293,7 +273,6 @@
     }
     .contact-lines{display:grid;gap:8px;margin:18px 0 26px}
     .contact-lines p{font-size:16px}
-
     .form{display:grid;gap:13px}
     .form input,.form select,.form textarea{
       width:100%;
@@ -307,7 +286,6 @@
     }
     .form textarea{min-height:120px;resize:vertical}
     .form input:focus,.form select:focus,.form textarea:focus{border-color:#111;box-shadow:0 0 0 3px rgba(0,0,0,.08)}
-
     .footer{
       background:#111;
       color:#fff;
@@ -317,7 +295,6 @@
     }
     .footer img{height:82px;margin:0 auto 12px}
     .footer p{color:#e7e7e7;margin:5px 0}
-
     .whatsapp{
       position:fixed;
       right:20px;
@@ -331,7 +308,6 @@
       box-shadow:0 14px 30px rgba(37,211,102,.35);
       animation:pulseWhatsApp 1.8s infinite;
     }
-
     .reveal{opacity:0;transform:translateY(35px);animation:fadeUp .9s ease forwards}
     .delay-1{animation-delay:.12s}.delay-2{animation-delay:.24s}.delay-3{animation-delay:.36s}
 
@@ -374,7 +350,6 @@
       </div>
     </nav>
   </header>
-
   <main>
     <section class="hero">
       <div class="hero-copy reveal">
@@ -391,14 +366,12 @@
         <span class="badge">Fresh Kerala Taste</span>
       </div>
     </section>
-
     <section id="products">
       <div class="section-title reveal">
         <h2>Our Snack Range</h2>
         <p>Krizpia brings a wide range of authentic Kerala snacks made using traditional Kerala recipes and quality ingredients. Perfect for tea time, family gatherings, gifting, and retail stores.</p>
         <div class="gold-line"></div>
       </div>
-
       <div class="products">
         <article class="card reveal"><img src="traditional-kuzhalappam.PNG" alt="Traditional Kuzhalappam" loading="lazy"><div class="card-body"><h3>Traditional Kuzhalappam</h3><p>A classic Kerala tea-time snack made with rice flour, coconut, sesame and spices.</p><ul><li>Best for tea time</li><li>Crunchy mild flavour</li><li>Authentic Kerala recipe</li></ul></div></article>
         <article class="card reveal delay-1"><img src="spicy-kuzhalappam.PNG" alt="Spicy Kuzhalappam" loading="lazy"><div class="card-body"><h3>Spicy Kuzhalappam</h3><p>A bold, crispy Kuzhalappam with chilli, pepper, ginger and garlic notes.</p><ul><li>Rich spicy taste</li><li>Crispy roll shape</li><li>Evening snack favourite</li></ul></div></article>
@@ -406,13 +379,11 @@
         <article class="card reveal delay-3"><img src="thatta-photo.PNG" alt="Thatta Kerala snack" loading="lazy"><div class="card-body"><h3>Thatta</h3><p>A thin, round and crispy Kerala-style savoury snack with a light crunch and mild spice.</p><ul><li>Perfect with tea</li><li>Easy to share</li><li>Shop supply friendly</li></ul></div></article>
       </div>
     </section>
-
     <section id="about" class="about">
       <img class="reveal" src="traditional-kuzhalappam.PNG" alt="Traditional Kerala snack" loading="lazy">
       <div class="about-text reveal delay-1">
         <h2>About Krizpia</h2>
         <p>Krizpia brings the authentic taste of Kerala through a variety of traditional snacks made with quality ingredients and time-tested recipes. Our range includes Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam, and Thatta. We focus on freshness, quality, and great taste, making every snack perfect for tea time, family gatherings, and everyday enjoyment.</p>
-
         <h2 class="why-title">Why Choose Krizpia?</h2>
         <div class="why-grid">
           <div class="why-card"><h3>Homemade Style Goodness</h3><p>Traditional snacks crafted with care and attention to detail.</p></div>
@@ -421,7 +392,6 @@
         </div>
       </div>
     </section>
-
     <section id="process" class="process reveal">
       <div class="section-title">
      <section class="process-section">
@@ -448,13 +418,11 @@
   border-radius:28px;
   margin:50px auto;
 }
-
 .process-flow{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
   gap:18px;
 }
-
 .process-step{
   background:#ffffff;
   border:1px solid #e5e5e5;
@@ -465,12 +433,10 @@
   animation:fadeUp .9s ease both;
   transition:.3s ease;
 }
-
 .process-step:hover{
   transform:translateY(-8px) scale(1.02);
   box-shadow:0 18px 35px rgba(0,0,0,.14);
 }
-
 .process-step span{
   width:58px;
   height:58px;
@@ -484,19 +450,16 @@
   font-size:28px;
   animation:bounceIcon 1.8s infinite;
 }
-
 .process-step h3{
   font-size:17px;
   margin-bottom:10px;
   color:#111;
 }
-
 .process-step p{
   font-size:14px;
   color:#666;
   line-height:1.5;
 }
-
 @keyframes bounceIcon{
   0%,100%{transform:translateY(0);}
   50%{transform:translateY(-6px);}
@@ -525,7 +488,6 @@
         <img class="reveal delay-3" src="thatta-photo.PNG" alt="Thatta close up" loading="lazy">
       </div>
     </section>
-
     <section id="order">
       <div class="order reveal">
         <div>
@@ -538,7 +500,6 @@
           </div>
           <a class="btn gold" href="https://wa.me/919495679851" target="_blank">Chat on WhatsApp</a>
         </div>
-
         <form class="form" onsubmit="sendWhatsApp(event)">
           <input id="name" type="text" placeholder="Your Name" required>
           <input id="phone" type="text" placeholder="Phone Number" required>
@@ -555,16 +516,13 @@
       </div>
     </section>
   </main>
-
   <a class="whatsapp" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank">WhatsApp</a>
-
   <footer class="footer">
     <img src="krizpia-logo.png" alt="Krizpia logo">
     <p>Traditional Kuzhalappam | Spicy Kuzhalappam | Sweet Kuzhalappam | Thatta</p>
     <p>Contact: +91 9495679851</p>
     <p>Email: Sales@krizpia.com</p>
   </footer>
-
   <script>
     function sendWhatsApp(event){
       event.preventDefault();
