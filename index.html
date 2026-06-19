@@ -444,6 +444,75 @@
     <div class="process-step"><span>👀</span><h3>Quality Check</h3><p>Every batch is checked for taste, crunch and appearance.</p></div>
     <div class="process-step"><span>📦</span><h3>Packing</h3><p>Fresh snacks are hygienically packed for freshness.</p></div>
   </div>
+  <style>
+    .process-section{
+  background:#f8f8f8;
+  border-radius:28px;
+  margin:50px auto;
+}
+
+.process-flow{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:18px;
+}
+
+.process-step{
+  background:#ffffff;
+  border:1px solid #e5e5e5;
+  border-radius:20px;
+  padding:25px 18px;
+  text-align:center;
+  box-shadow:0 12px 28px rgba(0,0,0,.08);
+  animation:fadeUp .9s ease both;
+  transition:.3s ease;
+}
+
+.process-step:hover{
+  transform:translateY(-8px) scale(1.02);
+  box-shadow:0 18px 35px rgba(0,0,0,.14);
+}
+
+.process-step span{
+  width:58px;
+  height:58px;
+  margin:0 auto 14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#111;
+  color:#fff;
+  border-radius:50%;
+  font-size:28px;
+  animation:bounceIcon 1.8s infinite;
+}
+
+.process-step h3{
+  font-size:17px;
+  margin-bottom:10px;
+  color:#111;
+}
+
+.process-step p{
+  font-size:14px;
+  color:#666;
+  line-height:1.5;
+}
+
+@keyframes bounceIcon{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+.process-step:nth-child(1){animation-delay:.1s;}
+.process-step:nth-child(2){animation-delay:.2s;}
+.process-step:nth-child(3){animation-delay:.3s;}
+.process-step:nth-child(4){animation-delay:.4s;}
+.process-step:nth-child(5){animation-delay:.5s;}
+.process-step:nth-child(6){animation-delay:.6s;}
+.process-step:nth-child(7){animation-delay:.7s;}
+.process-step:nth-child(8){animation-delay:.8s;}
+.process-step:nth-child(9){animation-delay:.9s;}
+  </style>        
 </section>
           <section id="gallery">
       <div class="section-title reveal">
