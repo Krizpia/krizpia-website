@@ -462,6 +462,19 @@
           <div class="card-body">
             <h3>Thatta</h3>
             <p>A thin, round and crispy Kerala-style savoury snack with a light crunch and mild spice.</p>
+<style>
+  .card img{
+  animation: snackFloat 3.5s ease-in-out infinite;
+}
+.card:nth-child(2) img{ animation-delay:.3s; }
+.card:nth-child(3) img{ animation-delay:.6s; }
+.card:nth-child(4) img{ animation-delay:.9s; }
+
+@keyframes snackFloat{
+  0%,100%{ transform:translateY(0); }
+  50%{ transform:translateY(-8px); }
+}
+</style>
             <ul>
               <li>Perfect with tea</li>
               <li>Easy to share</li>
