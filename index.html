@@ -524,6 +524,25 @@
         <img class="reveal delay-2" src="sweet-kuzhalappam.PNG" alt="Sweet Kuzhalappam close up" loading="lazy">
         <img class="reveal delay-3" src="thatta-photo.PNG" alt="Thatta close up" loading="lazy">
       </div>
+<Style> 
+.card img{
+  transition: transform .45s ease, filter .45s ease;
+}
+
+.card:hover img{
+  transform: scale(1.08);
+  filter: brightness(1.08) contrast(1.05);
+}
+
+.card{
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 18px 45px rgba(0,0,0,.14);
+}
+</Style>
     </section>
 
     <section id="order">
