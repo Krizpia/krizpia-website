@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https: data:; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src https://fonts.gstatic.com; connect-src 'self' https://www.google-analytics.com https://analytics.google.com;">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HP67SVL8C"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -8,7 +14,7 @@
     gtag('js', new Date());
     gtag('config', 'G-4HP67SVL8C');
   </script>
-  <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Krizpia | Authentic Kerala Snacks | Kuzhalappam & Thatta</title>
 
@@ -306,15 +312,9 @@
       padding:10px 18px;
       background:#d9a441;
       color:#111;
-      text-decoration:none;
       border-radius:25px;
       font-weight:800;
       font-size:14px;
-    }
-
-    .product-btn:hover{
-      opacity:0.9;
-      transform:translateY(-2px);
     }
 
     #about{padding-top:18px;padding-bottom:24px}
@@ -358,6 +358,7 @@
       gap:24px;
       align-items:start;
     }
+
     .gallery img{
       width:100%;
       height:auto;
@@ -366,6 +367,7 @@
       transition:.3s ease;
       box-shadow:0 10px 30px rgba(0,0,0,.06);
     }
+
     .gallery img:hover{transform:scale(1.03)}
 
     .order{
@@ -393,6 +395,7 @@
       background:#fff;
       outline:none;
     }
+
     .form textarea{min-height:120px;resize:vertical}
     .form input:focus,.form select:focus,.form textarea:focus{
       border-color:#111;
@@ -406,11 +409,13 @@
       border-radius:14px;
       box-shadow:0 2px 8px rgba(0,0,0,0.08);
     }
+
     .faq-item h3{
       color:#1f5e3b;
       margin-bottom:8px;
       font-size:16px;
     }
+
     .faq-item p{
       color:#555;
       line-height:1.6;
@@ -423,6 +428,7 @@
       padding:34px 28px;
       margin-top:20px;
     }
+
     .footer-inner{
       width:100%;
       max-width:1280px;
@@ -432,16 +438,19 @@
       justify-content:space-between;
       gap:28px;
     }
+
     .footer-fssai img{
       width:120px;
       height:auto;
       object-fit:contain;
       background:transparent;
     }
+
     .footer-content{
       flex:1;
       text-align:center;
     }
+
     .footer-logo{height:82px;width:auto;margin:0 auto 12px}
     .footer p{color:#e7e7e7;margin:5px 0}
 
@@ -449,12 +458,13 @@
       text-align:center;
       margin-top:15px;
     }
+
     .footer-links a{
       color:#ffffff;
-      text-decoration:none;
       margin:0 8px;
       font-size:14px;
     }
+
     .footer-links a:hover{text-decoration:underline}
 
     .whatsapp{
@@ -499,7 +509,6 @@
       .order{padding:26px 18px}
       .process-video{height:220px}
       .footer-inner{flex-direction:column;text-align:center}
-      .footer-fssai{justify-content:center}
       .footer-fssai img{width:106px}
       .footer-links a{display:inline-block;margin:5px 6px}
       .whatsapp{right:14px;bottom:14px;padding:12px 15px;font-size:14px}
@@ -511,7 +520,7 @@
 
 <header>
   <nav>
-    <a class="brand" href="https://krizpia.com/">
+    <a class="brand" href="https://krizpia.com/" aria-label="Krizpia Home">
       <img src="krizpia-logo.png" alt="Krizpia Kerala snacks logo">
     </a>
 
@@ -534,7 +543,7 @@
     <p>Discover a delicious range of Kerala snacks including Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam, and Thatta.</p>
 
     <div class="cta">
-      <a class="btn gold" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener">Order on WhatsApp</a>
+      <a class="btn gold" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
       <a class="btn outline" href="#products">View Products</a>
     </div>
   </div>
@@ -664,25 +673,27 @@
       <div class="contact-lines">
         <p><strong>Phone:</strong> +91 9495679851</p>
         <p><strong>WhatsApp Orders:</strong> +91 9495679851</p>
-        <p><strong>Email:</strong> Sales@krizpia.com</p>
+        <p><strong>Email:</strong> sales [at] krizpia [dot] com</p>
       </div>
 
-      <a class="btn gold" href="https://wa.me/919495679851" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn gold" href="https://wa.me/919495679851" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
 
       <form class="form order-form" onsubmit="sendWhatsApp(event)">
-        <input id="name" type="text" placeholder="Your Name" required>
-        <input id="phone" type="text" placeholder="Phone Number" required>
+        <input id="name" type="text" maxlength="50" placeholder="Your Name" autocomplete="name" required>
 
-        <select id="product">
-          <option>Traditional Kuzhalappam</option>
-          <option>Spicy Kuzhalappam</option>
-          <option>Sweet Kuzhalappam</option>
-          <option>Thatta</option>
-          <option>All Products</option>
-          <option>Distribution Enquiries</option>
+        <input id="phone" type="tel" maxlength="15" pattern="[0-9+\-\s]{7,15}" placeholder="Phone Number" autocomplete="tel" required>
+
+        <select id="product" required>
+          <option value="Traditional Kuzhalappam">Traditional Kuzhalappam</option>
+          <option value="Spicy Kuzhalappam">Spicy Kuzhalappam</option>
+          <option value="Sweet Kuzhalappam">Sweet Kuzhalappam</option>
+          <option value="Thatta">Thatta</option>
+          <option value="All Products">All Products</option>
+          <option value="Distribution Enquiries">Distribution Enquiries</option>
         </select>
 
-        <textarea id="message" placeholder="Your message / quantity required"></textarea>
+        <textarea id="message" maxlength="300" placeholder="Your message / quantity required"></textarea>
+
         <button class="btn gold" type="submit">Send Enquiry</button>
       </form>
     </div>
@@ -721,7 +732,7 @@
 
 </main>
 
-<a class="whatsapp" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 
 <footer class="footer">
   <div class="footer-inner">
@@ -735,7 +746,7 @@
 
       <p>Traditional Kuzhalappam | Spicy Kuzhalappam | Sweet Kuzhalappam | Thatta</p>
       <p>Contact: +91 9495679851</p>
-      <p>Email: Sales@krizpia.com</p>
+      <p>Email: sales [at] krizpia [dot] com</p>
       <p><strong>FSSAI License No:</strong> 21326171000212</p>
 
       <p>
@@ -760,17 +771,31 @@
 </footer>
 
 <script>
+  function cleanInput(value){
+    return value
+      .replace(/[<>]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
   function sendWhatsApp(event){
     event.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const product = document.getElementById('product').value;
-    const message = document.getElementById('message').value.trim();
+    const name = cleanInput(document.getElementById('name').value);
+    const phone = cleanInput(document.getElementById('phone').value);
+    const product = cleanInput(document.getElementById('product').value);
+    const message = cleanInput(document.getElementById('message').value);
+
+    const phonePattern = /^[0-9+\-\s]{7,15}$/;
+
+    if(!name || !phonePattern.test(phone)){
+      alert("Please enter a valid name and phone number.");
+      return;
+    }
 
     const text = `Hi Krizpia, my name is ${name}. Phone: ${phone}. I am interested in ${product}. Message: ${message}`;
 
-    window.open('https://wa.me/919495679851?text=' + encodeURIComponent(text), '_blank');
+    window.open('https://wa.me/919495679851?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
   }
 </script>
 
