@@ -666,6 +666,106 @@
 <section id="order">
   <div class="order reveal">
 
+    <!-- LEFT SIDE: ORDER FORM -->
+    <div>
+      <h2>Order Enquiry</h2>
+      <p>For retail supply, family orders, events, wholesale enquiries, or distribution opportunities, contact Krizpia directly.</p>
+
+      <div class="contact-lines">
+        <p><strong>Phone:</strong> +91 9495679851</p>
+        <p><strong>WhatsApp Orders:</strong> +91 9495679851</p>
+        <p><strong>Email:</strong> sales@krizpia.com</p>
+      </div>
+
+      <a class="btn gold" href="https://wa.me/919495679851" target="_blank" rel="noopener noreferrer">
+        Chat on WhatsApp
+      </a>
+
+      <form class="form order-form" onsubmit="sendWhatsApp(event)">
+        <input id="name" type="text" maxlength="50" placeholder="Your Name" autocomplete="name" required>
+
+        <input id="phone" type="tel" maxlength="15" pattern="[0-9+\-\s]{7,15}" placeholder="Phone Number" autocomplete="tel" required>
+
+        <select id="product" required>
+          <option value="Traditional Kuzhalappam">Traditional Kuzhalappam</option>
+          <option value="Spicy Kuzhalappam">Spicy Kuzhalappam</option>
+          <option value="Sweet Kuzhalappam">Sweet Kuzhalappam</option>
+          <option value="Thatta">Thatta</option>
+          <option value="All Products">All Products</option>
+          <option value="Distribution Enquiries">Distribution Enquiries</option>
+        </select>
+
+        <textarea id="message" maxlength="300" placeholder="Your message / quantity required"></textarea>
+
+        <button class="btn gold" type="submit">Send Enquiry</button>
+      </form>
+    </div>
+
+    <!-- RIGHT SIDE: FAQ + COMING SOON IMAGE -->
+    <div class="faq-section">
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>What products does Krizpia offer?</h3>
+        <p>Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta, with more products planned in the future.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Will Krizpia launch spice powders?</h3>
+        <p>Yes. Krizpia Spice Collection featuring authentic Kerala spice blends and curry masalas is coming soon.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>Are Krizpia products FSSAI licensed?</h3>
+        <p>Yes. All Krizpia products are manufactured under FSSAI Licence No. 21326171000212 and follow hygienic production practices.</p>
+      </div>
+
+      <div class="coming-soon-card">
+        <img src="coming soon.png" alt="Krizpia Spice Collection Coming Soon" loading="lazy">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  <style> .order{
+  background:var(--soft);
+  border:1px solid var(--border);
+  border-radius:32px;
+  padding:36px;
+  display:grid;
+  grid-template-columns:58% 42%;
+  gap:35px;
+  align-items:start;
+}
+
+.faq-section{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.coming-soon-card{
+  background:#fff;
+  padding:0;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 8px 22px rgba(0,0,0,.12);
+}
+
+.coming-soon-card img{
+  width:100%;
+  display:block;
+}
+
+@media(max-width:900px){
+  .order{
+    grid-template-columns:1fr;
+  }
+}
+    </style>
+
     <div><section id="reviews">
   <div class="section-title reveal">
     <h2>Customer Reviews</h2>
