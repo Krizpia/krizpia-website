@@ -68,7 +68,7 @@
     "image": "https://krizpia.com/mix%20image.png",
     "url": "https://krizpia.com/",
     "telephone": "+91-9495679851",
-    priceRange": "₹₹",
+    "priceRange": "₹₹",
     "servesCuisine": "Kerala Snacks",
     "address": {
       "@type": "PostalAddress",
@@ -201,13 +201,14 @@
     }
 
     .cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+
     .btn{
       display:inline-flex;
       align-items:center;
       justify-content:center;
       gap:8px;
-      min-height:50px;
-      padding:14px 26px;
+      min-height:46px;
+      padding:12px 24px;
       border-radius:999px;
       font-weight:800;
       border:1px solid var(--black);
@@ -216,6 +217,7 @@
       font-family:inherit;
       font-size:15px;
     }
+
     .btn.gold,.btn.dark{background:var(--black);color:#fff}
     .btn.outline{background:#fff;color:var(--black)}
     .btn:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(0,0,0,.16)}
@@ -370,24 +372,60 @@
 
     .gallery img:hover{transform:scale(1.03)}
 
+    .review-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+
+    .review-card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:26px;
+      text-align:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.06);
+    }
+
+    .review-card p{
+      color:#666;
+      font-size:16px;
+      margin:14px 0;
+      line-height:1.7;
+    }
+
+    .stars{
+      color:#d9a441;
+      font-size:26px;
+      letter-spacing:2px;
+      margin-bottom:8px;
+    }
+
     .order{
       background:var(--soft);
       border:1px solid var(--border);
       border-radius:32px;
       padding:36px;
       display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:30px;
+      grid-template-columns:58% 42%;
+      gap:35px;
       align-items:start;
     }
 
     .contact-lines{display:grid;gap:8px;margin:18px 0 26px}
     .contact-lines p{font-size:16px}
 
-    .form{display:grid;gap:13px;margin-top:20px}
-    .form input,.form select,.form textarea{
+    .form{
+      display:grid;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .form input,
+    .form select{
       width:100%;
-      padding:15px 16px;
+      padding:11px 14px;
+      min-height:48px;
       border:1px solid #ddd;
       border-radius:14px;
       font-family:inherit;
@@ -396,14 +434,33 @@
       outline:none;
     }
 
-    .form textarea{min-height:120px;resize:vertical}
-    .form input:focus,.form select:focus,.form textarea:focus{
+    .form textarea{
+      width:100%;
+      padding:12px 14px;
+      min-height:95px;
+      border:1px solid #ddd;
+      border-radius:14px;
+      font-family:inherit;
+      font-size:15px;
+      background:#fff;
+      outline:none;
+      resize:vertical;
+    }
+
+    .form input:focus,
+    .form select:focus,
+    .form textarea:focus{
       border-color:#111;
       box-shadow:0 0 0 3px rgba(0,0,0,.08);
     }
 
+    .faq-section{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
     .faq-item{
-      margin-bottom:18px;
       padding:18px;
       background:#ffffff;
       border-radius:14px;
@@ -420,6 +477,19 @@
       color:#555;
       line-height:1.6;
       font-size:14px;
+    }
+
+    .coming-soon-card{
+      background:#fff;
+      padding:0;
+      border-radius:20px;
+      overflow:hidden;
+      box-shadow:0 8px 22px rgba(0,0,0,.12);
+    }
+
+    .coming-soon-card img{
+      width:100%;
+      display:block;
     }
 
     .footer{
@@ -505,7 +575,7 @@
       .hero p{margin-left:auto;margin-right:auto}
       .cta{justify-content:center}
       .hero-visual img{height:330px}
-      .products,.gallery{grid-template-columns:1fr}
+      .products,.gallery,.review-grid{grid-template-columns:1fr}
       .order{padding:26px 18px}
       .process-video{height:220px}
       .footer-inner{flex-direction:column;text-align:center}
@@ -529,6 +599,7 @@
       <a href="#about">About</a>
       <a href="#process">Process</a>
       <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
       <a href="#order">Order</a>
     </div>
   </nav>
@@ -569,7 +640,6 @@
   </div>
 
   <div class="products">
-
     <article class="card reveal">
       <img src="traditional-kuzhalappam.PNG" alt="Traditional Kerala Kuzhalappam snack" loading="lazy">
       <div class="card-body">
@@ -625,7 +695,6 @@
         <a href="thatta.html" class="product-btn">View Product</a>
       </div>
     </article>
-
   </div>
 </section>
 
@@ -642,10 +711,10 @@
     <div class="gold-line"></div>
   </div>
 
-<video class="process-video" controls preload="metadata">
-  <source src="krizpia-process-video.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+  <video class="process-video" controls preload="metadata">
+    <source src="krizpia-process-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </section>
 
 <section id="gallery">
@@ -663,10 +732,37 @@
   </div>
 </section>
 
+<section id="reviews">
+  <div class="section-title reveal">
+    <h2>Customer Reviews</h2>
+    <p>What customers say about Krizpia snacks.</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="review-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Excellent taste, reminds me of homemade Kuzhalappam."</p>
+      <strong>- Anil, Kottayam</strong>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Very crispy and fresh. My children loved it."</p>
+      <strong>- Reshma, Kochi</strong>
+    </div>
+
+    <div class="review-card">
+      <div class="stars">★★★★</div>
+      <p>"Good packing and authentic Kerala snack taste."</p>
+      <strong>- Saji, Changanacherry</strong>
+    </div>
+  </div>
+</section>
+
 <section id="order">
   <div class="order reveal">
 
-    <!-- LEFT SIDE: ORDER FORM -->
     <div>
       <h2>Order Enquiry</h2>
       <p>For retail supply, family orders, events, wholesale enquiries, or distribution opportunities, contact Krizpia directly.</p>
@@ -701,9 +797,7 @@
       </form>
     </div>
 
-    <!-- RIGHT SIDE: FAQ + COMING SOON IMAGE -->
     <div class="faq-section">
-
       <h2>Frequently Asked Questions</h2>
 
       <div class="faq-item">
@@ -723,168 +817,6 @@
 
       <div class="coming-soon-card">
         <img src="coming soon.png" alt="Krizpia Spice Collection Coming Soon" loading="lazy">
-      </div>
-
-    </div>
-
-  </div>
-</section>
-  <style> .order{
-  background:var(--soft);
-  border:1px solid var(--border);
-  border-radius:32px;
-  padding:36px;
-  display:grid;
-  grid-template-columns:58% 42%;
-  gap:35px;
-  align-items:start;
-}
-
-.faq-section{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-
-.coming-soon-card{
-  background:#fff;
-  padding:0;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 8px 22px rgba(0,0,0,.12);
-}
-
-.coming-soon-card img{
-  width:100%;
-  display:block;
-}
-
-@media(max-width:900px){
-  .order{
-    grid-template-columns:1fr;
-  }
-}
-    </style>
-
-    <div><section id="reviews">
-  <div class="section-title reveal">
-    <h2>Customer Reviews</h2>
-    <p>What customers say about Krizpia snacks.</p>
-    <div class="gold-line"></div>
-  </div>
-
-  <div class="review-grid">
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>"Excellent taste, reminds me of homemade Kuzhalappam."</p>
-      <strong>- Anil, Kottayam</strong>
-    </div>
-
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>"Very crispy and fresh. My children loved it."</p>
-      <strong>- Reshma, Kochi</strong>
-    </div>
-
-    <div class="review-card">
-      <div class="stars">★★★★</div>
-      <p>"Good packing and authentic Kerala snack taste."</p>
-      <strong>- Saji, Changanacherry</strong>
-    </div>
-  </div>
-</section>
-      <style> .review-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-}
-
-.review-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:26px;
-  text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,.06);
-}
-
-.review-card p{
-  color:#666;
-  font-size:16px;
-  margin:14px 0;
-  line-height:1.7;
-}
-
-.stars{
-  color:#d9a441;
-  font-size:26px;
-  letter-spacing:2px;
-  margin-bottom:8px;
-}
-
-@media(max-width:768px){
-  .review-grid{
-    grid-template-columns:1fr;
-  }
-}
-      </style>
-      <h2>Order Enquiry</h2>
-      <p>For retail supply, family orders, events, wholesale enquiries, or distribution opportunities, contact Krizpia directly.</p>
-
-      <div class="contact-lines">
-        <p><strong>Phone:</strong> +91 9495679851</p>
-        <p><strong>WhatsApp Orders:</strong> +91 9495679851</p>
-        <p><strong>Email:</strong> sales@krizpia.com</p>
-      </div>
-
-      <a class="btn gold" href="https://wa.me/919495679851" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a>
-
-      <form class="form order-form" onsubmit="sendWhatsApp(event)">
-        <input id="name" type="text" maxlength="50" placeholder="Your Name" autocomplete="name" required>
-
-        <input id="phone" type="tel" maxlength="15" pattern="[0-9+\-\s]{7,15}" placeholder="Phone Number" autocomplete="tel" required>
-
-        <select id="product" required>
-          <option value="Traditional Kuzhalappam">Traditional Kuzhalappam</option>
-          <option value="Spicy Kuzhalappam">Spicy Kuzhalappam</option>
-          <option value="Sweet Kuzhalappam">Sweet Kuzhalappam</option>
-          <option value="Thatta">Thatta</option>
-          <option value="All Products">All Products</option>
-          <option value="Distribution Enquiries">Distribution Enquiries</option>
-        </select>
-
-        <textarea id="message" maxlength="300" placeholder="Your message / quantity required"></textarea>
-
-        <button class="btn gold" type="submit">Send Enquiry</button>
-      </form>
-    </div>
-
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-item">
-  <h3>Are Krizpia products FSSAI licensed?</h3>
-  <p>Yes. All Krizpia products are manufactured under FSSAI Licence No. 21326171000212 and follow hygienic production practices.</p>
-</div>
-
-      <div class="faq-item">
-        <h3>Where are Krizpia products made?</h3>
-        <p>All Krizpia products are proudly prepared in Kerala, India.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Do you use artificial preservatives?</h3>
-        <p>No. Krizpia products are prepared without artificial preservatives.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What products does Krizpia offer?</h3>
-        <p>Traditional, Spicy, Sweet Kuzhalappam and Thatta, with more products planned in the future.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Will Krizpia launch spice powders?</h3>
-        <p>Yes. Krizpia Spice Collection featuring authentic Kerala spice blends and curry masalas is coming soon.</p>
       </div>
     </div>
 
@@ -912,10 +844,12 @@
 
       <p>
         Rangeela Products<br>
-        12/1059-1, Perunna East P.O,Changanacherry,<br>
+        12/1059-1, Perunna East P.O, Changanacherry,<br>
         Kottayam, Kerala – 686102
       </p>
-      <p>© 2026 Krizpia â Rangeela Products. All Rights Reserved.</p>
+
+      <p>© 2026 Krizpia – Rangeela Products. All Rights Reserved.</p>
+
       <div class="footer-links">
         <a href="terms.html">Terms & Conditions</a> |
         <a href="privacy.html">Privacy Policy</a> |
