@@ -1,665 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title>Krizpia | Authentic Kerala Snacks - Kuzhalappam & Thatta</title>
-
-  <meta name="description" content="Krizpia by Rangeela Products offers authentic Kerala snacks including Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta. FSSAI licensed Kerala snack brand from Kottayam." />
-
-  <meta name="keywords" content="Krizpia, Kerala snacks, Kuzhalappam, Thatta, Kerala Kuzhalappam, traditional Kerala snacks, buy Kerala snacks, Rangeela Products, Kottayam snacks" />
-
-  <meta name="author" content="Rangeela Products" />
-
-  <meta property="og:title" content="Krizpia - Authentic Kerala Snacks" />
-  <meta property="og:description" content="Traditional Kerala Kuzhalappam and Thatta made with quality ingredients." />
-  <meta property="og:image" content="images/krizpia-logo.png" />
-  <meta property="og:url" content="https://krizpia.com" />
-  <meta property="og:type" content="website" />
-
-  <link rel="icon" href="images/krizpia-logo.png" />
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background: #fffaf0;
-      color: #222;
-      line-height: 1.6;
-    }
-
-    header {
-      background: linear-gradient(135deg, #064420, #0b6b34);
-      color: white;
-      padding: 18px 7%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-    }
-
-    .logo img {
-      height: 62px;
-      background: white;
-      border-radius: 50%;
-      padding: 6px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: 600;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #ffd45a;
-    }
-
-    .hero {
-      padding: 70px 7%;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: center;
-      background: linear-gradient(135deg, #fff7df, #ffffff);
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      color: #064420;
-      line-height: 1.15;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #c89416;
-    }
-
-    .hero p {
-      font-size: 19px;
-      margin-bottom: 25px;
-      color: #444;
-    }
-
-    .hero-buttons a {
-      display: inline-block;
-      margin: 8px 10px 8px 0;
-      padding: 14px 24px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .btn-primary {
-      background: #0b6b34;
-      color: white;
-    }
-
-    .btn-secondary {
-      background: #ffd45a;
-      color: #064420;
-    }
-
-    .hero img {
-      width: 100%;
-      border-radius: 25px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-    }
-
-    .trust-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 18px;
-      padding: 35px 7%;
-      background: white;
-    }
-
-    .trust-box {
-      background: #fffaf0;
-      border: 1px solid #f1dc9a;
-      padding: 22px;
-      text-align: center;
-      border-radius: 18px;
-      font-weight: bold;
-      color: #064420;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.06);
-    }
-
-    section {
-      padding: 60px 7%;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 35px;
-    }
-
-    .section-title h2 {
-      color: #064420;
-      font-size: 34px;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #555;
-      max-width: 760px;
-      margin: auto;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 25px;
-    }
-
-    .product-card {
-      background: white;
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 7px 18px rgba(0,0,0,0.1);
-      transition: 0.3s;
-      border: 1px solid #f0e3ba;
-    }
-
-    .product-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .product-card img {
-      width: 100%;
-      height: 230px;
-      object-fit: cover;
-    }
-
-    .product-content {
-      padding: 22px;
-    }
-
-    .product-content h3 {
-      color: #064420;
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    .product-content p {
-      color: #555;
-      font-size: 15px;
-      margin-bottom: 15px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #fff3c1;
-      color: #805c00;
-      padding: 6px 12px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
-
-    .order-btn {
-      display: block;
-      background: #25D366;
-      color: white;
-      text-align: center;
-      padding: 12px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-    }
-
-    .about {
-      background: #064420;
-      color: white;
-      border-radius: 30px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: center;
-    }
-
-    .about h2 {
-      font-size: 34px;
-      margin-bottom: 18px;
-      color: #ffd45a;
-    }
-
-    .about p {
-      margin-bottom: 15px;
-    }
-
-    .about img {
-      width: 100%;
-      border-radius: 22px;
-    }
-
-    .reviews {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .review-card {
-      background: white;
-      padding: 25px;
-      border-radius: 20px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-      border: 1px solid #f0e3ba;
-    }
-
-    .stars {
-      color: #f4b400;
-      font-size: 22px;
-      margin-bottom: 10px;
-    }
-
-    .review-card h4 {
-      color: #064420;
-      margin-top: 12px;
-    }
-
-    .coming-soon {
-      background: linear-gradient(135deg, #fff3c1, #ffffff);
-      border-radius: 28px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: center;
-      border: 2px dashed #c89416;
-    }
-
-    .coming-soon h2 {
-      color: #064420;
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
-
-    .coming-soon ul {
-      margin-left: 20px;
-      margin-top: 15px;
-      font-weight: bold;
-      color: #064420;
-    }
-
-    .coming-soon img {
-      width: 100%;
-      border-radius: 22px;
-    }
-
-    .faq {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .faq-item {
-      background: white;
-      padding: 20px;
-      margin-bottom: 15px;
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-
-    .faq-item h3 {
-      color: #064420;
-      margin-bottom: 8px;
-    }
-
-    .cta {
-      text-align: center;
-      background: linear-gradient(135deg, #064420, #0b6b34);
-      color: white;
-      border-radius: 30px;
-    }
-
-    .cta h2 {
-      font-size: 34px;
-      margin-bottom: 15px;
-      color: #ffd45a;
-    }
-
-    .cta a {
-      display: inline-block;
-      background: #25D366;
-      color: white;
-      padding: 15px 28px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-
-    footer {
-      background: #032d16;
-      color: white;
-      text-align: center;
-      padding: 35px 7%;
-    }
-
-    footer a {
-      color: #ffd45a;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    .whatsapp-fixed {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      background: #25D366;
-      color: white;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 28px;
-      text-decoration: none;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-      z-index: 999;
-    }
-
-    @media (max-width: 900px) {
-      header {
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      nav {
-        text-align: center;
-      }
-
-      nav a {
-        display: inline-block;
-        margin: 6px;
-        font-size: 14px;
-      }
-
-      .hero,
-      .about,
-      .coming-soon {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 36px;
-      }
-
-      .trust-bar,
-      .products,
-      .reviews {
-        grid-template-columns: 1fr;
-      }
-
-      section {
-        padding: 45px 5%;
-      }
-    }
-  </style>
-
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Krizpia - Rangeela Products",
-    "image": "https://krizpia.com/images/krizpia-logo.png",
-    "url": "https://krizpia.com",
-    "telephone": "+91 9447462098",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "12/1059-1, Perunna East P.O, Changanacherry",
-      "addressLocality": "Kottayam",
-      "addressRegion": "Kerala",
-      "postalCode": "686102",
-      "addressCountry": "IN"
-    },
-    "description": "Authentic Kerala snacks including Kuzhalappam and Thatta from Rangeela Products.",
-    "brand": "Krizpia",
-    "priceRange": "₹₹"
-  }
-  </script>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Krizpia | Authentic Kerala Snacks - Kuzhalappam & Thatta</title>
+
+<meta name="description" content="Krizpia by Rangeela Products offers authentic Kerala snacks including Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta. FSSAI licensed Kerala snack brand from Kottayam.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#fff;color:#111;line-height:1.6}
+header{background:#111;color:#fff;padding:18px 7%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1000;box-shadow:0 3px 14px rgba(0,0,0,.25)}
+.logo img{height:64px;background:#fff;border-radius:50%;padding:6px}
+nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:600;font-size:15px}
+nav a:hover{color:#c9a227}
+.hero{padding:75px 7%;display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center;background:#fff}
+.hero h1{font-size:50px;color:#111;line-height:1.15;margin-bottom:20px}
+.hero h1 span{color:#c9a227}
+.hero p{font-size:19px;color:#444;margin-bottom:25px}
+.hero-buttons a{display:inline-block;margin:8px 10px 8px 0;padding:14px 26px;border-radius:50px;text-decoration:none;font-weight:bold}
+.btn-primary{background:#111;color:#fff}
+.btn-secondary{background:#c9a227;color:#111}
+.hero img{width:100%;border-radius:25px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+.trust-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:35px 7%;background:#fafafa}
+.trust-box{background:#fff;border:1px solid #e5e5e5;padding:22px;text-align:center;border-radius:18px;font-weight:bold;color:#111;box-shadow:0 5px 14px rgba(0,0,0,.06)}
+section{padding:60px 7%}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title h2{color:#111;font-size:34px;margin-bottom:10px}
+.section-title p{color:#555;max-width:760px;margin:auto}
+.products{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+.product-card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 8px 22px rgba(0,0,0,.1);border:1px solid #e8e8e8;transition:.3s}
+.product-card:hover{transform:translateY(-6px)}
+.product-card img{width:100%;height:230px;object-fit:cover;background:#f5f5f5}
+.product-content{padding:22px}
+.product-content h3{color:#111;margin-bottom:10px;font-size:21px}
+.product-content p{color:#555;font-size:15px;margin-bottom:15px}
+.tag{display:inline-block;background:#f5f5f5;color:#111;padding:6px 12px;border-radius:30px;font-size:13px;font-weight:bold;margin-bottom:12px;border:1px solid #ddd}
+.order-btn{display:block;background:#111;color:#fff;text-align:center;padding:12px;border-radius:12px;text-decoration:none;font-weight:bold;margin-top:15px}
+.order-btn:hover,.btn-primary:hover{background:#333}
+.about{background:#111;color:#fff;border-radius:30px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.about h2{font-size:34px;margin-bottom:18px;color:#c9a227}
+.about p{margin-bottom:15px}
+.about img{width:100%;border-radius:22px}
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.review-card{background:#fff;padding:25px;border-radius:20px;box-shadow:0 6px 18px rgba(0,0,0,.08);border:1px solid #e8e8e8}
+.stars{color:#c9a227;font-size:22px;margin-bottom:10px}
+.review-card h4{color:#111;margin-top:12px}
+.coming-soon{background:#fff;border-radius:28px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;border:2px dashed #111}
+.coming-soon h2{color:#111;font-size:34px;margin-bottom:15px}
+.coming-soon ul{margin-left:20px;margin-top:15px;font-weight:bold;color:#111}
+.coming-soon img{width:100%;border-radius:22px}
+.faq{max-width:900px;margin:auto}
+.faq-item{background:#fff;padding:20px;margin-bottom:15px;border-radius:16px;box-shadow:0 4px 14px rgba(0,0,0,.06);border:1px solid #e8e8e8}
+.faq-item h3{color:#111;margin-bottom:8px}
+.cta{text-align:center;background:#111;color:#fff;border-radius:30px}
+.cta h2{font-size:34px;margin-bottom:15px;color:#c9a227}
+.cta a{display:inline-block;background:#25d366;color:#fff;padding:15px 28px;border-radius:50px;text-decoration:none;font-weight:bold;margin-top:20px}
+footer{background:#111;color:#fff;text-align:center;padding:35px 7%}
+footer a{color:#c9a227;text-decoration:none;margin:0 8px}
+.whatsapp-fixed{position:fixed;right:18px;bottom:18px;background:#25d366;color:#fff;width:58px;height:58px;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:28px;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:999}
+@media(max-width:900px){
+header{flex-direction:column;gap:12px}
+nav{text-align:center}
+nav a{display:inline-block;margin:6px;font-size:14px}
+.hero,.about,.coming-soon{grid-template-columns:1fr}
+.hero h1{font-size:36px}
+.trust-bar,.products,.reviews{grid-template-columns:1fr}
+section{padding:45px 5%}
+}
+</style>
+
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"LocalBusiness",
+"name":"Krizpia - Rangeela Products",
+"image":"https://krizpia.com/images/krizpia-logo.png",
+"url":"https://krizpia.com",
+"telephone":"+91 9447462098",
+"address":{
+"@type":"PostalAddress",
+"streetAddress":"12/1059-1, Perunna East P.O, Changanacherry",
+"addressLocality":"Kottayam",
+"addressRegion":"Kerala",
+"postalCode":"686102",
+"addressCountry":"IN"
+},
+"description":"Authentic Kerala snacks including Kuzhalappam and Thatta from Rangeela Products.",
+"brand":"Krizpia",
+"priceRange":"₹₹"
+}
+</script>
 </head>
 
 <body>
 
 <header>
-  <div class="logo">
-    <img src="images/krizpia-logo.png" alt="Krizpia Logo">
-  </div>
+<div class="logo">
+<img src="images/krizpia-logo.png" alt="Krizpia Logo">
+</div>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#products">Products</a>
-    <a href="#about">About</a>
-    <a href="#reviews">Reviews</a>
-    <a href="#spices">Spices</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#about">About</a>
+<a href="#reviews">Reviews</a>
+<a href="#spices">Spices</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
 <section class="hero" id="home">
-  <div>
-    <h1>Authentic <span>Kerala Snacks</span> for Every Crispy Moment</h1>
-    <p>
-      Krizpia brings traditional Kerala snacks like Kuzhalappam and Thatta, made with quality ingredients, authentic taste, and hygienic packing.
-    </p>
+<div>
+<h1>Authentic <span>Kerala Snacks</span> Crafted for Crispy Moments</h1>
+<p>Krizpia brings traditional Kerala Kuzhalappam and Thatta with quality ingredients, hygienic packing, and real homemade-style taste.</p>
 
-    <div class="hero-buttons">
-      <a class="btn-primary" href="#products">View Products</a>
-      <a class="btn-secondary" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20would%20like%20to%20order%20your%20Kerala%20snacks." target="_blank">Order on WhatsApp</a>
-    </div>
-  </div>
+<div class="hero-buttons">
+<a class="btn-primary" href="#products">View Products</a>
+<a class="btn-secondary" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20would%20like%20to%20order%20your%20Kerala%20snacks." target="_blank">Order on WhatsApp</a>
+</div>
+</div>
 
-  <img src="images/hero-snacks.jpg" alt="Krizpia Kerala Snacks">
+<img src="images/hero-snacks.jpg" alt="Krizpia Kerala Snacks">
 </section>
 
 <div class="trust-bar">
-  <div class="trust-box">✅ FSSAI Licensed</div>
-  <div class="trust-box">✅ Hygienically Packed</div>
-  <div class="trust-box">✅ Authentic Kerala Taste</div>
-  <div class="trust-box">✅ Quality Ingredients</div>
+<div class="trust-box">✅ FSSAI Licensed</div>
+<div class="trust-box">✅ Hygienically Packed</div>
+<div class="trust-box">✅ Authentic Kerala Taste</div>
+<div class="trust-box">✅ Quality Ingredients</div>
 </div>
 
 <section id="products">
-  <div class="section-title">
-    <h2>Our Kerala Snack Products</h2>
-    <p>Explore Krizpia’s crispy and crunchy Kerala snack varieties made for tea time, family gatherings, and everyday enjoyment.</p>
-  </div>
+<div class="section-title">
+<h2>Our Kerala Snack Products</h2>
+<p>Explore Krizpia’s crispy and crunchy snack varieties made for tea time, family gatherings, and everyday enjoyment.</p>
+</div>
 
-  <div class="products">
+<div class="products">
 
-    <div class="product-card">
-      <img src="images/traditional-kuzhalappam.jpg" alt="Traditional Kuzhalappam">
-      <div class="product-content">
-        <span class="tag">Traditional Taste</span>
-        <h3>Traditional Kuzhalappam</h3>
-        <p>Crispy Kerala-style Kuzhalappam made with rice flour, coconut, cumin, fennel, and sesame seeds.</p>
-        <a class="order-btn" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20want%20Traditional%20Kuzhalappam." target="_blank">Order Now</a>
-      </div>
-    </div>
+<div class="product-card">
+<img src="images/traditional-kuzhalappam.jpg" alt="Traditional Kuzhalappam">
+<div class="product-content">
+<span class="tag">Traditional Taste</span>
+<h3>Traditional Kuzhalappam</h3>
+<p>Crispy Kerala-style Kuzhalappam made with rice flour, coconut, cumin, fennel, and sesame seeds.</p>
+<a class="order-btn" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20want%20Traditional%20Kuzhalappam." target="_blank">Order Now</a>
+</div>
+</div>
 
-    <div class="product-card">
-      <img src="images/spicy-kuzhalappam.jpg" alt="Spicy Kuzhalappam">
-      <div class="product-content">
-        <span class="tag">Spicy Kerala Flavour</span>
-        <h3>Spicy Kuzhalappam</h3>
-        <p>A bold and flavourful Kuzhalappam variety with Kerala-style spice notes for crispy snack lovers.</p>
-        <a class="order-btn" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20want%20Spicy%20Kuzhalappam." target="_blank">Order Now</a>
-      </div>
-    </div>
+<div class="product-card">
+<img src="images/spicy-kuzhalappam.jpg" alt="Spicy Kuzhalappam">
+<div class="product-content">
+<span class="tag">Spicy Kerala Flavour</span>
+<h3>Spicy Kuzhalappam</h3>
+<p>A bold and flavourful Kuzhalappam variety with Kerala-style spice notes for crispy snack lovers.</p>
+<a class="order-btn" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20want%20Spicy%20Kuzhalappam." target="_blank">Order Now</a>
+</div>
+</div>
 
-    <div class="product-card">
-      <img src="images/sweet-kuzhalappam.jpg" alt="Sweet Kuzhalappam">
-      <div class="product-content">
-        <span class="tag">Sweet & Crispy</span>
-        <h3>Sweet Kuzhalappam</h3>
-        <p>A mildly sweet Kerala snack prepared for those who enjoy a crunchy traditional treat.</p>
-        <a class="order-btn" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20want%20Sweet%20Kuzhalappam." target="_blank">Order Now</a>
-      </div>
-    </div>
+<div class="product-card">
+<img src="images/sweet-kuzhalappam.jpg" alt="Sweet Kuzhalappam">
+<div class="product-content">
+<span class="tag">Sweet & Crispy</span>
+<h3>Sweet Kuzhalappam</h3>
+<p>A mildly sweet Kerala snack prepared for those who enjoy a crunchy traditional treat.</p>
+<a class="order-btn" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20want%20Sweet%20Kuzhalappam." target="_blank">Order Now</a>
+</div>
+</div>
 
-    <div class="product-card">
-      <img src="images/thatta.jpg" alt="Thatta Kerala Snack">
-      <div class="product-content">
-        <span class="tag">Crunchy Snack</span>
-        <h3>Thatta</h3>
-        <p>A crispy Kerala-style Thatta snack made for tea time and family sharing.</p>
-        <a class="order-btn" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20want%20Thatta." target="_blank">Order Now</a>
-      </div>
-    </div>
+<div class="product-card">
+<img src="images/thatta.jpg" alt="Thatta Kerala Snack">
+<div class="product-content">
+<span class="tag">Crunchy Snack</span>
+<h3>Thatta</h3>
+<p>A crispy Kerala-style Thatta snack made for tea time and family sharing.</p>
+<a class="order-btn" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20want%20Thatta." target="_blank">Order Now</a>
+</div>
+</div>
 
-  </div>
+</div>
 </section>
 
 <section class="about" id="about">
-  <div>
-    <h2>About Krizpia</h2>
-    <p>
-      Krizpia is a Kerala snack brand from Rangeela Products, created to bring authentic traditional flavours to modern customers.
-    </p>
-    <p>
-      Our products include Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam, and Thatta.
-    </p>
-    <p>
-      We focus on quality ingredients, hygienic packing, traditional taste, and consistent customer satisfaction.
-    </p>
-    <p><strong>FSSAI No:</strong> 21326171000212</p>
-  </div>
+<div>
+<h2>About Krizpia</h2>
+<p>Krizpia is a Kerala snack brand from Rangeela Products, created to bring authentic traditional flavours to modern customers.</p>
+<p>Our products include Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam, and Thatta.</p>
+<p>We focus on quality ingredients, hygienic packing, traditional taste, and consistent customer satisfaction.</p>
+<p><strong>FSSAI No:</strong> 21326171000212</p>
+</div>
 
-  <img src="images/about-krizpia.jpg" alt="About Krizpia Rangeela Products">
+<img src="images/about-krizpia.jpg" alt="About Krizpia Rangeela Products">
 </section>
 
 <section id="reviews">
-  <div class="section-title">
-    <h2>Customer Reviews</h2>
-    <p>Real taste, crispy texture, and Kerala-style flavour loved by families.</p>
-  </div>
+<div class="section-title">
+<h2>Customer Reviews</h2>
+<p>Real taste, crispy texture, and Kerala-style flavour loved by families.</p>
+</div>
 
-  <div class="reviews">
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>“Very crispy and tasty. It reminds us of homemade Kerala snacks.”</p>
-      <h4>- Customer, Kottayam</h4>
-    </div>
+<div class="reviews">
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>“Very crispy and tasty. It reminds us of homemade Kerala snacks.”</p>
+<h4>- Customer, Kottayam</h4>
+</div>
 
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>“Good packing and fresh taste. Perfect with evening tea.”</p>
-      <h4>- Customer, Changanacherry</h4>
-    </div>
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>“Good packing and fresh taste. Perfect with evening tea.”</p>
+<h4>- Customer, Changanacherry</h4>
+</div>
 
-    <div class="review-card">
-      <div class="stars">★★★★★</div>
-      <p>“The spicy Kuzhalappam has a very nice flavour. Family loved it.”</p>
-      <h4>- Customer, Kerala</h4>
-    </div>
-  </div>
+<div class="review-card">
+<div class="stars">★★★★★</div>
+<p>“The spicy Kuzhalappam has a very nice flavour. Family loved it.”</p>
+<h4>- Customer, Kerala</h4>
+</div>
+</div>
 </section>
 
 <section class="coming-soon" id="spices">
-  <div>
-    <h2>🌶 Coming Soon - Krizpia Spice Collection</h2>
-    <p>
-      At Krizpia, our journey does not stop with authentic Kerala snacks. We are preparing to introduce a premium range of Kerala spice powders and curry masalas.
-    </p>
-    <p>
-      Our spice collection is planned to make traditional cooking easier for today’s busy lifestyle.
-    </p>
+<div>
+<h2>🌶 Coming Soon - Krizpia Spice Collection</h2>
+<p>At Krizpia, our journey does not stop with authentic Kerala snacks. We are preparing to introduce Kerala spice powders and curry masalas.</p>
+<p>Our spice collection is planned to make traditional cooking easier for today’s busy lifestyle.</p>
 
-    <ul>
-      <li>Kerala Meat Masala</li>
-      <li>Kerala Chicken Masala</li>
-      <li>Kerala Beef Curry Masala</li>
-      <li>Special Curry Blends</li>
-    </ul>
-  </div>
+<ul>
+<li>Kerala Meat Masala</li>
+<li>Kerala Chicken Masala</li>
+<li>Kerala Beef Curry Masala</li>
+<li>Special Curry Blends</li>
+</ul>
+</div>
 
-  <img src="images/spice-coming-soon.jpg" alt="Krizpia Spice Collection Coming Soon">
+<img src="images/spice-coming-soon.jpg" alt="Krizpia Spice Collection Coming Soon">
 </section>
 
 <section>
-  <div class="section-title">
-    <h2>Wholesale & Distributor Enquiry</h2>
-    <p>Interested in selling Krizpia products in your shop or supermarket? Contact us for supply and distributor enquiries.</p>
-  </div>
+<div class="section-title">
+<h2>Wholesale & Distributor Enquiry</h2>
+<p>Interested in selling Krizpia products in your shop or supermarket? Contact us for supply and distributor enquiries.</p>
+</div>
 
-  <div class="cta">
-    <h2>Become a Krizpia Distributor</h2>
-    <p>Partner with Krizpia and bring authentic Kerala snacks to more customers.</p>
-    <a href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20am%20interested%20in%20distributor%20or%20wholesale%20enquiry." target="_blank">Wholesale Enquiry</a>
-  </div>
+<div class="cta">
+<h2>Become a Krizpia Distributor</h2>
+<p>Partner with Krizpia and bring authentic Kerala snacks to more customers.</p>
+<a href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20am%20interested%20in%20distributor%20or%20wholesale%20enquiry." target="_blank">Wholesale Enquiry</a>
+</div>
 </section>
 
 <section>
-  <div class="section-title">
-    <h2>Frequently Asked Questions</h2>
-  </div>
+<div class="section-title">
+<h2>Frequently Asked Questions</h2>
+</div>
 
-  <div class="faq">
-    <div class="faq-item">
-      <h3>What products does Krizpia offer?</h3>
-      <p>Krizpia offers Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam, and Thatta.</p>
-    </div>
+<div class="faq">
+<div class="faq-item">
+<h3>What products does Krizpia offer?</h3>
+<p>Krizpia offers Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam, and Thatta.</p>
+</div>
 
-    <div class="faq-item">
-      <h3>Where is Krizpia located?</h3>
-      <p>Krizpia is from Rangeela Products, Perunna East P.O, Changanacherry, Kottayam, Kerala.</p>
-    </div>
+<div class="faq-item">
+<h3>Where is Krizpia located?</h3>
+<p>Krizpia is from Rangeela Products, Perunna East P.O, Changanacherry, Kottayam, Kerala.</p>
+</div>
 
-    <div class="faq-item">
-      <h3>How can I order Krizpia snacks?</h3>
-      <p>You can order directly through WhatsApp by clicking the order button on this website.</p>
-    </div>
+<div class="faq-item">
+<h3>How can I order Krizpia snacks?</h3>
+<p>You can order directly through WhatsApp by clicking the order button on this website.</p>
+</div>
 
-    <div class="faq-item">
-      <h3>Is Krizpia FSSAI licensed?</h3>
-      <p>Yes. Krizpia is under Rangeela Products. FSSAI No: 21326171000212.</p>
-    </div>
-  </div>
+<div class="faq-item">
+<h3>Is Krizpia FSSAI licensed?</h3>
+<p>Yes. Krizpia is under Rangeela Products. FSSAI No: 21326171000212.</p>
+</div>
+</div>
 </section>
 
 <section class="cta" id="contact">
-  <h2>Order Authentic Kerala Snacks Today</h2>
-  <p>Krizpia - Crispy, crunchy, and authentic Kerala taste.</p>
-  <a href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20would%20like%20to%20place%20an%20order." target="_blank">Chat on WhatsApp</a>
+<h2>Order Authentic Kerala Snacks Today</h2>
+<p>Krizpia - Crispy, crunchy, and authentic Kerala taste.</p>
+<a href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20would%20like%20to%20place%20an%20order." target="_blank">Chat on WhatsApp</a>
 </section>
 
 <footer>
-  <p><strong>Krizpia - Rangeela Products</strong></p>
-  <p>12/1059-1, Perunna East P.O, Changanacherry, Kottayam, Kerala - 686102</p>
-  <p>FSSAI No: 21326171000212</p>
-  <p>Mobile / WhatsApp: +91 9447462098</p>
+<p><strong>Krizpia - Rangeela Products</strong></p>
+<p>12/1059-1, Perunna East P.O, Changanacherry, Kottayam, Kerala - 686102</p>
+<p>FSSAI No: 21326171000212</p>
+<p>Mobile / WhatsApp: +91 9447462098</p>
 
-  <br>
+<br>
 
-  <p>
-    <a href="terms.html">Terms & Conditions</a> |
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="shipping.html">Shipping Policy</a> |
-    <a href="refund.html">Refund Policy</a> |
-    <a href="contact.html">Contact Us</a>
-  </p>
+<p>
+<a href="terms.html">Terms & Conditions</a> |
+<a href="privacy.html">Privacy Policy</a> |
+<a href="shipping.html">Shipping Policy</a> |
+<a href="refund.html">Refund Policy</a> |
+<a href="contact.html">Contact Us</a>
+</p>
 
-  <br>
+<br>
 
-  <p>© 2026 Krizpia. All Rights Reserved.</p>
+<p>© 2026 Krizpia. All Rights Reserved.</p>
 </footer>
 
-<a class="whatsapp-fixed" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20want%20to%20order%20your%20Kerala%20snacks." target="_blank">☘</a>
+<a class="whatsapp-fixed" href="https://wa.me/919447462098?text=Hi%20Krizpia,%20I%20want%20to%20order%20your%20Kerala%20snacks." target="_blank">☎</a>
 
 </body>
 </html>
