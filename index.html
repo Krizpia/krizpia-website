@@ -666,40 +666,68 @@
 <section id="order">
   <div class="order reveal">
 
-    <div>
-<section id="reviews">
+    <div><section id="reviews">
   <div class="section-title reveal">
     <h2>Customer Reviews</h2>
     <p>What customers say about Krizpia snacks.</p>
     <div class="gold-line"></div>
   </div>
 
-  <div class="products">
-    <article class="card reveal">
-      <div class="card-body">
-        <h3>★★★★★</h3>
-        <p>"Excellent taste, reminds me of homemade Kuzhalappam."</p>
-        <p><strong>– Anil, Kottayam</strong></p>
-      </div>
-    </article>
+  <div class="review-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Excellent taste, reminds me of homemade Kuzhalappam."</p>
+      <strong>– Anil, Kottayam</strong>
+    </div>
 
-    <article class="card reveal delay-1">
-      <div class="card-body">
-        <h3>★★★★★</h3>
-        <p>"Very crispy and fresh. My children loved it."</p>
-        <p><strong>– Reshma, Kochi</strong></p>
-      </div>
-    </article>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Very crispy and fresh. My children loved it."</p>
+      <strong>– Reshma, Kochi</strong>
+    </div>
 
-    <article class="card reveal delay-2">
-      <div class="card-body">
-        <h3>★★★★★</h3>
-        <p>"Good packing and authentic Kerala snack taste."</p>
-        <p><strong>– Saji, Changanacherry</strong></p>
-      </div>
-    </article>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p>"Good packing and authentic Kerala snack taste."</p>
+      <strong>– Saji, Changanacherry</strong>
+    </div>
   </div>
-</section>      
+</section>
+      <style> .review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.review-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:26px;
+  text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+
+.review-card p{
+  color:#666;
+  font-size:16px;
+  margin:14px 0;
+  line-height:1.7;
+}
+
+.stars{
+  color:#d9a441;
+  font-size:26px;
+  letter-spacing:2px;
+  margin-bottom:8px;
+}
+
+@media(max-width:768px){
+  .review-grid{
+    grid-template-columns:1fr;
+  }
+}
+      </style>
       <h2>Order Enquiry</h2>
       <p>For shop supply, family orders, events or distribution enquiries, contact Krizpia directly.</p>
 
