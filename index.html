@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HP67SVL8C"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,20 +10,49 @@
     gtag('config', 'G-4HP67SVL8C');
   </script>
 
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Krizpia | Authentic Kerala Snacks, Kuzhalappam & Thatta from Kerala</title>
 
-  <meta name="description" content="Buy authentic Kerala snacks from Krizpia. Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta made with quality ingredients and traditional Kerala recipes. Made in Kerala." />
+  <meta name="description" content="Buy authentic Kerala snacks from Krizpia. Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta made with quality ingredients and traditional Kerala recipes. Made in Kerala.">
 
-  <meta name="keywords" content="Kerala snacks, Kuzhalappam, Thatta, traditional Kerala snacks, spicy Kuzhalappam, sweet Kuzhalappam, Kerala food products, Kerala snacks manufacturer, Kerala snacks supplier, Krizpia" />
+  <meta name="keywords" content="Kerala snacks, Kuzhalappam, Thatta, traditional Kerala snacks, spicy Kuzhalappam, sweet Kuzhalappam, Kerala food products, Kerala snacks manufacturer, Kerala snacks supplier, Krizpia">
 
-  <link rel="canonical" href="https://krizpia.com/" />
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://krizpia.com/">
 
-    <meta property="og:image" content="https://krizpia.com/mix%20image.png" />
-  <meta property="og:url" content="https://krizpia.com/" />
-  <meta property="og:type" content="website" />
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:title" content="Krizpia | Authentic Kerala Snacks">
+  <meta property="og:description" content="Authentic Kerala Kuzhalappam and Thatta made with traditional recipes and quality ingredients.">
+  <meta property="og:image" content="https://krizpia.com/mix%20image.png">
+  <meta property="og:url" content="https://krizpia.com/">
+  <meta property="og:type" content="website">
+
+  <!-- Schema SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "Krizpia",
+    "url": "https://krizpia.com/",
+    "logo": "https://krizpia.com/krizpia-logo.png",
+    "image": "https://krizpia.com/mix%20image.png",
+    "description": "Krizpia offers authentic Kerala snacks including Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta.",
+    "telephone": "+91 9495679851",
+    "email": "Sales@krizpia.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    },
+    "brand": {
+      "@type": "Brand",
+      "name": "Krizpia"
+    }
+  }
+  </script>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
@@ -188,8 +217,8 @@
 
     .section-title{
       text-align:center;
-      max-width:820px;
-      margin:0 auto 24px;
+      max-width:900px;
+      margin:0 auto 30px;
     }
 
     .section-title h2,
@@ -216,6 +245,11 @@
       margin:16px auto 0;
     }
 
+    .seo-content{
+      padding-top:20px;
+      padding-bottom:20px;
+    }
+
     .products{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
@@ -232,7 +266,11 @@
     }
 
     .card:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
-    .card img{width:100%;height:245px;object-fit:cover}
+    .card img{width:100%;height:245px;object-fit:cover;animation:snackFloat 3.5s ease-in-out infinite}
+    .card:nth-child(2) img{animation-delay:.3s}
+    .card:nth-child(3) img{animation-delay:.6s}
+    .card:nth-child(4) img{animation-delay:.9s}
+
     .card-body{padding:22px}
     .card h3{font-size:21px;line-height:1.25;margin-bottom:10px;font-weight:900}
     .card ul{padding-left:18px;margin-top:12px}
@@ -253,49 +291,26 @@
       box-shadow:0 10px 30px rgba(0,0,0,.08);
     }
 
-    #process{padding-top:20px;padding-bottom:28px}
-    .process{
+    #process{
       max-width:1200px;
       background:var(--soft);
       border-radius:32px;
       overflow:hidden;
+      padding-top:40px;
+      padding-bottom:40px;
     }
-    .process-flow{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:18px;
-    }
-    .process-step{
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:20px;
-      padding:24px 18px;
-      text-align:center;
-      box-shadow:0 12px 28px rgba(0,0,0,.06);
-      transition:.3s ease;
-      animation:fadeUp .9s ease both;
-    }
-    .process-step:hover{
-      transform:translateY(-8px) scale(1.02);
-      box-shadow:0 18px 35px rgba(0,0,0,.12);
-    }
-    .process-step span{
-      width:58px;
-      height:58px;
-      margin:0 auto 14px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#111;
-      color:#fff;
-      border-radius:50%;
-      font-size:28px;
-      animation:bounceIcon 1.8s infinite;
-    }
-    .process-step h3{font-size:17px;margin-bottom:10px;color:#111;font-weight:900}
-    .process-step p{font-size:14px;line-height:1.5}
 
-    #gallery{padding-top:20px;padding-bottom:34px}
+    .process-video{
+      width:100%;
+      max-width:1000px;
+      height:420px;
+      object-fit:cover;
+      border-radius:28px;
+      margin:30px auto;
+      display:block;
+      box-shadow:0 18px 50px rgba(0,0,0,.15);
+    }
+
     .gallery{
       display:grid;
       grid-template-columns:repeat(4,minmax(0,1fr));
@@ -322,9 +337,11 @@
       gap:30px;
       align-items:start;
     }
+
     .contact-lines{display:grid;gap:8px;margin:18px 0 26px}
     .contact-lines p{font-size:16px}
-    .form{display:grid;gap:13px}
+
+    .form{display:grid;gap:13px;margin-top:20px}
     .form input,.form select,.form textarea{
       width:100%;
       padding:15px 16px;
@@ -336,7 +353,28 @@
       outline:none;
     }
     .form textarea{min-height:120px;resize:vertical}
-    .form input:focus,.form select:focus,.form textarea:focus{border-color:#111;box-shadow:0 0 0 3px rgba(0,0,0,.08)}
+    .form input:focus,.form select:focus,.form textarea:focus{
+      border-color:#111;
+      box-shadow:0 0 0 3px rgba(0,0,0,.08);
+    }
+
+    .faq-item{
+      margin-bottom:18px;
+      padding:18px;
+      background:#ffffff;
+      border-radius:14px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+    }
+    .faq-item h3{
+      color:#1f5e3b;
+      margin-bottom:8px;
+      font-size:16px;
+    }
+    .faq-item p{
+      color:#555;
+      line-height:1.6;
+      font-size:14px;
+    }
 
     .footer{
       background:#111;
@@ -363,10 +401,7 @@
       width:120px;
       height:auto;
       object-fit:contain;
-      background:#fff;
-      border-radius:0px;
-      padding:0px;
-      background: transparent;
+      background:transparent;
     }
     .footer-content{
       flex:1;
@@ -375,17 +410,17 @@
     .footer-logo{height:82px;width:auto;margin:0 auto 12px}
     .footer p{color:#e7e7e7;margin:5px 0}
 
-
-
-    .card img{animation:snackFloat 3.5s ease-in-out infinite}
-    .card:nth-child(2) img{animation-delay:.3s}
-    .card:nth-child(3) img{animation-delay:.6s}
-    .card:nth-child(4) img{animation-delay:.9s}
-
-    @keyframes snackFloat{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-8px)}
+    .footer-links{
+      text-align:center;
+      margin-top:15px;
     }
+    .footer-links a{
+      color:#ffffff;
+      text-decoration:none;
+      margin:0 8px;
+      font-size:14px;
+    }
+    .footer-links a:hover{text-decoration:underline}
 
     .whatsapp{
       position:fixed;
@@ -402,12 +437,17 @@
     }
 
     .reveal{opacity:0;transform:translateY(35px);animation:fadeUp .9s ease forwards}
-    .delay-1{animation-delay:.12s}.delay-2{animation-delay:.24s}.delay-3{animation-delay:.36s}
+    .delay-1{animation-delay:.12s}
+    .delay-2{animation-delay:.24s}
+    .delay-3{animation-delay:.36s}
 
+    @keyframes snackFloat{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-8px)}
+    }
     @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
     @keyframes floatImage{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
     @keyframes pulseWhatsApp{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
-    @keyframes bounceIcon{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
     @media(max-width:1000px){
       .hero,.order{grid-template-columns:1fr}
@@ -419,40 +459,30 @@
       nav{padding:12px 16px}
       .brand img{height:52px}
       section{padding:32px 16px}
-      .hero{padding:44px 16px 30px;text-align:center}
+      .hero{padding:44px 16px 30px;text-align:center;grid-template-columns:1fr}
       .hero p{margin-left:auto;margin-right:auto}
       .cta{justify-content:center}
       .hero-visual img{height:330px}
-      .products,.gallery,.process-flow{grid-template-columns:1fr}
+      .products,.gallery{grid-template-columns:1fr}
       .order{padding:26px 18px}
+      .process-video{height:220px}
       .footer-inner{flex-direction:column;text-align:center}
       .footer-fssai{justify-content:center}
       .footer-fssai img{width:106px}
+      .footer-links a{display:inline-block;margin:5px 6px}
       .whatsapp{right:14px;bottom:14px;padding:12px 15px;font-size:14px}
     }
-    <meta charset="UTF-8">
- <title>Buy Kuzhalappam & Thatta Online | Authentic Kerala Snacks | Krizpia</title>
-
-  <meta name="description" content="Buy authentic Kerala Kuzhalappam and Thatta online from Krizpia.">
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Product",
-    "name":"Traditional Kuzhalappam",
-    "brand":"Krizpia",
-    "category":"Kerala Snack",
-    "description":"Authentic Kerala Kuzhalappam made using traditional recipes.",
-    "image":"https://krizpia.com/traditional-kuzhalappam.PNG"
-  }
-  </script>
   </style>
 </head>
 
 <body>
+
   <header>
     <nav>
-      <a class="brand" href="#"><img src="krizpia-logo.png" alt="Krizpia logo"></a>
+      <a class="brand" href="https://krizpia.com/">
+        <img src="krizpia-logo.png" alt="Krizpia Kerala snacks logo">
+      </a>
+
       <div class="links">
         <a href="#products">Products</a>
         <a href="#about">About</a>
@@ -464,41 +494,32 @@
   </header>
 
   <main>
+
     <section class="hero">
       <div class="hero-copy reveal">
         <span class="eyebrow">Made in Kerala • Crispy • Crunchy</span>
         <h1>Authentic Kerala Kuzhalappam & Thatta Snacks</h1>
         <p>Discover a delicious range of Kerala snacks including Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam, and Thatta.</p>
+
         <div class="cta">
-          <a class="btn gold" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank">Order on WhatsApp</a>
+          <a class="btn gold" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener">Order on WhatsApp</a>
           <a class="btn outline" href="#products">View Products</a>
         </div>
       </div>
 
       <div class="hero-visual reveal delay-1">
-        <img src="mix image.png" alt="Krizpia snack collection">
+        <img src="mix image.png" alt="Krizpia authentic Kerala snack collection">
         <span class="badge">Fresh Kerala Taste</span>
       </div>
     </section>
 
     <section class="seo-content">
-  <div class="section-title">
-    <section class="seo-content">
-      <meta property="og:title" content="Krizpia | Authentic Kerala Snacks" />
-<meta property="og:description" content="Authentic Kerala Kuzhalappam and Thatta made with traditional recipes and quality ingredients." />
-<meta property="og:image" content="https://krizpia.com/mix%20image.png" />
-<meta property="og:url" content="https://krizpia.com" />
-<meta property="og:type" content="website" />
-     
-    <h2>Authentic Kerala Kuzhalappam & Thatta</h2>
-    <p>
-      Krizpia is a Kerala snack brand offering Traditional Kuzhalappam,
-      Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta. Our snacks are
-      prepared using traditional Kerala recipes and quality ingredients,
-      bringing the authentic taste of Kerala to every pack.
-    </p>
+      <div class="section-title">
+        <h2>Authentic Kerala Kuzhalappam & Thatta</h2>
+        <p>Krizpia is a Kerala snack brand offering Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta. Our snacks are prepared using traditional Kerala recipes and quality ingredients, bringing the authentic taste of Kerala to every pack.</p>
       </div>
-</section>
+    </section>
+
     <section id="products">
       <div class="section-title reveal">
         <h2>Our Snack Range</h2>
@@ -507,8 +528,9 @@
       </div>
 
       <div class="products">
+
         <article class="card reveal">
-          <img src="traditional-kuzhalappam.PNG" alt="Traditional Kerala Kuzhalappam Snack" loading="lazy">
+          <img src="traditional-kuzhalappam.PNG" alt="Traditional Kerala Kuzhalappam snack" loading="lazy">
           <div class="card-body">
             <h3>Traditional Kuzhalappam</h3>
             <p>A classic Kerala tea-time snack made with rice flour, coconut, sesame and spices.</p>
@@ -521,7 +543,7 @@
         </article>
 
         <article class="card reveal delay-1">
-          <img src="spicy-kuzhalappam.PNG" alt="Spicy Kuzhalappam" loading="lazy">
+          <img src="spicy-kuzhalappam.PNG" alt="Spicy Kerala Kuzhalappam snack" loading="lazy">
           <div class="card-body">
             <h3>Spicy Kuzhalappam</h3>
             <p>A bold, crispy Kuzhalappam with chilli, pepper, ginger and garlic notes.</p>
@@ -534,7 +556,7 @@
         </article>
 
         <article class="card reveal delay-2">
-          <img src="sweet-kuzhalappam.PNG" alt="Sweet Kuzhalappam" loading="lazy">
+          <img src="sweet-kuzhalappam.PNG" alt="Sweet Kerala Kuzhalappam snack" loading="lazy">
           <div class="card-body">
             <h3>Sweet Kuzhalappam</h3>
             <p>A sweet version of the Kerala favourite with a glossy finish and gentle sweetness.</p>
@@ -547,11 +569,10 @@
         </article>
 
         <article class="card reveal delay-3">
-          <img src="thatta-photo.PNG" alt="Thatta Kerala snack" loading="lazy">
+          <img src="thatta-photo.PNG" alt="Thatta traditional Kerala snack" loading="lazy">
           <div class="card-body">
             <h3>Thatta</h3>
             <p>A thin, round and crispy Kerala-style savoury snack with a light crunch and mild spice.</p>
-
             <ul>
               <li>Perfect with tea</li>
               <li>Easy to share</li>
@@ -559,65 +580,29 @@
             </ul>
           </div>
         </article>
+
       </div>
     </section>
 
     <section id="about">
       <div class="about-banner reveal">
-        <img src="About Krizpia Image.png" alt="About Krizpia">
+        <img src="About Krizpia Image.png" alt="About Krizpia Kerala snack brand">
       </div>
     </section>
 
-  <style>
-.process-video{
-  width:100%;
-  max-width:1000px;
-  height:420px;
-  object-fit:cover;
-  border-radius:28px;
-  margin:0 auto 30px;
-  display:block;
-  box-shadow:0 18px 50px rgba(0,0,0,.15);
-}
-@media(max-width:768px){
-  .process-video{
-    height:220px;
-  }
-}
-</style>
- <section id="process" class="process reveal">
+    <section id="process" class="reveal">
+      <div class="section-title">
+        <h2>How Krizpia is Made</h2>
+        <p>Watch our authentic Kerala snack preparation process from raw ingredients to final packing.</p>
+        <div class="gold-line"></div>
+      </div>
 
-  <div class="section-title">
-    <h2>How Krizpia is Made</h2>
-    <p>Watch our authentic Kerala snack preparation process from raw ingredients to final packing.</p>
-    <div class="gold-line"></div>
-  </div>
+      <video class="process-video" controls preload="metadata">
+        <source src="krizpia-process-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </section>
 
-  <video class="process-video" controls preload="metadata">
-      <source src="krizpia-process-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-  </video>
-
-  <div class="process-flow">
-      <!-- process steps here -->
-  </div>
-   <style> .section-title{
-    text-align:center;
-    max-width:900px;
-    margin:0 auto 30px;
-}
-   </style>
-<style> .process-video{
-    width:100%;
-    max-width:1000px;
-    height:420px;
-    object-fit:cover;
-    border-radius:28px;
-    display:block;
-    margin:30px auto;
-    box-shadow:0 18px 50px rgba(0,0,0,.15);
-}</style>
-</section>
     <section id="gallery">
       <div class="section-title reveal">
         <h2>Product Gallery</h2>
@@ -629,148 +614,121 @@
         <img class="reveal" src="traditional-kuzhalappam.PNG" alt="Traditional Kuzhalappam close up" loading="lazy">
         <img class="reveal delay-1" src="spicy-kuzhalappam.PNG" alt="Spicy Kuzhalappam close up" loading="lazy">
         <img class="reveal delay-2" src="sweet-kuzhalappam.PNG" alt="Sweet Kuzhalappam close up" loading="lazy">
-        <img class="reveal delay-3" src="thatta-photo.PNG" alt="Thatta close up" loading="lazy">
-
+        <img class="reveal delay-3" src="thatta-photo.PNG" alt="Thatta snack close up" loading="lazy">
       </div>
     </section>
 
     <section id="order">
-  <div class="order reveal">
+      <div class="order reveal">
 
-    <div>
-      <h2>Order Enquiry</h2>
-      <p>For shop supply, family orders, events or distribution enquiries, contact Krizpia directly.</p>
+        <div>
+          <h2>Order Enquiry</h2>
+          <p>For shop supply, family orders, events or distribution enquiries, contact Krizpia directly.</p>
 
-      <div class="contact-lines">
-        <p><strong>Phone:</strong> +91 9495679851</p>
-        <p><strong>WhatsApp Orders:</strong> +91 9495679851</p>
-        <p><strong>Email:</strong> Sales@krizpia.com</p>
+          <div class="contact-lines">
+            <p><strong>Phone:</strong> +91 9495679851</p>
+            <p><strong>WhatsApp Orders:</strong> +91 9495679851</p>
+            <p><strong>Email:</strong> Sales@krizpia.com</p>
+          </div>
+
+          <a class="btn gold" href="https://wa.me/919495679851" target="_blank" rel="noopener">Chat on WhatsApp</a>
+
+          <form class="form order-form" onsubmit="sendWhatsApp(event)">
+            <input id="name" type="text" placeholder="Your Name" required>
+            <input id="phone" type="text" placeholder="Phone Number" required>
+
+            <select id="product">
+              <option>Traditional Kuzhalappam</option>
+              <option>Spicy Kuzhalappam</option>
+              <option>Sweet Kuzhalappam</option>
+              <option>Thatta</option>
+              <option>All Products</option>
+              <option>Distribution Enquiries</option>
+            </select>
+
+            <textarea id="message" placeholder="Your message / quantity required"></textarea>
+            <button class="btn gold" type="submit">Send Enquiry</button>
+          </form>
+        </div>
+
+        <div class="faq-section">
+          <h2>Frequently Asked Questions</h2>
+
+          <div class="faq-item">
+            <h3>What is Krizpia?</h3>
+            <p>Krizpia is a Kerala snack brand offering authentic traditional snacks made using carefully selected ingredients and traditional recipes.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Where are Krizpia products made?</h3>
+            <p>All Krizpia products are proudly prepared in Kerala, India.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Do you use artificial preservatives?</h3>
+            <p>No. Krizpia products are prepared without artificial preservatives.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What products does Krizpia offer?</h3>
+            <p>Traditional, Spicy, Sweet Kuzhalappam and Thatta, with more products planned in the future.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Will Krizpia launch spice powders?</h3>
+            <p>Yes. Krizpia Spice Collection featuring authentic Kerala spice blends and curry masalas is coming soon.</p>
+          </div>
+        </div>
+
       </div>
+    </section>
 
-      <a class="btn gold" href="https://wa.me/919495679851" target="_blank">Chat on WhatsApp</a>
-
-      <form class="form order-form" onsubmit="sendWhatsApp(event)">
-        <input id="name" type="text" placeholder="Your Name" required>
-        <input id="phone" type="text" placeholder="Phone Number" required>
-
-        <select id="product">
-          <option>Traditional Kuzhalappam</option>
-          <option>Spicy Kuzhalappam</option>
-          <option>Sweet Kuzhalappam</option>
-          <option>Thatta</option>
-          <option>All Products</option>
-          <option>Distribution Enquiries</option>
-        </select>
-
-        <textarea id="message" placeholder="Your message / quantity required"></textarea>
-        <button class="btn gold" type="submit">Send Enquiry</button>
-      </form>
-    </div>
-
-    <div class="faq-section">
-      <h2>Frequently Asked Questions</h2>
-
-      <div class="faq-item">
-        <h3>What is Krizpia?</h3>
-        <p>Krizpia is a Kerala snack brand offering authentic traditional snacks made using carefully selected ingredients and traditional recipes.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Where are Krizpia products made?</h3>
-        <p>All Krizpia products are proudly prepared in Kerala, India.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Do you use artificial preservatives?</h3>
-        <p>No. Krizpia products are prepared without artificial preservatives.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>What products does Krizpia offer?</h3>
-        <p>Traditional, Spicy, Sweet Kuzhalappam and Thatta, with more products planned in the future.</p>
-      </div>
-
-      <div class="faq-item">
-        <h3>Will Krizpia launch spice powders?</h3>
-        <p>Yes. Krizpia Spice Collection featuring authentic Kerala spice blends and curry masalas is coming soon.</p>
-      </div>
-    </div>
-
-  </div>
-      <style> 
-        .faq-item{
-  margin-bottom:18px;
-  padding:18px;
-  background:#ffffff;
-  border-radius:10px;
-  box-shadow:0 2px 8px rgba(0,0,0,0.08);
-}
-
-.faq-item h3{
-  color:#1f5e3b;
-  margin-bottom:8px;
-  font-size:16px;
-}
-
-.faq-item p{
-  color:#555;
-  line-height:1.6;
-  font-size:14px;
-}
-</style>
   </main>
-  <a class="whatsapp" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank">WhatsApp</a>
 
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-fssai">
-      <img src="Fssai Logo.png" alt="Fssai Logo">
+  <a class="whatsapp" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener">WhatsApp</a>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+      <div class="footer-fssai">
+        <img src="Fssai Logo.png" alt="FSSAI logo">
+      </div>
+
+      <div class="footer-content">
+        <img src="krizpia-logo.png" alt="Krizpia logo" class="footer-logo">
+
+        <p>Traditional Kuzhalappam | Spicy Kuzhalappam | Sweet Kuzhalappam | Thatta</p>
+        <p>Contact: +91 9495679851</p>
+        <p>Email: Sales@krizpia.com</p>
+
+        <p>© 2026 Krizpia – Rangeela Products. All Rights Reserved.</p>
+
+        <div class="footer-links">
+          <a href="terms.html">Terms & Conditions</a> |
+          <a href="privacy.html">Privacy Policy</a> |
+          <a href="shipping.html">Shipping Policy</a> |
+          <a href="refund.html">Refund Policy</a> |
+          <a href="#order">Contact Us</a>
+        </div>
+      </div>
+
     </div>
+  </footer>
 
-    <div class="footer-content">
-      <img src="krizpia-logo.png" alt="Krizpia Logo" class="footer-logo">
-      <p>Traditional Kuzhalappam | Spicy Kuzhalappam | Sweet Kuzhalappam | Thatta</p>
-      <p>Contact: +91 9495679851</p>
-      <p>Email: Sales@krizpia.com</p>
-      <footer>
- <p>© 2026 Krizpia – Rangeela Products. All Rights Reserved.</p>
-
-<div class="footer-links">
-    <a href="terms.html">Terms & Conditions</a> |
-    <a href="privacy.html">Privacy Policy</a> |
-    <a href="shipping.html">Shipping Policy</a> |
-    <a href="refund.html">Refund Policy</a> |
-    <a href="#order">Contact Us</a>
-</div>
-</footer>
-    </div>
-  </div>
- </footer>
-  <style> .footer-links {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-    margin: 0 12px;
-    font-size: 14px;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}</style>
   <script>
     function sendWhatsApp(event){
       event.preventDefault();
+
       const name = document.getElementById('name').value.trim();
       const phone = document.getElementById('phone').value.trim();
       const product = document.getElementById('product').value;
       const message = document.getElementById('message').value.trim();
+
       const text = `Hi Krizpia, my name is ${name}. Phone: ${phone}. I am interested in ${product}. Message: ${message}`;
+
       window.open('https://wa.me/919495679851?text=' + encodeURIComponent(text), '_blank');
     }
   </script>
+
 </body>
 </html>
