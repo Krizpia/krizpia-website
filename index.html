@@ -462,39 +462,6 @@
     <div class="line"></div>
   </div>
   <div id="scheduledBlogs" class="blog-grid"></div>
-</section>
-
-<section id="digital-security">
-  <div class="section-title">
-    <h2>Digital Security</h2>
-    <p>Krizpia also follows basic digital safety practices to protect customer communication and website access.</p>
-    <div class="line"></div>
-  </div>
-
-  <div class="about">
-    <div>
-      <h2>Website Protection</h2>
-      <p>Our website uses HTTPS-secured access to support safer browsing for customers visiting krizpia.com.</p>
-      <p>Website and domain management accounts should be protected with strong passwords and Two-Factor Authentication wherever available.</p>
-      <p>Security headers should also be enabled through the hosting provider to help reduce browser-based risks such as clickjacking and content sniffing.</p>
-    </div>
-    <div>
-      <div class="faq-box">
-        <h3>HTTPS Enabled</h3>
-        <p>HTTPS helps protect visitors while browsing the website.</p>
-      </div>
-      <div class="faq-box">
-        <h3>2FA Recommended</h3>
-        <p>Domain, hosting and GitHub accounts should use Two-Factor Authentication for stronger account protection.</p>
-      </div>
-      <div class="faq-box">
-        <h3>Security Headers</h3>
-        <p>Security headers should be configured through Cloudflare, GitHub Pages, or the hosting provider for stronger protection.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="order">
   <div class="order">
     <div>
@@ -679,8 +646,3 @@
 
 </body>
 </html>
-'''
-
-path = Path("/mnt/data/index.html")
-path.write_text(html, encoding="utf-8")
-print(f"Created {path} ({path.stat().st_size} bytes)")
