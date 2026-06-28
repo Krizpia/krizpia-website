@@ -14,10 +14,10 @@
   <meta name="robots" content="index, follow">
   <meta name="p:domain_verify" content="a0fe59804f9811039943fd8d0d8b297d"/>
 
-<link rel="canonical" href="https://krizpia.com/">
 
   <!-- CANONICAL URL -->
   <link rel="canonical" href="https://krizpia.com/">
+  <link rel="icon" type="image/png" href="favicon.png">
 
   <!-- OPEN GRAPH TAGS -->
   <meta property="og:title" content="Krizpia | Authentic Kerala Snacks">
@@ -121,6 +121,30 @@
         ]
       },
       {
+        "@type": "BreadcrumbList",
+        "@id": "https://krizpia.com/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://krizpia.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Products",
+            "item": "https://krizpia.com/#products"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Blog",
+            "item": "https://krizpia.com/#blog"
+          }
+        ]
+      },
+      {
         "@type": "FAQPage",
         "@id": "https://krizpia.com/#faq",
         "mainEntity": [
@@ -154,97 +178,8 @@
   }
   </script>
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:Arial,sans-serif;background:#fffaf2;color:#111;line-height:1.6;overflow-x:hidden}
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    header{background:#ffffff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:999}
-    .nav{max-width:1250px;margin:auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-    .logo img{height:62px}
-    .links{display:flex;gap:22px;align-items:center;font-weight:800;font-size:15px}
-    .links a:hover{color:#d9a441}
-    .whatsapp-btn{background:#111;color:#fff;padding:11px 18px;border-radius:30px;font-weight:900}
-    .hero{background:linear-gradient(135deg,#fff3d6,#ffffff);padding:70px 22px}
-    .hero-inner{max-width:1250px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}
-    .tag{display:inline-block;background:#111;color:#fff;padding:8px 15px;border-radius:30px;font-size:13px;font-weight:900;margin-bottom:18px}
-    h1{font-size:58px;line-height:1.08;margin-bottom:18px;letter-spacing:-1.5px}
-    .hero p{font-size:19px;color:#555;margin-bottom:26px;max-width:650px}
-    .btn{display:inline-block;background:#111;color:#fff;padding:13px 24px;border-radius:30px;font-weight:900;margin:5px 8px 5px 0;transition:.3s;border:none;cursor:pointer}
-    .btn.gold{background:#d9a441;color:#111}
-    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.18)}
-    .hero-image{background:#fff;padding:16px;border-radius:30px;box-shadow:0 18px 45px rgba(0,0,0,.14);position:relative}
-    .hero-image img{width:100%;height:430px;object-fit:cover;border-radius:22px}
-    .fresh-badge{position:absolute;left:28px;bottom:28px;background:#fff;padding:10px 16px;border-radius:30px;font-weight:900;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-    section{max-width:1250px;margin:auto;padding:55px 22px}
-    .section-title{text-align:center;max-width:850px;margin:0 auto 35px}
-    .section-title h2{font-size:40px;line-height:1.15;margin-bottom:12px}
-    .section-title p{color:#555;font-size:17px}
-    .line{width:80px;height:4px;background:#d9a441;border-radius:20px;margin:16px auto 0}
-    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-    .card{background:#fff;border:1px solid #ead8b8;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07);transition:.3s}
-    .card:hover{transform:translateY(-7px);box-shadow:0 18px 40px rgba(0,0,0,.12)}
-    .card img{width:100%;height:245px;object-fit:cover;background:#f8f8f8}
-    .card-body{padding:22px}
-    .card h3{font-size:22px;margin-bottom:10px}
-    .card p{color:#555;font-size:15px;margin-bottom:12px}
-    .card ul{padding-left:18px;color:#555;font-size:14px;margin-bottom:12px}
-    .small-btn{display:inline-block;background:#d9a441;color:#111;padding:10px 16px;border-radius:22px;font-weight:900;font-size:14px;margin:5px 5px 0 0}
-    .notice-box{background:#fff8e8;border:1px solid #ead8b8;border-radius:18px;padding:14px;margin:14px 0;color:#333}
-    .notice-box h4{font-size:16px;margin-bottom:6px}
-    .notice-box p{font-size:14px;margin-bottom:6px;color:#555}
-    .about{background:#fff;border:1px solid #ead8b8;border-radius:28px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;box-shadow:0 10px 28px rgba(0,0,0,.06)}
-    .about img{border-radius:22px;width:100%}
-    .about h2{font-size:36px;margin-bottom:14px}
-    .about p{color:#555;margin-bottom:14px;font-size:17px}
-    .assurance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .assurance-card{background:#fff;border:1px solid #ead8b8;border-radius:24px;padding:26px;box-shadow:0 10px 28px rgba(0,0,0,.06)}
-    .assurance-card h3{font-size:20px;margin-bottom:10px}
-    .assurance-card p{color:#555;font-size:15px}
-    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
-    .gallery img{width:100%;height:260px;object-fit:contain;background:#fff;border-radius:22px;padding:10px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
-    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .review{background:#fff;border:1px solid #ead8b8;border-radius:22px;padding:26px;text-align:center;box-shadow:0 10px 28px rgba(0,0,0,.06)}
-    .stars{color:#d9a441;font-size:26px;margin-bottom:10px}
-    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-    .blog-card{background:#fff;border:1px solid #ead8b8;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07)}
-    .blog-card img{width:100%;height:240px;object-fit:cover}
-    .blog-content{padding:22px;text-align:center}
-    .blog-content h3{font-size:22px;margin-bottom:10px}
-    .blog-content p{color:#555;margin-bottom:14px;font-size:15px}
-    .blog-meta{display:inline-block;background:#fff3d6;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:800;margin-bottom:10px}
-    .order{background:#111;color:#fff;border-radius:30px;padding:38px;display:grid;grid-template-columns:1fr 1fr;gap:35px}
-    .order h2{font-size:36px;margin-bottom:12px}
-    .order p{color:#eee;margin-bottom:12px}
-    .form{display:grid;gap:12px;margin-top:18px}
-    .form input,.form select,.form textarea{width:100%;padding:13px 15px;border-radius:14px;border:none;font-size:15px;font-family:inherit}
-    .form textarea{min-height:95px;resize:vertical}
-    .faq-box{background:#fff;color:#111;padding:20px;border-radius:20px;margin-bottom:15px}
-    .faq-box h3{font-size:17px;margin-bottom:6px}
-    .floating-whatsapp{position:fixed;right:18px;bottom:18px;z-index:999;background:#25D366;color:#000;padding:14px 18px;border-radius:999px;font-weight:900;box-shadow:0 12px 28px rgba(0,0,0,.25)}
-    footer{background:#0d120d;color:#fff;text-align:center;padding:35px 22px;margin-top:40px}
-    footer img{height:78px;margin:0 auto 14px}
-    footer p{color:#ddd;margin-bottom:7px;font-size:14px}
-    .footer-links{margin-top:14px}
-    .footer-links a{color:#fff;margin:0 7px;font-size:14px}
-    @media(max-width:950px){
-      .hero-inner,.about,.order{grid-template-columns:1fr}
-      .products,.gallery,.assurance-grid{grid-template-columns:repeat(2,1fr)}
-      .blog-grid,.reviews{grid-template-columns:1fr}
-      h1{font-size:42px}
-    }
-    @media(max-width:700px){
-      .links{display:none}
-      .nav{justify-content:center}
-      .hero{padding:45px 16px;text-align:center}
-      h1{font-size:34px}
-      .hero-image img{height:300px}
-      section{padding:38px 16px}
-      .products,.gallery,.assurance-grid{grid-template-columns:1fr}
-      .section-title h2{font-size:30px}
-      .about,.order{padding:24px}
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -276,7 +211,10 @@
       <a class="btn gold" href="#products">View Products</a>
     </div>
     <div class="hero-image">
-      <img src="mix image.png" alt="Krizpia authentic Kerala snack collection">
+      <picture>
+        <source srcset="mix-image.webp" type="image/webp">
+        <img src="mix image.png" alt="Krizpia authentic Kerala snack collection">
+      </picture>
       <span class="fresh-badge">Fresh Kerala Taste</span>
     </div>
   </div>
@@ -291,7 +229,10 @@
 
   <div class="products" id="products">
     <article class="card">
-      <img src="traditional-kuzhalappam.PNG" alt="Traditional Kuzhalappam by Krizpia">
+      <picture>
+          <source srcset="traditional-kuzhalappam.webp" type="image/webp">
+          <img src="traditional-kuzhalappam.PNG" alt="Traditional Kuzhalappam by Krizpia" loading="lazy">
+        </picture>
       <div class="card-body">
         <h3>Traditional Kuzhalappam</h3>
         <p>A crispy Kerala tea-time favourite made with rice flour, coconut, cumin, fennel and sesame seeds.</p>
@@ -311,7 +252,10 @@
     </article>
 
     <article class="card">
-      <img src="spicy-kuzhalappam.PNG" alt="Spicy Kuzhalappam by Krizpia">
+      <picture>
+          <source srcset="spicy-kuzhalappam.webp" type="image/webp">
+          <img src="spicy-kuzhalappam.PNG" alt="Spicy Kuzhalappam by Krizpia" loading="lazy">
+        </picture>
       <div class="card-body">
         <h3>Spicy Kuzhalappam</h3>
         <p>A bold and crispy Kerala snack with chilli, pepper, ginger and garlic for spicy snack lovers.</p>
@@ -326,11 +270,15 @@
           <p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p>
         </div>
         <a href="spicy-kuzhalappam.html" class="small-btn">View Product</a>
+        <a href="blog-spicy-kuzhalappam.html" class="small-btn">Read Blog</a>
       </div>
     </article>
 
     <article class="card">
-      <img src="sweet-kuzhalappam.PNG" alt="Sweet Kuzhalappam by Krizpia">
+      <picture>
+          <source srcset="sweet-kuzhalappam.webp" type="image/webp">
+          <img src="sweet-kuzhalappam.PNG" alt="Sweet Kuzhalappam by Krizpia" loading="lazy">
+        </picture>
       <div class="card-body">
         <h3>Sweet Kuzhalappam</h3>
         <p>A sweet and crunchy variation of traditional Kuzhalappam, suitable for children and celebrations.</p>
@@ -345,11 +293,15 @@
           <p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p>
         </div>
         <a href="sweet-kuzhalappam.html" class="small-btn">View Product</a>
+        <a href="blog-sweet-kuzhalappam.html" class="small-btn">Read Blog</a>
       </div>
     </article>
 
     <article class="card">
-      <img src="thatta-photo.PNG" alt="Thatta Kerala snack by Krizpia">
+      <picture>
+          <source srcset="thatta-photo.webp" type="image/webp">
+          <img src="thatta-photo.PNG" alt="Thatta Kerala snack by Krizpia" loading="lazy">
+        </picture>
       <div class="card-body">
         <h3>Thatta</h3>
         <p>A traditional Kerala savoury snack with crispy texture and mild spice, perfect for tea time.</p>
@@ -364,6 +316,7 @@
           <p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p>
         </div>
         <a href="thatta.html" class="small-btn">View Product</a>
+        <a href="blog-thatta.html" class="small-btn">Read Blog</a>
       </div>
     </article>
   </div>
@@ -379,7 +332,10 @@
       <a href="#products" class="btn gold">Explore Products</a>
     </div>
     <div>
-      <img src="About Krizpia Image.png" alt="About Krizpia Kerala snack brand">
+      <picture>
+        <source srcset="about-krizpia-image.webp" type="image/webp">
+        <img src="About Krizpia Image.png" alt="About Krizpia Kerala snack brand" loading="lazy">
+      </picture>
     </div>
   </div>
 </section>
@@ -426,10 +382,22 @@
     <div class="line"></div>
   </div>
   <div class="gallery">
-    <img src="traditional-kuzhalappam.PNG" alt="Traditional Kuzhalappam close up">
-    <img src="spicy-kuzhalappam.PNG" alt="Spicy Kuzhalappam close up">
-    <img src="sweet-kuzhalappam.PNG" alt="Sweet Kuzhalappam close up">
-    <img src="thatta-photo.PNG" alt="Thatta snack close up">
+    <picture>
+      <source srcset="traditional-kuzhalappam.webp" type="image/webp">
+      <img src="traditional-kuzhalappam.PNG" alt="Traditional Kuzhalappam close up" loading="lazy">
+    </picture>
+    <picture>
+      <source srcset="spicy-kuzhalappam.webp" type="image/webp">
+      <img src="spicy-kuzhalappam.PNG" alt="Spicy Kuzhalappam close up" loading="lazy">
+    </picture>
+    <picture>
+      <source srcset="sweet-kuzhalappam.webp" type="image/webp">
+      <img src="sweet-kuzhalappam.PNG" alt="Sweet Kuzhalappam close up" loading="lazy">
+    </picture>
+    <picture>
+      <source srcset="thatta-photo.webp" type="image/webp">
+      <img src="thatta-photo.PNG" alt="Thatta snack close up" loading="lazy">
+    </picture>
   </div>
 </section>
 
@@ -514,7 +482,10 @@
         <p>Yes. Krizpia Spice Collection featuring Kerala spice blends and curry masalas is coming soon.</p>
       </div>
 
-      <img src="coming soon.png" alt="Krizpia Spice Collection Coming Soon" style="border-radius:20px;margin-top:10px;">
+      <picture>
+        <source srcset="coming-soon.webp" type="image/webp">
+        <img src="coming soon.png" alt="Krizpia Spice Collection Coming Soon" loading="lazy" style="border-radius:20px;margin-top:10px;">
+      </picture>
     </div>
   </div>
 </section>
@@ -523,9 +494,10 @@
 </a>
 
 <footer>
-  <img src="krizpia-logo.png" alt="Krizpia logo">
+  <img src="krizpia-logo.png" alt="Krizpia logo" loading="lazy">
   <p><strong>Krizpia</strong> – A brand from Rangeela Products</p>
-  <p>Contact: +91 9795679851 </p>
+  <p>Authentic Kerala Snacks | Kuzhalappam | Thatta</p>
+  <p>Contact: +91 9795679851 / +91 7907790570</p>
   <p>Email: info@krizpia.com</p>
   <p>Rangeela Products, 12/1059-1, Perunna East P.O, Changanacherry, Kottayam, Kerala – 686102</p>
   <p>FSSAI Licence No: 21326171000212</p>
@@ -546,6 +518,7 @@
       title: "Traditional Kuzhalappam",
       description: "Discover Kerala's crispy traditional Kuzhalappam made with authentic taste and perfect crunch.",
       image: "traditional-kuzhalappam.PNG",
+      webp: "traditional-kuzhalappam.webp",
       url: "blog-traditional-kuzhalappam.html",
       publishDate: "2026-06-29T09:00:00+05:30"
     },
@@ -553,27 +526,31 @@
       title: "Spicy Kuzhalappam",
       description: "A crispy and spicy Kerala snack with bold flavour, perfect for tea time and family sharing.",
       image: "spicy-kuzhalappam.PNG",
-      url: "spicy-kuzhalappam.html",
+      webp: "spicy-kuzhalappam.webp",
+      url: "blog-spicy-kuzhalappam.html",
       publishDate: "2026-07-06T09:00:00+05:30"
     },
     {
       title: "Sweet Kuzhalappam",
       description: "A lightly sweet Kerala snack with crispy texture, perfect for children and festive moments.",
       image: "sweet-kuzhalappam.PNG",
-      url: "sweet-kuzhalappam.html",
+      webp: "sweet-kuzhalappam.webp",
+      url: "blog-sweet-kuzhalappam.html",
       publishDate: "2026-07-13T09:00:00+05:30"
     },
     {
       title: "Kerala Thatta",
       description: "A flat, crispy, spicy Kerala snack made for crunchy snack lovers.",
       image: "thatta-photo.PNG",
-      url: "thatta.html",
+      webp: "thatta-photo.webp",
+      url: "blog-thatta.html",
       publishDate: "2026-07-20T09:00:00+05:30"
     },
     {
       title: "Kerala Snacks Guide",
       description: "A complete guide to Kerala snacks including Kuzhalappam, Thatta and tea-time favourites.",
       image: "mix image.png",
+      webp: "mix-image.webp",
       url: "kerala-snacks-guide.html",
       publishDate: "2026-07-27T09:00:00+05:30"
     },
@@ -581,6 +558,7 @@
       title: "Tea Time Snacks",
       description: "Explore the best Kerala tea-time snacks for family, guests, travel and evening tea.",
       image: "mix image.png",
+      webp: "mix-image.webp",
       url: "tea-time-snacks.html",
       publishDate: "2026-08-03T09:00:00+05:30"
     },
@@ -588,6 +566,7 @@
       title: "Rice Flour Snacks",
       description: "Discover crispy rice flour snacks like Kuzhalappam and Thatta with authentic Kerala flavour.",
       image: "traditional-kuzhalappam.PNG",
+      webp: "traditional-kuzhalappam.webp",
       url: "rice-flour-snacks.html",
       publishDate: "2026-08-10T09:00:00+05:30"
     }
@@ -616,7 +595,10 @@
     blogSection.style.display = "block";
     blogContainer.innerHTML = publishedBlogs.map((blog,index) => `
       <article class="blog-card">
-        <img src="${blog.image}" alt="${blog.title}">
+        <picture>
+          <source srcset="${blog.webp || blog.image}" type="image/webp">
+          <img src="${blog.image}" alt="${blog.title}" loading="lazy">
+        </picture>
         <div class="blog-content">
           <span class="blog-meta">${index === 0 ? 'Latest Blog' : 'Published'} • ${formatIndianDate(blog.publishDate)}</span>
           <h3>${blog.title}</h3>
