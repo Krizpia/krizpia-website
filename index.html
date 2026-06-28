@@ -179,100 +179,144 @@
   </script>
 
   <style>
-*{margin:0;padding:0;box-sizing:border-box}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
     body{font-family:Arial,sans-serif;background:#fffaf2;color:#111;line-height:1.6;overflow-x:hidden}
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
-    header{background:#ffffff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:999}
-    .nav{max-width:1250px;margin:auto;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-    .logo img{height:62px}
-    .links{display:flex;gap:22px;align-items:center;font-weight:800;font-size:15px}
+    picture{display:block}
+
+    header{background:#ffffff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:999;box-shadow:0 4px 18px rgba(0,0,0,.04)}
+    .nav{max-width:1250px;margin:auto;padding:10px 22px;display:flex;justify-content:space-between;align-items:center;gap:18px}
+    .logo{flex:0 0 auto}
+    .logo img{height:62px;width:auto}
+    .links{display:flex;gap:18px;align-items:center;font-weight:800;font-size:15px;flex-wrap:wrap;justify-content:flex-end}
+    .links a{padding:8px 4px;white-space:nowrap}
     .links a:hover{color:#d9a441}
-    .whatsapp-btn{background:#111;color:#fff;padding:11px 18px;border-radius:30px;font-weight:900}
+    .whatsapp-btn{background:#111;color:#fff!important;padding:10px 16px!important;border-radius:30px;font-weight:900}
+
     .hero{background:linear-gradient(135deg,#fff3d6,#ffffff);padding:70px 22px}
-    .hero-inner{max-width:1250px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center}
+    .hero-inner{max-width:1250px;margin:auto;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:45px;align-items:center}
     .tag{display:inline-block;background:#111;color:#fff;padding:8px 15px;border-radius:30px;font-size:13px;font-weight:900;margin-bottom:18px}
-    h1{font-size:58px;line-height:1.08;margin-bottom:18px;letter-spacing:-1.5px}
+    h1{font-size:clamp(36px,5vw,58px);line-height:1.08;margin-bottom:18px;letter-spacing:-1.5px}
     .hero p{font-size:19px;color:#555;margin-bottom:26px;max-width:650px}
-    .btn{display:inline-block;background:#111;color:#fff;padding:13px 24px;border-radius:30px;font-weight:900;margin:5px 8px 5px 0;transition:.3s;border:none;cursor:pointer}
+    .btn{display:inline-block;background:#111;color:#fff;padding:13px 24px;border-radius:30px;font-weight:900;margin:5px 8px 5px 0;transition:.3s;border:none;cursor:pointer;text-align:center;min-height:46px}
     .btn.gold{background:#d9a441;color:#111}
     .btn:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.18)}
     .hero-image{background:#fff;padding:16px;border-radius:30px;box-shadow:0 18px 45px rgba(0,0,0,.14);position:relative}
-    .hero-image picture{display:block}
     .hero-image img{width:100%;height:430px;object-fit:cover;border-radius:22px}
     .fresh-badge{position:absolute;left:28px;bottom:28px;background:#fff;padding:10px 16px;border-radius:30px;font-weight:900;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+
     section{max-width:1250px;margin:auto;padding:55px 22px}
     .section-title{text-align:center;max-width:850px;margin:0 auto 35px}
-    .section-title h2{font-size:40px;line-height:1.15;margin-bottom:12px}
+    .section-title h2{font-size:clamp(30px,4vw,40px);line-height:1.15;margin-bottom:12px}
     .section-title p{color:#555;font-size:17px}
     .line{width:80px;height:4px;background:#d9a441;border-radius:20px;margin:16px auto 0}
-    .products{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
-    .card{background:#fff;border:1px solid #ead8b8;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07);transition:.3s}
+
+    .products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+    .card{background:#fff;border:1px solid #ead8b8;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07);transition:.3s;display:flex;flex-direction:column}
     .card:hover{transform:translateY(-7px);box-shadow:0 18px 40px rgba(0,0,0,.12)}
     .card picture{display:block;background:#f8f8f8}
     .card img{width:100%;height:245px;object-fit:cover;background:#f8f8f8}
-    .card-body{padding:22px}
+    .card-body{padding:22px;display:flex;flex-direction:column;flex:1}
     .card h3{font-size:22px;margin-bottom:10px}
     .card p{color:#555;font-size:15px;margin-bottom:12px}
     .card ul{padding-left:18px;color:#555;font-size:14px;margin-bottom:12px}
-    .small-btn{display:inline-block;background:#d9a441;color:#111;padding:10px 16px;border-radius:22px;font-weight:900;font-size:14px;margin:5px 5px 0 0}
+    .small-btn{display:inline-block;background:#d9a441;color:#111;padding:10px 16px;border-radius:22px;font-weight:900;font-size:14px;margin:5px 5px 0 0;text-align:center}
     .notice-box{background:#fff8e8;border:1px solid #ead8b8;border-radius:18px;padding:14px;margin:14px 0;color:#333}
     .notice-box h4{font-size:16px;margin-bottom:6px}
     .notice-box p{font-size:14px;margin-bottom:6px;color:#555}
-    .about{background:#fff;border:1px solid #ead8b8;border-radius:28px;padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center;box-shadow:0 10px 28px rgba(0,0,0,.06)}
-    .about picture{display:block}
-    .about img{border-radius:22px;width:100%}
-    .about h2{font-size:36px;margin-bottom:14px}
+
+    .about{background:#fff;border:1px solid #ead8b8;border-radius:28px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1fr);gap:35px;align-items:center;box-shadow:0 10px 28px rgba(0,0,0,.06)}
+    .about img{border-radius:22px;width:100%;height:auto}
+    .about h2{font-size:clamp(30px,3vw,36px);margin-bottom:14px}
     .about p{color:#555;margin-bottom:14px;font-size:17px}
-    .assurance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+    .assurance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
     .assurance-card{background:#fff;border:1px solid #ead8b8;border-radius:24px;padding:26px;box-shadow:0 10px 28px rgba(0,0,0,.06)}
     .assurance-card h3{font-size:20px;margin-bottom:10px}
     .assurance-card p{color:#555;font-size:15px}
-    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+
+    .gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
     .gallery picture{display:block;background:#fff;border-radius:22px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
     .gallery img{width:100%;height:260px;object-fit:contain;background:#fff;border-radius:22px;padding:10px}
-    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+
+    .reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
     .review{background:#fff;border:1px solid #ead8b8;border-radius:22px;padding:26px;text-align:center;box-shadow:0 10px 28px rgba(0,0,0,.06)}
     .stars{color:#d9a441;font-size:26px;margin-bottom:10px}
-    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+
+    .blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
     .blog-card{background:#fff;border:1px solid #ead8b8;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07)}
     .blog-card img{width:100%;height:240px;object-fit:cover}
     .blog-content{padding:22px;text-align:center}
     .blog-content h3{font-size:22px;margin-bottom:10px}
     .blog-content p{color:#555;margin-bottom:14px;font-size:15px}
     .blog-meta{display:inline-block;background:#fff3d6;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:800;margin-bottom:10px}
-    .order{background:#111;color:#fff;border-radius:30px;padding:38px;display:grid;grid-template-columns:1fr 1fr;gap:35px}
-    .order h2{font-size:36px;margin-bottom:12px}
+
+    .order{background:#111;color:#fff;border-radius:30px;padding:38px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1fr);gap:35px;align-items:start}
+    .order h2{font-size:clamp(30px,4vw,36px);margin-bottom:12px}
     .order p{color:#eee;margin-bottom:12px}
     .form{display:grid;gap:12px;margin-top:18px}
-    .form input,.form select,.form textarea{width:100%;padding:13px 15px;border-radius:14px;border:none;font-size:15px;font-family:inherit}
+    .form input,.form select,.form textarea{width:100%;padding:13px 15px;border-radius:14px;border:none;font-size:16px;font-family:inherit}
     .form textarea{min-height:95px;resize:vertical}
     .faq-box{background:#fff;color:#111;padding:20px;border-radius:20px;margin-bottom:15px}
     .faq-box h3{font-size:17px;margin-bottom:6px}
+    .faq-box p{color:#555}
+
     .floating-whatsapp{position:fixed;right:18px;bottom:18px;z-index:999;background:#25D366;color:#000;padding:14px 18px;border-radius:999px;font-weight:900;box-shadow:0 12px 28px rgba(0,0,0,.25)}
     footer{background:#0d120d;color:#fff;text-align:center;padding:35px 22px;margin-top:40px}
-    footer img{height:78px;margin:0 auto 14px}
+    footer img{height:78px;margin:0 auto 14px;width:auto}
     footer p{color:#ddd;margin-bottom:7px;font-size:14px}
-    .footer-links{margin-top:14px}
-    .footer-links a{color:#fff;margin:0 7px;font-size:14px}
-    @media(max-width:950px){
-      .hero-inner,.about,.order{grid-template-columns:1fr}
-      .products,.gallery,.assurance-grid{grid-template-columns:repeat(2,1fr)}
-      .blog-grid,.reviews{grid-template-columns:1fr}
-      h1{font-size:42px}
-    }
-    @media(max-width:700px){
-      .links{display:none}
-      .nav{justify-content:center}
-      .hero{padding:45px 16px;text-align:center}
-      h1{font-size:34px}
-      .hero-image img{height:300px}
-      section{padding:38px 16px}
-      .products,.gallery,.assurance-grid{grid-template-columns:1fr}
-      .section-title h2{font-size:30px}
-      .about,.order{padding:24px}
+    .footer-links{margin-top:14px;line-height:2}
+    .footer-links a{color:#fff;margin:0 7px;font-size:14px;white-space:nowrap}
+
+    @media(max-width:1100px){
+      .products,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .hero-inner{grid-template-columns:1fr;gap:32px}
     }
 
+    @media(max-width:900px){
+      .nav{align-items:flex-start;flex-direction:column;padding:10px 16px}
+      .links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}
+      .links::-webkit-scrollbar{display:none}
+      .logo img{height:56px}
+      .about,.order{grid-template-columns:1fr}
+      .blog-grid,.reviews{grid-template-columns:1fr}
+    }
+
+    @media(max-width:700px){
+      header{position:static}
+      .nav{align-items:center;text-align:center}
+      .links{font-size:13px}
+      .whatsapp-btn{padding:8px 12px!important}
+      .hero{padding:38px 16px;text-align:center}
+      .hero p{font-size:16px;margin-left:auto;margin-right:auto}
+      .btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}
+      .hero-image{padding:10px;border-radius:22px}
+      .hero-image img{height:280px;border-radius:16px}
+      .fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}
+      section{padding:36px 16px}
+      .products,.gallery,.assurance-grid{grid-template-columns:1fr}
+      .card img{height:230px}
+      .gallery img{height:230px}
+      .section-title{margin-bottom:24px}
+      .section-title p{font-size:15px}
+      .about,.order{padding:22px;border-radius:22px}
+      .about p,.order p{font-size:15px}
+      .floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}
+      footer{padding:30px 16px 70px}
+      .footer-links a{display:inline-block;margin:4px 6px}
+    }
+
+    @media(max-width:420px){
+      h1{font-size:32px;letter-spacing:-.8px}
+      .tag{font-size:12px;padding:7px 12px}
+      .hero-image img{height:235px}
+      .card img,.gallery img,.blog-card img{height:210px}
+      .logo img{height:50px}
+      .links{gap:10px;font-size:12px}
+    }
   </style>
 
 </head>
@@ -529,18 +573,12 @@
   <div id="scheduledBlogs" class="blog-grid"></div>
 </section>
 
-<section id="order">
-  <div class="order">
-    <div>
-      <!-- LOCAL SEO SECTION -->
+
+<!-- LOCAL SEO SECTION -->
 <section id="local-seo">
   <div class="section-title">
     <h2>Krizpia Kerala Snacks from Changanacherry, Kottayam</h2>
-    <p>
-      Krizpia offers authentic Kerala snacks including Kuzhalappam and Thatta,
-      made by Rangeela Products in Changanacherry, Kottayam, Kerala.
-      Perfect for tea time, family use, shops, events and gifting.
-    </p>
+    <p>Krizpia offers authentic Kerala snacks including Kuzhalappam and Thatta, made by Rangeela Products in Changanacherry, Kottayam, Kerala. Perfect for tea time, family use, shops, events and gifting.</p>
     <div class="line"></div>
   </div>
 
@@ -549,12 +587,10 @@
       <h3>Kerala Snacks Online</h3>
       <p>Order crispy Kerala snacks directly through WhatsApp.</p>
     </div>
-
     <div class="assurance-card">
       <h3>Kuzhalappam in Kerala</h3>
       <p>Traditional, Spicy and Sweet Kuzhalappam with authentic Kerala taste.</p>
     </div>
-
     <div class="assurance-card">
       <h3>Changanacherry Snack Brand</h3>
       <p>Made in Kerala by Rangeela Products, Perunna East P.O, Changanacherry.</p>
@@ -571,41 +607,53 @@
   </div>
 
   <div class="blog-grid">
-    <div class="blog-card">
-      <img src="traditional-kuzhalappam.PNG" alt="Traditional Kuzhalappam Kerala snack" loading="lazy">
+    <article class="blog-card">
+      <picture>
+        <source srcset="traditional-kuzhalappam.webp" type="image/webp">
+        <img src="traditional-kuzhalappam.PNG" alt="Traditional Kuzhalappam Kerala snack" loading="lazy">
+      </picture>
       <div class="blog-content">
         <h3>Traditional Kuzhalappam</h3>
         <p>Classic crispy Kerala Kuzhalappam for tea time and family sharing.</p>
         <a href="traditional-kuzhalappam.html" class="small-btn">View Product</a>
       </div>
-    </div>
+    </article>
 
-    <div class="blog-card">
-      <img src="spicy-kuzhalappam.PNG" alt="Spicy Kuzhalappam Kerala snack" loading="lazy">
+    <article class="blog-card">
+      <picture>
+        <source srcset="spicy-kuzhalappam.webp" type="image/webp">
+        <img src="spicy-kuzhalappam.PNG" alt="Spicy Kuzhalappam Kerala snack" loading="lazy">
+      </picture>
       <div class="blog-content">
         <h3>Spicy Kuzhalappam</h3>
         <p>Bold spicy Kuzhalappam for customers who love crispy spicy snacks.</p>
         <a href="spicy-kuzhalappam.html" class="small-btn">View Product</a>
       </div>
-    </div>
+    </article>
 
-    <div class="blog-card">
-      <img src="sweet-kuzhalappam.PNG" alt="Sweet Kuzhalappam Kerala snack" loading="lazy">
+    <article class="blog-card">
+      <picture>
+        <source srcset="sweet-kuzhalappam.webp" type="image/webp">
+        <img src="sweet-kuzhalappam.PNG" alt="Sweet Kuzhalappam Kerala snack" loading="lazy">
+      </picture>
       <div class="blog-content">
         <h3>Sweet Kuzhalappam</h3>
         <p>Sweet and crunchy Kuzhalappam for children, guests and celebrations.</p>
         <a href="sweet-kuzhalappam.html" class="small-btn">View Product</a>
       </div>
-    </div>
+    </article>
 
-    <div class="blog-card">
-      <img src="thatta-photo.PNG" alt="Thatta Kerala snack" loading="lazy">
+    <article class="blog-card">
+      <picture>
+        <source srcset="thatta-photo.webp" type="image/webp">
+        <img src="thatta-photo.PNG" alt="Thatta Kerala snack" loading="lazy">
+      </picture>
       <div class="blog-content">
         <h3>Thatta</h3>
         <p>Crispy Kerala Thatta snack with mild spice and traditional taste.</p>
         <a href="thatta.html" class="small-btn">View Product</a>
       </div>
-    </div>
+    </article>
   </div>
 </section>
 
@@ -614,10 +662,7 @@
   <div class="order">
     <div>
       <h2>Shop Supply & Distributor Enquiry</h2>
-      <p>
-        Krizpia welcomes enquiries from retail shops, supermarkets, tea shops,
-        bakery stores, snack distributors and event suppliers.
-      </p>
+      <p>Krizpia welcomes enquiries from retail shops, supermarkets, tea shops, bakery stores, snack distributors and event suppliers.</p>
       <p><strong>Products:</strong> Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta</p>
       <p><strong>Location:</strong> Changanacherry, Kottayam, Kerala</p>
       <p><strong>Contact:</strong> +91 9795679851 / +91 7907790570</p>
@@ -632,12 +677,10 @@
         <h3>Do you supply to shops?</h3>
         <p>Yes, Krizpia is open for retail shop supply and distribution enquiries.</p>
       </div>
-
       <div class="faq-box">
         <h3>Which area do you serve?</h3>
         <p>We are based in Changanacherry, Kottayam, Kerala.</p>
       </div>
-
       <div class="faq-box">
         <h3>How can I order?</h3>
         <p>You can contact Krizpia directly through WhatsApp or phone.</p>
@@ -645,6 +688,10 @@
     </div>
   </div>
 </section>
+
+<section id="order">
+  <div class="order">
+    <div>
       <h2>Order Enquiry</h2>
       <p>For retail supply, family orders, events, wholesale enquiries or distribution opportunities, contact Krizpia directly.</p>
       <p><strong>Phone:</strong> +91 9795679851</p>
@@ -679,12 +726,10 @@
         <h3>What products does Krizpia offer?</h3>
         <p>Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta.</p>
       </div>
-
       <div class="faq-box">
         <h3>Are Krizpia products FSSAI licensed?</h3>
         <p>Yes. Krizpia products are manufactured under FSSAI Licence No. 21326171000212.</p>
       </div>
-
       <div class="faq-box">
         <h3>Will Krizpia launch spice powders?</h3>
         <p>Yes. Krizpia Spice Collection featuring Kerala spice blends and curry masalas is coming soon.</p>
@@ -697,6 +742,7 @@
     </div>
   </div>
 </section>
+
 <a class="floating-whatsapp" href="https://wa.me/919795679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener noreferrer">
   WhatsApp
 </a>
@@ -721,7 +767,7 @@
 </footer>
 
 <script>
-  const scheduledBlogs = [
+const scheduledBlogs = [
     {
       title: "Traditional Kuzhalappam",
       description: "Discover Kerala's crispy traditional Kuzhalappam made with authentic taste and perfect crunch.",
