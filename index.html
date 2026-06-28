@@ -53,7 +53,7 @@
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-9495679851",
+      "telephone": "+91-9795679851",
       "contactType": "customer support",
       "areaServed": "IN",
       "availableLanguage": ["English", "Malayalam", "Hindi"]
@@ -68,7 +68,7 @@
     "name": "Krizpia - Rangeela Products",
     "image": "https://krizpia.com/mix%20image.png",
     "url": "https://krizpia.com/",
-    "telephone": "+91-9495679851",
+    "telephone": "+91-9795679851",
     "priceRange": "₹₹",
     "servesCuisine": "Kerala Snacks",
     "address": {
@@ -685,52 +685,7 @@
       .cta{justify-content:center}
       .hero-visual img{height:330px}
       .products,.gallery,.review-grid,.blog-grid{grid-template-columns:1fr}
-  
-
-    .blog-grid{
-      display:grid;
-      grid-template-columns:repeat(3,minmax(0,1fr));
-      gap:24px;
-      align-items:stretch;
-    }
-
-    .blog-meta{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:6px 12px;
-      border-radius:999px;
-      background:#f3f3f0;
-      color:#333;
-      font-size:12px;
-      font-weight:800;
-      margin-bottom:14px;
-    }
-
-    .blog-badge{
-      display:inline-block;
-      margin-bottom:10px;
-      padding:6px 12px;
-      border-radius:999px;
-      background:var(--black);
-      color:#fff;
-      font-size:12px;
-      font-weight:900;
-    }
-
-    .blog-empty{
-      max-width:760px;
-      margin:0 auto;
-      text-align:center;
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:24px;
-      padding:28px;
-      box-shadow:0 10px 30px rgba(0,0,0,.06);
-      color:var(--muted);
-    }
-
-    .order{padding:26px 18px}
+      .order{padding:26px 18px}
       .process-video{height:220px}
       .blog-card img{height:240px}
       .footer-inner{flex-direction:column;text-align:center}
@@ -770,7 +725,7 @@
     <p>Discover authentic Kerala snacks including Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam, and Thatta, crafted using traditional recipes and quality ingredients.</p>
 
     <div class="cta">
-      <a class="btn gold" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+      <a class="btn gold" href="https://wa.me/919795679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
       <a class="btn outline" href="#products">View Products</a>
     </div>
   </div>
@@ -938,12 +893,13 @@
       <p>For retail supply, family orders, events, wholesale enquiries, or distribution opportunities, contact Krizpia directly.</p>
 
       <div class="contact-lines">
-        <p><strong>Phone:</strong> +91 9495679851</p>
-        <p><strong>WhatsApp Orders:</strong> +91 9495679851</p>
+        <p><strong>Phone:</strong> +91 9795679851</p>
+        <p><strong>WhatsApp Orders:</strong> +91 9795679851</p>
+        <p><strong>Alternative Phone:</strong> +91 7907790570</p>
         <p><strong>Email:</strong> info@krizpia.com</p>
       </div>
 
-      <a class="btn gold" href="https://wa.me/919495679851" target="_blank" rel="noopener noreferrer">
+      <a class="btn gold" href="https://wa.me/919795679851" target="_blank" rel="noopener noreferrer">
         Chat on WhatsApp
       </a>
 
@@ -995,7 +951,7 @@
 
 </main>
 
-<a class="whatsapp" href="https://wa.me/919495679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/919795679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener noreferrer">WhatsApp</a>
 
 <footer class="footer">
   <div class="footer-inner">
@@ -1007,7 +963,7 @@
     <div class="footer-content">
       <img src="krizpia-logo.png" alt="Krizpia logo" class="footer-logo">
 
-      <p>Contact: +91 9495679851</p>
+      <p>Contact: +91 9795679851 / +91 7907790570</p>
       <p>Email: info@krizpia.com</p>
 
       <p>
@@ -1099,7 +1055,8 @@
 
   function loadScheduledBlogs(){
     const blogContainer = document.getElementById('scheduledBlogs');
-    if(!blogContainer) return;
+    const blogSection = document.getElementById('blog');
+    if(!blogContainer || !blogSection) return;
 
     const now = new Date();
 
@@ -1107,28 +1064,14 @@
       .filter(blog => new Date(blog.publishDate) <= now)
       .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
-   if (publishedBlogs.length === 0) {
-    blogContainer.style.display = "none";
-    return;
-} else {
-    blogContainer.style.display = "grid";
-}     
-    const blogSection = document.getElementById("blog");
-
-if (publishedBlogs.length === 0) {
-    blogSection.style.display = "none";
-    return;
-} else {
-    blogSection.style.display = "block";
-}
-    <div class="blog-empty">
-          <strong>Blogs are scheduled.</strong><br>
-          The first blog will appear automatically on Monday, 29 June 2026 at 9:00 AM Indian time.
-        </div>
-      `;
+    if(publishedBlogs.length === 0){
+      blogSection.style.display = "none";
+      blogContainer.innerHTML = "";
       return;
     }
 
+    blogSection.style.display = "block";
+    blogContainer.style.display = "grid";
     blogContainer.classList.add('blog-grid');
 
     blogContainer.innerHTML = publishedBlogs.map((blog, index) => {
@@ -1177,7 +1120,7 @@ if (publishedBlogs.length === 0) {
 
     const text = `Hi Krizpia, my name is ${name}. Phone: ${phone}. I am interested in ${product}. Message: ${message}`;
 
-    window.open('https://wa.me/919495679851?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
+    window.open('https://wa.me/919795679851?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
   }
 </script>
 
