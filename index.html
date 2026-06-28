@@ -16,6 +16,7 @@
   </script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Krizpia | Authentic Kerala Snacks | Kuzhalappam & Thatta</title>
 
   <meta name="description" content="Buy authentic Kerala snacks from Krizpia including Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta. Made in Kerala by Rangeela Products. FSSAI Licensed.">
@@ -112,6 +113,7 @@
       line-height:1.6;
       overflow-x:hidden;
     }
+
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
 
@@ -144,6 +146,7 @@
       color:var(--text);
       position:relative;
     }
+
     .links a::after{
       content:"";
       position:absolute;
@@ -154,6 +157,7 @@
       background:var(--black);
       transition:.3s ease;
     }
+
     .links a:hover::after{width:100%}
 
     section{
@@ -320,12 +324,14 @@
     }
 
     #about{padding-top:18px;padding-bottom:24px}
+
     .about-banner{
       display:flex;
       justify-content:center;
       align-items:center;
       margin:0 auto;
     }
+
     .about-banner img{
       width:100%;
       max-width:1200px;
@@ -378,8 +384,6 @@
       gap:24px;
     }
 
-    <a href="blog.html">Blog</a>
-    
     .review-card{
       background:#fff;
       border:1px solid var(--border);
@@ -401,6 +405,43 @@
       font-size:26px;
       letter-spacing:2px;
       margin-bottom:8px;
+    }
+
+    .blog-section{
+      background:#fff;
+    }
+
+    .blog-card{
+      max-width:720px;
+      margin:0 auto;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .blog-card img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+    }
+
+    .blog-card-content{
+      padding:24px;
+      text-align:center;
+    }
+
+    .blog-card h3{
+      font-size:24px;
+      line-height:1.3;
+      margin-bottom:12px;
+      font-weight:900;
+    }
+
+    .blog-card p{
+      color:var(--muted);
+      margin-bottom:18px;
     }
 
     .order{
@@ -481,17 +522,25 @@
       font-size:14px;
     }
 
-    .coming-soon-card{
+    .coming-soon-box{
+      width:100%;
+      margin-top:20px;
       background:#fff;
-      padding:0;
       border-radius:20px;
       overflow:hidden;
-      box-shadow:0 8px 22px rgba(0,0,0,.12);
+      box-shadow:0 10px 30px rgba(0,0,0,.08);
+      transition:.3s ease;
     }
 
-    .coming-soon-card img{
+    .coming-soon-box:hover{
+      transform:translateY(-4px);
+      box-shadow:0 18px 40px rgba(0,0,0,.12);
+    }
+
+    .coming-soon-box img{
       width:100%;
       display:block;
+      border-radius:20px;
     }
 
     .footer{
@@ -523,8 +572,16 @@
       text-align:center;
     }
 
-    .footer-logo{height:82px;width:auto;margin:0 auto 12px}
-    .footer p{color:#e7e7e7;margin:5px 0}
+    .footer-logo{
+      height:82px;
+      width:auto;
+      margin:0 auto 12px;
+    }
+
+    .footer p{
+      color:#e7e7e7;
+      margin:5px 0;
+    }
 
     .footer-links{
       text-align:center;
@@ -553,7 +610,12 @@
       animation:pulseWhatsApp 1.8s infinite;
     }
 
-    .reveal{opacity:0;transform:translateY(35px);animation:fadeUp .9s ease forwards}
+    .reveal{
+      opacity:0;
+      transform:translateY(35px);
+      animation:fadeUp .9s ease forwards;
+    }
+
     .delay-1{animation-delay:.12s}
     .delay-2{animation-delay:.24s}
     .delay-3{animation-delay:.36s}
@@ -580,6 +642,7 @@
       .products,.gallery,.review-grid{grid-template-columns:1fr}
       .order{padding:26px 18px}
       .process-video{height:220px}
+      .blog-card img{height:240px}
       .footer-inner{flex-direction:column;text-align:center}
       .footer-fssai img{width:106px}
       .footer-links a{display:inline-block;margin:5px 6px}
@@ -602,6 +665,7 @@
       <a href="#process">Process</a>
       <a href="#gallery">Gallery</a>
       <a href="#reviews">Reviews</a>
+      <a href="blog-traditional-kuzhalappam.html">Blog</a>
       <a href="#order">Order</a>
     </div>
   </nav>
@@ -642,6 +706,7 @@
   </div>
 
   <div class="products">
+
     <article class="card reveal">
       <img src="traditional-kuzhalappam.PNG" alt="Traditional Kerala Kuzhalappam snack" loading="lazy">
       <div class="card-body">
@@ -653,6 +718,8 @@
           <li>Authentic Kerala recipe</li>
         </ul>
         <a href="traditional-kuzhalappam.html" class="product-btn">View Product</a>
+        <br>
+        <a href="blog-traditional-kuzhalappam.html" class="product-btn">Read Blog</a>
       </div>
     </article>
 
@@ -697,6 +764,7 @@
         <a href="thatta.html" class="product-btn">View Product</a>
       </div>
     </article>
+
   </div>
 </section>
 
@@ -762,6 +830,24 @@
   </div>
 </section>
 
+<section class="blog-section" id="blog">
+  <div class="section-title reveal">
+    <h2>Latest From Our Blog</h2>
+    <p>Learn more about Kerala snacks, traditional recipes and Krizpia products.</p>
+    <div class="gold-line"></div>
+  </div>
+
+  <div class="blog-card reveal">
+    <img src="traditional-kuzhalappam.PNG" alt="Traditional Kuzhalappam Kerala snack">
+
+    <div class="blog-card-content">
+      <h3>Traditional Kuzhalappam: Kerala's Crispy Tea-Time Snack</h3>
+      <p>Discover the history, ingredients, preparation and why Traditional Kuzhalappam remains Kerala's favourite snack.</p>
+      <a href="blog-traditional-kuzhalappam.html" class="btn gold">Read Full Article →</a>
+    </div>
+  </div>
+</section>
+
 <section id="order">
   <div class="order reveal">
 
@@ -772,7 +858,7 @@
       <div class="contact-lines">
         <p><strong>Phone:</strong> +91 9495679851</p>
         <p><strong>WhatsApp Orders:</strong> +91 9495679851</p>
-        <p><strong>Email:info@krizpia.com</strong> </p>
+        <p><strong>Email:</strong> info@krizpia.com</p>
       </div>
 
       <a class="btn gold" href="https://wa.me/919495679851" target="_blank" rel="noopener noreferrer">
@@ -817,30 +903,10 @@
         <p>Yes. All Krizpia products are manufactured under FSSAI Licence No. 21326171000212 and follow hygienic production practices.</p>
       </div>
 
-     <div class="coming-soon-box reveal">
-    <img src="coming soon.png" alt="Krizpia Spice Collection Coming Soon"loading="lazy">
-</div>
-<Style> 
-.coming-soon-box{
-    width:100%;
-    margin-top:20px;
-    background:#fff;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    transition:.3s ease;
-}
-
-.coming-soon-box:hover{
-    transform:translateY(-4px);
-    box-shadow:0 18px 40px rgba(0,0,0,.12);
-}
-
-.coming-soon-box img{
-    width:100%;
-    display:block;
-    border-radius:20px;
-}</Style>
+      <div class="coming-soon-box reveal">
+        <img src="coming soon.png" alt="Krizpia Spice Collection Coming Soon" loading="lazy">
+      </div>
+    </div>
 
   </div>
 </section>
@@ -855,74 +921,14 @@
     <div class="footer-fssai">
       <img src="Fssai Logo.png" alt="FSSAI logo">
     </div>
-  <section class="blog-section">
-    <h2>Latest From Our Blog</h2>
-
-    <div class="blog-card">
-
-        <img src="images/traditional-kuzhalappam.jpg"
-             alt="Traditional Kuzhalappam">
-
-        <h3>
-            Traditional Kuzhalappam:
-            Kerala's Crispy Tea-Time Snack
-        </h3>
-
-        <p>
-            Discover the history, ingredients,
-            preparation and why Traditional
-            Kuzhalappam remains Kerala's favourite snack.
-        </p>
-
-        <a href="blog-traditional-kuzhalappam.html"
-           class="btn">
-           Read Full Article →
-        </a>
-
-    </div>
-</section>
-  <p>
-
-Want to know more about this snack?
-
-<a href="blog-traditional-kuzhalappam.html">
-
-Read our complete guide to Traditional Kuzhalappam.
-
-</a>
-
-</p>
-  <a href="products.html">View Products</a>
-  <a href="traditional-kuzhalappam.html">
-
-Buy Traditional Kuzhalappam
-
-</a>
-  <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"BlogPosting",
-  "headline":"Traditional Kuzhalappam: Kerala's Crispy Tea-Time Snack Loved for Generations",
-  "description":"Learn everything about Traditional Kuzhalappam, Kerala's famous crispy rice flour snack.",
-  "author":{
-    "@type":"Organization",
-    "name":"Krizpia"
-  },
-  "publisher":{
-    "@type":"Organization",
-    "name":"Krizpia"
-  },
-  "mainEntityOfPage":"https://www.krizpia.com/blog-traditional-kuzhalappam.html"
-}
-</script>
-    
 
     <div class="footer-content">
       <img src="krizpia-logo.png" alt="Krizpia logo" class="footer-logo">
 
       <p>Contact: +91 9495679851</p>
-      <p>Email:info@krizpia.com </p>
-          <p>
+      <p>Email: info@krizpia.com</p>
+
+      <p>
         Rangeela Products<br>
         12/1059-1, Perunna East P.O, Changanacherry,<br>
         Kottayam, Kerala – 686102
