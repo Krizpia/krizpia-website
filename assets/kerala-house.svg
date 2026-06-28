@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="430" viewBox="0 0 650 430">
+<rect width="650" height="430" rx="28" fill="#fff8ea"/>
+<text x="35" y="55" font-family="Arial" font-size="30" font-weight="900" fill="#111">Kerala Tradition</text>
+<path d="M120 245 L325 110 L530 245 Z" fill="#8a3f00"/>
+<path d="M155 245 H495 V360 H155 Z" fill="#f0c276"/>
+<path d="M205 210 H445 V260 H205 Z" fill="#5a2d0c"/>
+<rect x="285" y="275" width="80" height="85" fill="#6b3a18"/>
+<rect x="190" y="280" width="55" height="45" fill="#fff8ea" stroke="#6b3a18" stroke-width="6"/>
+<rect x="405" y="280" width="55" height="45" fill="#fff8ea" stroke="#6b3a18" stroke-width="6"/>
+<path d="M80 360 C180 320, 470 320, 570 360" fill="#2f6b32"/>
+<circle cx="92" cy="255" r="35" fill="#2f6b32"/><rect x="88" y="255" width="8" height="105" fill="#6b3a18"/>
+<circle cx="555" cy="255" r="35" fill="#2f6b32"/><rect x="551" y="255" width="8" height="105" fill="#6b3a18"/>
+</svg>

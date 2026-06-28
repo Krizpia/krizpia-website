@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="160" viewBox="0 0 420 160">
+  <rect width="420" height="160" fill="#0d120d"/>
+  <text x="36" y="78" font-family="Georgia, serif" font-size="54" font-weight="700" fill="#d9a441" font-style="italic">Krizpia</text>
+  <text x="42" y="112" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#fff3d6">Authentic Kerala Snacks</text>
+  <path d="M245 42 C265 20, 292 23, 306 48 C281 55, 262 57,245 42Z" fill="#5fa843"/>
+  <path d="M285 24 C301 13, 321 18, 329 37 C311 42, 297 42,285 24Z" fill="#89c654"/>
+</svg>

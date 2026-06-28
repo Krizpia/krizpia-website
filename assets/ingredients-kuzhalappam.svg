@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="650" height="430" viewBox="0 0 650 430">
+<rect width="650" height="430" rx="28" fill="#fff8ea"/>
+<text x="35" y="55" font-family="Arial" font-size="30" font-weight="900" fill="#111">Main Ingredients</text>
+<g font-family="Arial" font-size="20" font-weight="700" fill="#333">
+<circle cx="95" cy="120" r="36" fill="#fff" stroke="#e0c894"/><text x="150" y="128">Rice Flour</text>
+<circle cx="95" cy="190" r="36" fill="#f6efe3" stroke="#e0c894"/><text x="150" y="198">Coconut</text>
+<circle cx="95" cy="260" r="36" fill="#d8b06a" stroke="#e0c894"/><text x="150" y="268">Cumin</text>
+<circle cx="370" cy="120" r="36" fill="#ad8f58" stroke="#e0c894"/><text x="425" y="128">Sesame Seeds</text>
+<circle cx="370" cy="190" r="36" fill="#fff" stroke="#e0c894"/><text x="425" y="198">Salt</text>
+<circle cx="370" cy="260" r="36" fill="#f5bb37" stroke="#e0c894"/><text x="425" y="268">Oil</text>
+</g>
+<path d="M255 370 C315 310,390 315,440 370" fill="none" stroke="#2f6b32" stroke-width="12" stroke-linecap="round"/>
+<circle cx="310" cy="350" r="42" fill="#fff" stroke="#9b6b36" stroke-width="8"/>
+<circle cx="382" cy="350" r="42" fill="#fff" stroke="#9b6b36" stroke-width="8"/>
+</svg>
