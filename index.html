@@ -1174,7 +1174,46 @@ function updateBlogs(){
 updateBlogs();
 setInterval(updateBlogs,1000);
 </script>
+<script>
+const blogs = [
+  {
+    title: "Spicy Kuzhalappam",
+    url: "scheduled-blogs/01-blog-spicy-kuzhalappam.html",
+    image: "spicy-kuzhalappam.PNG",
+    publishDate: "2026-06-28T18:30:00+05:30"
+  }
+];
 
+const blogBox = document.getElementById("scheduledBlogs");
+
+function updateBlogs(){
+  const now = new Date();
+  const nextBlog = blogs.find(blog => new Date(blog.publishDate) > now);
+
+  if(nextBlog){
+    const distance = new Date(nextBlog.publishDate) - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((distance / (1000 * 60)) % 60);
+    const seconds = Math.floor((distance / 1000) % 60);
+
+    blogBox.innerHTML = `
+      <div class="blog-card reveal">
+        <div class="blog-card-content">
+          <h3>Next Blog Coming Soon</h3>
+          <p><strong>${nextBlog.title}</strong> will be published in:</p>
+          <h2>${days}d ${hours}h ${minutes}m ${seconds}s</h2>
+          <p>Every Sunday at 6:30 PM Indian time.</p>
+        </div>
+      </div>
+    `;
+  }
+}
+
+updateBlogs();
+setInterval(updateBlogs, 1000);
+</script>
 </body>
   
 </body>
