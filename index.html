@@ -1083,6 +1083,7 @@
       publishDate: "2026-08-10T09:00:00+05:30"
     }
   ];
+
   function formatIndianDate(dateString){
     return new Date(dateString).toLocaleString('en-IN', {
       timeZone: 'Asia/Kolkata',
@@ -1096,54 +1097,31 @@
     });
   }
 
-  function getTimeParts(distance){
-    return {
-      days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-      hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
-      minutes: Math.floor((distance / (1000 * 60)) % 60),
-      seconds: Math.floor((distance / 1000) % 60)
-    };
-  }
-
-  function countdownCard(nextBlog){
-    const distance = new Date(nextBlog.publishDate) - new Date();
-    const time = getTimeParts(Math.max(distance, 0));
-
-    return `
-      <article class="blog-card">
-        <div class="blog-card-content">
-          <span class="blog-badge">Coming Next</span>
-          <div class="blog-meta">Publishes: ${formatIndianDate(nextBlog.publishDate)}</div>
-          <h3>${nextBlog.title}</h3>
-          <p>Next Krizpia blog will automatically appear in:</p>
-          <h2 style="font-size:32px;margin:14px 0;font-weight:900;">
-            ${time.days}d ${time.hours}h ${time.minutes}m ${time.seconds}s
-          </h2>
-          <p>New blogs publish every Monday at 9:00 AM Indian time.</p>
-        </div>
-      </article>
-    `;
-  }
-
   function loadScheduledBlogs(){
     const blogContainer = document.getElementById('scheduledBlogs');
     if(!blogContainer) return;
 
     const now = new Date();
-    const publishedBlogs = scheduledBlogs.filter(blog => new Date(blog.publishDate) <= now);
-    const nextBlog = scheduledBlogs.find(blog => new Date(blog.publishDate) > now);
+
+    const publishedBlogs = scheduledBlogs
+      .filter(blog => new Date(blog.publishDate) <= now)
+      .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
     if(publishedBlogs.length === 0){
       blogContainer.classList.remove('blog-grid');
-      if(nextBlog){
-        blogContainer.innerHTML = countdownCard(nextBlog);
-      }
+      blogContainer.innerHTML = `
+        <div class="blog-empty">
+          <strong>Blogs are scheduled.</strong><br>
+          The first blog will appear automatically on Monday, 29 June 2026 at 9:00 AM Indian time.
+        </div>
+      `;
       return;
     }
 
     blogContainer.classList.add('blog-grid');
-    const publishedHtml = publishedBlogs.map((blog, index) => {
-      const isLatest = index === publishedBlogs.length - 1;
+
+    blogContainer.innerHTML = publishedBlogs.map((blog, index) => {
+      const isLatest = index === 0;
       return `
         <article class="blog-card">
           <img src="${blog.image}" alt="${blog.title}" loading="lazy">
@@ -1157,13 +1135,12 @@
         </article>
       `;
     }).join('');
-
-    const nextHtml = nextBlog ? countdownCard(nextBlog) : '';
-    blogContainer.innerHTML = publishedHtml + nextHtml;
   }
 
   loadScheduledBlogs();
-  setInterval(loadScheduledBlogs, 1000);
+
+  // Checks every minute so a scheduled blog can appear without showing any countdown.
+  setInterval(loadScheduledBlogs, 60000);
 
   function cleanInput(value){
     return value
