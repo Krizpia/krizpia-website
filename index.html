@@ -1107,10 +1107,21 @@
       .filter(blog => new Date(blog.publishDate) <= now)
       .sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
 
-    if(publishedBlogs.length === 0){
-      blogContainer.classList.remove('blog-grid');
-      blogContainer.innerHTML = `
-        <div class="blog-empty">
+   if (publishedBlogs.length === 0) {
+    blogContainer.style.display = "none";
+    return;
+} else {
+    blogContainer.style.display = "grid";
+}     
+    const blogSection = document.getElementById("blog");
+
+if (publishedBlogs.length === 0) {
+    blogSection.style.display = "none";
+    return;
+} else {
+    blogSection.style.display = "block";
+}
+    <div class="blog-empty">
           <strong>Blogs are scheduled.</strong><br>
           The first blog will appear automatically on Monday, 29 June 2026 at 9:00 AM Indian time.
         </div>
