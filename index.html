@@ -923,7 +923,7 @@
 <section class="blog-section" id="blog">
   <div class="section-title reveal">
     <h2>Latest From Our Blog</h2>
-    <p>New Krizpia blogs will automatically appear here every Sunday at 6:30 PM Indian time.</p>
+    <p>New Krizpia blogs will automatically appear here every Monday at 9:00 AM Indian time.</p>
     <div class="gold-line"></div>
   </div>
 
@@ -1030,53 +1030,59 @@
   </div>
 </footer>
 
-<script>
 
+<script>
   const scheduledBlogs = [
     {
-      title: "Spicy Kuzhalappam: Kerala's Crispy Snack with a Fiery Twist",
-      description: "Discover Krizpia Spicy Kuzhalappam, a crispy Kerala rice snack blended with authentic spices for tea time and family sharing.",
-      image: "spicy-kuzhalappam.PNG",
-      url: "scheduled-blogs/01-blog-spicy-kuzhalappam.html",
-      publishDate: "2026-06-28T18:30:00+05:30"
-    },
-    {
-      title: "Sweet Kuzhalappam: Crispy Kerala Sweet Snack",
-      description: "A light sweet Kerala snack with traditional crunch, perfect for tea time, children, festivals and guest serving.",
-      image: "sweet-kuzhalappam.PNG",
-      url: "scheduled-blogs/02-blog-sweet-kuzhalappam.html",
-      publishDate: "2026-07-05T18:30:00+05:30"
-    },
-    {
-      title: "Kerala Thatta: Crispy Spicy Rice Snack",
-      description: "Learn about Krizpia Kerala Thatta, a flat, crispy and spicy rice flour snack made for crunchy snack lovers.",
-      image: "thatta-photo.PNG",
-      url: "scheduled-blogs/03-blog-thatta.html",
-      publishDate: "2026-07-12T18:30:00+05:30"
-    },
-    {
-      title: "Kerala Snacks Guide: Traditional Crispy Snacks",
-      description: "A complete guide to Kerala snacks including Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta.",
-      image: "mix image.png",
-      url: "scheduled-blogs/04-blog-kerala-snacks-guide.html",
-      publishDate: "2026-07-19T18:30:00+05:30"
-    },
-    {
-      title: "Best Kerala Tea Time Snacks for a Crispy Evening",
-      description: "Explore the best Krizpia snacks for tea time, family gatherings, school snack boxes, travel and guest serving.",
-      image: "mix image.png",
-      url: "scheduled-blogs/05-blog-tea-time-snacks.html",
-      publishDate: "2026-07-26T18:30:00+05:30"
-    },
-    {
-      title: "Rice Flour Snacks: Crispy Kerala Snacks Made for Every Bite",
-      description: "Discover rice flour snacks like Kuzhalappam and Thatta, made with traditional Kerala flavour and perfect crunch.",
+      title: "Traditional Kuzhalappam",
+      description: "Discover Kerala's crispy traditional Kuzhalappam made with authentic taste and perfect crunch.",
       image: "traditional-kuzhalappam.PNG",
-      url: "scheduled-blogs/06-blog-rice-flour-snacks.html",
-      publishDate: "2026-08-02T18:30:00+05:30"
+      url: "traditional-kuzhalappam.html",
+      publishDate: "2026-06-29T09:00:00+05:30"
+    },
+    {
+      title: "Spicy Kuzhalappam",
+      description: "A crispy and spicy Kerala snack with bold flavour, perfect for tea time and family sharing.",
+      image: "spicy-kuzhalappam.PNG",
+      url: "spicy-kuzhalappam.html",
+      publishDate: "2026-07-06T09:00:00+05:30"
+    },
+    {
+      title: "Sweet Kuzhalappam",
+      description: "A lightly sweet Kerala snack with crispy texture, perfect for children and festive moments.",
+      image: "sweet-kuzhalappam.PNG",
+      url: "sweet-kuzhalappam.html",
+      publishDate: "2026-07-13T09:00:00+05:30"
+    },
+    {
+      title: "Kerala Thatta",
+      description: "A flat, crispy, spicy Kerala snack made for crunchy snack lovers.",
+      image: "thatta-photo.PNG",
+      url: "thatta.html",
+      publishDate: "2026-07-20T09:00:00+05:30"
+    },
+    {
+      title: "Kerala Snacks Guide",
+      description: "A complete guide to Kerala snacks including Kuzhalappam, Thatta and tea-time favourites.",
+      image: "mix image.png",
+      url: "kerala-snacks-guide.html",
+      publishDate: "2026-07-27T09:00:00+05:30"
+    },
+    {
+      title: "Tea Time Snacks",
+      description: "Explore the best Kerala tea-time snacks for family, guests, travel and evening tea.",
+      image: "mix image.png",
+      url: "tea-time-snacks.html",
+      publishDate: "2026-08-03T09:00:00+05:30"
+    },
+    {
+      title: "Rice Flour Snacks",
+      description: "Discover crispy rice flour snacks like Kuzhalappam and Thatta with authentic Kerala flavour.",
+      image: "traditional-kuzhalappam.PNG",
+      url: "rice-flour-snacks.html",
+      publishDate: "2026-08-10T09:00:00+05:30"
     }
   ];
-
   function formatIndianDate(dateString){
     return new Date(dateString).toLocaleString('en-IN', {
       timeZone: 'Asia/Kolkata',
@@ -1090,25 +1096,53 @@
     });
   }
 
+  function getTimeParts(distance){
+    return {
+      days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((distance / (1000 * 60)) % 60),
+      seconds: Math.floor((distance / 1000) % 60)
+    };
+  }
+
+  function countdownCard(nextBlog){
+    const distance = new Date(nextBlog.publishDate) - new Date();
+    const time = getTimeParts(Math.max(distance, 0));
+
+    return `
+      <article class="blog-card">
+        <div class="blog-card-content">
+          <span class="blog-badge">Coming Next</span>
+          <div class="blog-meta">Publishes: ${formatIndianDate(nextBlog.publishDate)}</div>
+          <h3>${nextBlog.title}</h3>
+          <p>Next Krizpia blog will automatically appear in:</p>
+          <h2 style="font-size:32px;margin:14px 0;font-weight:900;">
+            ${time.days}d ${time.hours}h ${time.minutes}m ${time.seconds}s
+          </h2>
+          <p>New blogs publish every Monday at 9:00 AM Indian time.</p>
+        </div>
+      </article>
+    `;
+  }
+
   function loadScheduledBlogs(){
     const blogContainer = document.getElementById('scheduledBlogs');
     if(!blogContainer) return;
 
     const now = new Date();
     const publishedBlogs = scheduledBlogs.filter(blog => new Date(blog.publishDate) <= now);
+    const nextBlog = scheduledBlogs.find(blog => new Date(blog.publishDate) > now);
 
     if(publishedBlogs.length === 0){
       blogContainer.classList.remove('blog-grid');
-      blogContainer.innerHTML = `
-        <div class="blog-empty">
-          <h3>No blogs published yet</h3>
-          <p>The first Krizpia scheduled blog will appear on Sunday, 28 June 2026 at 6:30 PM Indian time.</p>
-        </div>
-      `;
+      if(nextBlog){
+        blogContainer.innerHTML = countdownCard(nextBlog);
+      }
       return;
     }
 
-    blogContainer.innerHTML = publishedBlogs.map((blog, index) => {
+    blogContainer.classList.add('blog-grid');
+    const publishedHtml = publishedBlogs.map((blog, index) => {
       const isLatest = index === publishedBlogs.length - 1;
       return `
         <article class="blog-card">
@@ -1123,9 +1157,13 @@
         </article>
       `;
     }).join('');
+
+    const nextHtml = nextBlog ? countdownCard(nextBlog) : '';
+    blogContainer.innerHTML = publishedHtml + nextHtml;
   }
 
   loadScheduledBlogs();
+  setInterval(loadScheduledBlogs, 1000);
 
   function cleanInput(value){
     return value
@@ -1154,67 +1192,6 @@
     window.open('https://wa.me/919495679851?text=' + encodeURIComponent(text), '_blank', 'noopener,noreferrer');
   }
 </script>
-<script>
-function cleanInput(value){
-   ...
-}
-</script>
 
-<!-- PASTE THE COUNTDOWN SCRIPT HERE -->
-
-<script>
-const blogs = [
-...
-];
-
-function updateBlogs(){
-...
-}
-
-updateBlogs();
-setInterval(updateBlogs,1000);
-</script>
-<script>
-const blogs = [
-  {
-    title: "Spicy Kuzhalappam",
-    url: "scheduled-blogs/01-blog-spicy-kuzhalappam.html",
-    image: "spicy-kuzhalappam.PNG",
-    publishDate: "2026-06-28T18:30:00+05:30"
-  }
-];
-
-const blogBox = document.getElementById("scheduledBlogs");
-
-function updateBlogs(){
-  const now = new Date();
-  const nextBlog = blogs.find(blog => new Date(blog.publishDate) > now);
-
-  if(nextBlog){
-    const distance = new Date(nextBlog.publishDate) - now;
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((distance / (1000 * 60)) % 60);
-    const seconds = Math.floor((distance / 1000) % 60);
-
-    blogBox.innerHTML = `
-      <div class="blog-card reveal">
-        <div class="blog-card-content">
-          <h3>Next Blog Coming Soon</h3>
-          <p><strong>${nextBlog.title}</strong> will be published in:</p>
-          <h2>${days}d ${hours}h ${minutes}m ${seconds}s</h2>
-          <p>Every Sunday at 6:30 PM Indian time.</p>
-        </div>
-      </div>
-    `;
-  }
-}
-
-updateBlogs();
-setInterval(updateBlogs, 1000);
-</script>
-</body>
-  
 </body>
 </html>
