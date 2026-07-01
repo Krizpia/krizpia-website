@@ -228,6 +228,12 @@
     .blog-content p{color:#555;margin-bottom:14px;font-size:15px}
     .blog-meta{display:inline-block;background:#fff3d6;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:800;margin-bottom:10px}
 
+
+    .knowledge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .knowledge-card{background:#fff;border:1px solid #ead8b8;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07);transition:.3s;text-align:center}
+    .knowledge-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.12)}
+    .knowledge-card img{width:100%;height:360px;object-fit:cover;background:#fffaf2}
+    .knowledge-card h3{padding:18px;font-size:20px}
     .order{background:#111;color:#fff;border-radius:30px;padding:38px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1fr);gap:35px;align-items:start}
     .order h2{font-size:clamp(30px,4vw,36px);margin-bottom:12px}
     .order p{color:#eee;margin-bottom:12px}
@@ -249,8 +255,8 @@
     .footer-links a{color:#fff;margin:0 7px;font-size:14px;white-space:nowrap}
 
     @media(max-width:1100px){.products,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}}
-    @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid,.reviews{grid-template-columns:1fr}.seo-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:700px){header{position:static}.nav{align-items:center;text-align:center}.links{font-size:13px}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.assurance-grid,.seo-link-grid{grid-template-columns:1fr}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
+    @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid,.reviews{grid-template-columns:1fr}.knowledge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.seo-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:700px){header{position:static}.nav{align-items:center;text-align:center}.links{font-size:13px}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.assurance-grid,.seo-link-grid,.knowledge-grid{grid-template-columns:1fr}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
     @media(max-width:420px){h1{font-size:32px;letter-spacing:-.8px}.tag{font-size:12px;padding:7px 12px}.hero-image img{height:235px}.card img,.gallery img,.blog-card img{height:210px}.logo img{height:50px}.links{gap:10px;font-size:12px}}
   </style>
 </head>
@@ -431,110 +437,66 @@
       </div>
     </section>
 
-    <section id="blog">
-      <section id="knowledge">
-  <div class="section-title">
-    <h2>Knowledge Center</h2>
-    <p>Explore Krizpia snack guides, product information, storage tips and Kerala snack knowledge.</p>
-    <div class="line"></div>
-  </div>
+    <section id="knowledge">
+      <div class="section-title">
+        <h2>Knowledge Center</h2>
+        <p>Explore Krizpia snack guides, product information, storage tips and Kerala snack knowledge.</p>
+        <div class="line"></div>
+      </div>
 
-  <div class="knowledge-grid">
+      <div class="knowledge-grid">
 
-    <a class="knowledge-card" href="knowledge/rice-flour-snacks.html">
-      <img src="knowledge/image/Rice Flour.jpg">
-      <h3>Rice Flour Snacks Guide</h3>
-    </a>
+        <a class="knowledge-card" href="Knowledge/Rice Flour.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="Knowledge/Rice Flour.jpg" alt="Rice Flour Snacks Guide" loading="lazy">
+          <h3>Rice Flour Snacks Guide</h3>
+        </a>
 
-    <a class="knowledge-card" href="knowledge/Best Snacks for Travel.jpg">
-     <img src="knowledge/image/Best Snacks for Travel.jpg">
-      <h3>Best Snacks for Travel</h3>
-    </a>
+        <a class="knowledge-card" href="Knowledge/Best Snacks for Travel.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="Knowledge/Best Snacks for Travel.jpg" alt="Best Snacks for Travel" loading="lazy">
+          <h3>Best Snacks for Travel</h3>
+        </a>
 
-    <a class="knowledge-card" href="knowledge/Complete Kerala Snacks Guide.jpg">
-      <img src="knowledge/image/Complete Kerala Snacks Guide.jpg">
-      <h3>Complete Kerala Snacks Guide</h3>
-    </a>
+        <a class="knowledge-card" href="Knowledge/Complete Kerala Snacks Guide.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="Knowledge/Complete Kerala Snacks Guide.jpg" alt="Complete Kerala Snacks Guide" loading="lazy">
+          <h3>Complete Kerala Snacks Guide</h3>
+        </a>
 
-    <a class="knowledge-card" href="knowledge/Healthy Kerala.jpg">
-      <img src="knowledge/image/Healthy Kerala.jpg">
-      <h3>Healthy Kerala Snacks</h3>
-    </a>
+        <a class="knowledge-card" href="Knowledge/Healthy Kerala.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="Knowledge/Healthy Kerala.jpg" alt="Healthy Kerala Snacks Guide" loading="lazy">
+          <h3>Healthy Kerala Snacks</h3>
+        </a>
 
-    <a class="knowledge-card" href="knowledge/Spicy Kuzhalappam.jpg">
-      <img src="knowledge/image/Spicy Kuzhalappam.jpg">
-      <h3>Spicy Kuzhalappam Guide</h3>
-    </a>
+        <a class="knowledge-card" href="Knowledge/Spicy Kuzhalappam.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="Knowledge/Spicy Kuzhalappam.jpg" alt="Spicy Kuzhalappam Guide" loading="lazy">
+          <h3>Spicy Kuzhalappam Guide</h3>
+        </a>
 
-    <a class="knowledge-card" href="knowledge/Sweet Kuzhalappam.jpg">
-     <img src="knowledge/image/Sweet Kuzhalappam.jpg">
-      <h3>Sweet Kuzhalappam Guide</h3>
-    </a>
+        <a class="knowledge-card" href="Knowledge/Sweet Kuzhalappam.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="Knowledge/Sweet Kuzhalappam.jpg" alt="Sweet Kuzhalappam Guide" loading="lazy">
+          <h3>Sweet Kuzhalappam Guide</h3>
+        </a>
 
-    <a class="knowledge-card" href="knowledge/Thatta.jpg">
-      <img src="knowledge/image/Thatta.jpg">
-      <h3>Thatta Guide</h3>
-    </a>
+        <a class="knowledge-card" href="Knowledge/Thatta.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="Knowledge/Thatta.jpg" alt="Thatta Guide" loading="lazy">
+          <h3>Thatta Guide</h3>
+        </a>
 
-    <a class="knowledge-card" href="knowledge/Tranitional Kuzhalappam.jpg">
-      <img src="knowledge/image/Tranitional Kuzhalappam.jpg">
-      <h3>Traditional Kuzhalappam Guide</h3>
-    </a>
+        <a class="knowledge-card" href="Knowledge/Tranitional Kuzhalappam.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="Knowledge/Tranitional Kuzhalappam.jpg" alt="Traditional Kuzhalappam Guide" loading="lazy">
+          <h3>Traditional Kuzhalappam Guide</h3>
+        </a>
 
-  </div>
-</section>
-      <div class="section-title"><h2>Latest From Our Blog</h2><p>New Krizpia blogs will automatically appear here every Monday at 9:00 AM Indian time.</p><div class="line"></div></div>
-      <div id="scheduledBlogs" class="blog-grid"></div>
-<style> .knowledge-grid{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:24px;
-}
-
-.knowledge-card{
-  background:#fff;
-  border:1px solid #ead8b8;
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 10px 28px rgba(0,0,0,.07);
-  transition:.3s;
-  text-align:center;
-}
-
-.knowledge-card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 18px 40px rgba(0,0,0,.12);
-}
-
-.knowledge-card img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
-  background:#fffaf2;
-}
-
-.knowledge-card h3{
-  padding:18px;
-  font-size:20px;
-}
-
-@media(max-width:900px){
-  .knowledge-grid{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-}
-
-@media(max-width:600px){
-  .knowledge-grid{
-    grid-template-columns:1fr;
-  }
-
-  .knowledge-card img{
-    height:auto;
-  }
-}</style>
+      </div>
     </section>
 
+    <section id="blog">
+      <div class="section-title">
+        <h2>Latest From Our Blog</h2>
+        <p>New Krizpia blogs will automatically appear here every Monday at 9:00 AM Indian time.</p>
+        <div class="line"></div>
+      </div>
+      <div id="scheduledBlogs" class="blog-grid"></div>
+    </section>
 
 
     <section id="faq">
