@@ -239,20 +239,20 @@
     .authority-inner{max-width:1250px;margin:auto}
 
     .gallery img{width:100%;height:260px;object-fit:contain;background:#fff;border:1px solid #ead8b8;border-radius:22px;padding:10px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
-    .reviews-modal,.knowledge-modal{max-width:none;margin:0;position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(17,17,17,.55);backdrop-filter:blur(4px)}
-    .reviews-modal.is-open,.knowledge-modal.is-open{display:flex}
-    .reviews-panel,.knowledge-panel{width:min(1120px,100%);max-height:88vh;overflow:auto;background:#fffaf2;border:1px solid #ead8b8;border-radius:26px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
-    .reviews-header,.knowledge-header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:22px;text-align:left}
-    .reviews-header h2,.knowledge-header h2{font-size:clamp(28px,4vw,38px);margin-bottom:8px}
-    .reviews-header p,.knowledge-header p{color:#555;max-width:660px;font-size:15px}
-    .reviews-close,.knowledge-close{border:none;background:#111;color:#fff;border-radius:999px;width:42px;height:42px;cursor:pointer;font-size:24px;line-height:1;flex:0 0 auto}
+    .reviews-modal,.knowledge-modal,.blog-modal{max-width:none;margin:0;position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(17,17,17,.55);backdrop-filter:blur(4px)}
+    .reviews-modal.is-open,.knowledge-modal.is-open,.blog-modal.is-open{display:flex}
+    .reviews-panel,.knowledge-panel,.blog-panel{width:min(1120px,100%);max-height:88vh;overflow:auto;background:#fffaf2;border:1px solid #ead8b8;border-radius:26px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+    .reviews-header,.knowledge-header,.blog-header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:22px;text-align:left}
+    .reviews-header h2,.knowledge-header h2,.blog-header h2{font-size:clamp(28px,4vw,38px);margin-bottom:8px}
+    .reviews-header p,.knowledge-header p,.blog-header p{color:#555;max-width:660px;font-size:15px}
+    .reviews-close,.knowledge-close,.blog-close{border:none;background:#111;color:#fff;border-radius:999px;width:42px;height:42px;cursor:pointer;font-size:24px;line-height:1;flex:0 0 auto}
     .reviews{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
     .review{padding:18px;text-align:left;background:#fff;border:1px solid #ead8b8;border-radius:18px;box-shadow:0 8px 22px rgba(0,0,0,.06)}
     .review p{color:#333;margin-bottom:14px;font-size:14px;line-height:1.55}
     .review strong{color:#064e3b;font-size:14px}
     .review-source{display:block;color:#666;font-size:12px;margin-top:3px}
     .stars{color:#d9a441;font-size:18px;margin-bottom:8px;letter-spacing:1px}
-    body.reviews-open,body.knowledge-open{overflow:hidden}
+    body.reviews-open,body.knowledge-open,body.blog-open{overflow:hidden}
 
     .blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
     .blog-card img{width:100%;height:240px;object-fit:cover}
@@ -263,8 +263,8 @@
 
 
     .knowledge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-    .knowledge-header .section-title{text-align:left;margin:0}
-    .knowledge-header .line{margin:16px 0 0}
+    .knowledge-header .section-title,.blog-header .section-title{text-align:left;margin:0}
+    .knowledge-header .line,.blog-header .line{margin:16px 0 0}
     .knowledge-card{background:#fff;border:1px solid #ead8b8;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07);transition:.3s;text-align:center}
     .knowledge-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.12)}
     .knowledge-card img{width:100%;height:360px;object-fit:cover;background:#fffaf2}
@@ -293,7 +293,7 @@
 
     @media(max-width:1100px){.products,.gallery,.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}.video-ideas{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}}
     @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr}.knowledge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:700px){header{position:static}.reviews{grid-template-columns:1fr}.reviews-modal,.knowledge-modal{padding:12px}.reviews-panel,.knowledge-panel{padding:18px;max-height:92vh}.reviews-header,.knowledge-header{gap:12px}.reviews-close,.knowledge-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center}.links .nav-secondary{display:none}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid,.knowledge-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
+    @media(max-width:700px){header{position:static}.reviews{grid-template-columns:1fr}.reviews-modal,.knowledge-modal,.blog-modal{padding:12px}.reviews-panel,.knowledge-panel,.blog-panel{padding:18px;max-height:92vh}.reviews-header,.knowledge-header,.blog-header{gap:12px}.reviews-close,.knowledge-close,.blog-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center}.links .nav-secondary{display:none}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid,.knowledge-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
     @media(max-width:420px){h1{font-size:32px;letter-spacing:-.8px}.tag{font-size:12px;padding:7px 12px}.hero-image img{height:235px}.card img,.gallery img,.blog-card img{height:210px}.logo img{height:50px}.links{gap:10px;font-size:12px}}
   </style>
 </head>
@@ -310,7 +310,7 @@
         <a class="nav-secondary" href="#about">About</a>
         <a class="nav-secondary" href="#quality">Quality</a>
         <a href="#reviews" id="reviewsNavLink" aria-haspopup="dialog" aria-controls="reviews">Reviews</a>
-        <a class="nav-secondary" href="#blog">Blog</a>
+        <a class="nav-secondary" href="#blog" id="blogNavLink" aria-haspopup="dialog" aria-controls="blog">Blog</a>
        <a class="nav-secondary" href="#knowledge" id="knowledgeNavLink" aria-haspopup="dialog" aria-controls="knowledge">Knowledge Center</a>
       </nav>
     </div>
@@ -519,13 +519,18 @@
       </div>
     </section>
 
-    <section id="blog">
-      <div class="section-title">
-        <h2>Latest From Our Blog</h2>
-        <p>New Krizpia blogs will automatically appear here every Monday at 9:00 AM Indian time.</p>
-        <div class="line"></div>
+    <section id="blog" class="blog-modal" aria-hidden="true" aria-labelledby="blogTitle">
+      <div class="blog-panel" role="dialog" aria-modal="true">
+        <div class="blog-header">
+          <div class="section-title">
+            <h2 id="blogTitle">Latest From Our Blog</h2>
+            <p>New Krizpia blogs will automatically appear here every Monday at 9:00 AM Indian time.</p>
+            <div class="line"></div>
+          </div>
+          <button class="blog-close" type="button" aria-label="Close blog">×</button>
+        </div>
+        <div id="scheduledBlogs" class="blog-grid"></div>
       </div>
-      <div id="scheduledBlogs" class="blog-grid"></div>
     </section>
 
 
@@ -623,8 +628,7 @@
 
     function loadScheduledBlogs(){
       const blogContainer = document.getElementById('scheduledBlogs');
-      const blogSection = document.getElementById('blog');
-      if(!blogContainer || !blogSection) return;
+      if(!blogContainer) return;
 
       const now = new Date();
       const publishedBlogs = scheduledBlogs
@@ -632,11 +636,10 @@
         .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate));
 
       if(publishedBlogs.length === 0){
-        blogSection.style.display = 'none';
+        blogContainer.innerHTML = '<p class="knowledge-empty">Blog posts will start publishing when the next scheduled post is available.</p>';
         return;
       }
 
-      blogSection.style.display = 'block';
       blogContainer.innerHTML = publishedBlogs.map((blog,index) => `
         <article class="blog-card">
           <img src="${blog.image}" alt="${blog.title}" loading="lazy" decoding="async">
@@ -720,6 +723,37 @@
     }
 
 
+    function setupBlogModal(){
+      const blogLink = document.getElementById('blogNavLink');
+      const modal = document.getElementById('blog');
+      if(!blogLink || !modal) return;
+
+      const closeButton = modal.querySelector('.blog-close');
+      const openModal = event => {
+        event.preventDefault();
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden','false');
+        document.body.classList.add('blog-open');
+        closeButton && closeButton.focus();
+      };
+      const closeModal = () => {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden','true');
+        document.body.classList.remove('blog-open');
+        blogLink.focus();
+      };
+
+      blogLink.addEventListener('click', openModal);
+      closeButton && closeButton.addEventListener('click', closeModal);
+      modal.addEventListener('click', event => {
+        if(event.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', event => {
+        if(event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      });
+    }
+
+
     function setupKnowledgeModal(){
       const modal = document.getElementById('knowledge');
       if(!modal) return;
@@ -754,6 +788,7 @@
     }
 
     setupReviewsModal();
+    setupBlogModal();
     setupKnowledgeModal();
     loadScheduledBlogs();
     loadScheduledKnowledge();
