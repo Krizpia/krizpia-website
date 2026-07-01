@@ -196,6 +196,16 @@
     .line{width:80px;height:4px;background:#d9a441;border-radius:20px;margin:16px auto 0}
 
     .products,.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+    .video-showcase{background:#fff;border:1px solid #ead8b8;border-radius:28px;padding:28px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
+    .featured-video{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:28px;align-items:center;margin-bottom:24px}
+    .featured-video video{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:22px;background:#111;box-shadow:0 12px 30px rgba(0,0,0,.14)}
+    .featured-video h3{font-size:28px;margin-bottom:10px;color:#064e3b}
+    .featured-video p{color:#555;margin-bottom:12px}
+    .video-ideas{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+    .video-idea{background:#fffaf2;border:1px solid #f0dfbf;border-radius:18px;padding:18px;text-align:center}
+    .video-idea span{display:block;font-size:28px;margin-bottom:8px}
+    .video-idea h4{font-size:16px;margin-bottom:6px}
+    .video-idea p{color:#555;font-size:13px}
     .card,.blog-card,.assurance-card,.review{background:#fff;border:1px solid #ead8b8;border-radius:24px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
     .card,.blog-card{overflow:hidden}
     .card{display:flex;flex-direction:column;transition:.3s}
@@ -269,9 +279,9 @@
     .footer-links{margin-top:14px;line-height:2}
     .footer-links a{color:#fff;margin:0 7px;font-size:14px;white-space:nowrap}
 
-    @media(max-width:1100px){.products,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}.trust-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:1100px){.products,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.video-ideas{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}.trust-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid,.reviews{grid-template-columns:1fr}.knowledge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.seo-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:700px){header{position:static}.nav{align-items:center;text-align:center}.links{font-size:13px}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.trust-strip{grid-template-columns:1fr;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.assurance-grid,.seo-link-grid,.knowledge-grid,.trust-list{grid-template-columns:1fr}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
+    @media(max-width:700px){header{position:static}.nav{align-items:center;text-align:center}.links{font-size:13px}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.trust-strip{grid-template-columns:1fr;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid,.seo-link-grid,.knowledge-grid,.trust-list{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
     @media(max-width:420px){h1{font-size:32px;letter-spacing:-.8px}.tag{font-size:12px;padding:7px 12px}.hero-image img{height:235px}.card img,.gallery img,.blog-card img{height:210px}.logo img{height:50px}.links{gap:10px;font-size:12px}}
   </style>
 </head>
@@ -284,6 +294,7 @@
       </a>
       <nav class="links" aria-label="Main navigation">
         <a href="#products">Products</a>
+        <a href="#product-videos">Videos</a>
         <a href="#about">About</a>
         <a href="#quality">Quality</a>
         <a href="#reviews">Reviews</a>
@@ -375,6 +386,37 @@
         </article>
       </div>
     </section>
+
+    <section id="product-videos">
+      <div class="section-title">
+        <h2>Product Videos</h2>
+        <p>Short, snackable videos that show the real Krizpia experience—from opening the pack to sharing crispy Kerala snacks with family.</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="video-showcase">
+        <div class="featured-video">
+          <video controls preload="metadata" poster="mix image.png" aria-label="Krizpia product process and snack video">
+            <source src="krizpia-process-video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div>
+            <h3>See the Crunch Before You Order</h3>
+            <p>Use this space to feature short reels for WhatsApp, Instagram and website visitors. Each clip can highlight one simple moment that makes Krizpia snacks feel fresh, crispy and family-friendly.</p>
+            <a class="btn gold" href="https://wa.me/919795679851?text=Hi%20Krizpia%2C%20I%20watched%20the%20product%20video%20and%20want%20to%20order" target="_blank" rel="noopener noreferrer">Order After Watching</a>
+          </div>
+        </div>
+
+        <div class="video-ideas" aria-label="Product video ideas">
+          <div class="video-idea"><span>📦</span><h4>Opening the Pack</h4><p>Show the sealed pack, easy opening and fresh first look.</p></div>
+          <div class="video-idea"><span>🔊</span><h4>Crunch Sound</h4><p>Capture the crispy bite and satisfying snack sound.</p></div>
+          <div class="video-idea"><span>☕</span><h4>Tea-time Serving</h4><p>Plate Kuzhalappam or Thatta with hot tea for evening snack moments.</p></div>
+          <div class="video-idea"><span>👨‍👩‍👧‍👦</span><h4>Family Sharing</h4><p>Highlight kids, guests and family enjoying the snack together.</p></div>
+          <div class="video-idea"><span>🔍</span><h4>Snack Close-up</h4><p>Zoom in on texture, colour, shape and crispy finish.</p></div>
+        </div>
+      </div>
+    </section>
+
 
     <section id="about">
       <div class="about">
