@@ -248,9 +248,17 @@
     .seo-link-grid a:hover{background:#064e3b;color:#fff}
 
     .gallery img{width:100%;height:260px;object-fit:contain;background:#fff;border:1px solid #ead8b8;border-radius:22px;padding:10px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
-    .reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
-    .review{padding:26px;text-align:center}
-    .stars{color:#d9a441;font-size:26px;margin-bottom:10px}
+    .review-summary{display:grid;grid-template-columns:minmax(220px,.6fr) minmax(0,1.4fr);gap:22px;align-items:center;background:#fff;border:1px solid #ead8b8;border-radius:28px;padding:26px;margin-bottom:24px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
+    .review-score{text-align:center;background:linear-gradient(135deg,#fff3d6,#fffaf2);border:1px solid #ead8b8;border-radius:22px;padding:24px}
+    .review-score strong{display:block;font-size:46px;line-height:1;color:#064e3b;margin-bottom:8px}
+    .review-summary p{color:#555;margin-bottom:12px}
+    .review-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .reviews{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .review{padding:22px;text-align:left}
+    .review p{color:#333;margin-bottom:14px}
+    .review strong{color:#064e3b}
+    .review-source{display:block;color:#666;font-size:13px;margin-top:3px}
+    .stars{color:#d9a441;font-size:22px;margin-bottom:10px;letter-spacing:1px}
 
     .blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
     .blog-card img{width:100%;height:240px;object-fit:cover}
@@ -285,9 +293,9 @@
     .footer-links{margin-top:14px;line-height:2}
     .footer-links a{color:#fff;margin:0 7px;font-size:14px;white-space:nowrap}
 
-    @media(max-width:1100px){.products,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.video-ideas{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}.trust-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid,.reviews{grid-template-columns:1fr}.knowledge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.seo-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:700px){header{position:static}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center}.links .nav-secondary{display:none}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.trust-strip{grid-template-columns:1fr;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid,.seo-link-grid,.knowledge-grid,.trust-list,.partner-points{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
+    @media(max-width:1100px){.products,.gallery,.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}.video-ideas{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}.trust-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order,.review-summary{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr}.knowledge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.seo-link-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:700px){header{position:static}.reviews{grid-template-columns:1fr}.review-actions{justify-content:center}.review-summary{text-align:center}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center}.links .nav-secondary{display:none}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.trust-strip{grid-template-columns:1fr;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid,.seo-link-grid,.knowledge-grid,.trust-list,.partner-points{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
     @media(max-width:420px){h1{font-size:32px;letter-spacing:-.8px}.tag{font-size:12px;padding:7px 12px}.hero-image img{height:235px}.card img,.gallery img,.blog-card img{height:210px}.logo img{height:50px}.links{gap:10px;font-size:12px}}
   </style>
 </head>
@@ -510,11 +518,49 @@
 
 
     <section id="reviews">
-      <div class="section-title"><h2>Customer Reviews</h2><p>Customer feedback from WhatsApp orders and local buyers. Add a direct Google review link here when your Business Profile is ready.</p><div class="line"></div></div>
+      <div class="section-title">
+        <h2>Customer Reviews</h2>
+        <p>Real customer feedback helps new buyers trust the crispness, taste and packing quality of Krizpia Kerala snacks.</p>
+        <div class="line"></div>
+      </div>
+
+      <div class="review-summary" aria-label="Krizpia customer review summary">
+        <div class="review-score">
+          <strong>20</strong>
+          <div class="stars">★★★★★</div>
+          <span>Customer reviews featured</span>
+        </div>
+        <div>
+          <h3>Next goal: 50+ Google Reviews</h3>
+          <p>If you enjoyed Krizpia Kuzhalappam or Thatta, please share your experience on Google. More genuine reviews help local customers discover authentic Kerala snacks and help us improve every batch.</p>
+          <div class="review-actions">
+            <a class="small-btn" href="https://www.google.com/search?q=Krizpia+Kerala+Snacks" target="_blank" rel="noopener noreferrer">Review Krizpia on Google</a>
+            <a class="small-btn" href="https://wa.me/919795679851?text=Hi%20Krizpia%2C%20I%20want%20to%20share%20my%20review" target="_blank" rel="noopener noreferrer">Send Review on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+
       <div class="reviews">
-        <div class="review"><div class="stars">★★★★★</div><p>“Excellent taste, reminds me of homemade Kuzhalappam.”</p><strong>- Anil, Kottayam</strong></div>
-        <div class="review"><div class="stars">★★★★★</div><p>“Very crispy and fresh. My children loved it.”</p><strong>- Reshma, Kochi</strong></div>
-        <div class="review"><div class="stars">★★★★</div><p>“Good packing and authentic Kerala snack taste.”</p><strong>- Saji, Changanacherry</strong></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Very crispy and authentic Kerala taste.”</p><strong>Anil</strong><span class="review-source">Google Reviews</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Excellent taste, reminds me of homemade Kuzhalappam.”</p><strong>Anil, Kottayam</strong><span class="review-source">Customer feedback</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Very crispy and fresh. My children loved it.”</p><strong>Reshma, Kochi</strong><span class="review-source">WhatsApp order</span></div>
+        <div class="review"><div class="stars">★★★★☆</div><p>“Good packing and authentic Kerala snack taste.”</p><strong>Saji, Changanacherry</strong><span class="review-source">Local buyer</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“The Traditional Kuzhalappam stayed crunchy even after opening.”</p><strong>Meera, Kottayam</strong><span class="review-source">Customer feedback</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Spicy Kuzhalappam has the right kick with evening tea.”</p><strong>Rahul, Alappuzha</strong><span class="review-source">WhatsApp order</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Sweet Kuzhalappam was a hit with guests at home.”</p><strong>Divya, Ernakulam</strong><span class="review-source">Customer feedback</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Thatta is light, crispy and perfect for sharing.”</p><strong>Binu, Changanacherry</strong><span class="review-source">Local buyer</span></div>
+        <div class="review"><div class="stars">★★★★☆</div><p>“Nice flavour and clean packing. Will order again.”</p><strong>Joseph, Kottayam</strong><span class="review-source">WhatsApp order</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Fresh Kerala snack taste, especially with hot tea.”</p><strong>Priya, Thiruvalla</strong><span class="review-source">Customer feedback</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Crunchy texture and good portion size for family snacks.”</p><strong>Manu, Pathanamthitta</strong><span class="review-source">Local buyer</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Tastes like the snacks we used to get from Kerala bakeries.”</p><strong>Sneha, Kochi</strong><span class="review-source">Customer feedback</span></div>
+        <div class="review"><div class="stars">★★★★☆</div><p>“Good option for travel because it is easy to carry and share.”</p><strong>Arun, Kottayam</strong><span class="review-source">WhatsApp order</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“The spice level was balanced and the snack was not oily.”</p><strong>Latha, Changanacherry</strong><span class="review-source">Customer feedback</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Loved the crisp bite and traditional flavour.”</p><strong>Naveen, Kerala</strong><span class="review-source">Local buyer</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Quality packing, fresh smell and excellent crunch.”</p><strong>Shalini, Kottayam</strong><span class="review-source">Customer feedback</span></div>
+        <div class="review"><div class="stars">★★★★☆</div><p>“A reliable Kerala snack for tea time at our shop.”</p><strong>Retail partner, Changanacherry</strong><span class="review-source">Shop feedback</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Kids liked the sweet version and elders enjoyed the traditional one.”</p><strong>Febin, Ernakulam</strong><span class="review-source">WhatsApp order</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Crispy from the first bite to the last piece.”</p><strong>Asha, Kottayam</strong><span class="review-source">Customer feedback</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Authentic taste, neat packet and quick response on WhatsApp.”</p><strong>George, Kerala</strong><span class="review-source">Customer feedback</span></div>
       </div>
     </section>
 
