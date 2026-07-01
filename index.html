@@ -194,10 +194,6 @@
     .hero-image{background:#fff;padding:16px;border-radius:30px;box-shadow:0 18px 45px rgba(0,0,0,.14);position:relative}
     .hero-image img{width:100%;height:430px;object-fit:cover;border-radius:22px}
     .fresh-badge{position:absolute;left:28px;bottom:28px;background:#fff;padding:10px 16px;border-radius:30px;font-weight:900;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-    .trust-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px;max-width:720px}
-    .trust-pill{background:#fff;border:1px solid #ead8b8;border-radius:16px;padding:12px 14px;box-shadow:0 6px 18px rgba(0,0,0,.06)}
-    .trust-pill strong{display:block;color:#064e3b;font-size:14px}.trust-pill span{display:block;color:#555;font-size:13px;margin-top:2px}
-
     .section-title{text-align:center;max-width:850px;margin:0 auto 35px}
     .section-title h2{font-size:clamp(30px,4vw,40px);line-height:1.15;margin-bottom:12px}
     .section-title p{color:#555;font-size:17px}
@@ -295,9 +291,9 @@
     .footer-links{margin-top:14px;line-height:2}
     .footer-links a{color:#fff;margin:0 7px;font-size:14px;white-space:nowrap}
 
-    @media(max-width:1100px){.products,.gallery,.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}.video-ideas{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}.trust-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:1100px){.products,.gallery,.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}.video-ideas{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}}
     @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr}.knowledge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:700px){header{position:static}.reviews{grid-template-columns:1fr}.reviews-modal,.knowledge-modal{padding:12px}.reviews-panel,.knowledge-panel{padding:18px;max-height:92vh}.reviews-header,.knowledge-header{gap:12px}.reviews-close,.knowledge-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center}.links .nav-secondary{display:none}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.trust-strip{grid-template-columns:1fr;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid,.knowledge-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
+    @media(max-width:700px){header{position:static}.reviews{grid-template-columns:1fr}.reviews-modal,.knowledge-modal{padding:12px}.reviews-panel,.knowledge-panel{padding:18px;max-height:92vh}.reviews-header,.knowledge-header{gap:12px}.reviews-close,.knowledge-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center}.links .nav-secondary{display:none}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid,.knowledge-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
     @media(max-width:420px){h1{font-size:32px;letter-spacing:-.8px}.tag{font-size:12px;padding:7px 12px}.hero-image img{height:235px}.card img,.gallery img,.blog-card img{height:210px}.logo img{height:50px}.links{gap:10px;font-size:12px}}
   </style>
 </head>
@@ -329,14 +325,6 @@
           <span class="tag">Made in Kerala • Crispy • Crunchy</span>
           <h1>Authentic Kerala Snacks</h1>
           <p>Krizpia brings traditional Kerala snacks including Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta, made with quality ingredients and authentic taste.</p>
-          <a class="btn" href="https://wa.me/919795679851?text=Hi%20Krizpia%2C%20I%20want%20to%20order%20snacks" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
-          <a class="btn gold" href="#products">View Products</a>
-          <div class="trust-strip" aria-label="Krizpia trust signals">
-            <div class="trust-pill"><strong>FSSAI Licensed</strong><span>No. 21326171000212</span></div>
-            <div class="trust-pill"><strong>Full Contact Details</strong><span>Phone, email and address</span></div>
-            <div class="trust-pill"><strong>Clear Policies</strong><span>Shipping, refund and privacy</span></div>
-            <div class="trust-pill"><strong>Kerala Manufacturer</strong><span>Rangeela Products</span></div>
-          </div>
         </div>
         <div class="hero-image">
           <img src="mix image.png" alt="Krizpia authentic Kerala snack collection" decoding="async" />
