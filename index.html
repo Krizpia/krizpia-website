@@ -269,7 +269,7 @@
         <a href="#quality">Quality</a>
         <a href="#reviews">Reviews</a>
         <a href="#blog">Blog</a>
-       <a href="#blog">Knowledge Center</a>
+       <a href="#knowledge">Knowledge Center</a>
         <a href="#order">Order</a>
         <a class="whatsapp-btn" href="https://wa.me/919795679851" target="_blank" rel="noopener noreferrer">WhatsApp</a>
       </nav>
@@ -434,8 +434,102 @@
     </section>
 
     <section id="blog">
+      <section id="knowledge">
+  <div class="section-title">
+    <h2>Knowledge Center</h2>
+    <p>Explore Krizpia snack guides, product information, storage tips and Kerala snack knowledge.</p>
+    <div class="line"></div>
+  </div>
+
+  <div class="knowledge-grid">
+
+    <a class="knowledge-card" href="knowledge/rice-flour-snacks.html">
+      <img src="knowledge/images/rice-flour-snacks-guide.jpg" alt="Rice Flour Snacks Guide">
+      <h3>Rice Flour Snacks Guide</h3>
+    </a>
+
+    <a class="knowledge-card" href="knowledge/tea-time-snacks.html">
+      <img src="knowledge/images/tea-time-snacks-guide.jpg" alt="Tea Time Snacks Guide">
+      <h3>Tea-Time Snacks Guide</h3>
+    </a>
+
+    <a class="knowledge-card" href="knowledge/kerala-snacks-guide.html">
+      <img src="knowledge/images/kerala-snacks-guide.jpg" alt="Kerala Snacks Guide">
+      <h3>Kerala Snacks Guide</h3>
+    </a>
+
+    <a class="knowledge-card" href="knowledge/traditional-kuzhalappam-guide.html">
+      <img src="knowledge/images/traditional-kuzhalappam-guide.jpg" alt="Traditional Kuzhalappam Guide">
+      <h3>Traditional Kuzhalappam Guide</h3>
+    </a>
+
+    <a class="knowledge-card" href="knowledge/spicy-kuzhalappam-guide.html">
+      <img src="knowledge/images/spicy-kuzhalappam-guide.jpg" alt="Spicy Kuzhalappam Guide">
+      <h3>Spicy Kuzhalappam Guide</h3>
+    </a>
+
+    <a class="knowledge-card" href="knowledge/sweet-kuzhalappam-guide.html">
+      <img src="knowledge/images/sweet-kuzhalappam-guide.jpg" alt="Sweet Kuzhalappam Guide">
+      <h3>Sweet Kuzhalappam Guide</h3>
+    </a>
+
+    <a class="knowledge-card" href="knowledge/thatta-guide.html">
+      <img src="knowledge/images/thatta-guide.jpg" alt="Thatta Kerala Snack Guide">
+      <h3>Thatta Guide</h3>
+    </a>
+
+  </div>
+</section>
       <div class="section-title"><h2>Latest From Our Blog</h2><p>New Krizpia blogs will automatically appear here every Monday at 9:00 AM Indian time.</p><div class="line"></div></div>
       <div id="scheduledBlogs" class="blog-grid"></div>
+<style> .knowledge-grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+}
+
+.knowledge-card{
+  background:#fff;
+  border:1px solid #ead8b8;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 10px 28px rgba(0,0,0,.07);
+  transition:.3s;
+  text-align:center;
+}
+
+.knowledge-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.knowledge-card img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  background:#fffaf2;
+}
+
+.knowledge-card h3{
+  padding:18px;
+  font-size:20px;
+}
+
+@media(max-width:900px){
+  .knowledge-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
+
+@media(max-width:600px){
+  .knowledge-grid{
+    grid-template-columns:1fr;
+  }
+
+  .knowledge-card img{
+    height:auto;
+  }
+}</style>
     </section>
 
 
