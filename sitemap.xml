@@ -27,8 +27,103 @@
   </url>
 
   <url>
+    <loc>https://krizpia.com/terms.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/privacy.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/shipping.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/refund.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
     <loc>https://krizpia.com/blog-traditional-kuzhalappam.html</loc>
-    <priority>0.80</priority>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/01-blog-Traditional%20Kuzhalappam.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/02-blog-spicy-kuzhalappam.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/03-blog-sweet-kuzhalappam.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/05-blog-thatta.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/06-blog-kerala-snacks-guide.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/07-blog-tea-time-snacks.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/08-blog-rice-flour-snacks.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/rice-flour-snacks.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/best-snacks-for-travel.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/kerala-snacks-guide.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/healthy-kerala-snacks.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/spicy-kuzhalappam-guide.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/sweet-kuzhalappam-guide.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/thatta-guide.html</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/traditional-kuzhalappam-guide.html</loc>
+    <priority>0.70</priority>
   </url>
 
 </urlset>
