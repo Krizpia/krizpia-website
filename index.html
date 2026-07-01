@@ -272,7 +272,9 @@
     .knowledge-card{background:#fff;border:1px solid #ead8b8;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07);transition:.3s;text-align:center}
     .knowledge-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.12)}
     .knowledge-card img{width:100%;height:360px;object-fit:cover;background:#fffaf2}
-    .knowledge-card h3{padding:18px;font-size:20px}
+    .knowledge-card h3{padding:18px 18px 8px;font-size:20px}
+    .knowledge-card .blog-meta{margin:0 18px 18px}
+    .knowledge-empty{grid-column:1/-1;text-align:center;background:#fff3d6;border-radius:18px;padding:18px;font-weight:700;color:#6b3f16}
     .order{background:#111;color:#fff;border-radius:30px;padding:38px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1fr);gap:35px;align-items:start}
     .order h2{font-size:clamp(30px,4vw,36px);margin-bottom:12px}
     .order p{color:#eee;margin-bottom:12px}
@@ -521,55 +523,13 @@
         <div class="knowledge-header">
           <div class="section-title">
         <h2 id="knowledgeTitle">Knowledge Center</h2>
-        <p>Explore Krizpia snack guides, product information, storage tips and Kerala snack knowledge.</p>
+        <p>New Knowledge Center guides will automatically appear here every Thursday at 9:00 AM Indian time.</p>
         <div class="line"></div>
           </div>
           <button class="knowledge-close" type="button" aria-label="Close knowledge center">×</button>
         </div>
 
-      <div class="knowledge-grid">
-
-        <a class="knowledge-card" href="rice-flour-snacks.html">
-          <img src="Knowledge/Rice Flour.jpg" alt="Rice Flour Snacks Guide" loading="lazy" decoding="async">
-          <h3>Rice Flour Snacks Guide</h3>
-        </a>
-
-        <a class="knowledge-card" href="best-snacks-for-travel.html">
-          <img src="Knowledge/Best Snacks for Travel.jpg" alt="Best Snacks for Travel" loading="lazy" decoding="async">
-          <h3>Best Snacks for Travel</h3>
-        </a>
-
-        <a class="knowledge-card" href="kerala-snacks-guide.html">
-          <img src="Knowledge/Complete Kerala  Snacks Guide.jpg" alt="Complete Kerala Snacks Guide" loading="lazy" decoding="async">
-          <h3>Complete Kerala Snacks Guide</h3>
-        </a>
-
-        <a class="knowledge-card" href="healthy-kerala-snacks.html">
-          <img src="Knowledge/Healthy Kerala.jpg" alt="Healthy Kerala Snacks Guide" loading="lazy" decoding="async">
-          <h3>Healthy Kerala Snacks</h3>
-        </a>
-
-        <a class="knowledge-card" href="spicy-kuzhalappam-guide.html">
-          <img src="Knowledge/Spicy Kuzhalappam.jpg" alt="Spicy Kuzhalappam Guide" loading="lazy" decoding="async">
-          <h3>Spicy Kuzhalappam Guide</h3>
-        </a>
-
-        <a class="knowledge-card" href="sweet-kuzhalappam-guide.html">
-          <img src="Knowledge/Sweet Kuzhalappam.jpg" alt="Sweet Kuzhalappam Guide" loading="lazy" decoding="async">
-          <h3>Sweet Kuzhalappam Guide</h3>
-        </a>
-
-        <a class="knowledge-card" href="thatta-guide.html">
-          <img src="Knowledge/Thatta.jpg" alt="Thatta Guide" loading="lazy" decoding="async">
-          <h3>Thatta Guide</h3>
-        </a>
-
-        <a class="knowledge-card" href="traditional-kuzhalappam-guide.html">
-          <img src="Knowledge/Tranitional Kuzhalappam.jpg" alt="Traditional Kuzhalappam Guide" loading="lazy" decoding="async">
-          <h3>Traditional Kuzhalappam Guide</h3>
-        </a>
-
-      </div>
+      <div id="scheduledKnowledge" class="knowledge-grid"></div>
       </div>
     </section>
 
@@ -660,6 +620,17 @@
       { title:"Rice Flour Snacks", description:"Discover crispy rice flour snacks like Kuzhalappam and Thatta with authentic Kerala flavour.", image:"traditional-kuzhalappam.PNG", url:"scheduled-blogs/08-blog-rice-flour-snacks.html", publishDate:"2026-08-10T09:00:00+05:30" }
     ];
 
+    const scheduledKnowledge = [
+      { title:"Rice Flour Snacks Guide", image:"Knowledge/Rice Flour.jpg", url:"rice-flour-snacks.html", publishDate:"2026-07-02T09:00:00+05:30" },
+      { title:"Best Snacks for Travel", image:"Knowledge/Best Snacks for Travel.jpg", url:"best-snacks-for-travel.html", publishDate:"2026-07-09T09:00:00+05:30" },
+      { title:"Complete Kerala Snacks Guide", image:"Knowledge/Complete Kerala  Snacks Guide.jpg", url:"kerala-snacks-guide.html", publishDate:"2026-07-16T09:00:00+05:30" },
+      { title:"Healthy Kerala Snacks", image:"Knowledge/Healthy Kerala.jpg", url:"healthy-kerala-snacks.html", publishDate:"2026-07-23T09:00:00+05:30" },
+      { title:"Spicy Kuzhalappam Guide", image:"Knowledge/Spicy Kuzhalappam.jpg", url:"spicy-kuzhalappam-guide.html", publishDate:"2026-07-30T09:00:00+05:30" },
+      { title:"Sweet Kuzhalappam Guide", image:"Knowledge/Sweet Kuzhalappam.jpg", url:"sweet-kuzhalappam-guide.html", publishDate:"2026-08-06T09:00:00+05:30" },
+      { title:"Thatta Guide", image:"Knowledge/Thatta.jpg", url:"thatta-guide.html", publishDate:"2026-08-13T09:00:00+05:30" },
+      { title:"Traditional Kuzhalappam Guide", image:"Knowledge/Tranitional Kuzhalappam.jpg", url:"traditional-kuzhalappam-guide.html", publishDate:"2026-08-20T09:00:00+05:30" }
+    ];
+
     function formatIndianDate(dateString){
       return new Date(dateString).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',day:'numeric',month:'long',year:'numeric'});
     }
@@ -690,6 +661,31 @@
             <a href="${blog.url}" class="small-btn">Read Full Article</a>
           </div>
         </article>
+      `).join('');
+    }
+
+
+
+    function loadScheduledKnowledge(){
+      const knowledgeContainer = document.getElementById('scheduledKnowledge');
+      if(!knowledgeContainer) return;
+
+      const now = new Date();
+      const publishedGuides = scheduledKnowledge
+        .filter(guide => new Date(guide.publishDate) <= now)
+        .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate));
+
+      if(publishedGuides.length === 0){
+        knowledgeContainer.innerHTML = '<p class="knowledge-empty">Knowledge Center guides will start publishing on 2 July 2026 at 9:00 AM Indian time.</p>';
+        return;
+      }
+
+      knowledgeContainer.innerHTML = publishedGuides.map((guide,index) => `
+        <a class="knowledge-card" href="${guide.url}">
+          <img src="${guide.image}" alt="${guide.title}" loading="lazy" decoding="async">
+          <h3>${guide.title}</h3>
+          <span class="blog-meta">${index === 0 ? 'Latest Guide' : 'Published'} • ${formatIndianDate(guide.publishDate)}</span>
+        </a>
       `).join('');
     }
 
@@ -774,7 +770,9 @@
     setupReviewsModal();
     setupKnowledgeModal();
     loadScheduledBlogs();
+    loadScheduledKnowledge();
     setInterval(loadScheduledBlogs, 60000);
+    setInterval(loadScheduledKnowledge, 60000);
   </script>
 </body>
 </html>
