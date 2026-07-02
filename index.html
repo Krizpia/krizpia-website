@@ -321,7 +321,6 @@
         <a class="nav-secondary" href="#quality" id="qualityNavLink" aria-haspopup="dialog" aria-controls="quality">Quality</a>
         <a href="#reviews" id="reviewsNavLink" aria-haspopup="dialog" aria-controls="reviews">Reviews</a>
         <a class="nav-secondary" href="#blog" id="blogNavLink" aria-haspopup="dialog" aria-controls="blog">Blog</a>
-       <a class="nav-secondary" href="#knowledge" id="knowledgeNavLink" aria-haspopup="dialog" aria-controls="knowledge">Knowledge Center</a>
         <a href="#order" class="contact-nav-link">Contact</a>
       </nav>
     </div>
@@ -358,7 +357,7 @@
             <ul><li>Authentic Kerala taste</li><li>Crunchy mild flavour</li><li>Perfect for tea time</li></ul><div class="product-facts"><span>160 g pack</span><span>Best before 50 days</span><span>Vegetarian</span><span>Mild spice</span></div>
             <div class="notice-box"><h4>Allergen & Storage</h4><p><strong>Allergen:</strong> Contains sesame seeds. May contain traces of coconut.</p><p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p></div>
             <a href="/traditional-kuzhalappam" class="small-btn">View Product</a>
-           <a href="#knowledge" class="small-btn knowledge-trigger">Learn More</a>
+           <a href="#blog" class="small-btn blog-trigger">Learn More</a>
           </div>
         </article>
 
@@ -370,7 +369,7 @@
             <ul><li>Spicy flavour</li><li>Crispy roll shape</li><li>Evening snack favourite</li></ul><div class="product-facts"><span>160 g pack</span><span>Best before 50 days</span><span>Vegetarian</span><span>High spice</span></div>
             <div class="notice-box"><h4>Allergen & Storage</h4><p><strong>Allergen:</strong> Contains sesame seeds. May contain traces of coconut.</p><p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p></div>
             <a href="/spicy-kuzhalappam" class="small-btn">View Product</a>
-            <a href="#knowledge" class="small-btn knowledge-trigger">Learn More</a>
+            <a href="#blog" class="small-btn blog-trigger">Learn More</a>
           </div>
         </article>
 
@@ -382,7 +381,7 @@
             <ul><li>Sweet and crunchy</li><li>Great for guests</li><li>Festival-friendly snack</li></ul><div class="product-facts"><span>160 g pack</span><span>Best before 50 days</span><span>Vegetarian</span><span>Sweet flavour</span></div>
             <div class="notice-box"><h4>Allergen & Storage</h4><p><strong>Allergen:</strong> Contains sesame seeds. May contain traces of coconut.</p><p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p></div>
             <a href="/sweet-kuzhalappam" class="small-btn">View Product</a>
-           <a href="#knowledge" class="small-btn knowledge-trigger">Learn More</a>
+           <a href="#blog" class="small-btn blog-trigger">Learn More</a>
           </div>
         </article>
 
@@ -394,7 +393,7 @@
             <ul><li>Perfect with tea</li><li>Easy to share</li><li>Shop supply friendly</li></ul><div class="product-facts"><span>160 g pack</span><span>Best before 50 days</span><span>Vegetarian</span><span>Mild spice</span></div>
             <div class="notice-box"><h4>Allergen & Storage</h4><p><strong>Allergen:</strong> Contains urad dal and sesame seeds.</p><p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p></div>
             <a href="/thatta" class="small-btn">View Product</a>
-            <a href="#knowledge" class="small-btn knowledge-trigger">Learn More</a>
+            <a href="#blog" class="small-btn blog-trigger">Learn More</a>
           </div>
         </article>
       </div>
@@ -507,27 +506,12 @@
       </div>
     </section>
 
-    <section id="knowledge" class="knowledge-modal" aria-hidden="true" aria-labelledby="knowledgeTitle">
-      <div class="knowledge-panel" role="dialog" aria-modal="true">
-        <div class="knowledge-header">
-          <div class="section-title">
-        <h2 id="knowledgeTitle">Knowledge Center</h2>
-        <p>Helpful Krizpia guides for Kerala snacks, storage, travel, tea-time serving and product selection.</p>
-        <div class="line"></div>
-          </div>
-          <button class="knowledge-close" type="button" aria-label="Close knowledge center">×</button>
-        </div>
-
-      <div id="scheduledKnowledge" class="knowledge-grid"></div>
-      </div>
-    </section>
-
     <section id="blog" class="blog-modal" aria-hidden="true" aria-labelledby="blogTitle">
       <div class="blog-panel" role="dialog" aria-modal="true">
         <div class="blog-header">
           <div class="section-title">
             <h2 id="blogTitle">Latest From Our Blog</h2>
-            <p>Read Krizpia blogs on Kuzhalappam, Thatta snacks, Kerala tea-time snacks, storage tips and snack ideas.</p>
+            <p>Read Krizpia blogs and guides on Kuzhalappam, Thatta snacks, Kerala tea-time snacks, storage tips, travel snacks and product selection.</p>
             <div class="line"></div>
           </div>
           <button class="blog-close" type="button" aria-label="Close blog">×</button>
@@ -642,41 +626,30 @@
       const blogContainer = document.getElementById('scheduledBlogs');
       if(!blogContainer) return;
 
-      const publishedBlogs = scheduledBlogs
-        .slice(0, 8)
-        .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate));
+      const blogItems = scheduledBlogs.map(blog => ({ ...blog, type: 'Blog' }));
+      const guideItems = scheduledKnowledge.map(guide => ({
+        ...guide,
+        description: 'Helpful Krizpia guide for Kerala snacks, storage, travel, tea-time serving and product selection.',
+        type: 'Guide'
+      }));
+      const publishedItems = [...blogItems, ...guideItems]
+        .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate))
+        .slice(0, 13);
 
-      blogContainer.innerHTML = publishedBlogs.map((blog,index) => `
+      blogContainer.innerHTML = publishedItems.map((item,index) => `
         <article class="blog-card">
-          <img src="${blog.image}" alt="${blog.title}" loading="lazy" decoding="async">
+          <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async">
           <div class="blog-content">
-            <span class="blog-meta">${index === 0 ? 'Latest Blog' : 'Published'} • ${formatIndianDate(blog.publishDate)}</span>
-            <h3>${blog.title}</h3>
-            <p>${blog.description}</p>
-            <a href="${blog.url}" class="small-btn">Read Full Article</a>
+            <span class="blog-meta">${index === 0 ? 'Latest' : 'Published'} ${item.type} • ${formatIndianDate(item.publishDate)}</span>
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+            <a href="${item.url}" class="small-btn">${item.type === 'Guide' ? 'Read Guide' : 'Read Full Article'}</a>
           </div>
         </article>
       `).join('');
     }
 
 
-
-    function loadScheduledKnowledge(){
-      const knowledgeContainer = document.getElementById('scheduledKnowledge');
-      if(!knowledgeContainer) return;
-
-      const publishedGuides = scheduledKnowledge
-        .slice(0, 5)
-        .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate));
-
-      knowledgeContainer.innerHTML = publishedGuides.map((guide,index) => `
-        <a class="knowledge-card" href="${guide.url}">
-          <img src="${guide.image}" alt="${guide.title}" loading="lazy" decoding="async">
-          <h3>${guide.title}</h3>
-          <span class="blog-meta">${index === 0 ? 'Latest Guide' : 'Published'} • ${formatIndianDate(guide.publishDate)}</span>
-        </a>
-      `).join('');
-    }
 
     function cleanInput(value){
       return value.replace(/[<>]/g,'').replace(/\s+/g,' ').trim();
@@ -765,8 +738,12 @@
       if(!blogLink || !modal) return;
 
       const closeButton = modal.querySelector('.blog-close');
+      const triggers = document.querySelectorAll('a[href="#blog"], .blog-trigger');
+      let lastTrigger = null;
+
       const openModal = event => {
         event.preventDefault();
+        lastTrigger = event.currentTarget;
         modal.classList.add('is-open');
         modal.setAttribute('aria-hidden','false');
         document.body.classList.add('blog-open');
@@ -776,41 +753,7 @@
         modal.classList.remove('is-open');
         modal.setAttribute('aria-hidden','true');
         document.body.classList.remove('blog-open');
-        blogLink.focus();
-      };
-
-      blogLink.addEventListener('click', openModal);
-      closeButton && closeButton.addEventListener('click', closeModal);
-      modal.addEventListener('click', event => {
-        if(event.target === modal) closeModal();
-      });
-      document.addEventListener('keydown', event => {
-        if(event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-      });
-    }
-
-
-    function setupKnowledgeModal(){
-      const modal = document.getElementById('knowledge');
-      if(!modal) return;
-
-      const closeButton = modal.querySelector('.knowledge-close');
-      const triggers = document.querySelectorAll('a[href="#knowledge"], .knowledge-trigger');
-      let lastTrigger = null;
-
-      const openModal = event => {
-        event.preventDefault();
-        lastTrigger = event.currentTarget;
-        modal.classList.add('is-open');
-        modal.setAttribute('aria-hidden','false');
-        document.body.classList.add('knowledge-open');
-        closeButton && closeButton.focus();
-      };
-      const closeModal = () => {
-        modal.classList.remove('is-open');
-        modal.setAttribute('aria-hidden','true');
-        document.body.classList.remove('knowledge-open');
-        lastTrigger && lastTrigger.focus();
+        (lastTrigger || blogLink).focus();
       };
 
       triggers.forEach(trigger => trigger.addEventListener('click', openModal));
@@ -823,14 +766,12 @@
       });
     }
 
+
     setupReviewsModal();
     setupQualityModal();
     setupBlogModal();
-    setupKnowledgeModal();
     loadScheduledBlogs();
-    loadScheduledKnowledge();
     setInterval(loadScheduledBlogs, 60000);
-    setInterval(loadScheduledKnowledge, 60000);
   </script>
 </body>
 </html>
