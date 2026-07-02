@@ -37,10 +37,25 @@
       background: #000;
       padding: 20px;
       text-align: center;
+      position: relative;
+      min-height: 78px;
     }
 
     header img {
       max-width: 150px;
+    }
+
+    .header-logo {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      display: inline-block;
+    }
+
+    .header-logo img {
+      width: 120px;
+      max-width: 24vw;
+      height: auto;
     }
 
     nav {
@@ -146,6 +161,15 @@
         font-size: 29px;
       }
 
+      .header-logo {
+        top: 12px;
+        right: 12px;
+      }
+
+      .header-logo img {
+        width: 84px;
+      }
+
       nav a {
         display: inline-block;
         margin: 6px;
@@ -157,7 +181,9 @@
 <body>
 
 <header>
-<img src="krizpia-logo.png" alt="Krizpia Logo" decoding="async">
+<a class="header-logo" href="index.html" aria-label="Krizpia home">
+  <img src="krizpia-logo.png" alt="Krizpia Logo" decoding="async">
+</a>
 
   <nav>
   <a href="index.html">Home</a>
