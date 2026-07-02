@@ -1167,13 +1167,13 @@
 
       { title:"Sweet Kuzhalappam", description:"A lightly sweet Kerala snack with crispy texture, perfect for children and festive moments.", image:"sweet-kuzhalappam.PNG", url:"scheduled-blogs/03-blog-sweet-kuzhalappam.html", publishDate:"2026-07-01T09:00:00+05:30" },
 
-      { title:"Kerala Thatta", description:"A flat, crispy, spicy Kerala snack made for crunchy snack lovers.", image:"thatta-photo.PNG", url:"scheduled-blogs/05-blog-thatta.html", publishDate:"2026-07-02T09:00:00+05:30" },
+      { title:"Kerala Thatta", description:"A flat, crispy, spicy Kerala snack made for crunchy snack lovers.", image:"thatta-photo.PNG", url:"scheduled-blogs/05-blog-thatta.html", publishDate:"2026-07-02T09:00:00+05:30", hidden:true },
 
-      { title:"Kerala Snacks Guide", description:"A complete guide to Kerala snacks including Kuzhalappam, Thatta and tea-time favourites.", image:"mix image.png", url:"scheduled-blogs/06-blog-kerala-snacks-guide.html", publishDate:"2026-07-02T09:00:00+05:30" },
+      { title:"Kerala Snacks Guide", description:"A complete guide to Kerala snacks including Kuzhalappam, Thatta and tea-time favourites.", image:"mix image.png", url:"scheduled-blogs/06-blog-kerala-snacks-guide.html", publishDate:"2026-07-02T09:00:00+05:30", hidden:true },
 
-      { title:"Tea Time Snacks", description:"Explore the best Kerala tea-time snacks for family, guests, travel and evening tea.", image:"mix image.png", url:"scheduled-blogs/07-blog-tea-time-snacks.html", publishDate:"2026-07-02T09:00:00+05:30" },
+      { title:"Tea Time Snacks", description:"Explore the best Kerala tea-time snacks for family, guests, travel and evening tea.", image:"mix image.png", url:"scheduled-blogs/07-blog-tea-time-snacks.html", publishDate:"2026-07-02T09:00:00+05:30", hidden:true },
 
-      { title:"Rice Flour Snacks", description:"Discover crispy rice flour snacks like Kuzhalappam and Thatta with authentic Kerala flavour.", image:"traditional-kuzhalappam.PNG", url:"scheduled-blogs/08-blog-rice-flour-snacks.html", publishDate:"2026-07-02T09:00:00+05:30" },
+      { title:"Rice Flour Snacks", description:"Discover crispy rice flour snacks like Kuzhalappam and Thatta with authentic Kerala flavour.", image:"traditional-kuzhalappam.PNG", url:"scheduled-blogs/08-blog-rice-flour-snacks.html", publishDate:"2026-07-02T09:00:00+05:30", hidden:true },
 
       { title:"Authentic Kerala Snacks", description:"A visual guide to authentic Kerala snacks and the traditional flavours Krizpia brings to every pack.", image:"scheduled-blogs/09 Authentic Kerala Snacks.png", url:"scheduled-blogs/09 Authentic Kerala Snacks.png", publishDate:"2026-07-02T09:00:00+05:30" },
 
@@ -1261,7 +1261,7 @@
 
       return scheduledBlogs
 
-        .filter(item => new Date(item.publishDate) <= now)
+        .filter(item => !item.hidden && new Date(item.publishDate) <= now)
 
         .map(item => ({ ...item, type: item.type || 'Blog' }))
 
