@@ -38,6 +38,7 @@ body{
 }
 
 header{
+  position:relative;
   background:#b86b00;
   color:white;
   padding:50px 20px;
@@ -119,12 +120,42 @@ footer{
 a{
   color:#b86b00;
 }
+
+.top-logo{
+  position:absolute;
+  top:18px;
+  right:20px;
+  display:inline-block;
+}
+
+.top-logo img{
+  width:96px;
+  max-width:24vw;
+  height:auto;
+  margin:0;
+  border-radius:0;
+}
+
+@media (max-width:600px){
+  .top-logo{
+    top:12px;
+    right:12px;
+  }
+
+  .top-logo img{
+    width:72px;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+  <a class="top-logo" href="../index.html" aria-label="Krizpia home">
+    <img src="../krizpia-logo.png" alt="Krizpia Logo" decoding="async">
+  </a>
   <h1>Sweet Kuzhalappam – Kerala’s Crispy Snack with a Gentle Sweet Taste</h1>
   <p>
     Krizpia Sweet Kuzhalappam brings together traditional Kerala crunch and a light sweetness, making it a perfect snack for tea time, family moments, and festive sharing.

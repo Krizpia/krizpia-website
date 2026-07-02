@@ -38,6 +38,7 @@ body{
 }
 
 header{
+  position:relative;
   background:#8b1e1e;
   color:white;
   padding:50px 20px;
@@ -119,12 +120,42 @@ footer{
 a{
   color:#8b1e1e;
 }
+
+.top-logo{
+  position:absolute;
+  top:18px;
+  right:20px;
+  display:inline-block;
+}
+
+.top-logo img{
+  width:96px;
+  max-width:24vw;
+  height:auto;
+  margin:0;
+  border-radius:0;
+}
+
+@media (max-width:600px){
+  .top-logo{
+    top:12px;
+    right:12px;
+  }
+
+  .top-logo img{
+    width:72px;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+  <a class="top-logo" href="../index.html" aria-label="Krizpia home">
+    <img src="../krizpia-logo.png" alt="Krizpia Logo" decoding="async">
+  </a>
   <h1>Kerala Thatta – A Crispy Spicy Snack Full of Traditional Flavour</h1>
   <p>
     Krizpia Kerala Thatta brings you a bold, crispy, and spicy snack inspired by traditional Kerala taste, made for every crunchy snack lover.

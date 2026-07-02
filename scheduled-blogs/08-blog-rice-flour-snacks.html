@@ -38,6 +38,7 @@ body{
 }
 
 header{
+  position:relative;
   background:#0f5d2d;
   color:white;
   padding:55px 20px;
@@ -146,12 +147,42 @@ footer{
 a{
   color:#0f5d2d;
 }
+
+.top-logo{
+  position:absolute;
+  top:18px;
+  right:20px;
+  display:inline-block;
+}
+
+.top-logo img{
+  width:96px;
+  max-width:24vw;
+  height:auto;
+  margin:0;
+  border-radius:0;
+}
+
+@media (max-width:600px){
+  .top-logo{
+    top:12px;
+    right:12px;
+  }
+
+  .top-logo img{
+    width:72px;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
+  <a class="top-logo" href="../index.html" aria-label="Krizpia home">
+    <img src="../krizpia-logo.png" alt="Krizpia Logo" decoding="async">
+  </a>
   <h1>Rice Flour Snacks – Crispy Kerala Snacks Made for Every Bite</h1>
   <p>
     Rice flour snacks are a special part of Kerala food culture. Krizpia brings you crispy, crunchy, and flavourful rice flour snacks made for tea time, travel, and family sharing.
