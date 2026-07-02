@@ -358,6 +358,12 @@
 
     .hero p{font-size:19px;color:#555;margin-bottom:26px;max-width:650px}
 
+    .trust-badges{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 26px;max-width:720px}
+
+    .trust-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid #d9d9d9;border-radius:999px;padding:9px 14px;font-size:14px;font-weight:900;color:#111;box-shadow:0 8px 20px rgba(0,0,0,.06)}
+
+    .trust-badge::before{content:"✓";display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:#111;color:#fff;font-size:12px;line-height:1}
+
     .btn{display:inline-block;background:#111;color:#fff;padding:13px 24px;border-radius:30px;font-weight:900;margin:5px 8px 5px 0;transition:.3s;border:none;cursor:pointer;text-align:center;min-height:46px}
 
     .btn.gold,.small-btn{background:#111111;color:#fff}
@@ -554,7 +560,7 @@
 
     @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr}}
 
-    @media(max-width:700px){header{position:static}.reviews{grid-template-columns:1fr}.reviews-modal,.blog-modal,.quality-modal{padding:12px}.reviews-panel,.blog-panel,.quality-panel{padding:18px;max-height:92vh}.reviews-header,.blog-header,.quality-header{gap:12px}.reviews-close,.blog-close,.quality-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center;flex-wrap:wrap;overflow-x:visible;gap:8px 12px}.links a{padding:6px 3px}.contact-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-contact{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
+    @media(max-width:700px){header{position:static}.reviews{grid-template-columns:1fr}.reviews-modal,.blog-modal,.quality-modal{padding:12px}.reviews-panel,.blog-panel,.quality-panel{padding:18px;max-height:92vh}.reviews-header,.blog-header,.quality-header{gap:12px}.reviews-close,.blog-close,.quality-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center;flex-wrap:wrap;overflow-x:visible;gap:8px 12px}.links a{padding:6px 3px}.contact-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.trust-badges{justify-content:center}.trust-badge{font-size:13px;padding:8px 12px}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-contact{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
 
     @media(max-width:420px){h1{font-size:32px;letter-spacing:-.8px}.tag{font-size:12px;padding:7px 12px}.hero-image img{height:235px}.card img,.gallery img,.blog-card img{height:210px}.logo img{height:50px}.links{gap:10px;font-size:12px}}
 
@@ -609,6 +615,20 @@
           <h1>Authentic Kerala Snacks</h1>
 
           <p>Krizpia brings Kuzhalappam in Kerala, Kerala snacks in Kottayam, Changanacherry snacks and Thatta snacks, made with quality ingredients for authentic Kerala tea-time taste.</p>
+
+          <div class="trust-badges" aria-label="Krizpia trust badges">
+
+            <span class="trust-badge">FSSAI Licensed</span>
+
+            <span class="trust-badge">Hygienically Packed</span>
+
+            <span class="trust-badge">Made in Kerala</span>
+
+            <span class="trust-badge">Quality Ingredients</span>
+
+            <span class="trust-badge">Secure Ordering</span>
+
+          </div>
 
         </div>
 
