@@ -500,19 +500,19 @@
 
     .gallery img{width:100%;height:260px;object-fit:contain;background:#fff;border:1px solid #d9d9d9;border-radius:22px;padding:10px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
 
-    .reviews-modal,.knowledge-modal,.blog-modal,.quality-modal{max-width:none;margin:0;position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(17,17,17,.55);backdrop-filter:blur(4px)}
+    .reviews-modal,.blog-modal,.quality-modal{max-width:none;margin:0;position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(17,17,17,.55);backdrop-filter:blur(4px)}
 
-    .reviews-modal.is-open,.knowledge-modal.is-open,.blog-modal.is-open,.quality-modal.is-open{display:flex}
+    .reviews-modal.is-open,.blog-modal.is-open,.quality-modal.is-open{display:flex}
 
-    .reviews-panel,.knowledge-panel,.blog-panel,.quality-panel{width:min(1120px,100%);max-height:88vh;overflow:auto;background:#ffffff;border:1px solid #d9d9d9;border-radius:26px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
+    .reviews-panel,.blog-panel,.quality-panel{width:min(1120px,100%);max-height:88vh;overflow:auto;background:#ffffff;border:1px solid #d9d9d9;border-radius:26px;padding:26px;box-shadow:0 24px 70px rgba(0,0,0,.28)}
 
-    .reviews-header,.knowledge-header,.blog-header,.quality-header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:22px;text-align:left}
+    .reviews-header,.blog-header,.quality-header{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:22px;text-align:left}
 
-    .reviews-header h2,.knowledge-header h2,.blog-header h2,.quality-header h2{font-size:clamp(28px,4vw,38px);margin-bottom:8px}
+    .reviews-header h2,.blog-header h2,.quality-header h2{font-size:clamp(28px,4vw,38px);margin-bottom:8px}
 
-    .reviews-header p,.knowledge-header p,.blog-header p,.quality-header p{color:#555;max-width:660px;font-size:15px}
+    .reviews-header p,.blog-header p,.quality-header p{color:#555;max-width:660px;font-size:15px}
 
-    .reviews-close,.knowledge-close,.blog-close,.quality-close{border:none;background:#111;color:#fff;border-radius:999px;width:42px;height:42px;cursor:pointer;font-size:24px;line-height:1;flex:0 0 auto}
+    .reviews-close,.blog-close,.quality-close{border:none;background:#111;color:#fff;border-radius:999px;width:42px;height:42px;cursor:pointer;font-size:24px;line-height:1;flex:0 0 auto}
 
     .reviews{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
 
@@ -526,7 +526,7 @@
 
     .stars{color:#111111;font-size:18px;margin-bottom:8px;letter-spacing:1px}
 
-    body.reviews-open,body.knowledge-open,body.blog-open,body.quality-open{overflow:hidden}
+    body.reviews-open,body.blog-open,body.quality-open{overflow:hidden}
 
 
 
@@ -544,25 +544,11 @@
 
 
 
+    .blog-header .section-title,.quality-header .section-title{text-align:left;margin:0}
 
+    .blog-header .line,.quality-header .line{margin:16px 0 0}
 
-    .knowledge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
-
-    .knowledge-header .section-title,.blog-header .section-title,.quality-header .section-title{text-align:left;margin:0}
-
-    .knowledge-header .line,.blog-header .line,.quality-header .line{margin:16px 0 0}
-
-    .knowledge-card{background:#fff;border:1px solid #d9d9d9;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07);transition:.3s;text-align:center}
-
-    .knowledge-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(0,0,0,.12)}
-
-    .knowledge-card img{width:100%;height:360px;object-fit:cover;background:#ffffff}
-
-    .knowledge-card h3{padding:18px 18px 8px;font-size:20px}
-
-    .knowledge-card .blog-meta{margin:0 18px 18px}
-
-    .knowledge-empty{grid-column:1/-1;text-align:center;background:#f5f5f5;border-radius:18px;padding:18px;font-weight:700;color:#333333}
+     .blog-empty{grid-column:1/-1;text-align:center;background:#f5f5f5;border-radius:18px;padding:18px;font-weight:700;color:#333333}
 
     .order{background:#111;color:#fff;border-radius:30px;padding:38px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1fr);gap:35px;align-items:start}
 
@@ -606,9 +592,9 @@
 
     @media(max-width:1100px){.products,.gallery,.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}.video-ideas{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}}
 
-    @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr}.knowledge-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr}}
 
-    @media(max-width:700px){header{position:static}.reviews{grid-template-columns:1fr}.reviews-modal,.knowledge-modal,.blog-modal,.quality-modal{padding:12px}.reviews-panel,.knowledge-panel,.blog-panel,.quality-panel{padding:18px;max-height:92vh}.reviews-header,.knowledge-header,.blog-header,.quality-header{gap:12px}.reviews-close,.knowledge-close,.blog-close,.quality-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center;flex-wrap:wrap;overflow-x:visible;gap:8px 12px}.links a{padding:6px 3px}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid,.knowledge-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
+    @media(max-width:700px){header{position:static}.reviews{grid-template-columns:1fr}.reviews-modal,.blog-modal,.quality-modal{padding:12px}.reviews-panel,.blog-panel,.quality-panel{padding:18px;max-height:92vh}.reviews-header,.blog-header,.quality-header{gap:12px}.reviews-close,.blog-close,.quality-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center;flex-wrap:wrap;overflow-x:visible;gap:8px 12px}.links a{padding:6px 3px}.whatsapp-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-whatsapp{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
 
     @media(max-width:420px){h1{font-size:32px;letter-spacing:-.8px}.tag{font-size:12px;padding:7px 12px}.hero-image img{height:235px}.card img,.gallery img,.blog-card img{height:210px}.logo img{height:50px}.links{gap:10px;font-size:12px}}
 
@@ -643,8 +629,6 @@
         <a href="#reviews" id="reviewsNavLink" aria-haspopup="dialog" aria-controls="reviews">Reviews</a>
 
         <a class="nav-secondary" href="#blog" id="blogNavLink" aria-haspopup="dialog" aria-controls="blog">Blog</a>
-
-        <a class="nav-secondary" href="#knowledge" id="knowledgeNavLink" aria-haspopup="dialog" aria-controls="knowledge">Knowledge Center</a>
 
         <a href="#order" class="contact-nav-link">Contact</a>
 
@@ -1026,7 +1010,7 @@
 
             <h2 id="blogTitle">Latest From Our Blog</h2>
 
-            <p>Read Krizpia blog articles on Kuzhalappam, Thatta snacks, Kerala tea-time snacks, storage tips and snacking ideas.</p>
+            <p>Read Krizpia blog articles and guides on Kuzhalappam, Thatta snacks, Kerala tea-time snacks, storage tips and snacking ideas.</p>
 
             <div class="line"></div>
 
@@ -1042,33 +1026,6 @@
 
     </section>
 
-
-
-    <section id="knowledge" class="knowledge-modal" aria-hidden="true" aria-labelledby="knowledgeTitle">
-
-      <div class="knowledge-panel" role="dialog" aria-modal="true">
-
-        <div class="knowledge-header">
-
-          <div class="section-title">
-
-            <h2 id="knowledgeTitle">Knowledge Center</h2>
-
-            <p>Explore Krizpia guides for Kerala snacks, product selection, travel snacks, tea-time serving and snack storage.</p>
-
-            <div class="line"></div>
-
-          </div>
-
-          <button class="knowledge-close" type="button" aria-label="Close knowledge center">×</button>
-
-        </div>
-
-        <div id="scheduledKnowledge" class="blog-grid knowledge-grid"></div>
-
-      </div>
-
-    </section>
 
 
 
@@ -1240,29 +1197,23 @@
 
       { title:"Why Rice Flour Makes Kerala Snacks Special", description:"Learn why rice flour gives Kerala snacks their signature crunch, texture and traditional character.", image:"scheduled-blogs/19 Rice flour makes kerala snacks.png", url:"scheduled-blogs/19 Rice flour makes kerala snacks.png", publishDate:"2026-10-26T09:00:00+05:30" },
 
-      { title:"School Snack Ideas", description:"Kid-friendly Kerala snack ideas for lunch boxes, after-school breaks and family snack time.", image:"scheduled-blogs/20 School Snack Ideas.png", url:"scheduled-blogs/20 School Snack Ideas.png", publishDate:"2026-11-02T09:00:00+05:30" }
+      { title:"School Snack Ideas", description:"Kid-friendly Kerala snack ideas for lunch boxes, after-school breaks and family snack time.", image:"scheduled-blogs/20 School Snack Ideas.png", url:"scheduled-blogs/20 School Snack Ideas.png", publishDate:"2026-11-02T09:00:00+05:30" },
 
-    ];
+      { title:"Rice Flour Snacks Guide", description:"Helpful guide to Kerala rice flour snacks, including crunch, ingredients and tea-time serving ideas.", image:"Knowledge/Rice Flour.jpg", url:"rice-flour-snacks.html", publishDate:"2026-07-02T09:00:00+05:30", type:"Guide" },
 
+      { title:"Best Snacks for Travel", description:"A practical guide to choosing crisp Kerala snacks for journeys, sharing and easy travel packing.", image:"Knowledge/Best Snacks for Travel.jpg", url:"best-snacks-for-travel.html", publishDate:"2026-07-02T09:00:00+05:30", type:"Guide" },
 
+      { title:"Complete Kerala Snacks Guide", description:"Explore classic Kerala snacks, product choices and favourite flavours for everyday snacking.", image:"Knowledge/Complete Kerala  Snacks Guide.jpg", url:"kerala-snacks-guide.html", publishDate:"2026-07-02T09:00:00+05:30", type:"Guide" },
 
-    const scheduledKnowledge = [
+      { title:"Healthy Kerala Snacks", description:"A simple guide to balanced snacking choices inspired by Kerala flavours and quality ingredients.", image:"Knowledge/Healthy Kerala.jpg", url:"healthy-kerala-snacks.html", publishDate:"2026-07-02T09:00:00+05:30", type:"Guide" },
 
-      { title:"Rice Flour Snacks Guide", image:"Knowledge/Rice Flour.jpg", url:"rice-flour-snacks.html", publishDate:"2026-07-02T09:00:00+05:30" },
+      { title:"Spicy Kuzhalappam Guide", description:"Learn about spicy Kuzhalappam flavour, serving ideas and how to enjoy it with tea-time moments.", image:"Knowledge/Spicy Kuzhalappam.jpg", url:"spicy-kuzhalappam-guide.html", publishDate:"2026-07-02T09:00:00+05:30", type:"Guide" },
 
-      { title:"Best Snacks for Travel", image:"Knowledge/Best Snacks for Travel.jpg", url:"best-snacks-for-travel.html", publishDate:"2026-07-02T09:00:00+05:30" },
+      { title:"Sweet Kuzhalappam Guide", description:"A guide to sweet Kuzhalappam for family sharing, festive tables and lighter sweet snack cravings.", image:"Knowledge/Sweet Kuzhalappam.jpg", url:"sweet-kuzhalappam-guide.html", publishDate:"2026-08-06T09:00:00+05:30", type:"Guide" },
 
-      { title:"Complete Kerala Snacks Guide", image:"Knowledge/Complete Kerala  Snacks Guide.jpg", url:"kerala-snacks-guide.html", publishDate:"2026-07-02T09:00:00+05:30" },
+      { title:"Thatta Guide", description:"Everything to know about crispy Kerala Thatta, spice, texture and snack-time pairings.", image:"Knowledge/Thatta.jpg", url:"thatta-guide.html", publishDate:"2026-08-13T09:00:00+05:30", type:"Guide" },
 
-      { title:"Healthy Kerala Snacks", image:"Knowledge/Healthy Kerala.jpg", url:"healthy-kerala-snacks.html", publishDate:"2026-07-02T09:00:00+05:30" },
-
-      { title:"Spicy Kuzhalappam Guide", image:"Knowledge/Spicy Kuzhalappam.jpg", url:"spicy-kuzhalappam-guide.html", publishDate:"2026-07-02T09:00:00+05:30" },
-
-      { title:"Sweet Kuzhalappam Guide", image:"Knowledge/Sweet Kuzhalappam.jpg", url:"sweet-kuzhalappam-guide.html", publishDate:"2026-08-06T09:00:00+05:30" },
-
-      { title:"Thatta Guide", image:"Knowledge/Thatta.jpg", url:"thatta-guide.html", publishDate:"2026-08-13T09:00:00+05:30" },
-
-      { title:"Traditional Kuzhalappam Guide", image:"Knowledge/Tranitional Kuzhalappam.jpg", url:"traditional-kuzhalappam-guide.html", publishDate:"2026-08-20T09:00:00+05:30" }
+      { title:"Traditional Kuzhalappam Guide", description:"A full guide to traditional Kuzhalappam, its crunch, Kerala roots and tea-time appeal.", image:"Knowledge/Tranitional Kuzhalappam.jpg", url:"traditional-kuzhalappam-guide.html", publishDate:"2026-08-20T09:00:00+05:30", type:"Guide" }
 
     ];
 
@@ -1276,6 +1227,22 @@
 
 
 
+    function getPublishedBlogItems(){
+
+      const now = new Date();
+
+      return scheduledBlogs
+
+        .filter(item => new Date(item.publishDate) <= now)
+
+        .map(item => ({ ...item, type: item.type || 'Blog' }))
+
+        .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate));
+
+    }
+
+
+
     function loadScheduledBlogs(){
 
       const blogContainer = document.getElementById('scheduledBlogs');
@@ -1284,11 +1251,15 @@
 
 
 
-      const publishedItems = scheduledBlogs
+      const publishedItems = getPublishedBlogItems();
 
-        .map(blog => ({ ...blog, type: 'Blog' }))
+      if(!publishedItems.length){
 
-        .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate));
+        blogContainer.innerHTML = '<p class="blog-empty">New blog posts and guides will appear here automatically on their scheduled publish date.</p>';
+
+        return;
+
+      }
 
 
 
@@ -1306,7 +1277,7 @@
 
             <p>${item.description}</p>
 
-            <a href="${item.url}" class="small-btn">Read Full Article</a>
+            <a href="${item.url}" class="small-btn">${item.type === 'Guide' ? 'Read Guide' : 'Read Full Article'}</a>
 
           </div>
 
@@ -1318,54 +1289,33 @@
 
 
 
-    function loadScheduledKnowledge(){
+    function setupBlogAutoPopup(){
 
-      const knowledgeContainer = document.getElementById('scheduledKnowledge');
+      const modal = document.getElementById('blog');
 
-      if(!knowledgeContainer) return;
+      const closeButton = modal && modal.querySelector('.blog-close');
 
+      if(!modal || modal.classList.contains('is-open')) return;
 
+      const todayKey = new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'});
 
-      const publishedGuides = scheduledKnowledge
+      const hasNewToday = getPublishedBlogItems().some(item => new Date(item.publishDate).toLocaleDateString('en-CA',{timeZone:'Asia/Kolkata'}) === todayKey);
 
-        .map(guide => ({
+      const storageKey = `krizpia-blog-popup-${todayKey}`;
 
-          ...guide,
+      if(!hasNewToday || localStorage.getItem(storageKey)) return;
 
-          description: 'Helpful Krizpia guide for Kerala snacks, storage, travel, tea-time serving and product selection.',
+      modal.classList.add('is-open');
 
-          type: 'Guide'
+      modal.setAttribute('aria-hidden','false');
 
-        }))
+      document.body.classList.add('blog-open');
 
-        .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate));
+      localStorage.setItem(storageKey,'shown');
 
-
-
-      knowledgeContainer.innerHTML = publishedGuides.map((guide,index) => `
-
-        <article class="blog-card knowledge-card">
-
-          <img src="${guide.image}" alt="${guide.title}" loading="lazy" decoding="async">
-
-          <div class="blog-content">
-
-            <span class="blog-meta">${index === 0 ? 'Latest' : 'Published'} Guide • ${formatIndianDate(guide.publishDate)}</span>
-
-            <h3>${guide.title}</h3>
-
-            <p>${guide.description}</p>
-
-            <a href="${guide.url}" class="small-btn">Read Guide</a>
-
-          </div>
-
-        </article>
-
-      `).join('');
+      closeButton && closeButton.focus();
 
     }
-
 
 
 
@@ -1605,72 +1555,6 @@
 
 
 
-    function setupKnowledgeModal(){
-
-      const knowledgeLink = document.getElementById('knowledgeNavLink');
-
-      const modal = document.getElementById('knowledge');
-
-      if(!knowledgeLink || !modal) return;
-
-
-
-      const closeButton = modal.querySelector('.knowledge-close');
-
-      const triggers = document.querySelectorAll('a[href="#knowledge"]');
-
-      let lastTrigger = null;
-
-
-
-      const openModal = event => {
-
-        event.preventDefault();
-
-        lastTrigger = event.currentTarget;
-
-        modal.classList.add('is-open');
-
-        modal.setAttribute('aria-hidden','false');
-
-        document.body.classList.add('knowledge-open');
-
-        closeButton && closeButton.focus();
-
-      };
-
-      const closeModal = () => {
-
-        modal.classList.remove('is-open');
-
-        modal.setAttribute('aria-hidden','true');
-
-        document.body.classList.remove('knowledge-open');
-
-        (lastTrigger || knowledgeLink).focus();
-
-      };
-
-
-
-      triggers.forEach(trigger => trigger.addEventListener('click', openModal));
-
-      closeButton && closeButton.addEventListener('click', closeModal);
-
-      modal.addEventListener('click', event => {
-
-        if(event.target === modal) closeModal();
-
-      });
-
-      document.addEventListener('keydown', event => {
-
-        if(event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-
-      });
-
-    }
-
 
 
     setupReviewsModal();
@@ -1679,11 +1563,10 @@
 
     setupBlogModal();
 
-    setupKnowledgeModal();
 
     loadScheduledBlogs();
 
-    loadScheduledKnowledge();
+    setupBlogAutoPopup();
 
 
   </script>
