@@ -8,11 +8,24 @@
   <meta name="description" content="Read the Refund and Return Policy of Krizpia, a Kerala snack brand by Rangeela Products. Learn about food product returns, damaged deliveries, refunds, replacements, and FSSAI food safety commitment.">
 
   <style>
+    :root {
+      --brand-gold: #d9a441;
+      --brand-deep: #2b1b10;
+      --brand-cream: #fff8ec;
+      --text: #1f1a16;
+      --muted: #6b6259;
+      --line: #eadcc8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      color: #111;
+      background: linear-gradient(180deg, var(--brand-cream), #f7f7f7 45%);
+      color: var(--text);
       line-height: 1.7;
     }
 
@@ -22,19 +35,35 @@
       background: #fff;
       padding: 35px;
       border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      box-shadow: 0 8px 25px rgba(43,27,16,0.10);
+      border: 1px solid var(--line);
+    }
+
+    .policy-header {
+      text-align: center;
+      padding: 10px 0 22px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 28px;
+    }
+
+    .policy-logo {
+      display: inline-block;
+      width: 150px;
+      max-width: 60%;
+      height: auto;
+      margin-bottom: 14px;
     }
 
     h1 {
       text-align: center;
       font-size: 34px;
       margin-bottom: 5px;
-      color: #000;
+      color: var(--brand-deep);
     }
 
     .updated {
       text-align: center;
-      color: #555;
+      color: var(--muted);
       margin-bottom: 30px;
       font-size: 15px;
     }
@@ -42,8 +71,8 @@
     h2 {
       font-size: 22px;
       margin-top: 30px;
-      color: #000;
-      border-left: 5px solid #000;
+      color: var(--brand-deep);
+      border-left: 5px solid var(--brand-gold);
       padding-left: 12px;
     }
 
@@ -61,15 +90,15 @@
     }
 
     .highlight {
-      background: #f2f2f2;
+      background: #fff6e3;
       padding: 18px;
       border-radius: 14px;
-      border-left: 5px solid #000;
+      border-left: 5px solid var(--brand-gold);
       margin: 20px 0;
     }
 
     .contact-box {
-      background: #000;
+      background: var(--brand-deep);
       color: #fff;
       padding: 25px;
       border-radius: 16px;
@@ -90,12 +119,20 @@
       text-align: center;
       margin-top: 30px;
       font-weight: bold;
-      color: #222;
+      color: var(--brand-deep);
     }
 
     a {
-      color: #000;
+      color: var(--brand-deep);
       font-weight: bold;
+    }
+
+    .intro-card {
+      background: var(--brand-cream);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
     }
 
     @media (max-width: 600px) {
@@ -123,24 +160,31 @@
 
   <main class="page">
 
-    <h1>Refund & Return Policy</h1>
-    <p class="updated">Last Updated: June 2026</p>
+    <header class="policy-header">
+      <a href="index.html" aria-label="Krizpia Home">
+        <img class="policy-logo" src="krizpia-logo.png" alt="Krizpia Logo" decoding="async">
+      </a>
+      <h1>Refund & Return Policy</h1>
+      <p class="updated">Last Updated: June 2026</p>
+    </header>
 
-    <p>
-      Welcome to <strong>Krizpia</strong>, a premium Kerala snack brand owned and operated by
-      <strong>Rangeela Products</strong>.
-    </p>
+    <section class="intro-card" aria-label="Policy introduction">
+      <p>
+        Welcome to <strong>Krizpia</strong>, a premium Kerala snack brand owned and operated by
+        <strong>Rangeela Products</strong>.
+      </p>
 
-    <p>
-      We are committed to delivering fresh, authentic, and hygienically packed Kerala snacks.
-      As our products are food items with a limited shelf life, our Refund & Return Policy has
-      been designed in accordance with good business practices and applicable consumer protection
-      laws in India.
-    </p>
+      <p>
+        We are committed to delivering fresh, authentic, and hygienically packed Kerala snacks.
+        As our products are food items with a limited shelf life, this Refund & Return Policy is
+        designed in accordance with good business practices and applicable consumer protection
+        laws in India.
+      </p>
 
-    <p>
-      Please read this policy carefully before placing your order.
-    </p>
+      <p>
+        Please read this policy carefully before placing your order.
+      </p>
+    </section>
 
     <h2>1. Nature of Food Products</h2>
     <p>
@@ -308,7 +352,7 @@
 
       <p><strong>FSSAI Licence No.: 21326171000212</strong></p>
 
-      <p>Email: <a href="mailto:info@krizpia.com">info@krizpia.com</a></p>
+      <p>Email: <a href="mailto:sales@krizpia.com">sales@krizpia.com</a></p>
       <p>Website: <a href="https://www.krizpia.com">www.krizpia.com</a></p>
     </section>
 
