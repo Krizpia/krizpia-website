@@ -700,7 +700,7 @@
 
             <div class="notice-box"><h4>Allergen & Storage</h4><p><strong>Allergen:</strong> Contains sesame seeds. May contain traces of coconut.</p><p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p></div>
 
-            <a href="/traditional-kuzhalappam" class="small-btn">View Product</a>
+            <a href="traditional-kuzhalappam/" class="small-btn">View Product</a>
 
            <a href="#blog" class="small-btn blog-trigger">Learn More</a>
 
@@ -724,7 +724,7 @@
 
             <div class="notice-box"><h4>Allergen & Storage</h4><p><strong>Allergen:</strong> Contains sesame seeds. May contain traces of coconut.</p><p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p></div>
 
-            <a href="/spicy-kuzhalappam" class="small-btn">View Product</a>
+            <a href="spicy-kuzhalappam/" class="small-btn">View Product</a>
 
             <a href="#blog" class="small-btn blog-trigger">Learn More</a>
 
@@ -748,7 +748,7 @@
 
             <div class="notice-box"><h4>Allergen & Storage</h4><p><strong>Allergen:</strong> Contains sesame seeds. May contain traces of coconut.</p><p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p></div>
 
-            <a href="/sweet-kuzhalappam" class="small-btn">View Product</a>
+            <a href="sweet-kuzhalappam/" class="small-btn">View Product</a>
 
            <a href="#blog" class="small-btn blog-trigger">Learn More</a>
 
@@ -772,7 +772,7 @@
 
             <div class="notice-box"><h4>Allergen & Storage</h4><p><strong>Allergen:</strong> Contains urad dal and sesame seeds.</p><p><strong>Storage:</strong> Store in a cool, dry place. Keep pack sealed after opening.</p></div>
 
-            <a href="/thatta" class="small-btn">View Product</a>
+            <a href="thatta/" class="small-btn">View Product</a>
 
             <a href="#blog" class="small-btn blog-trigger">Learn More</a>
 
@@ -1227,6 +1227,34 @@
 
 
 
+    function escapeHtml(value){
+
+      return String(value).replace(/[&<>"']/g, character => ({
+
+        '&': '&amp;',
+
+        '<': '&lt;',
+
+        '>': '&gt;',
+
+        '"': '&quot;',
+
+        "'": '&#39;'
+
+      }[character]));
+
+    }
+
+
+
+    function encodeRelativeUrl(url){
+
+      return String(url).split('/').map(part => encodeURIComponent(part).replace(/%2F/g,'/')).join('/');
+
+    }
+
+
+
     function getPublishedBlogItems(){
 
       const now = new Date();
@@ -1263,27 +1291,37 @@
 
 
 
-      blogContainer.innerHTML = publishedItems.map((item,index) => `
+      blogContainer.innerHTML = publishedItems.map((item,index) => {
+
+        const title = escapeHtml(item.title);
+
+        const type = escapeHtml(item.type);
+
+        const label = item.type === 'Guide' ? 'Read Guide' : 'Read Full Article';
+
+        return `
 
         <article class="blog-card">
 
-          <img src="${item.image}" alt="${item.title}" loading="lazy" decoding="async">
+          <img src="${encodeRelativeUrl(item.image)}" alt="${title}" loading="lazy" decoding="async">
 
           <div class="blog-content">
 
-            <span class="blog-meta">${index === 0 ? 'Latest' : 'Published'} ${item.type} • ${formatIndianDate(item.publishDate)}</span>
+            <span class="blog-meta">${index === 0 ? 'Latest' : 'Published'} ${type} • ${formatIndianDate(item.publishDate)}</span>
 
-            <h3>${item.title}</h3>
+            <h3>${title}</h3>
 
-            <p>${item.description}</p>
+            <p>${escapeHtml(item.description)}</p>
 
-            <a href="${item.url}" class="small-btn">${item.type === 'Guide' ? 'Read Guide' : 'Read Full Article'}</a>
+            <a href="${encodeRelativeUrl(item.url)}" class="small-btn">${label}</a>
 
           </div>
 
         </article>
 
-      `).join('');
+      `;
+
+      }).join('');
 
     }
 
