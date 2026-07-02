@@ -644,6 +644,8 @@
 
         <a class="nav-secondary" href="#blog" id="blogNavLink" aria-haspopup="dialog" aria-controls="blog">Blog</a>
 
+        <a class="nav-secondary" href="#knowledge" id="knowledgeNavLink" aria-haspopup="dialog" aria-controls="knowledge">Knowledge Center</a>
+
         <a href="#order" class="contact-nav-link">Contact</a>
 
       </nav>
@@ -1024,7 +1026,7 @@
 
             <h2 id="blogTitle">Latest From Our Blog</h2>
 
-            <p>Read Krizpia blogs and guides on Kuzhalappam, Thatta snacks, Kerala tea-time snacks, storage tips, travel snacks and product selection.</p>
+            <p>Read Krizpia blog articles on Kuzhalappam, Thatta snacks, Kerala tea-time snacks, storage tips and snacking ideas.</p>
 
             <div class="line"></div>
 
@@ -1035,6 +1037,34 @@
         </div>
 
         <div id="scheduledBlogs" class="blog-grid"></div>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="knowledge" class="knowledge-modal" aria-hidden="true" aria-labelledby="knowledgeTitle">
+
+      <div class="knowledge-panel" role="dialog" aria-modal="true">
+
+        <div class="knowledge-header">
+
+          <div class="section-title">
+
+            <h2 id="knowledgeTitle">Knowledge Center</h2>
+
+            <p>Explore Krizpia guides for Kerala snacks, product selection, travel snacks, tea-time serving and snack storage.</p>
+
+            <div class="line"></div>
+
+          </div>
+
+          <button class="knowledge-close" type="button" aria-label="Close knowledge center">×</button>
+
+        </div>
+
+        <div id="scheduledKnowledge" class="blog-grid knowledge-grid"></div>
 
       </div>
 
@@ -1254,23 +1284,11 @@
 
 
 
-      const blogItems = scheduledBlogs.map(blog => ({ ...blog, type: 'Blog' }));
+      const publishedItems = scheduledBlogs
 
-      const guideItems = scheduledKnowledge.map(guide => ({
+        .map(blog => ({ ...blog, type: 'Blog' }))
 
-        ...guide,
-
-        description: 'Helpful Krizpia guide for Kerala snacks, storage, travel, tea-time serving and product selection.',
-
-        type: 'Guide'
-
-      }));
-
-      const publishedItems = [...blogItems, ...guideItems]
-
-        .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate))
-
-        .slice(0, 13);
+        .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate));
 
 
 
@@ -1288,7 +1306,7 @@
 
             <p>${item.description}</p>
 
-            <a href="${item.url}" class="small-btn">${item.type === 'Guide' ? 'Read Guide' : 'Read Full Article'}</a>
+            <a href="${item.url}" class="small-btn">Read Full Article</a>
 
           </div>
 
@@ -1300,6 +1318,53 @@
 
 
 
+    function loadScheduledKnowledge(){
+
+      const knowledgeContainer = document.getElementById('scheduledKnowledge');
+
+      if(!knowledgeContainer) return;
+
+
+
+      const publishedGuides = scheduledKnowledge
+
+        .map(guide => ({
+
+          ...guide,
+
+          description: 'Helpful Krizpia guide for Kerala snacks, storage, travel, tea-time serving and product selection.',
+
+          type: 'Guide'
+
+        }))
+
+        .sort((a,b) => new Date(b.publishDate) - new Date(a.publishDate));
+
+
+
+      knowledgeContainer.innerHTML = publishedGuides.map((guide,index) => `
+
+        <article class="blog-card knowledge-card">
+
+          <img src="${guide.image}" alt="${guide.title}" loading="lazy" decoding="async">
+
+          <div class="blog-content">
+
+            <span class="blog-meta">${index === 0 ? 'Latest' : 'Published'} Guide • ${formatIndianDate(guide.publishDate)}</span>
+
+            <h3>${guide.title}</h3>
+
+            <p>${guide.description}</p>
+
+            <a href="${guide.url}" class="small-btn">Read Guide</a>
+
+          </div>
+
+        </article>
+
+      `).join('');
+
+    }
 
 
 
@@ -1536,13 +1601,89 @@
 
 
 
+
+
+
+
+    function setupKnowledgeModal(){
+
+      const knowledgeLink = document.getElementById('knowledgeNavLink');
+
+      const modal = document.getElementById('knowledge');
+
+      if(!knowledgeLink || !modal) return;
+
+
+
+      const closeButton = modal.querySelector('.knowledge-close');
+
+      const triggers = document.querySelectorAll('a[href="#knowledge"]');
+
+      let lastTrigger = null;
+
+
+
+      const openModal = event => {
+
+        event.preventDefault();
+
+        lastTrigger = event.currentTarget;
+
+        modal.classList.add('is-open');
+
+        modal.setAttribute('aria-hidden','false');
+
+        document.body.classList.add('knowledge-open');
+
+        closeButton && closeButton.focus();
+
+      };
+
+      const closeModal = () => {
+
+        modal.classList.remove('is-open');
+
+        modal.setAttribute('aria-hidden','true');
+
+        document.body.classList.remove('knowledge-open');
+
+        (lastTrigger || knowledgeLink).focus();
+
+      };
+
+
+
+      triggers.forEach(trigger => trigger.addEventListener('click', openModal));
+
+      closeButton && closeButton.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', event => {
+
+        if(event.target === modal) closeModal();
+
+      });
+
+      document.addEventListener('keydown', event => {
+
+        if(event.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+
+      });
+
+    }
+
+
+
     setupReviewsModal();
 
     setupQualityModal();
 
     setupBlogModal();
 
+    setupKnowledgeModal();
+
     loadScheduledBlogs();
+
+    loadScheduledKnowledge();
 
 
   </script>
