@@ -18,3 +18,28 @@
 
 [functions."auto-reply-google-reviews"]
   schedule = "*/30 * * * *"
+
+[[redirects]]
+  from = "/traditional-kuzhalappam.html"
+  to = "/traditional-kuzhalappam/"
+  status = 301
+
+[[redirects]]
+  from = "/spicy-kuzhalappam.html"
+  to = "/spicy-kuzhalappam/"
+  status = 301
+
+[[redirects]]
+  from = "/sweet-kuzhalappam.html"
+  to = "/sweet-kuzhalappam/"
+  status = 301
+
+[[redirects]]
+  from = "/thatta.html"
+  to = "/thatta/"
+  status = 301
+
+[[redirects]]
+  from = "/kerala-snacks-guide.html"
+  to = "/blog/kerala-snacks/"
+  status = 301

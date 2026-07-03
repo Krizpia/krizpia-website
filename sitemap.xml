@@ -7,23 +7,30 @@
   </url>
 
   <url>
-    <loc>https://krizpia.com/traditional-kuzhalappam</loc>
+    <loc>https://krizpia.com/traditional-kuzhalappam/</loc>
     <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://krizpia.com/spicy-kuzhalappam</loc>
+    <loc>https://krizpia.com/spicy-kuzhalappam/</loc>
     <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://krizpia.com/sweet-kuzhalappam</loc>
+    <loc>https://krizpia.com/sweet-kuzhalappam/</loc>
     <priority>0.90</priority>
   </url>
 
   <url>
-    <loc>https://krizpia.com/thatta</loc>
+    <loc>https://krizpia.com/thatta/</loc>
     <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://krizpia.com/blog/kerala-snacks/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
   <url>
