@@ -1,0 +1,36 @@
+{
+  "name": "Krizpia Authentic Kerala Snacks",
+  "short_name": "Krizpia",
+  "description": "Authentic Kerala snacks from Rangeela Products, including crispy Kuzhalappam and Thatta made in Changanacherry, Kottayam.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#111111",
+  "orientation": "portrait-primary",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["food", "shopping", "business"],
+  "icons": [
+    {
+      "src": "/krizpia-logo.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Traditional Kuzhalappam",
+      "short_name": "Kuzhalappam",
+      "url": "/traditional-kuzhalappam/",
+      "description": "View Krizpia Traditional Kuzhalappam"
+    },
+    {
+      "name": "Kerala Snacks Guide",
+      "short_name": "Snack Guide",
+      "url": "/kerala-snacks-guide.html",
+      "description": "Read Krizpia's Kerala snacks guide"
+    }
+  ]
+}

@@ -1,203 +1,189 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://krizpia.com/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
-
   <url>
     <loc>https://krizpia.com/traditional-kuzhalappam/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
-
   <url>
     <loc>https://krizpia.com/spicy-kuzhalappam/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
-
   <url>
     <loc>https://krizpia.com/sweet-kuzhalappam/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
-
   <url>
     <loc>https://krizpia.com/thatta/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
-
   <url>
     <loc>https://krizpia.com/blog/kerala-snacks/</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.75</priority>
   </url>
-
-  <url>
-    <loc>https://krizpia.com/terms.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/privacy.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/shipping.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/refund.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/blog-traditional-kuzhalappam.html</loc>
-    <priority>0.90</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/01-blog-Traditional%20Kuzhalappam.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/02-blog-spicy-kuzhalappam.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/03-blog-sweet-kuzhalappam.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/05-blog-thatta.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/06-blog-kerala-snacks-guide.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/07-blog-tea-time-snacks.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/08-blog-rice-flour-snacks.html</loc>
-    <priority>0.70</priority>
-  </url>
-
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/09%20Authentic%20Kerala%20Snacks.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/10%20Best%20Kerala%20Snacks%20for%20Office%20Tea%20Breaks.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/11%20Best%20ways%20to%20Store%20Traditional%20Snacks.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/12%20Common%20Ingredients.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/13%20Homemade%20Kerala%20snacks%20infographic.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/14%20Kerala%20snacks%20for%20every%20celebration.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/15%20Kerala%20snacks%20for%20festive%20parties.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/16%20Kerala%20Snacks%20That%20Pair%20Perfectly%20With%20Tea%20%26%20Coffee.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/17%20Kerala%20Tea%20Time%20Culture.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/18%20Quality%20Packaged%20Kerala%20Snacks.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/19%20Rice%20flour%20makes%20kerala%20snacks.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/scheduled-blogs/20%20School%20Snack%20Ideas.png</loc>
-    <priority>0.60</priority>
-  </url>
-
-  <url>
-    <loc>https://krizpia.com/rice-flour-snacks.html</loc>
-    <priority>0.70</priority>
-  </url>
-
   <url>
     <loc>https://krizpia.com/best-snacks-for-travel.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
   <url>
-    <loc>https://krizpia.com/kerala-snacks-guide.html</loc>
-    <priority>0.70</priority>
+    <loc>https://krizpia.com/blog-traditional-kuzhalappam.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
-
   <url>
     <loc>https://krizpia.com/healthy-kerala-snacks.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
   <url>
-    <loc>https://krizpia.com/spicy-kuzhalappam-guide.html</loc>
-    <priority>0.70</priority>
+    <loc>https://krizpia.com/kerala-snacks-guide.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
-
   <url>
-    <loc>https://krizpia.com/sweet-kuzhalappam-guide.html</loc>
+    <loc>https://krizpia.com/privacy.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
   <url>
-    <loc>https://krizpia.com/thatta-guide.html</loc>
+    <loc>https://krizpia.com/refund.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.70</priority>
   </url>
-
-  <url>
-    <loc>https://krizpia.com/traditional-kuzhalappam-guide.html</loc>
-    <priority>0.70</priority>
-  </url>
-
   <url>
     <loc>https://krizpia.com/reviews.html</loc>
     <lastmod>2026-07-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/rice-flour-snacks.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/01-blog-Traditional%20Kuzhalappam.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/02-blog-spicy-kuzhalappam.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/03-blog-sweet-kuzhalappam.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/05-blog-thatta.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/06-blog-kerala-snacks-guide.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/07-blog-tea-time-snacks.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/scheduled-blogs/08-blog-rice-flour-snacks.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/shipping.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/spicy-kuzhalappam-guide.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/spicy-kuzhalappam.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/sweet-kuzhalappam-guide.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/sweet-kuzhalappam.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/terms.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/thatta-guide.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/thatta.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/traditional-kuzhalappam-guide.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://krizpia.com/traditional-kuzhalappam.html</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
 </urlset>
