@@ -139,22 +139,10 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://krizpia.com/spicy-kuzhalappam.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
     <loc>https://krizpia.com/sweet-kuzhalappam-guide.html</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://krizpia.com/sweet-kuzhalappam.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://krizpia.com/terms.html</loc>
@@ -169,21 +157,9 @@
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://krizpia.com/thatta.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-  <url>
     <loc>https://krizpia.com/traditional-kuzhalappam-guide.html</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://krizpia.com/traditional-kuzhalappam.html</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
   </url>
 </urlset>
