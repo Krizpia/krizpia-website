@@ -1,0 +1,17 @@
+/* TEAM */
+Brand: Krizpia
+Company: Rangeela Products
+Location: Changanacherry, Kottayam, Kerala, India
+Contact: info@krizpia.com
+Website: https://krizpia.com/
+
+/* SITE */
+Language: English
+Standards: HTML5, CSS3, JSON-LD structured data, Web App Manifest
+Primary audience: Kerala snack customers, retailers, distributors, and food lovers
+SEO package: sitemap.xml, robots.txt, manifest.json, humans.txt, Organization schema, Product schema, Breadcrumb schema, FAQ schema
+Host: GitHub Pages compatible static website
+Canonical domain: https://krizpia.com/
+
+/* THANKS */
+Thanks to customers, retailers, distributors, and Kerala snack lovers supporting Krizpia.

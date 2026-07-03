@@ -1,4 +1,9 @@
 User-agent: *
 Allow: /
 
+# Keep utility and serverless endpoints out of search results.
+Disallow: /netlify/
+Disallow: /.github/
+
 Sitemap: https://krizpia.com/sitemap.xml
+Host: https://krizpia.com
