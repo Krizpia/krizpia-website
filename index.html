@@ -442,13 +442,17 @@
 
     .about p{color:#555;margin-bottom:14px;font-size:17px}
 
-    .assurance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .assurance-grid,.story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 
-    .assurance-card{padding:26px}
+    .assurance-card,.story-card{padding:26px}
 
-    .assurance-card h3{font-size:20px;margin-bottom:10px;color:#111111}
+    .story-card{background:#fff;border:1px solid #d9d9d9;border-radius:24px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
 
-    .assurance-card p{color:#555;font-size:15px}
+    .story-card span{display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#111;color:#fff;font-size:24px;margin-bottom:14px}
+
+    .assurance-card h3,.story-card h3{font-size:20px;margin-bottom:10px;color:#111111}
+
+    .assurance-card p,.story-card p{color:#555;font-size:15px}
 
     .authority-section{background:#f7f7f7;border-top:1px solid #d9d9d9;border-bottom:1px solid #d9d9d9;max-width:none}
 
@@ -564,11 +568,11 @@
 
     .footer-links a{color:#fff;margin:0 7px;font-size:14px;white-space:nowrap}
 
-    @media(max-width:1100px){.products,.gallery,.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}.video-ideas{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}}
+    @media(max-width:1100px){.products,.gallery,.reviews{grid-template-columns:repeat(2,minmax(0,1fr))}.video-ideas{grid-template-columns:repeat(3,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid,.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}}
 
     @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr}}
 
-    @media(max-width:700px){header{position:static}.reviews{grid-template-columns:1fr}.reviews-modal,.blog-modal,.quality-modal{padding:12px}.reviews-panel,.blog-panel,.quality-panel{padding:18px;max-height:92vh}.reviews-header,.blog-header,.quality-header{gap:12px}.reviews-close,.blog-close,.quality-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center;flex-wrap:wrap;overflow-x:visible;gap:8px 12px}.links a{padding:6px 3px}.contact-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.trust-badges{justify-content:center}.trust-badge{font-size:13px;padding:8px 12px}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-contact{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
+    @media(max-width:700px){header{position:static}.reviews,.story-grid{grid-template-columns:1fr}.reviews-modal,.blog-modal,.quality-modal{padding:12px}.reviews-panel,.blog-panel,.quality-panel{padding:18px;max-height:92vh}.reviews-header,.blog-header,.quality-header{gap:12px}.reviews-close,.blog-close,.quality-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center;flex-wrap:wrap;overflow-x:visible;gap:8px 12px}.links a{padding:6px 3px}.contact-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.trust-badges{justify-content:center}.trust-badge{font-size:13px;padding:8px 12px}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.video-ideas,.assurance-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-contact{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
 
     @media(max-width:420px){h1{font-size:32px;letter-spacing:-.8px}.tag{font-size:12px;padding:7px 12px}.hero-image img{height:235px}.card img,.gallery img,.blog-card img{height:210px}.logo img{height:50px}.links{gap:10px;font-size:12px}}
 
@@ -593,6 +597,8 @@
         <a href="#products">Products</a>
 
         <a class="nav-secondary" href="#product-videos">Videos</a>
+
+        <a class="nav-secondary" href="#story">Our Story</a>
 
         <a class="nav-secondary" href="#about">About</a>
 
@@ -810,6 +816,37 @@
 
     </section>
 
+
+    <section id="story">
+
+      <div class="section-title">
+
+        <h2>Our Story</h2>
+
+        <p>Krizpia began with a simple wish: to share the taste of Kerala homes with families who love genuine, crispy tea-time snacks.</p>
+
+        <div class="line"></div>
+
+      </div>
+
+      <div class="story-grid">
+
+        <article class="story-card"><span>🏠</span><h3>Why Krizpia Started</h3><p>Krizpia was started to make traditional Kerala snacks easier to enjoy beyond the home kitchen, while keeping the familiar crunch, aroma and comfort people expect from handmade-style recipes.</p></article>
+
+        <article class="story-card"><span>👨‍👩‍👧‍👦</span><h3>Inspired by Family</h3><p>Our inspiration comes from family tea-time memories, festive visits and the joy of serving guests snacks that feel warm, generous and proudly rooted in Kerala culture.</p></article>
+
+        <article class="story-card"><span>🌴</span><h3>Traditional Kerala Recipes</h3><p>We look to Kerala’s trusted snack traditions, using recipes built around rice flour, coconut, sesame, spices and careful preparation for an authentic taste experience.</p></article>
+
+        <article class="story-card"><span>☕</span><h3>Passion for Authentic Snacks</h3><p>Every pack reflects our passion for snacks that are crisp, flavourful and honest—made for evening tea, family sharing, travel, festivals and everyday moments.</p></article>
+
+        <article class="story-card"><span>✨</span><h3>From Tradition to Every Pack</h3><p>As Rangeela Products, we bring traditional favourites into clean, convenient packaging so customers can enjoy Kerala taste with confidence and consistency.</p></article>
+
+        <article class="story-card"><span>🤝</span><h3>Made to Share</h3><p>Krizpia is more than a product range; it is our way of sharing the snacks we grew up loving with homes, shops and snack lovers who value authenticity.</p></article>
+
+      </div>
+
+    </section>
+
     <section id="about">
 
       <div class="about">
@@ -818,9 +855,9 @@
 
           <h2>About Krizpia</h2>
 
-          <p>Krizpia is a Kerala snack brand from Rangeela Products, created to bring authentic Kerala snack varieties in a clean, attractive and convenient packed format.</p>
+          <p>Krizpia is a Kerala snack brand from Rangeela Products, created from family inspiration and a love for traditional Kerala recipes.</p>
 
-          <p>Our product range includes Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta. We focus on traditional recipes, quality ingredients and crispy taste.</p>
+          <p>Our product range includes Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta. We focus on authentic snack-making traditions, quality ingredients and crispy taste.</p>
 
           <p>Krizpia delivers authentic Kerala snack varieties made with quality ingredients, traditional recipes and a passion for great taste.</p>
 
