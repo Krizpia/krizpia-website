@@ -18,3 +18,4 @@
 
 [functions."auto-reply-google-reviews"]
   schedule = "*/30 * * * *"
+
