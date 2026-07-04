@@ -173,7 +173,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       reviewStatus.textContent = 'Showing recent Google reviews. Reviews are fetched server-side so the Google API key stays private.';
     }
 
-    fetch('/.netlify/functions/google-reviews', { headers: { Accept: 'application/json' } })
+    if (window.location.hostname.endsWith('github.io')) {
+      document.getElementById('googleReviews').innerHTML = fallbackReviewsMarkup;
+      reviewStatus.textContent = 'Google reviews are unavailable on this static host, so selected customer feedback is shown below.';
+    } else {
+      fetch('/.netlify/functions/google-reviews', { headers: { Accept: 'application/json' } })
       .then(response => response.ok ? response.json() : response.json().then(error => Promise.reject(error)))
       .then(renderGoogleReviews)
       .catch(error => {
@@ -184,6 +188,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.getElementById('googleReviews').innerHTML = fallbackReviewsMarkup;
         reviewStatus.textContent = 'Google reviews are currently unavailable, so selected customer feedback is shown below.';
       });
+    }
   </script>
   </body>
 </html>

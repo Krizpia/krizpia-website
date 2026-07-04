@@ -1371,15 +1371,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     }
 
+    function canUseNetlifyFunctions(){
+
+      return !window.location.hostname.endsWith('github.io');
+
+    }
+
+    function isNetlifyFunctionUnavailable(response){
+
+      return response && (response.status === 404 || response.status === 405);
+
+    }
+
+    function submitEnquiryByEmail(payload){
+
+      const subject = encodeURIComponent(`Krizpia enquiry from ${payload.name || 'website visitor'}`);
+
+      const body = encodeURIComponent([
+        `Name: ${payload.name || ''}`,
+        `Phone: ${payload.phone || ''}`,
+        `Product: ${payload.product || ''}`,
+        `Quantity: ${payload.quantity || ''}`,
+        `Message: ${payload.message || ''}`
+      ].join('\n'));
+
+      window.location.href = `mailto:info@krizpia.com?subject=${subject}&body=${body}`;
+
+    }
+
     async function refreshCsrfToken(){
 
+      if(!canUseNetlifyFunctions()) return null;
+
       const response = await fetch('/.netlify/functions/enquiry',{method:'GET',credentials:'same-origin',headers:{'Accept':'application/json'}});
+
+      if(isNetlifyFunctionUnavailable(response)){
+
+        document.getElementById('csrfToken').value = '';
+
+        return null;
+
+      }
 
       if(!response.ok) throw new Error('Unable to prepare secure form');
 
       const data = await response.json();
 
       document.getElementById('csrfToken').value = data.csrfToken;
+
+      return data.csrfToken;
 
     }
 
@@ -1415,6 +1455,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         Object.keys(payload).forEach(key => { payload[key] = cleanInput(payload[key]); });
 
+        if(!canUseNetlifyFunctions()){
+
+          submitEnquiryByEmail(payload);
+
+          setFormStatus('Opening your email app with the enquiry details because this static host does not run Netlify Functions.', false);
+
+          return;
+
+        }
+
         const response = await fetch(form.action,{
 
           method:'POST',
@@ -1426,6 +1476,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           body:JSON.stringify(payload)
 
         });
+
+        if(isNetlifyFunctionUnavailable(response)){
+
+          submitEnquiryByEmail(payload);
+
+          setFormStatus('Opening your email app with the enquiry details because the secure form endpoint is not available on this host.', false);
+
+          return;
+
+        }
 
         const data = await response.json().catch(() => ({}));
 
@@ -1514,9 +1574,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       form.addEventListener('submit', sendEnquiry);
 
+      if(!canUseNetlifyFunctions()){
+
+        setFormStatus('This static host does not run Netlify Functions. Submitting will open your email app as a fallback.', true);
+
+        return;
+
+      }
+
       refreshCsrfToken().catch(() => {
 
         document.getElementById('csrfToken').value = '';
+
+        setFormStatus('Secure form setup is unavailable on this host. Submitting will open your email app as a fallback.', true);
 
       });
 
@@ -1695,6 +1765,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       if(!reviewsContainer || !summary || !rating || !count) return;
 
       const fallbackReviewsMarkup = reviewsContainer.innerHTML;
+
+      if(!canUseNetlifyFunctions()){
+        reviewsContainer.innerHTML = fallbackReviewsMarkup;
+        rating.textContent = 'Customer feedback';
+        count.textContent = 'Google reviews are unavailable on this static host, so selected customer feedback is shown below.';
+        return;
+      }
 
       fetch('/.netlify/functions/google-reviews', { headers: { Accept: 'application/json' } })
         .then(response => response.ok ? response.json() : response.json().then(error => Promise.reject(error)))
