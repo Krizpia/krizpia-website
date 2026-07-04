@@ -59,13 +59,29 @@
       max-width:1200px;
       margin:auto;
       display:flex;
-      justify-content:space-between;
+      justify-content:flex-start;
       align-items:center;
       gap:20px;
     }
 
+    .logo{
+      position:absolute;
+      top:18px;
+      right:20px;
+      display:inline-block;
+    }
+
     .logo img{
-      height:58px;
+      width:96px;
+      max-width:24vw;
+      height:auto;
+      margin:0;
+      border-radius:0;
+    }
+
+    @media (max-width:600px){
+      .logo{top:12px;right:12px}
+      .logo img{width:72px}
     }
 
     .links{
