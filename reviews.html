@@ -63,7 +63,7 @@
     <section class="review-hero">
       <span class="tag">Customer feedback</span>
       <h1>Krizpia Customer Reviews</h1>
-      <p>See customer feedback for Krizpia Kerala snacks from families, local buyers and snack lovers. Live Google review pulling is disabled on this page.</p>
+      <p>See live Google reviews and saved customer feedback for Krizpia Kerala snacks from families, local buyers and snack lovers.</p>
       <div class="hero-actions">
         <a class="btn" href="index.html#order">Contact Krizpia</a>
         <a class="btn secondary" id="writeGoogleReview" href="https://www.google.com/search?q=Krizpia+reviews" target="_blank" rel="noopener">Write a Google Review</a>
@@ -71,7 +71,7 @@
     </section>
 
     <section class="reviews-wrap" aria-labelledby="reviewsTitle">
-      <div id="googleReviewStatus" class="status">Showing saved customer feedback. Live Google review pulling is disabled.</div>
+      <div id="googleReviewStatus" class="status">Loading latest Google reviews… saved customer feedback remains available.</div>
       <h2 id="reviewsTitle" class="fallback-title">Customer feedback</h2>
       <div id="googleReviews" class="reviews">
         <div class="review"><div class="stars">★★★★★</div><p>“Very crispy and authentic Kerala taste.”</p><strong>Anil</strong><span class="review-source">Customer feedback</span></div>
@@ -86,7 +86,63 @@
   <footer class="footer"><p>© 2026 Krizpia by Rangeela Products. <a href="index.html">Back to home</a></p></footer>
 
   <script>
-    // Live Google review pulling is intentionally disabled so this page shows saved customer feedback only.
+    const reviewsContainer = document.getElementById('googleReviews');
+    const reviewStatus = document.getElementById('googleReviewStatus');
+    const reviewsTitle = document.getElementById('reviewsTitle');
+    const writeGoogleReview = document.getElementById('writeGoogleReview');
+    const savedReviewsHtml = reviewsContainer ? reviewsContainer.innerHTML : '';
+
+    function escapeHtml(value){
+      return String(value || '').replace(/[&<>\"']/g, character => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '\"': '&quot;',
+        "'": '&#39;'
+      }[character]));
+    }
+
+    function renderStars(rating){
+      const score = Math.max(0, Math.min(5, Math.round(Number(rating) || 0)));
+      return '★'.repeat(score) + '☆'.repeat(5 - score);
+    }
+
+    function renderReview(review){
+      const author = escapeHtml(review.authorName || 'Google reviewer');
+      const text = escapeHtml(review.text || 'Shared a rating for Krizpia.');
+      const date = escapeHtml(review.relativeTimeDescription || 'Google review');
+      const photo = review.profilePhotoUrl ? `<img class="profile-photo" src="${escapeHtml(review.profilePhotoUrl)}" alt="" loading="lazy" decoding="async">` : '';
+
+      return `<div class="review">${photo}<div class="stars" aria-label="${Number(review.rating) || 0} out of 5 stars">${renderStars(review.rating)}</div><p>“${text}”</p><strong>${author}</strong><span class="review-source">Google review</span><span class="review-date">${date}</span></div>`;
+    }
+
+    async function loadGoogleReviews(){
+      if(!reviewsContainer || !reviewStatus) return;
+
+      try{
+        const response = await fetch('/.netlify/functions/google-reviews', { headers: { Accept: 'application/json' } });
+        const data = await response.json().catch(() => ({}));
+
+        if(!response.ok) throw new Error(data.error || 'Unable to load Google reviews.');
+
+        const reviews = Array.isArray(data.reviews) ? data.reviews.filter(review => review && (review.text || review.rating)) : [];
+        if(!reviews.length) throw new Error('No Google reviews were returned.');
+
+        reviewsContainer.innerHTML = reviews.map(renderReview).join('');
+        reviewsTitle.textContent = 'Latest Google reviews';
+        reviewStatus.textContent = `${data.name || 'Krizpia'} is rated ${data.rating || '—'} out of 5 from ${data.userRatingsTotal || reviews.length} Google reviews.`;
+
+        if(data.googleMapsUrl && writeGoogleReview){
+          writeGoogleReview.href = data.googleMapsUrl;
+        }
+      }catch(error){
+        reviewsContainer.innerHTML = savedReviewsHtml;
+        reviewsTitle.textContent = 'Customer feedback';
+        reviewStatus.textContent = `${error.message || 'Google reviews could not be loaded.'} Showing saved customer feedback instead.`;
+      }
+    }
+
+    loadGoogleReviews();
     </script>
 </body>
 </html>

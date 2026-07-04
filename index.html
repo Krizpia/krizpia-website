@@ -943,7 +943,7 @@
 
               <h2 id="reviewsTitle">Customer Reviews</h2>
 
-              <p>Saved customer notes from people who bought Krizpia for tea time, travel, shops and family sharing.</p>
+              <p>Live Google reviews when available, with saved customer notes as a fallback for tea time, travel, shops and family sharing.</p>
 
             </div>
 
@@ -1501,7 +1501,73 @@
     }
 
 
-    // Live Google review pulling is intentionally disabled so saved customer feedback remains visible.
+    function escapeHtml(value){
+
+      return String(value || '').replace(/[&<>\"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', "'": '&#39;' }[character]));
+
+    }
+
+    function renderStars(rating){
+
+      const score = Math.max(0, Math.min(5, Math.round(Number(rating) || 0)));
+
+      return '★'.repeat(score) + '☆'.repeat(5 - score);
+
+    }
+
+    function renderGoogleReview(review){
+
+      const author = escapeHtml(review.authorName || 'Google reviewer');
+
+      const text = escapeHtml(review.text || 'Shared a rating for Krizpia.');
+
+      const date = escapeHtml(review.relativeTimeDescription || 'Google review');
+
+      const photo = review.profilePhotoUrl ? `<img class="profile-photo" src="${escapeHtml(review.profilePhotoUrl)}" alt="" loading="lazy" decoding="async">` : '';
+
+      return `<div class="review">${photo}<div class="stars" aria-label="${Number(review.rating) || 0} out of 5 stars">${renderStars(review.rating)}</div><p>“${text}”</p><strong>${author}</strong><span class="review-source">Google review</span><span class="review-date">${date}</span></div>`;
+
+    }
+
+    async function loadGoogleReviews(){
+
+      const reviewsContainer = document.getElementById('googleReviews');
+
+      const summary = document.getElementById('googleReviewSummary');
+
+      if(!reviewsContainer || !summary) return;
+
+      const savedReviewsHtml = reviewsContainer.innerHTML;
+
+      try{
+
+        const response = await fetch('/.netlify/functions/google-reviews', { headers: { Accept: 'application/json' } });
+
+        const data = await response.json().catch(() => ({}));
+
+        if(!response.ok) throw new Error(data.error || 'Unable to load Google reviews.');
+
+        const reviews = Array.isArray(data.reviews) ? data.reviews.filter(review => review && (review.text || review.rating)) : [];
+
+        if(!reviews.length) throw new Error('No Google reviews were returned.');
+
+        reviewsContainer.innerHTML = reviews.map(renderGoogleReview).join('');
+
+        summary.hidden = false;
+
+        summary.innerHTML = `<div><div class="google-review-rating">${escapeHtml(data.rating || '—')} ★</div><p>${escapeHtml(data.name || 'Krizpia')} on Google · ${escapeHtml(data.userRatingsTotal || reviews.length)} reviews</p></div>${data.googleMapsUrl ? `<a class="small-btn secondary" href="${escapeHtml(data.googleMapsUrl)}" target="_blank" rel="noopener">Open on Google</a>` : ''}`;
+
+      }catch(error){
+
+        reviewsContainer.innerHTML = savedReviewsHtml;
+
+        summary.hidden = false;
+
+        summary.innerHTML = `<p>${escapeHtml(error.message || 'Google reviews could not be loaded.')} Showing saved customer feedback instead.</p>`;
+
+      }
+
+    }
 
     function setupReviewsModal(){
 
@@ -1540,6 +1606,8 @@
       };
 
       reviewsLink.addEventListener('click', openModal);
+
+      loadGoogleReviews();
 
       closeButton && closeButton.addEventListener('click', closeModal);
 
