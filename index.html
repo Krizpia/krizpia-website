@@ -1561,9 +1561,9 @@
 
         reviewsContainer.innerHTML = savedReviewsHtml;
 
-        summary.hidden = false;
+        summary.hidden = true;
 
-        summary.innerHTML = `<p>${escapeHtml(error.message || 'Google reviews could not be loaded.')} Showing saved customer feedback instead.</p>`;
+        summary.innerHTML = '';
 
       }
 
