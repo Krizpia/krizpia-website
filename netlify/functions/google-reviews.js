@@ -40,13 +40,13 @@ exports.handler = async event => {
   if (event.httpMethod === 'OPTIONS') return json(204, {});
   if (event.httpMethod !== 'GET') return json(405, { error: 'Method not allowed.' });
 
-  const apiKey = process.env.GOOGLE_PLACES_API_KEY;
+  const apiKey = process.env.GOOGLE_PLACES_API_KEY || process.env.GOOGLE_MAPS_API_KEY;
   const placeId = process.env.GOOGLE_PLACE_ID || DEFAULT_PLACE_ID;
   const reviewUrl = process.env.GOOGLE_REVIEW_URL || DEFAULT_REVIEW_URL;
 
   if (!apiKey) {
     return json(503, {
-      error: 'Google reviews are not configured yet.',
+      error: 'Google reviews are not configured yet. Add GOOGLE_PLACES_API_KEY or GOOGLE_MAPS_API_KEY in Netlify environment variables.',
       reviewUrl
     });
   }

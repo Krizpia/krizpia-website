@@ -943,7 +943,7 @@
 
               <h2 id="reviewsTitle">Customer Reviews</h2>
 
-              <p>Manual customer feedback from families, local buyers and snack lovers, with a quick link for customers who prefer to share feedback on Google.</p>
+              <p>Recent Google reviews load through the secure Krizpia backend when available, with selected customer feedback kept as a fallback.</p>
 
             </div>
 
@@ -955,7 +955,7 @@
 
         </div>
 
-        <div class="google-review-summary"><div><div class="google-review-rating">Share your experience</div><p>Automatic Google review syncing is not used on this GitHub Pages site. Customer feedback is curated manually to keep the page free, stable and simple.</p></div><a class="small-btn secondary" href="https://www.google.com/maps/place/Krizpia/@9.4453436,76.5401108,17z/data=!4m8!3m7!1s0x3b0627a2c11e21e5:0xf1c510a2018b698b!8m2!3d9.4453436!4d76.5426911!9m1!1b1!16s%2Fg%2F11nq1568c9?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Write a Google Review</a></div>
+        <div id="homeGoogleSummary" class="google-review-summary"><div><div id="homeGoogleRating" class="google-review-rating">Loading Google reviews</div><p id="homeGoogleReviewCount">Checking recent public feedback through the secure Krizpia backend. Manual reviews stay visible if Google is unavailable.</p></div><a id="homeWriteGoogleReview" class="small-btn secondary" href="https://www.google.com/maps/place/Krizpia/@9.4453436,76.5401108,17z/data=!4m8!3m7!1s0x3b0627a2c11e21e5:0xf1c510a2018b698b!8m2!3d9.4453436!4d76.5426911!9m1!1b1!16s%2Fg%2F11nq1568c9?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Write a Google Review</a></div>
 
         <div id="googleReviews" class="reviews">
 
@@ -1507,6 +1507,70 @@
 
     }
 
+    function starText(rating) {
+
+      const rounded = Math.max(0, Math.min(5, Math.round(Number(rating) || 0)));
+
+      return '★'.repeat(rounded) + '☆'.repeat(5 - rounded);
+
+    }
+
+    function escapeHtml(value) {
+
+      return String(value || '').replace(/[&<>"']/g, character => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#39;'
+      }[character]));
+
+    }
+
+    function loadGoogleReviewsPreview(){
+
+      const reviewsContainer = document.getElementById('googleReviews');
+      const summary = document.getElementById('homeGoogleSummary');
+      const rating = document.getElementById('homeGoogleRating');
+      const count = document.getElementById('homeGoogleReviewCount');
+      const writeLink = document.getElementById('homeWriteGoogleReview');
+
+      if(!reviewsContainer || !summary || !rating || !count) return;
+
+      const fallbackReviewsMarkup = reviewsContainer.innerHTML;
+
+      fetch('/.netlify/functions/google-reviews', { headers: { Accept: 'application/json' } })
+        .then(response => response.ok ? response.json() : response.json().then(error => Promise.reject(error)))
+        .then(data => {
+          const reviews = Array.isArray(data.reviews) ? data.reviews : [];
+          if(!reviews.length) throw new Error('No Google review text returned.');
+
+          if(data.reviewUrl && writeLink) writeLink.href = data.reviewUrl;
+
+          rating.textContent = data.rating ? `${Number(data.rating).toFixed(1)} ★ on Google` : 'Recent Google reviews';
+          count.textContent = data.userRatingsTotal
+            ? `${data.userRatingsTotal} public Google review${data.userRatingsTotal === 1 ? '' : 's'} for ${data.name || 'Krizpia'}.`
+            : `Recent public Google reviews for ${data.name || 'Krizpia'}.`;
+
+          reviewsContainer.innerHTML = reviews.slice(0, 8).map(review => `
+            <div class="review is-google">
+              <div class="stars" aria-label="${escapeHtml(review.rating)} out of 5 stars">${starText(review.rating)}</div>
+              <p>“${escapeHtml(review.text)}”</p>
+              <strong>${escapeHtml(review.authorName)}</strong>
+              <span class="review-source">Google review</span>
+              ${review.relativeTimeDescription ? `<span class="review-date">${escapeHtml(review.relativeTimeDescription)}</span>` : ''}
+            </div>
+          `).join('');
+        })
+        .catch(error => {
+          if(error && error.reviewUrl && writeLink) writeLink.href = error.reviewUrl;
+          reviewsContainer.innerHTML = fallbackReviewsMarkup;
+          rating.textContent = 'Customer feedback';
+          count.textContent = 'Google reviews are currently unavailable, so selected customer feedback is shown below.';
+        });
+
+    }
+
     function setupReviewsModal(){
 
       const reviewsLink = document.getElementById('reviewsNavLink');
@@ -1681,6 +1745,8 @@
       });
 
     }
+
+    loadGoogleReviewsPreview();
 
     setupReviewsModal();
 
