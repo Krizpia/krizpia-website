@@ -1,79 +1,52 @@
 # Google Reviews Setup Options
 
-Krizpia can show Google reviews on the website in three ways. Start with the easiest option that matches the current business need, then upgrade later if needed.
+Krizpia should keep customer feedback manual first because the current website is published on GitHub Pages. GitHub Pages can host static HTML, CSS and JavaScript, but it does not provide the private backend needed to safely call Google review APIs.
 
 ## Recommended path for Krizpia
 
-Use a review widget first so reviews can appear on krizpia.com quickly without custom Google Cloud setup. Later, move to the Google Places API or Google Business Profile API when the website grows and the team is ready to manage billing, API keys, and OAuth access.
+Start with the existing manual review sections on `index.html` and `reviews.html`.
 
-## Option 1: Google Places API
+This is the best first step because it is:
 
-This site already includes a Netlify function that can load Google reviews from the Google Places API and display them on `index.html` and `reviews.html`.
+- Free.
+- Safe for GitHub Pages.
+- Easy to edit without Google Cloud billing, API keys or OAuth setup.
+- Stable because the page does not depend on a third-party script or serverless backend.
 
-Use this option when you want the reviews section to update automatically from Google without embedding a third-party widget.
+Keep the **Write a Google Review** button so customers can still add public feedback on Google.
 
-Requirements:
+## Best free or low-cost options
 
-- Google Cloud billing enabled.
-- Places API enabled in Google Cloud.
-- `GOOGLE_PLACES_API_KEY` set in Netlify.
-- `GOOGLE_PLACE_ID` set in Netlify.
-- Optional `GOOGLE_MAPS_URL` or `GOOGLE_MAPS_REVIEW_URL` for the Google listing/review link.
+### Option 1: Manual reviews
 
-Important limitation: Google usually returns only a limited set of reviews through the Places API, not every review from the business profile.
+Copy selected customer feedback into the website manually. This is the safest option for the current GitHub Pages setup and is already implemented on the site.
 
-## Option 2: Elfsight, Tagembed, or SociableKIT widget
+Use this option when Krizpia only needs a small, curated reviews section.
 
-This is the easiest option for non-technical setup. Connect the Krizpia Google Business Profile in the widget provider dashboard, copy the embed code, and paste it into the website.
+### Option 2: Google review link button
 
-Use this option when you want the fastest setup and are comfortable with a free or paid widget service.
+Keep a button that opens the Krizpia Google listing or review page. This is free and works on GitHub Pages because it is only a normal external link.
 
-Before adding a widget embed, update the site Content Security Policy in `netlify.toml` so the selected provider's script, frame, image, and connection URLs are allowed.
+Use this option when customers should be encouraged to leave public Google feedback without embedding reviews automatically.
 
-## Option 3: Manual customer feedback
+### Option 3: Tagembed or SociableKIT free plan
 
-Copy selected customer reviews manually into the website. This needs no Google Cloud billing, API key, widget account, or OAuth setup.
+A third-party widget may be useful for testing, but free plans are usually limited and may include provider branding. Review the provider's terms, limits and script requirements before adding an embed.
 
-Use this option when you only need a small, curated reviews section and do not need automatic updates.
+If a widget is added later, update the site security policy and test the page on mobile before publishing.
 
-## Google Business Profile auto-reply setup
+### Option 4: Move backend features to Netlify
 
-Automatic replies to Google reviews require Google Business Profile API access, OAuth credentials, and a manager/owner account refresh token. This is more advanced than showing reviews on the website.
+Automatic Google reviews require a backend or serverless function because API keys and OAuth tokens must not be exposed in browser JavaScript. Netlify's free tier may work for a small site, but that would mean deploying backend-powered features outside the current GitHub Pages-only setup.
 
-This site includes a Netlify scheduled function that checks Google Business Profile reviews every 30 minutes and replies to any latest review that does not already have an owner reply.
+Use this option only when Krizpia is ready to manage environment variables, Google Cloud setup and deployment monitoring.
 
-### Required Netlify environment variables
+## Why automatic Google reviews are not enabled now
 
-Set these variables in Netlify before enabling the feature:
+There is no fully free, easy and safe automatic Google reviews method for a static GitHub Pages site. Google review APIs require credentials and backend handling. Exposing those credentials directly in frontend code would be insecure.
 
-- `GOOGLE_REVIEW_AUTO_REPLY_ENABLED` — set to `true` only after OAuth credentials are ready.
-- `GOOGLE_BUSINESS_ACCOUNT_ID` — Google Business Profile account ID. You can use either `123456789` or `accounts/123456789`.
-- `GOOGLE_BUSINESS_LOCATION_ID` — Google Business Profile location ID. You can use either `987654321` or `locations/987654321`.
-- `GOOGLE_BUSINESS_CLIENT_ID` — OAuth client ID with Google Business Profile API access.
-- `GOOGLE_BUSINESS_CLIENT_SECRET` — OAuth client secret.
-- `GOOGLE_BUSINESS_REFRESH_TOKEN` — refresh token for an authorized Business Profile manager/owner account.
-- `GOOGLE_REVIEW_AUTO_REPLY_SECRET` — secret used when manually testing the function URL.
+## Notes for future upgrades
 
-Optional:
-
-- `GOOGLE_REVIEW_REPLY_TEXT` — custom reply text. If not set, the function uses a polite Krizpia thank-you message.
-- `GOOGLE_BUSINESS_LOCATION_NAME` — display name used by the Google reviews function when Business Profile reviews are loaded.
-- `GOOGLE_MAPS_REVIEW_URL` or `GOOGLE_MAPS_URL` — Google listing/review URL returned to the frontend.
-
-### Manual dry-run test
-
-After deploy, test without posting replies:
-
-```bash
-curl -H "x-auto-reply-secret: $GOOGLE_REVIEW_AUTO_REPLY_SECRET" \
-  "https://YOUR_SITE.netlify.app/.netlify/functions/auto-reply-google-reviews?dryRun=true"
-```
-
-If the dry run looks correct, remove `?dryRun=true` to post replies immediately, or wait for the scheduled run.
-
-## Notes
-
-- The website first tries Google Business Profile review credentials, then falls back to Google Places API credentials.
-- The function only replies to reviews where Google does not return an existing `reviewReply`.
-- Each auto-reply run replies to at most 10 pending reviews to avoid accidental bulk posting.
-- The scheduled auto-reply function runs in UTC on Netlify's cron schedule.
+- Google Places API usually returns only a limited subset of reviews, not every review from the business profile.
+- Google Business Profile review management and auto-replies require OAuth access and are more complex than showing reviews on the website.
+- Keep manual reviews as the fallback even if a widget or backend integration is added later.

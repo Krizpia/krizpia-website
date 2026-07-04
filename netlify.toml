@@ -17,9 +17,6 @@
   [headers.values]
     Cache-Control = "no-store"
 
-[functions."auto-reply-google-reviews"]
-  schedule = "*/30 * * * *"
-
 [[redirects]]
   from = "/traditional-kuzhalappam.html"
   to = "/traditional-kuzhalappam/"
