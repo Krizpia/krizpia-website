@@ -71,7 +71,7 @@
     </section>
 
     <section class="reviews-wrap" aria-labelledby="reviewsTitle">
-      <div id="googleReviewStatus" class="status">Loading latest Google reviews… saved customer feedback remains available.</div>
+      <div id="googleReviewStatus" class="status" hidden>Loading latest Google reviews…</div>
       <h2 id="reviewsTitle" class="fallback-title">Customer feedback</h2>
       <div id="googleReviews" class="reviews">
         <div class="review"><div class="stars">★★★★★</div><p>“Very crispy and authentic Kerala taste.”</p><strong>Anil</strong><span class="review-source">Customer feedback</span></div>
@@ -130,6 +130,7 @@
 
         reviewsContainer.innerHTML = reviews.map(renderReview).join('');
         reviewsTitle.textContent = 'Latest Google reviews';
+        reviewStatus.hidden = false;
         reviewStatus.textContent = `${data.name || 'Krizpia'} is rated ${data.rating || '—'} out of 5 from ${data.userRatingsTotal || reviews.length} Google reviews.`;
 
         if(data.googleMapsUrl && writeGoogleReview){
@@ -138,7 +139,7 @@
       }catch(error){
         reviewsContainer.innerHTML = savedReviewsHtml;
         reviewsTitle.textContent = 'Customer feedback';
-        reviewStatus.textContent = `${error.message || 'Google reviews could not be loaded.'} Showing saved customer feedback instead.`;
+        reviewStatus.hidden = true;
       }
     }
 
