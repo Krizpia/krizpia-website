@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https://lh3.googleusercontent.com https://*.googleusercontent.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://stats.g.doubleclick.net; frame-src https://www.googletagmanager.com; form-action 'self'; upgrade-insecure-requests">
+
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -173,7 +175,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       reviewStatus.textContent = 'Showing recent Google reviews. Reviews are fetched server-side so the Google API key stays private.';
     }
 
-    if (window.location.hostname.endsWith('github.io')) {
+    if (!['localhost', '127.0.0.1'].includes(window.location.hostname) && !window.location.hostname.endsWith('.netlify.app') && !window.location.hostname.endsWith('.netlify.com')) {
       document.getElementById('googleReviews').innerHTML = fallbackReviewsMarkup;
       reviewStatus.textContent = 'Google reviews are unavailable on this static host, so selected customer feedback is shown below.';
     } else {
