@@ -965,7 +965,7 @@
 
               <h2 id="reviewsTitle">Customer Reviews</h2>
 
-              <p>Latest Google reviews and notes from customers who bought Krizpia for tea time, travel, shops and family sharing.</p>
+              <p>Saved customer notes from people who bought Krizpia for tea time, travel, shops and family sharing.</p>
 
             </div>
 
@@ -981,7 +981,7 @@
 
         <div id="googleReviews" class="reviews">
 
-        <div class="review"><div class="stars">★★★★★</div><p>“Very crispy and authentic Kerala taste.”</p><strong>Anil</strong><span class="review-source">Google Reviews</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Very crispy and authentic Kerala taste.”</p><strong>Anil</strong><span class="review-source">Customer feedback</span></div>
 
         <div class="review"><div class="stars">★★★★★</div><p>“Excellent taste, reminds me of homemade Kuzhalappam.”</p><strong>Anil, Kottayam</strong><span class="review-source">Customer feedback</span></div>
 
@@ -1525,89 +1525,7 @@
     }
 
 
-    function renderStars(rating){
-
-      const numericRating = Math.max(0, Math.min(5, Number(rating) || 0));
-
-      const fullStars = Math.round(numericRating);
-
-      return '★★★★★'.slice(0, fullStars) + '☆☆☆☆☆'.slice(fullStars);
-
-    }
-
-    function formatReviewDate(timestamp){
-
-      if(!timestamp) return '';
-
-      return new Date(timestamp * 1000).toLocaleDateString('en-IN',{timeZone:'Asia/Kolkata',day:'numeric',month:'short',year:'numeric'});
-
-    }
-
-    async function loadGoogleReviews(){
-
-      const reviewsContainer = document.getElementById('googleReviews');
-
-      const summary = document.getElementById('googleReviewSummary');
-
-      if(!reviewsContainer || !summary) return;
-
-      try{
-
-        const response = await fetch('/.netlify/functions/google-reviews',{headers:{'Accept':'application/json'},cache:'no-store'});
-
-        if(!response.ok) throw new Error('Google reviews are not configured yet');
-
-        const data = await response.json();
-
-        if(!Array.isArray(data.reviews) || !data.reviews.length) return;
-
-        const businessName = escapeHtml(data.name || 'Krizpia');
-
-        const rating = Number(data.rating || 0).toFixed(1);
-
-        const totalReviews = Number(data.userRatingsTotal || data.reviews.length);
-
-        summary.hidden = false;
-
-        summary.innerHTML = `
-
-          <div>
-
-            <div class="google-review-rating">${rating} ${renderStars(data.rating)}</div>
-
-            <p>${businessName} on Google • ${totalReviews} review${totalReviews === 1 ? '' : 's'}</p>
-
-          </div>
-
-          ${data.googleMapsUrl ? `<a class="small-btn" href="${escapeHtml(data.googleMapsUrl)}" target="_blank" rel="noopener">View on Google</a>` : ''}
-
-        `;
-
-        reviewsContainer.innerHTML = data.reviews.map(review => `
-
-          <div class="review">
-
-            <div class="stars">${renderStars(review.rating)}</div>
-
-            <p>“${escapeHtml(review.text || 'Great Krizpia experience.')}”</p>
-
-            <strong>${escapeHtml(review.authorName || 'Google customer')}</strong>
-
-            <span class="review-source">Google Reviews</span>
-
-            ${review.time ? `<span class="review-date">${formatReviewDate(review.time)}</span>` : ''}
-
-          </div>
-
-        `).join('');
-
-      }catch(error){
-
-        console.info('Using saved review highlights:', error.message);
-
-      }
-
-    }
+    // Live Google review pulling is intentionally disabled so saved customer feedback remains visible.
 
     function setupReviewsModal(){
 
@@ -1782,8 +1700,6 @@
       });
 
     }
-
-    loadGoogleReviews();
 
     setupReviewsModal();
 

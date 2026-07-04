@@ -12,13 +12,13 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Krizpia Customer Reviews | Latest Google Reviews</title>
-  <meta name="description" content="Read the latest Krizpia Google reviews automatically pulled from Google Business Profile, plus customer feedback for authentic Kerala snacks." />
+  <title>Krizpia Customer Reviews | Customer Feedback</title>
+  <meta name="description" content="Read customer feedback for Krizpia authentic Kerala snacks, including notes from local buyers and family snack lovers." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://krizpia.com/reviews.html" />
   <link rel="icon" type="image/png" href="krizpia-logo.png" />
   <meta property="og:title" content="Krizpia Customer Reviews" />
-  <meta property="og:description" content="Latest Google reviews for Krizpia Kerala snacks, refreshed automatically from Google." />
+  <meta property="og:description" content="Customer feedback for Krizpia Kerala snacks from local buyers and snack lovers." />
   <meta property="og:image" content="https://krizpia.com/mix%20image.png" />
   <meta property="og:url" content="https://krizpia.com/reviews.html" />
   <meta property="og:type" content="website" />
@@ -61,9 +61,9 @@
   </header>
   <main>
     <section class="review-hero">
-      <span class="tag">Automatically refreshed from Google</span>
+      <span class="tag">Customer feedback</span>
       <h1>Krizpia Customer Reviews</h1>
-      <p>See the latest customer ratings and Google reviews for Krizpia Kerala snacks. This page pulls live review highlights from Google when the site is deployed with the Google Places settings.</p>
+      <p>See customer feedback for Krizpia Kerala snacks from families, local buyers and snack lovers. Live Google review pulling is disabled on this page.</p>
       <div class="hero-actions">
         <a class="btn" href="index.html#order">Contact Krizpia</a>
         <a class="btn secondary" id="writeGoogleReview" href="https://www.google.com/search?q=Krizpia+reviews" target="_blank" rel="noopener">Write a Google Review</a>
@@ -71,11 +71,10 @@
     </section>
 
     <section class="reviews-wrap" aria-labelledby="reviewsTitle">
-      <div id="googleReviewStatus" class="status">Loading latest Google reviews…</div>
-      <div id="googleReviewSummary" class="google-review-summary" hidden></div>
+      <div id="googleReviewStatus" class="status">Showing saved customer feedback. Live Google review pulling is disabled.</div>
       <h2 id="reviewsTitle" class="fallback-title">Customer feedback</h2>
       <div id="googleReviews" class="reviews">
-        <div class="review"><div class="stars">★★★★★</div><p>“Very crispy and authentic Kerala taste.”</p><strong>Anil</strong><span class="review-source">Google Reviews</span></div>
+        <div class="review"><div class="stars">★★★★★</div><p>“Very crispy and authentic Kerala taste.”</p><strong>Anil</strong><span class="review-source">Customer feedback</span></div>
         <div class="review"><div class="stars">★★★★★</div><p>“Excellent taste, reminds me of homemade Kuzhalappam.”</p><strong>Anil, Kottayam</strong><span class="review-source">Customer feedback</span></div>
         <div class="review"><div class="stars">★★★★★</div><p>“Very crispy and fresh. My children loved it.”</p><strong>Reshma, Kochi</strong><span class="review-source">Customer feedback</span></div>
         <div class="review"><div class="stars">★★★★☆</div><p>“Good packing and authentic Kerala snack taste.”</p><strong>Saji, Changanacherry</strong><span class="review-source">Local buyer</span></div>
@@ -87,34 +86,7 @@
   <footer class="footer"><p>© 2026 Krizpia by Rangeela Products. <a href="index.html">Back to home</a></p></footer>
 
   <script>
-    function escapeHtml(value){return String(value).replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));}
-    function renderStars(rating){const numericRating=Math.max(0,Math.min(5,Number(rating)||0));const fullStars=Math.round(numericRating);return '★★★★★'.slice(0,fullStars)+'☆☆☆☆☆'.slice(fullStars);}
-    function formatReviewDate(timestamp){if(!timestamp)return '';return new Date(timestamp*1000).toLocaleDateString('en-IN',{timeZone:'Asia/Kolkata',day:'numeric',month:'short',year:'numeric'});}
-    async function loadGoogleReviews(){
-      const reviewsContainer=document.getElementById('googleReviews');
-      const summary=document.getElementById('googleReviewSummary');
-      const status=document.getElementById('googleReviewStatus');
-      const writeLink=document.getElementById('writeGoogleReview');
-      if(!reviewsContainer||!summary)return;
-      try{
-        const response=await fetch('/.netlify/functions/google-reviews',{headers:{'Accept':'application/json'},cache:'no-store'});
-        if(!response.ok)throw new Error('Google reviews are not configured yet');
-        const data=await response.json();
-        if(!Array.isArray(data.reviews)||!data.reviews.length)throw new Error('No Google review highlights returned yet');
-        const businessName=escapeHtml(data.name||'Krizpia');
-        const rating=Number(data.rating||0).toFixed(1);
-        const totalReviews=Number(data.userRatingsTotal||data.reviews.length);
-        if(data.googleMapsUrl)writeLink.href=data.googleMapsUrl;
-        summary.hidden=false;
-        summary.innerHTML=`<div><div class="google-review-rating">${rating} ${renderStars(data.rating)}</div><p>${businessName} on Google • ${totalReviews} review${totalReviews===1?'':'s'} • latest highlights auto pulled from Google</p></div>${data.googleMapsUrl?`<a class="small-btn" href="${escapeHtml(data.googleMapsUrl)}" target="_blank" rel="noopener">View on Google</a>`:''}`;
-        status.hidden=true;
-        reviewsContainer.innerHTML=data.reviews.map(review=>`<article class="review">${review.profilePhotoUrl?`<img class="profile-photo" src="${escapeHtml(review.profilePhotoUrl)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer">`:''}<div class="stars">${renderStars(review.rating)}</div><p>“${escapeHtml(review.text||'Great Krizpia experience.')}”</p><strong>${escapeHtml(review.authorName||'Google customer')}</strong><span class="review-source">Google Reviews</span>${review.time?`<span class="review-date">${formatReviewDate(review.time)}</span>`:''}</article>`).join('');
-      }catch(error){
-        if(status)status.textContent='Showing saved review highlights until live Google reviews are available.';
-        console.info('Using saved review highlights:',error.message);
-      }
-    }
-    loadGoogleReviews();
-  </script>
+    // Live Google review pulling is intentionally disabled so this page shows saved customer feedback only.
+    </script>
 </body>
 </html>
