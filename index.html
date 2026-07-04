@@ -943,7 +943,7 @@
 
               <h2 id="reviewsTitle">Customer Reviews</h2>
 
-              <p>Live Google reviews when available, with saved customer notes as a fallback for tea time, travel, shops and family sharing.</p>
+              <p>Manual customer feedback from families, local buyers and snack lovers, with a quick link for customers who prefer to share feedback on Google.</p>
 
             </div>
 
@@ -955,7 +955,7 @@
 
         </div>
 
-        <div id="googleReviewSummary" class="google-review-summary" hidden></div>
+        <div class="google-review-summary"><div><div class="google-review-rating">Share your experience</div><p>Automatic Google review syncing is not used on this GitHub Pages site. Customer feedback is curated manually to keep the page free, stable and simple.</p></div><a class="small-btn secondary" href="https://www.google.com/maps/place/Krizpia/@9.4453436,76.5401108,17z/data=!4m8!3m7!1s0x3b0627a2c11e21e5:0xf1c510a2018b698b!8m2!3d9.4453436!4d76.5426911!9m1!1b1!16s%2Fg%2F11nq1568c9?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Write a Google Review</a></div>
 
         <div id="googleReviews" class="reviews">
 
@@ -1507,70 +1507,6 @@
 
     }
 
-    function renderStars(rating){
-
-      const score = Math.max(0, Math.min(5, Math.round(Number(rating) || 0)));
-
-      return '★'.repeat(score) + '☆'.repeat(5 - score);
-
-    }
-
-    function renderGoogleReview(review){
-
-      const author = escapeHtml(review.authorName || 'Google reviewer');
-
-      const text = escapeHtml(review.text || 'Shared a rating for Krizpia.');
-
-      const date = escapeHtml(review.relativeTimeDescription || 'Google review');
-
-      const photo = review.profilePhotoUrl ? `<img class="profile-photo" src="${escapeHtml(review.profilePhotoUrl)}" alt="" loading="lazy" decoding="async">` : '';
-
-      return `<div class="review">${photo}<div class="stars" aria-label="${Number(review.rating) || 0} out of 5 stars">${renderStars(review.rating)}</div><p>“${text}”</p><strong>${author}</strong><span class="review-source">Google review</span><span class="review-date">${date}</span></div>`;
-
-    }
-
-    async function loadGoogleReviews(){
-
-      const reviewsContainer = document.getElementById('googleReviews');
-
-      const summary = document.getElementById('googleReviewSummary');
-
-      if(!reviewsContainer || !summary) return;
-
-      const savedReviewsHtml = reviewsContainer.innerHTML;
-
-      try{
-
-        const response = await fetch('/.netlify/functions/google-reviews', { headers: { Accept: 'application/json' } });
-
-        const data = await response.json().catch(() => ({}));
-
-        if(!response.ok) throw new Error(data.error || 'Unable to load Google reviews.');
-
-        const reviews = Array.isArray(data.reviews) ? data.reviews.filter(review => review && (review.text || review.rating)) : [];
-
-        summary.hidden = false;
-
-        summary.innerHTML = `<div><div class="google-review-rating">${escapeHtml(data.rating || '—')} ★</div><p>${escapeHtml(data.name || 'Krizpia')} on Google · ${escapeHtml(data.userRatingsTotal || reviews.length)} reviews</p></div>${data.googleMapsUrl ? `<a class="small-btn secondary" href="${escapeHtml(data.googleMapsUrl)}" target="_blank" rel="noopener">Open on Google</a>` : ''}`;
-
-        if(reviews.length){
-          reviewsContainer.innerHTML = reviews.map(renderGoogleReview).join('');
-        }else{
-          reviewsContainer.innerHTML = `<div class="review"><div class="stars">★★★★★</div><p>Google is currently showing ${escapeHtml(data.userRatingsTotal || 0)} rating${Number(data.userRatingsTotal) === 1 ? '' : 's'} for Krizpia, but no public review text was returned yet.</p><strong>Krizpia on Google</strong><span class="review-source">Google review summary</span></div>`;
-        }
-
-      }catch(error){
-
-        reviewsContainer.innerHTML = savedReviewsHtml;
-
-        summary.hidden = true;
-
-        summary.innerHTML = '';
-
-      }
-
-    }
-
     function setupReviewsModal(){
 
       const reviewsLink = document.getElementById('reviewsNavLink');
@@ -1609,7 +1545,6 @@
 
       reviewsLink.addEventListener('click', openModal);
 
-      loadGoogleReviews();
 
       closeButton && closeButton.addEventListener('click', closeModal);
 
