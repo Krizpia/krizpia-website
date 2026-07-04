@@ -1549,13 +1549,15 @@
 
         const reviews = Array.isArray(data.reviews) ? data.reviews.filter(review => review && (review.text || review.rating)) : [];
 
-        if(!reviews.length) throw new Error('No Google reviews were returned.');
-
-        reviewsContainer.innerHTML = reviews.map(renderGoogleReview).join('');
-
         summary.hidden = false;
 
         summary.innerHTML = `<div><div class="google-review-rating">${escapeHtml(data.rating || '—')} ★</div><p>${escapeHtml(data.name || 'Krizpia')} on Google · ${escapeHtml(data.userRatingsTotal || reviews.length)} reviews</p></div>${data.googleMapsUrl ? `<a class="small-btn secondary" href="${escapeHtml(data.googleMapsUrl)}" target="_blank" rel="noopener">Open on Google</a>` : ''}`;
+
+        if(reviews.length){
+          reviewsContainer.innerHTML = reviews.map(renderGoogleReview).join('');
+        }else{
+          reviewsContainer.innerHTML = `<div class="review"><div class="stars">★★★★★</div><p>Google is currently showing ${escapeHtml(data.userRatingsTotal || 0)} rating${Number(data.userRatingsTotal) === 1 ? '' : 's'} for Krizpia, but no public review text was returned yet.</p><strong>Krizpia on Google</strong><span class="review-source">Google review summary</span></div>`;
+        }
 
       }catch(error){
 

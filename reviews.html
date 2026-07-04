@@ -126,10 +126,14 @@
         if(!response.ok) throw new Error(data.error || 'Unable to load Google reviews.');
 
         const reviews = Array.isArray(data.reviews) ? data.reviews.filter(review => review && (review.text || review.rating)) : [];
-        if(!reviews.length) throw new Error('No Google reviews were returned.');
 
-        reviewsContainer.innerHTML = reviews.map(renderReview).join('');
-        reviewsTitle.textContent = 'Latest Google reviews';
+        if(reviews.length){
+          reviewsContainer.innerHTML = reviews.map(renderReview).join('');
+          reviewsTitle.textContent = 'Latest Google reviews';
+        }else{
+          reviewsContainer.innerHTML = `<div class="review"><div class="stars">★★★★★</div><p>Google is currently showing ${escapeHtml(data.userRatingsTotal || 0)} rating${Number(data.userRatingsTotal) === 1 ? '' : 's'} for Krizpia, but no public review text was returned yet.</p><strong>Krizpia on Google</strong><span class="review-source">Google review summary</span></div>`;
+          reviewsTitle.textContent = 'Google review summary';
+        }
         reviewStatus.hidden = false;
         reviewStatus.textContent = `${data.name || 'Krizpia'} is rated ${data.rating || '—'} out of 5 from ${data.userRatingsTotal || reviews.length} Google reviews.`;
 
