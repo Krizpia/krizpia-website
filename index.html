@@ -1419,6 +1419,14 @@
 
         if(!response.ok) throw new Error(data.error || 'Please check the form and try again.');
 
+        trackAnalyticsEvent('generate_lead', {
+
+          form_id: form.id || 'enquiryForm',
+
+          product: payload.product || 'Not selected'
+
+        });
+
         form.reset();
 
         await refreshCsrfToken();
@@ -1469,9 +1477,19 @@
 
       };
 
-      buttons.forEach(button => button.addEventListener('click', () => { cart.push(button.dataset.product); render(); document.getElementById('cart').scrollIntoView({behavior:'smooth'}); }));
+      buttons.forEach(button => button.addEventListener('click', () => {
 
-      cartList && cartList.addEventListener('click', event => { const index = event.target.dataset.removeCart; if(index !== undefined){ cart.splice(Number(index),1); render(); } });
+        cart.push(button.dataset.product);
+
+        trackAnalyticsEvent('add_to_cart', { item_name: button.dataset.product || 'Unknown product' });
+
+        render();
+
+        document.getElementById('cart').scrollIntoView({behavior:'smooth'});
+
+      }));
+
+      cartList && cartList.addEventListener('click', event => { const index = event.target.dataset.removeCart; if(index !== undefined){ trackAnalyticsEvent('remove_from_cart', { item_name: cart[Number(index)] || 'Unknown product' }); cart.splice(Number(index),1); render(); } });
 
     }
 
@@ -1487,6 +1505,44 @@
       refreshCsrfToken().catch(() => {
 
         document.getElementById('csrfToken').value = '';
+
+      });
+
+    }
+
+    function getTrafficSource(){
+
+      const params = new URLSearchParams(window.location.search);
+
+      if(params.get('utm_source')) return params.get('utm_source').slice(0,80);
+
+      if(!document.referrer) return 'direct';
+
+      try{
+
+        const referrer = new URL(document.referrer);
+
+        return referrer.hostname === window.location.hostname ? 'internal' : referrer.hostname.slice(0,80);
+
+      }catch(error){
+
+        return 'unknown';
+
+      }
+
+    }
+
+    function trackAnalyticsEvent(name, parameters){
+
+      if(typeof window.gtag !== 'function' || !window.krizpiaAnalyticsLoaded) return;
+
+      window.gtag('event', name, {
+
+        page_path: window.location.pathname,
+
+        traffic_source: getTrafficSource(),
+
+        ...parameters
 
       });
 
@@ -1512,9 +1568,48 @@
 
       window.gtag('js', new Date());
 
-      window.gtag('config', 'G-7KBNLLS1TB', { anonymize_ip: true });
+      window.gtag('config', 'G-7KBNLLS1TB', {
+
+        anonymize_ip: true,
+
+        allow_google_signals: false,
+
+        allow_ad_personalization_signals: false,
+
+        page_title: document.title,
+
+        page_path: window.location.pathname,
+
+        traffic_source: getTrafficSource()
+
+      });
 
     }
+
+    function setupClickTracking(){
+
+      document.addEventListener('click', event => {
+
+        const target = event.target.closest('a, button');
+
+        if(!target || target.hasAttribute('data-cookie-accept') || target.hasAttribute('data-cookie-decline')) return;
+
+        const label = (target.getAttribute('aria-label') || target.textContent || target.href || target.type || 'interaction').replace(/\s+/g,' ').trim().slice(0,80);
+
+        trackAnalyticsEvent('select_content', {
+
+          content_type: target.tagName.toLowerCase(),
+
+          item_id: target.id || target.className || target.getAttribute('href') || target.name || 'unlabelled',
+
+          item_name: label
+
+        });
+
+      }, { passive: true });
+
+    }
+
 
     function setupCookieConsent(){
 
@@ -1809,6 +1904,8 @@
     setupEnquiryForm();
 
     setupCookieConsent();
+
+    setupClickTracking();
 
     loadFeaturedBlogs();
 
