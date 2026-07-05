@@ -1635,27 +1635,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     }
 
-    function loadAnalytics(){
+    const GA_MEASUREMENT_ID = 'G-7KBNLLS1TB';
 
-      if(window.krizpiaAnalyticsLoaded) return;
+    function sendAnalyticsPageView(){
 
-      window.krizpiaAnalyticsLoaded = true;
+      if(typeof window.gtag !== 'function') return;
 
-      window.dataLayer = window.dataLayer || [];
+      window.gtag('event', 'page_view', {
 
-      window.gtag = function(){ window.dataLayer.push(arguments); };
+        send_to: GA_MEASUREMENT_ID,
 
-      const script = document.createElement('script');
+        page_title: document.title,
 
-      script.async = true;
+        page_location: window.location.href,
 
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-7KBNLLS1TB';
+        page_path: window.location.pathname,
 
-      document.head.appendChild(script);
+        traffic_source: getTrafficSource()
+
+      });
+
+    }
+
+    function configureAnalytics(){
+
+      if(typeof window.gtag !== 'function' || window.krizpiaAnalyticsConfigured) return;
+
+      window.krizpiaAnalyticsConfigured = true;
 
       window.gtag('js', new Date());
 
-      window.gtag('config', 'G-7KBNLLS1TB', {
+      window.gtag('config', GA_MEASUREMENT_ID, {
 
         anonymize_ip: true,
 
@@ -1663,13 +1673,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         allow_ad_personalization_signals: false,
 
-        page_title: document.title,
-
-        page_path: window.location.pathname,
-
-        traffic_source: getTrafficSource()
+        send_page_view: false
 
       });
+
+      sendAnalyticsPageView();
+
+    }
+
+    function loadAnalytics(){
+
+      if(window.krizpiaAnalyticsLoaded) {
+
+        configureAnalytics();
+
+        return;
+
+      }
+
+      window.krizpiaAnalyticsLoaded = true;
+
+      window.dataLayer = window.dataLayer || [];
+
+      window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+
+      const existingScript = document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"]`);
+
+      if(existingScript){
+
+        existingScript.addEventListener('load', configureAnalytics, { once: true });
+
+        configureAnalytics();
+
+        return;
+
+      }
+
+      const script = document.createElement('script');
+
+      script.async = true;
+
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+
+      script.onload = configureAnalytics;
+
+      script.onerror = () => {
+
+        window.krizpiaAnalyticsLoaded = false;
+
+        console.warn('Krizpia analytics could not load. Check browser extensions or Content Security Policy.');
+
+      };
+
+      document.head.appendChild(script);
 
     }
 
