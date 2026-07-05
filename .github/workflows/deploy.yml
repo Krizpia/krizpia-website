@@ -37,15 +37,14 @@ jobs:
             --exclude='_site/' \
             --exclude='netlify/' \
             --exclude='netlify.toml' \
-            --exclude='_headers' \
             --exclude='google-review-auto-reply.md' \
             ./ _site/
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: "_site"
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
