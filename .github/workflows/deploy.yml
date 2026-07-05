@@ -12,7 +12,9 @@ permissions:
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  # Do not cancel an in-flight Pages deployment. GitHub Pages can mark the
+  # canceled deployment as failed while actions/deploy-pages is polling it.
+  cancel-in-progress: false
 
 jobs:
   deploy:
