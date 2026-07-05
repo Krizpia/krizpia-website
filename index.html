@@ -15,6 +15,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Krizpia">
+  <meta http-equiv="Content-Security-Policy"
+content="
+default-src 'self';
+script-src 'self' 'unsafe-inline'
+https://www.googletagmanager.com
+https://www.google-analytics.com
+https://static.cloudflareinsights.com;
+connect-src 'self'
+https://www.google-analytics.com
+https://region1.google-analytics.com;
+img-src 'self' data:
+https://www.google-analytics.com;
+style-src 'self' 'unsafe-inline';
+font-src 'self' data:;
+">
   <link rel="apple-touch-icon" href="/krizpia-logo.png">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7KBNLLS1TB"></script>
