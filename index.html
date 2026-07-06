@@ -1825,31 +1825,10 @@ upgrade-insecure-requests;
 
       if(!banner) return;
 
-      const saved = localStorage.getItem('krizpia-cookie-consent');
+      banner.hidden = true; // hide cookie banner
 
-      if(saved === 'accepted') loadAnalytics();
-
-      if(saved){ banner.hidden = true; return; }
-
-      banner.hidden = false;
-
-      banner.querySelector('[data-cookie-accept]').addEventListener('click', () => {
-
-        localStorage.setItem('krizpia-cookie-consent','accepted');
-
-        banner.hidden = true;
-
-        loadAnalytics();
-
-      });
-
-      banner.querySelector('[data-cookie-decline]').addEventListener('click', () => {
-
-        localStorage.setItem('krizpia-cookie-consent','declined');
-
-        banner.hidden = true;
-
-      });
+      // Google Analytics starts immediately for every visitor
+      loadAnalytics();
 
     }
 
@@ -2101,6 +2080,8 @@ upgrade-insecure-requests;
     setupCart();
 
     setupEnquiryForm();
+
+    loadAnalytics();
 
     setupCookieConsent();
 
