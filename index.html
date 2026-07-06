@@ -23,38 +23,7 @@
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Krizpia">
-  <meta http-equiv="Content-Security-Policy" content="
-    script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
-script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com;
-connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com;
-img-src 'self' data: blob: https: https://www.google-analytics.com https://stats.g.doubleclick.net;
-default-src 'self';
-script-src 'self' 'unsafe-inline' 'unsafe-eval'
-https://www.googletagmanager.com
-https://www.google-analytics.com
-https://www.gstatic.com
-https://static.cloudflareinsights.com;
-script-src-elem 'self' 'unsafe-inline'
-https://www.googletagmanager.com
-https://www.google-analytics.com
-https://www.gstatic.com
-https://static.cloudflareinsights.com;
-connect-src 'self'
-https://www.google-analytics.com
-https://region1.google-analytics.com
-https://analytics.google.com
-https://stats.g.doubleclick.net
-https://www.googletagmanager.com
-https://static.cloudflareinsights.com;
-img-src 'self' data: blob: https:;
-style-src 'self' 'unsafe-inline' https:;
-font-src 'self' data: https:;
-frame-src 'self' https://www.googletagmanager.com https://wa.me;
-object-src 'none';
-base-uri 'self';
-form-action 'self' https://wa.me mailto:;
-upgrade-insecure-requests;
-">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://www.gstatic.com https://static.cloudflareinsights.com; script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://www.gstatic.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: blob: https: https://www.googletagmanager.com https://www.google-analytics.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://www.gstatic.com https://static.cloudflareinsights.com; font-src 'self' data: https:; connect-src 'self' https://wa.me https://www.google-analytics.com https://region1.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://www.googletagmanager.com https://www.gstatic.com https://static.cloudflareinsights.com https://cloudflareinsights.com; frame-src 'self' https://www.googletagmanager.com https://wa.me; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://wa.me mailto:; upgrade-insecure-requests;">
   <link rel="apple-touch-icon" href="/krizpia-logo.png">
 <meta charset="UTF-8" />
 
@@ -658,6 +627,9 @@ upgrade-insecure-requests;
 </head>
 
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2PMW4L2" height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <header>
 
     <div class="nav">
@@ -1775,11 +1747,13 @@ upgrade-insecure-requests;
 
     }
 
-    function trackAnalyticsEvent(name, parameters){
+    function pushDataLayerEvent(name, parameters = {}){
 
-      if(typeof window.gtag !== 'function' || !window.krizpiaAnalyticsLoaded) return;
+      window.dataLayer = window.dataLayer || [];
 
-      window.gtag('event', name, {
+      window.dataLayer.push({
+
+        event: name,
 
         page_path: window.location.pathname,
 
@@ -1791,13 +1765,31 @@ upgrade-insecure-requests;
 
     }
 
+    function trackAnalyticsEvent(name, parameters = {}){
+
+      const eventParameters = {
+
+        page_path: window.location.pathname,
+
+        traffic_source: getTrafficSource(),
+
+        ...parameters
+
+      };
+
+      pushDataLayerEvent(name, parameters);
+
+      if(typeof window.gtag !== 'function' || !window.krizpiaAnalyticsLoaded) return;
+
+      window.gtag('event', name, eventParameters);
+
+    }
+
     const GA_MEASUREMENT_ID = 'G-4HP67SVL8C';
 
     function sendAnalyticsPageView(){
 
-      if(typeof window.gtag !== 'function') return;
-
-      window.gtag('event', 'page_view', {
+      const pageViewParameters = {
 
         send_to: GA_MEASUREMENT_ID,
 
@@ -1809,7 +1801,13 @@ upgrade-insecure-requests;
 
         traffic_source: getTrafficSource()
 
-      });
+      };
+
+      pushDataLayerEvent('page_view', pageViewParameters);
+
+      if(typeof window.gtag !== 'function') return;
+
+      window.gtag('event', 'page_view', pageViewParameters);
 
     }
 
