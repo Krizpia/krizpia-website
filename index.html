@@ -3,14 +3,7 @@
 <html lang="en">
 
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-M2PMW4L2');</script>
-<!-- End Google Tag Manager -->
-  <link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#111111">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -31,22 +24,7 @@ form-action 'self' https://wa.me;
 upgrade-insecure-requests;
 ">
   <link rel="apple-touch-icon" href="/krizpia-logo.png">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HP67SVL8C"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-4HP67SVL8C', {
-      anonymize_ip: true,
-      allow_google_signals: false,
-      allow_ad_personalization_signals: false
-    });
-    window.krizpiaAnalyticsLoaded = true;
-    window.krizpiaAnalyticsConfigured = true;
-  </script>
-
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
 
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -614,12 +592,7 @@ upgrade-insecure-requests;
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2PMW4L2"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
- 
-  <header>
+<header>
 
     <div class="nav">
 
@@ -690,8 +663,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </section>
 
-    <!-- Category shortcuts hidden from the homepage until needed. -->
-    <section id="categories" hidden>
+    <!-- Category shortcuts are visible because the main navigation links here. -->
+    <section id="categories">
 
       <div class="section-title"><h2>Shop by Category</h2><p>Find the right Kerala snack faster with clear product groups for tea time, family sharing, travel and retail supply.</p><div class="line"></div></div>
 
@@ -1065,8 +1038,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </section>
 
-    <!-- FAQs are kept available from the top navigation, but hidden from the main page content. -->
-    <section id="faq" hidden>
+    <!-- FAQs are visible because the main navigation links here. -->
+    <section id="faq">
 
       <div class="section-title"><h2>Frequently Asked Questions</h2><p>Common questions about Krizpia snacks.</p><div class="line"></div></div>
 
@@ -1097,7 +1070,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <h2>Product Enquiry</h2>
 
-          <p>Send a quick enquiry for retail supply, family orders, events, wholesale or distribution by phone or email.</p>
+          <p>Send a quick enquiry for retail supply, family orders, events, wholesale or distribution. On GitHub Pages, this form opens your email app so your message can be sent directly to Krizpia.</p>
 
           <p><strong>Call:</strong> +91 9795679851</p>
 
@@ -1129,7 +1102,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <textarea id="message" name="message" maxlength="220" placeholder="Message"></textarea><input id="csrfToken" name="csrfToken" type="hidden" /><p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
 
-            <button id="enquirySubmit" class="btn gold" type="submit">Send Enquiry Securely</button>
+            <button id="enquirySubmit" class="btn gold" type="submit">Send Enquiry</button>
 
           </form>
 
@@ -1409,6 +1382,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     }
 
+    function canSubmitSecureEnquiry(){
+
+      return canUseNetlifyFunctions();
+
+    }
+
     function isNetlifyFunctionUnavailable(response){
 
       return response && (response.status === 404 || response.status === 405);
@@ -1433,7 +1412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     async function refreshCsrfToken(){
 
-      if(!canUseNetlifyFunctions()) return null;
+      if(!canSubmitSecureEnquiry()) return null;
 
       const response = await fetch('/.netlify/functions/enquiry',{method:'GET',credentials:'same-origin',headers:{'Accept':'application/json'}});
 
@@ -1473,7 +1452,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       submit.disabled = true;
 
-      setFormStatus('Sending your enquiry securely...', false);
+      setFormStatus(canSubmitSecureEnquiry() ? 'Sending your enquiry securely...' : 'Preparing your email enquiry...', false);
 
       try{
 
@@ -1487,11 +1466,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         Object.keys(payload).forEach(key => { payload[key] = cleanInput(payload[key]); });
 
-        if(!canUseNetlifyFunctions()){
+        if(!canSubmitSecureEnquiry()){
 
           submitEnquiryByEmail(payload);
 
-          setFormStatus('Opening your email app with the enquiry details because this static host does not run Netlify Functions.', false);
+          setFormStatus('Opening your email app with the enquiry details because GitHub Pages cannot run the secure Netlify Function endpoint.', false);
 
           return;
 
@@ -1606,9 +1585,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       form.addEventListener('submit', sendEnquiry);
 
-      if(!canUseNetlifyFunctions()){
+      if(!canSubmitSecureEnquiry()){
 
-        setFormStatus('This static host does not run Netlify Functions. Submitting will open your email app as a fallback.', true);
+        setFormStatus('This GitHub Pages site cannot run the secure form endpoint. Submitting will open your email app instead.', false);
 
         return;
 
@@ -1816,11 +1795,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
 
-    function escapeHtml(value){
-
-      return String(value || '').replace(/[&<>\"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '\"': '&quot;', "'": '&#39;' }[character]));
-
-    }
 
     function starText(rating) {
 
@@ -1830,17 +1804,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     }
 
-    function escapeHtml(value) {
-
-      return String(value || '').replace(/[&<>"']/g, character => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-      }[character]));
-
-    }
 
     function loadGoogleReviewsPreview(){
 
