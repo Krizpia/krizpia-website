@@ -487,6 +487,30 @@ upgrade-insecure-requests;
 
     .notice-box p{font-size:14px;margin-bottom:6px;color:#555}
 
+    .comparison-card{background:#fff;border:1px solid #d9d9d9;border-radius:28px;padding:24px;box-shadow:0 10px 28px rgba(0,0,0,.07);overflow-x:auto}
+
+    .comparison-table{width:100%;border-collapse:collapse;min-width:760px;text-align:left}
+
+    .comparison-table th,.comparison-table td{padding:14px 16px;border-bottom:1px solid #ead8bf;vertical-align:top}
+
+    .comparison-table thead th{background:#fff7e8;color:#261708;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+
+    .comparison-table tbody th{color:#111111;white-space:nowrap}
+
+    .comparison-note{margin-top:14px;color:#555;font-size:14px}
+
+    .recipe-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+
+    .recipe-card{background:#fff;border:1px solid #d9d9d9;border-radius:24px;padding:24px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
+
+    .recipe-card span{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#7a3f16;color:#fff;font-size:23px;margin-bottom:14px}
+
+    .recipe-card h3{font-size:20px;margin-bottom:10px;color:#111111}
+
+    .recipe-card p{color:#555;font-size:15px;margin-bottom:12px}
+
+    .recipe-card ul{padding-left:18px;color:#555;font-size:15px}
+
     .about{background:#fff;border:1px solid #d9d9d9;border-radius:28px;padding:36px;display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,1fr);gap:35px;align-items:center;box-shadow:0 10px 28px rgba(0,0,0,.06)}
 
     .about img{border-radius:22px;width:100%;height:auto}
@@ -621,11 +645,11 @@ upgrade-insecure-requests;
 
     .footer-links a{color:#fff;margin:0 7px;font-size:14px;white-space:nowrap}
 
-    @media(max-width:1100px){.products,.gallery,.reviews,.category-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid,.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}}
+    @media(max-width:1100px){.products,.gallery,.reviews,.category-strip,.recipe-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid,.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}}
 
     @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr}}
 
-    @media(max-width:700px){header{position:static}.reviews,.story-grid,.category-strip,.lifestyle-grid{grid-template-columns:1fr}.reviews-modal,.blog-modal,.quality-modal{padding:12px}.reviews-panel,.blog-panel,.quality-panel{padding:18px;max-height:92vh}.reviews-header,.blog-header,.quality-header{gap:12px}.reviews-close,.blog-close,.quality-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center;flex-wrap:wrap;overflow-x:visible;gap:8px 12px}.links a{padding:6px 3px}.contact-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.assurance-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-contact{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
+    @media(max-width:700px){header{position:static}.reviews,.story-grid,.category-strip,.lifestyle-grid,.recipe-grid{grid-template-columns:1fr}.reviews-modal,.blog-modal,.quality-modal{padding:12px}.reviews-panel,.blog-panel,.quality-panel{padding:18px;max-height:92vh}.reviews-header,.blog-header,.quality-header{gap:12px}.reviews-close,.blog-close,.quality-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center;flex-wrap:wrap;overflow-x:visible;gap:8px 12px}.links a{padding:6px 3px}.contact-btn{padding:8px 12px!important}.hero{padding:38px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:36px 16px}.products,.gallery,.assurance-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:24px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-contact{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
 
     @media(max-width:420px){h1{font-size:32px;letter-spacing:-.8px}.tag{font-size:12px;padding:7px 12px}.hero-image img{height:235px}.card img,.gallery img,.blog-card img{height:210px}.logo img{height:50px}.links{gap:10px;font-size:12px}}
 
@@ -649,6 +673,10 @@ upgrade-insecure-requests;
         <a href="#products">Products</a>
 
         <a href="#categories">Categories</a>
+
+        <a href="#nutrition-comparison">Nutrition</a>
+
+        <a class="nav-secondary" href="#recipe-ideas">Recipe Ideas</a>
 
         <a class="nav-secondary" href="#product-videos">Videos</a>
 
@@ -824,6 +852,69 @@ upgrade-insecure-requests;
           </div>
 
         </article>
+
+      </div>
+
+    </section>
+
+
+    <section id="nutrition-comparison">
+
+      <div class="section-title">
+
+        <h2>Nutrition Comparison Table</h2>
+
+        <p>Compare Krizpia snack varieties per 100 g to choose the flavour, sweetness and crunch that best fits your tea-time or sharing plan.</p>
+
+        <div class="line"></div>
+
+      </div>
+
+      <div class="comparison-card">
+
+        <table class="comparison-table">
+          <thead>
+            <tr><th>Snack</th><th>Energy</th><th>Protein</th><th>Carbohydrates</th><th>Total Sugars</th><th>Total Fat</th><th>Dietary Fiber</th><th>Sodium</th><th>Best For</th></tr>
+          </thead>
+          <tbody>
+            <tr><th>Traditional Kuzhalappam</th><td>485 kcal</td><td>5.5 g</td><td>58.0 g</td><td>1.0 g</td><td>26.0 g</td><td>2.5 g</td><td>380 mg</td><td>Classic tea-time crunch</td></tr>
+            <tr><th>Spicy Kuzhalappam</th><td>490 kcal</td><td>5.8 g</td><td>55.0 g</td><td>1.6 g</td><td>27.0 g</td><td>3.0 g</td><td>350 mg</td><td>Bold evening snack plates</td></tr>
+            <tr><th>Sweet Kuzhalappam</th><td>505 kcal</td><td>5.2 g</td><td>62.0 g</td><td>9.5 g</td><td>26.5 g</td><td>2.4 g</td><td>330 mg</td><td>Guests, kids and celebrations</td></tr>
+            <tr><th>Thatta</th><td>500 kcal</td><td>6.8 g</td><td>55.0 g</td><td>0.8 g</td><td>28.0 g</td><td>3.5 g</td><td>590 mg</td><td>Savoury sharing with tea</td></tr>
+          </tbody>
+        </table>
+
+        <p class="comparison-note">Values are listed per 100 g from the product nutrition panels. Always check the pack label before purchase or consumption, especially for allergens and dietary needs.</p>
+
+      </div>
+
+    </section>
+
+    <section id="recipe-ideas">
+
+      <div class="section-title">
+
+        <h2>Recipe Ideas with Krizpia Snacks</h2>
+
+        <p>Turn crispy Kuzhalappam and Thatta into quick serving ideas for family tea, guests, school snack boxes and festive plates.</p>
+
+        <div class="line"></div>
+
+      </div>
+
+      <div class="recipe-grid">
+
+        <article class="recipe-card"><span>🥗</span><h3>Kuzhalappam Chaat Cups</h3><p>Break Traditional or Spicy Kuzhalappam into bite-sized pieces and layer with chopped onion, tomato, coriander, curd and chutney.</p><ul><li>Best with spicy or traditional flavours</li><li>Serve immediately for maximum crunch</li></ul></article>
+
+        <article class="recipe-card"><span>🍨</span><h3>Sweet Crunch Dessert Bowl</h3><p>Use crushed Sweet Kuzhalappam as a crunchy topping over payasam, ice cream, fruit custard or warm banana slices.</p><ul><li>Great for celebrations</li><li>Add just before serving</li></ul></article>
+
+        <article class="recipe-card"><span>☕</span><h3>Kerala Tea-time Platter</h3><p>Arrange Thatta, Traditional Kuzhalappam and Sweet Kuzhalappam with banana chips, roasted peanuts and hot chai for guests.</p><ul><li>Easy sharing plate</li><li>Mix sweet, mild and savoury bites</li></ul></article>
+
+        <article class="recipe-card"><span>🌶️</span><h3>Spicy Snack Mix</h3><p>Toss broken Spicy Kuzhalappam with roasted nuts, curry leaves and a pinch of chaat masala for a fast party-style mix.</p><ul><li>Good for movie nights</li><li>Store airtight after mixing</li></ul></article>
+
+        <article class="recipe-card"><span>🥪</span><h3>Lunchbox Crunch Side</h3><p>Pack a small portion of Thatta or Traditional Kuzhalappam beside sandwiches, lemon rice or curd rice for a crisp side snack.</p><ul><li>Keep in a dry compartment</li><li>Ideal for travel and office breaks</li></ul></article>
+
+        <article class="recipe-card"><span>🎁</span><h3>Festival Gift Jar</h3><p>Fill a clean jar with mixed Kuzhalappam varieties and Thatta, then add a ribbon for a simple Kerala snack gift.</p><ul><li>Use sealed fresh packs</li><li>Label sweet and spicy varieties</li></ul></article>
 
       </div>
 
