@@ -1275,10 +1275,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 
   <div id="cookieConsent" class="cookie-consent" hidden>
-    <p>We use essential cookies for secure form protection and optional analytics cookies to improve Krizpia.com. You can accept or decline analytics cookies.</p>
+    <p>We use essential cookies for secure form protection and privacy-friendly analytics to improve Krizpia.com. Analytics starts automatically, and you can turn it off anytime.</p>
     <div>
-      <button class="small-btn" type="button" data-cookie-decline>Decline</button>
-      <button class="small-btn gold" type="button" data-cookie-accept>Accept</button>
+      <button class="small-btn" type="button" data-cookie-decline>Turn off analytics</button>
+      <button class="small-btn gold" type="button" data-cookie-accept>Continue</button>
     </div>
   </div>
 
@@ -1914,13 +1914,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       const consent = localStorage.getItem('krizpia-analytics-consent');
 
-      if(consent === 'accepted'){
+      if(consent === 'declined'){
         banner.hidden = true;
-        loadAnalytics();
         return;
       }
 
-      if(consent === 'declined'){
+      loadAnalytics();
+
+      if(consent === 'accepted'){
         banner.hidden = true;
         return;
       }
