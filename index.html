@@ -4,16 +4,6 @@
 
 <head>
 
-<!-- Google Tag Manager -->
-<script>
-  (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-M2PMW4L2');
-</script>
-<!-- End Google Tag Manager -->
-
 <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#111111">
   <meta name="mobile-web-app-capable" content="yes">
@@ -757,15 +747,10 @@
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2PMW4L2"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <header>
 
     <div class="nav">
-
       <a href="index.html" class="logo" aria-label="Krizpia Home">
 
         <img src="krizpia-logo.png" alt="Krizpia Kerala snacks logo" decoding="async" width="2048" height="768">
@@ -794,8 +779,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </nav>
 
     </div>
-
-  </header>
+  
+</header>
 
   <main>
 
@@ -1562,17 +1547,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       }
 
     }
+function canUseNetlifyFunctions(){
+  const hostname = window.location.hostname;
 
-    function canUseNetlifyFunctions(){
-
-      const hostname = window.location.hostname;
-      return hostname === 'localhost'
-        || hostname === '127.0.0.1'
-        || hostname.endsWith('.netlify.app')
-        || hostname.endsWith('.netlify.com');
-
-    }
-
+  return hostname === 'localhost'
+    || hostname === '127.0.0.1'
+    || hostname === 'krizpia.com'
+    || hostname === 'www.krizpia.com'
+    || hostname.endsWith('.netlify.app')
+    || hostname.endsWith('.netlify.com');
+}
     function canSubmitSecureEnquiry(){
 
       return canUseNetlifyFunctions();
@@ -1981,42 +1965,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
 
 
-    function setupCookieConsent(){
+      function setupCookieConsent() {
+  const banner = document.getElementById("cookieConsent");
+  if (!banner) return;
 
-      const banner = document.getElementById('cookieConsent');
+  const consent = localStorage.getItem("krizpia-analytics-consent");
 
-      if(!banner) return;
+  if (consent === "accepted") {
+    banner.hidden = true;
+    loadAnalytics();
+    return;
+  }
 
-      const consent = localStorage.getItem('krizpia-analytics-consent');
+  if (consent === "declined") {
+    banner.hidden = true;
+    return;
+  }
 
-      if(consent === 'declined'){
-        banner.hidden = true;
-        return;
-      }
+  banner.hidden = false;
 
-      loadAnalytics();
+  banner.querySelector("[data-cookie-accept]").onclick = function () {
+    localStorage.setItem("krizpia-analytics-consent", "accepted");
+    banner.hidden = true;
+    loadAnalytics();
+  };
 
-      if(consent === 'accepted'){
-        banner.hidden = true;
-        return;
-      }
-
-      banner.hidden = false;
-
-      banner.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
-        localStorage.setItem('krizpia-analytics-consent','accepted');
-        banner.hidden = true;
-        loadAnalytics();
-      });
-
-      banner.querySelector('[data-cookie-decline]')?.addEventListener('click', () => {
-        localStorage.setItem('krizpia-analytics-consent','declined');
-        banner.hidden = true;
-      });
-
-    }
-
-
+  banner.querySelector("[data-cookie-decline]").onclick = function () {
+    localStorage.setItem("krizpia-analytics-consent", "declined");
+    banner.hidden = true;
+  };
+}
 
     function starText(rating) {
 
