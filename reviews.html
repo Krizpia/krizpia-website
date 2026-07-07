@@ -63,7 +63,7 @@
     <section class="review-hero">
       <span class="tag">Customer feedback</span>
       <h1>Krizpia Customer Reviews</h1>
-      <p>Read manually selected customer feedback for Krizpia Kerala snacks from families, local buyers and snack lovers. Recent Google reviews are loaded through our secure backend when available. You can also leave a public review on Google Maps.</p>
+      <p>Read manually selected customer feedback for Krizpia Kerala snacks from families, local buyers and snack lovers. You can also leave a public review on Google Maps.</p>
       <div class="hero-actions">
         <a class="btn" href="index.html#order">Contact Krizpia</a>
         <a class="btn secondary" id="writeGoogleReview" href="https://www.google.com/maps/place/Krizpia/@9.4453436,76.5401108,17z/data=!4m8!3m7!1s0x3b0627a2c11e21e5:0xf1c510a2018b698b!8m2!3d9.4453436!4d76.5426911!9m1!1b1!16s%2Fg%2F11nq1568c9?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Write a Google Review</a>
@@ -71,7 +71,7 @@
     </section>
 
     <section class="reviews-wrap" aria-labelledby="reviewsTitle">
-      <div id="reviewStatus" class="status">Loading recent Google reviews securely through the Krizpia backend. If Google is unavailable, our selected customer feedback will remain visible.</div>
+      <div id="reviewStatus" class="status">Selected customer feedback is shown below.</div>
       <div id="googleSummary" class="google-review-summary" hidden>
         <div class="google-review-meta">
           <span class="google-badge" aria-hidden="true">G</span>
@@ -96,77 +96,11 @@
   <footer class="footer"><p>© 2026 Krizpia by Rangeela Products. <a href="index.html">Back to home</a></p></footer>
 
   <script>
-    const fallbackReviewsMarkup = document.getElementById('googleReviews').innerHTML;
-    const reviewStatus = document.getElementById('reviewStatus');
     const googleSummary = document.getElementById('googleSummary');
-    const googleRating = document.getElementById('googleRating');
-    const googleReviewCount = document.getElementById('googleReviewCount');
-    const viewGoogleReviews = document.getElementById('viewGoogleReviews');
-    const writeGoogleReview = document.getElementById('writeGoogleReview');
+    const reviewStatus = document.getElementById('reviewStatus');
 
-    function starText(rating) {
-      const rounded = Math.max(0, Math.min(5, Math.round(Number(rating) || 0)));
-      return '★'.repeat(rounded) + '☆'.repeat(5 - rounded);
-    }
-
-    function escapeHtml(value) {
-      return String(value || '').replace(/[&<>"']/g, character => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-      }[character]));
-    }
-
-    function renderGoogleReviews(data) {
-      const reviews = Array.isArray(data.reviews) ? data.reviews : [];
-      if (!reviews.length) throw new Error('No Google review text returned.');
-
-      if (data.reviewUrl) {
-        viewGoogleReviews.href = data.reviewUrl;
-        writeGoogleReview.href = data.reviewUrl;
-      }
-
-      if (data.rating) {
-        googleRating.textContent = `${Number(data.rating).toFixed(1)} ★ on Google`;
-        googleReviewCount.textContent = data.userRatingsTotal
-          ? `${data.userRatingsTotal} public Google review${data.userRatingsTotal === 1 ? '' : 's'} for ${data.name || 'Krizpia'}.`
-          : `Recent public Google reviews for ${data.name || 'Krizpia'}.`;
-        googleSummary.hidden = false;
-      }
-
-      document.getElementById('googleReviews').innerHTML = reviews.map(review => `
-        <article class="review is-google">
-          ${review.profilePhotoUrl ? `<img class="profile-photo" src="${escapeHtml(review.profilePhotoUrl)}" alt="" loading="lazy" decoding="async">` : ''}
-          <div class="stars" aria-label="${escapeHtml(review.rating)} out of 5 stars">${starText(review.rating)}</div>
-          <p>“${escapeHtml(review.text)}”</p>
-          <strong>${escapeHtml(review.authorName)}</strong>
-          <span class="review-source">Google review</span>
-          ${review.relativeTimeDescription ? `<span class="review-date">${escapeHtml(review.relativeTimeDescription)}</span>` : ''}
-          ${review.authorUrl ? `<a class="review-link" href="${escapeHtml(review.authorUrl)}" target="_blank" rel="noopener">Read on Google</a>` : ''}
-        </article>
-      `).join('');
-
-      reviewStatus.textContent = 'Showing verified Google reviews from the Krizpia Google Business Profile.';
-    }
-
-    if (!['localhost', '127.0.0.1'].includes(window.location.hostname) && !window.location.hostname.endsWith('.netlify.app') && !window.location.hostname.endsWith('.netlify.com')) {
-      document.getElementById('googleReviews').innerHTML = fallbackReviewsMarkup;
-      reviewStatus.textContent = 'Selected customer feedback is shown below until verified Google reviews are available.';
-    } else {
-      fetch('/.netlify/functions/google-reviews', { headers: { Accept: 'application/json' } })
-      .then(response => response.ok ? response.json() : response.json().then(error => Promise.reject(error)))
-      .then(renderGoogleReviews)
-      .catch(error => {
-        if (error && error.reviewUrl) {
-          viewGoogleReviews.href = error.reviewUrl;
-          writeGoogleReview.href = error.reviewUrl;
-        }
-        document.getElementById('googleReviews').innerHTML = fallbackReviewsMarkup;
-        reviewStatus.textContent = 'Google reviews are currently unavailable, so selected customer feedback is shown below.';
-      });
-    }
+    if (googleSummary) googleSummary.hidden = true;
+    if (reviewStatus) reviewStatus.textContent = 'Selected customer feedback is shown below.';
   </script>
   <script src="assets/breadcrumbs.js" defer></script>
 </body>

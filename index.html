@@ -1248,7 +1248,7 @@
 
           <p><strong>Email:</strong> <a href="mailto:info@krizpia.com">info@krizpia.com</a></p>
 
-          <form id="enquiryForm" class="form" action="/.netlify/functions/enquiry" method="post" novalidate>
+          <form id="enquiryForm" class="form" action="mailto:info@krizpia.com" method="post" novalidate>
 
             <input id="name" name="name" type="text" autocomplete="name" minlength="2" maxlength="50" pattern="[A-Za-z .\'-]{2,50}" placeholder="Your Name" required />
 
@@ -1272,7 +1272,7 @@
 
             <input id="quantity" name="quantity" type="text" maxlength="40" pattern="[A-Za-z0-9 .\-]{1,40}" placeholder="Quantity" required />
 
-            <textarea id="message" name="message" maxlength="220" placeholder="Message"></textarea><input id="csrfToken" name="csrfToken" type="hidden" /><p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+            <textarea id="message" name="message" maxlength="220" placeholder="Message"></textarea><p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
 
             <button id="enquirySubmit" class="btn gold" type="submit">Send Enquiry</button>
 
@@ -1547,32 +1547,8 @@
       }
 
     }
-function canUseNetlifyFunctions(){
-  const hostname = window.location.hostname;
-
-  return hostname === 'localhost'
-    || hostname === '127.0.0.1'
-    || hostname === 'krizpia.com'
-    || hostname === 'www.krizpia.com'
-    || hostname.endsWith('.netlify.app')
-    || hostname.endsWith('.netlify.com');
-}
-    function canSubmitSecureEnquiry(){
-
-      return canUseNetlifyFunctions();
-
-    }
-
-    function isNetlifyFunctionUnavailable(response){
-
-      return response && (response.status === 404 || response.status === 405);
-
-    }
-
-    function submitEnquiryByEmail(payload){
-
+function submitEnquiryByEmail(payload){
       const subject = encodeURIComponent(`Krizpia enquiry from ${payload.name || 'website visitor'}`);
-
       const body = encodeURIComponent([
         `Name: ${payload.name || ''}`,
         `Phone: ${payload.phone || ''}`,
@@ -1580,134 +1556,48 @@ function canUseNetlifyFunctions(){
         `Quantity: ${payload.quantity || ''}`,
         `Message: ${payload.message || ''}`
       ].join('\n'));
-
       window.location.href = `mailto:info@krizpia.com?subject=${subject}&body=${body}`;
-
     }
 
-    async function refreshCsrfToken(){
-
-      if(!canSubmitSecureEnquiry()) return null;
-
-      const response = await fetch('/.netlify/functions/enquiry',{method:'GET',credentials:'same-origin',headers:{'Accept':'application/json'}});
-
-      if(isNetlifyFunctionUnavailable(response)){
-
-        document.getElementById('csrfToken').value = '';
-
-        return null;
-
-      }
-
-      if(!response.ok) throw new Error('Unable to prepare secure form');
-
-      const data = await response.json();
-
-      document.getElementById('csrfToken').value = data.csrfToken;
-
-      return data.csrfToken;
-
+    function submitEnquiryByWhatsApp(payload){
+      const text = encodeURIComponent([
+        'Krizpia product enquiry',
+        `Name: ${payload.name || ''}`,
+        `Phone: ${payload.phone || ''}`,
+        `Product: ${payload.product || ''}`,
+        `Quantity: ${payload.quantity || ''}`,
+        `Message: ${payload.message || ''}`
+      ].join('\n'));
+      window.open(`https://wa.me/919795679851?text=${text}`, '_blank', 'noopener');
     }
 
     async function sendEnquiry(event){
-
       event.preventDefault();
-
       const form = event.currentTarget;
-
       if(!form.checkValidity()){
-
         form.reportValidity();
-
         return;
-
       }
-
       const submit = document.getElementById('enquirySubmit');
-
       submit.disabled = true;
-
-      setFormStatus(canSubmitSecureEnquiry() ? 'Sending your enquiry securely...' : 'Preparing your email enquiry...', false);
-
+      setFormStatus('Preparing your WhatsApp and email enquiry...', false);
       try{
-
-        if(!document.getElementById('csrfToken').value){
-
-          await refreshCsrfToken();
-
-        }
-
         const payload = Object.fromEntries(new FormData(form).entries());
-
         Object.keys(payload).forEach(key => { payload[key] = cleanInput(payload[key]); });
-
-        if(!canSubmitSecureEnquiry()){
-
-          submitEnquiryByEmail(payload);
-
-          setFormStatus('Opening your prepared email enquiry. You can also call or WhatsApp Krizpia for a faster response.', false);
-
-          return;
-
-        }
-
-        const response = await fetch(form.action,{
-
-          method:'POST',
-
-          credentials:'same-origin',
-
-          headers:{'Content-Type':'application/json','Accept':'application/json','X-CSRF-Token':payload.csrfToken},
-
-          body:JSON.stringify(payload)
-
-        });
-
-        if(isNetlifyFunctionUnavailable(response)){
-
-          submitEnquiryByEmail(payload);
-
-          setFormStatus('Opening your prepared email enquiry. You can also call or WhatsApp Krizpia for a faster response.', false);
-
-          return;
-
-        }
-
-        const data = await response.json().catch(() => ({}));
-
-        if(!response.ok) throw new Error(data.error || 'Please check the form and try again.');
-
         trackAnalyticsEvent('generate_lead', {
-
           form_id: form.id || 'enquiryForm',
-
           product: payload.product || 'Not selected'
-
         });
-
-        form.reset();
-
-        await refreshCsrfToken();
-
-        setFormStatus('Thank you. Your enquiry was received securely and our team will contact you soon.', false);
-
+        submitEnquiryByWhatsApp(payload);
+        submitEnquiryByEmail(payload);
+        setFormStatus('Opening your prepared WhatsApp and email enquiry. You can also call Krizpia for a faster response.', false);
       }catch(error){
-
-        const message = error.message === 'Unable to prepare secure form'
-
-          ? 'Secure form setup is temporarily unavailable. Please refresh and try again, or call Krizpia for urgent orders.'
-
-          : (error.message || 'Unable to send enquiry right now. Please call Krizpia for urgent orders.');
-
-        setFormStatus(message, true);
-
+        setFormStatus('Unable to prepare the enquiry right now. Please call, WhatsApp or email Krizpia directly.', true);
       }finally{
-
         submit.disabled = false;
-
       }
-
     }
+
 
     function setupCart(){
 
@@ -1760,21 +1650,7 @@ function canUseNetlifyFunctions(){
 
       form.addEventListener('submit', sendEnquiry);
 
-      if(!canSubmitSecureEnquiry()){
-
-        setFormStatus('You can submit this form, call, WhatsApp or email Krizpia for a quick product enquiry.', false);
-
-        return;
-
-      }
-
-      refreshCsrfToken().catch(() => {
-
-        document.getElementById('csrfToken').value = '';
-
-        setFormStatus('If secure submission is unavailable, the form will prepare an email enquiry. You can also call or WhatsApp Krizpia.', true);
-
-      });
+      setFormStatus('Submit this form to open a prepared WhatsApp/email enquiry, or call Krizpia directly.', false);
 
     }
 
@@ -1830,110 +1706,19 @@ function canUseNetlifyFunctions(){
 
       };
 
-      pushDataLayerEvent(name, parameters);
-
-      if(typeof window.gtag !== 'function' || !window.krizpiaAnalyticsLoaded) return;
-
-      window.gtag('event', name, eventParameters);
+      pushDataLayerEvent(name, eventParameters);
 
     }
-
-    const GA_MEASUREMENT_ID = 'G-4HP67SVL8C';
-
     function sendAnalyticsPageView(){
-
-      const pageViewParameters = {
-
-        send_to: GA_MEASUREMENT_ID,
-
+      pushDataLayerEvent('page_view', {
         page_title: document.title,
-
-        page_location: window.location.href,
-
-        page_path: window.location.pathname,
-
-        traffic_source: getTrafficSource()
-
-      };
-
-      pushDataLayerEvent('page_view', pageViewParameters);
-
-      if(typeof window.gtag !== 'function') return;
-
-      window.gtag('event', 'page_view', pageViewParameters);
-
-    }
-
-    function configureAnalytics(){
-
-      if(typeof window.gtag !== 'function' || window.krizpiaAnalyticsConfigured) return;
-
-      window.krizpiaAnalyticsConfigured = true;
-
-      window.gtag('js', new Date());
-
-      window.gtag('config', GA_MEASUREMENT_ID, {
-
-        anonymize_ip: true,
-
-        allow_google_signals: false,
-
-        allow_ad_personalization_signals: false,
-
-        send_page_view: false
-
+        page_location: window.location.href
       });
-
-      sendAnalyticsPageView();
-
     }
 
     function loadAnalytics(){
-
-      if(window.krizpiaAnalyticsLoaded) {
-
-        configureAnalytics();
-
-        return;
-
-      }
-
       window.krizpiaAnalyticsLoaded = true;
-
-      window.dataLayer = window.dataLayer || [];
-
-      window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
-
-      const existingScript = document.querySelector(`script[src*="googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"]`);
-
-      if(existingScript){
-
-        existingScript.addEventListener('load', configureAnalytics, { once: true });
-
-        configureAnalytics();
-
-        return;
-
-      }
-
-      const script = document.createElement('script');
-
-      script.async = true;
-
-      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-
-      script.onload = configureAnalytics;
-
-      script.onerror = () => {
-
-        window.krizpiaAnalyticsLoaded = false;
-
-        console.warn('Krizpia analytics could not load. Check browser extensions or Content Security Policy.');
-
-      };
-
-      document.head.appendChild(script);
-
+      sendAnalyticsPageView();
     }
 
     function setupClickTracking(){
@@ -2003,57 +1788,13 @@ function canUseNetlifyFunctions(){
       return '★'.repeat(rounded) + '☆'.repeat(5 - rounded);
 
     }
-
-
     function loadGoogleReviewsPreview(){
-
       const reviewsContainer = document.getElementById('googleReviews');
-      const summary = document.getElementById('homeGoogleSummary');
       const rating = document.getElementById('homeGoogleRating');
       const count = document.getElementById('homeGoogleReviewCount');
-      const writeLink = document.getElementById('homeWriteGoogleReview');
-
-      if(!reviewsContainer || !summary || !rating || !count) return;
-
-      const fallbackReviewsMarkup = reviewsContainer.innerHTML;
-
-      if(!canUseNetlifyFunctions()){
-        reviewsContainer.innerHTML = fallbackReviewsMarkup;
-        rating.textContent = 'Customer feedback';
-        count.textContent = 'Google reviews are unavailable on this static host, so selected customer feedback is shown below.';
-        return;
-      }
-
-      fetch('/.netlify/functions/google-reviews', { headers: { Accept: 'application/json' } })
-        .then(response => response.ok ? response.json() : response.json().then(error => Promise.reject(error)))
-        .then(data => {
-          const reviews = Array.isArray(data.reviews) ? data.reviews : [];
-          if(!reviews.length) throw new Error('No Google review text returned.');
-
-          if(data.reviewUrl && writeLink) writeLink.href = data.reviewUrl;
-
-          rating.textContent = data.rating ? `${Number(data.rating).toFixed(1)} ★ on Google` : 'Recent Google reviews';
-          count.textContent = data.userRatingsTotal
-            ? `${data.userRatingsTotal} public Google review${data.userRatingsTotal === 1 ? '' : 's'} for ${data.name || 'Krizpia'}.`
-            : `Recent public Google reviews for ${data.name || 'Krizpia'}.`;
-
-          reviewsContainer.innerHTML = reviews.slice(0, 8).map(review => `
-            <div class="review is-google">
-              <div class="stars" aria-label="${escapeHtml(review.rating)} out of 5 stars">${starText(review.rating)}</div>
-              <p>“${escapeHtml(review.text)}”</p>
-              <strong>${escapeHtml(review.authorName)}</strong>
-              <span class="review-source">Google review</span>
-              ${review.relativeTimeDescription ? `<span class="review-date">${escapeHtml(review.relativeTimeDescription)}</span>` : ''}
-            </div>
-          `).join('');
-        })
-        .catch(error => {
-          if(error && error.reviewUrl && writeLink) writeLink.href = error.reviewUrl;
-          reviewsContainer.innerHTML = fallbackReviewsMarkup;
-          rating.textContent = 'Customer feedback';
-          count.textContent = 'Google reviews are currently unavailable, so selected customer feedback is shown below.';
-        });
-
+      if(!reviewsContainer || !rating || !count) return;
+      rating.textContent = 'Customer feedback';
+      count.textContent = 'Selected customer feedback is shown below.';
     }
 
     function setupReviewsModal(){
