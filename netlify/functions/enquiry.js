@@ -11,7 +11,7 @@ const ALLOWED_PRODUCTS = new Set([
 ]);
 
 function getSecret() {
-  return process.env.CSRF_SECRET || process.env.NETLIFY_SITE_ID || 'krizpia-local-development-secret';
+  return process.env.CSRF_SECRET || process.env.NETLIFY_SITE_ID || 'krizpia-csrf-secret';
 }
 
 function parseCookies(header = '') {
