@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C6BWSDXRCT"></script>
-<!-- Google Tag Manager -->
+<!-- Krizpia Consent Mode v2 defaults (must run before GTM) -->
 <script>
-(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted',wait_for_update:500});
+window.dataLayer.push({event:'default_consent_set'});
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NDGDVK2N');
-</script>
+})(window,document,'script','dataLayer','GTM-NDGDVK2N');</script>
 <!-- End Google Tag Manager -->
-
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C6BWSDXRCT');
-</script>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://tagmanager.google.com; font-src 'self' data:; frame-src 'self' https://www.googletagmanager.com; media-src 'self'; manifest-src 'self'; form-action 'self' mailto: https://wa.me; base-uri 'self'; object-src 'none'; upgrade-insecure-requests;">
+<!-- Google tag (gtag.js) -->
 <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#111111">
   <meta name="mobile-web-app-capable" content="yes">
@@ -263,7 +260,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         gap:8px;
       }
     }
-  </style>
+  .privacy-preferences-button{background:transparent;color:inherit;border:1px solid currentColor;border-radius:999px;padding:8px 12px;cursor:pointer}.privacy-preferences-button:focus-visible,.small-btn:focus-visible,.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid #f6b73c;outline-offset:3px}</style>
 <script type="application/ld+json" class="breadcrumb-schema">
 {
   "@context": "https://schema.org",
@@ -288,18 +285,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDGDVK2N"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NDGDVK2N" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '2168242727072905');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2168242727072905&ev=PageView&noscript=1"></noscript>
-<!-- End Meta Pixel Code -->
 <header>
   <a class="logo" href="../index.html">
     <img src="../krizpia-logo.png" alt="Krizpia Logo" width="140" height="70" decoding="async">
@@ -402,8 +389,10 @@ fbq('track', 'PageView');
 <footer>
   <p>Krizpia – Authentic Kerala Snacks by Rangeela Products</p>
   <p>FSSAI: 21326171000212 | Made in Kerala, India</p>
+<p><button type="button" class="privacy-preferences-button" data-open-cookie-preferences>Cookie preferences</button></p>
 </footer>
 
 <script src="../assets/breadcrumbs.js" defer></script>
+<script src="/assets/js/analytics.js" defer></script>
 </body>
 </html>
