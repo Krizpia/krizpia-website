@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krizpia Blog | Kerala Snack Guides</title>
+<meta name="description" content="Read Krizpia blog articles and guides about Kerala snacks, Kuzhalappam, Thatta, tea-time snacks, storage tips and festive snacking ideas.">
+<link rel="canonical" href="https://krizpia.com/blog/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Krizpia Blog | Kerala Snack Guides">
+<meta property="og:description" content="Explore Krizpia guides on Kerala snacks, Kuzhalappam, Thatta and tea-time snacking.">
+<meta property="og:url" content="https://krizpia.com/blog/">
+<meta property="og:image" content="https://krizpia.com/Knowledge/Complete%20Kerala%20%20Snacks%20Guide.jpg">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fffaf2;color:#111;line-height:1.6}header,footer{background:#111;color:#fff;text-align:center;padding:24px}header a,footer a{color:#facc15;text-decoration:none;font-weight:800}.wrap{max-width:1180px;margin:auto;padding:34px 20px}.hero{background:#fff;border:1px solid #ead8b8;border-radius:28px;padding:28px;text-align:center;box-shadow:0 10px 28px rgba(0,0,0,.07)}h1{font-size:clamp(34px,5vw,56px);line-height:1.08;margin:0 0 14px}.hero p{max-width:760px;margin:0 auto 18px;color:#444}.blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:30px}.blog-card{background:#fff;border:1px solid #ead8b8;border-radius:24px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.07)}.blog-card img{width:100%;height:235px;object-fit:cover;display:block}.blog-content{padding:22px;text-align:center}.blog-content h2{font-size:22px;line-height:1.2;margin:10px 0}.blog-content p{color:#555;font-size:15px}.blog-meta{display:inline-block;background:#f5f5f5;padding:6px 12px;border-radius:20px;font-size:12px;font-weight:800}.small-btn{display:inline-block;background:#111;color:#fff;text-decoration:none;border-radius:999px;padding:11px 18px;font-weight:900;margin-top:8px}.home-btn{background:#d9a441;color:#111}.blog-empty{grid-column:1/-1;text-align:center;background:#fff;border:1px solid #ead8b8;border-radius:18px;padding:18px;font-weight:700}.top-logo{display:inline-block;margin-top:10px}.top-logo img{width:118px;height:auto}@media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.wrap{padding:24px 14px}.hero{padding:22px}.blog-grid{grid-template-columns:1fr}.blog-card img{height:220px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://krizpia.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://krizpia.com/blog/"}]}
+</script>
+</head>
+<body>
+<header><a href="../">Krizpia Home</a><br><a class="top-logo" href="../" aria-label="Krizpia home"><img src="../krizpia-logo.png" alt="Krizpia Logo" width="2048" height="768"></a></header>
+<main class="wrap">
+<section class="hero" aria-labelledby="blogTitle">
+<h1 id="blogTitle">Krizpia Blog</h1>
+<p>Browse Kerala snack guides, Kuzhalappam articles, Thatta serving ideas, storage tips and tea-time inspiration from Krizpia.</p>
+<a class="small-btn home-btn" href="../#products">Shop Kerala Snacks</a>
+</section>
+<section aria-label="Blog articles" class="blog-grid" id="blogGrid">
+<noscript><p class="blog-empty">JavaScript is needed to load the full blog library. You can start with the <a href="../blog/kerala-snacks/">Complete Kerala Snacks Guide</a>.</p></noscript>
+</section>
+</main>
+<footer><p>Krizpia – Authentic Kerala Snacks by Rangeela Products</p><p><a href="../">Back to Home</a></p></footer>
+<script>
+let blogPosts=[];
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));}
+function encodeRelativeUrl(url){return String(url).split('/').map(part=>encodeURIComponent(part)).join('/');}
+function formatIndianDate(dateString){return new Date(dateString).toLocaleString('en-IN',{timeZone:'Asia/Kolkata',day:'numeric',month:'long',year:'numeric'});}
+function publishedPosts(){const now=new Date();return blogPosts.filter(item=>!item.hidden&&new Date(item.publishDate)<=now).map(item=>({...item,type:item.type||'Blog'})).sort((a,b)=>new Date(b.publishDate)-new Date(a.publishDate));}
+function renderCards(items){return items.map((item,index)=>{const title=escapeHtml(item.title);const type=escapeHtml(item.type);const label=item.type==='Guide'?'Read Guide':'Read Full Article';return `<article class="blog-card"><img src="../${encodeRelativeUrl(item.image)}" alt="${title}" loading="lazy" decoding="async"><div class="blog-content"><span class="blog-meta">${index===0?'Featured':'Published'} ${type} • ${formatIndianDate(item.publishDate)}</span><h2>${title}</h2><p>${escapeHtml(item.description)}</p><a class="small-btn" href="../${encodeRelativeUrl(item.url)}">${label}</a></div></article>`;}).join('');}
+async function loadBlogPage(){const grid=document.getElementById('blogGrid');try{const response=await fetch('../blog-posts.json',{cache:'no-store'});if(!response.ok)throw new Error('Unable to load blog posts');blogPosts=await response.json();const items=publishedPosts();grid.innerHTML=items.length?renderCards(items):'<p class="blog-empty">New blog posts and guides will appear here automatically when they are published.</p>';}catch(error){grid.innerHTML='<p class="blog-empty">Blog posts are temporarily unavailable. Please try again later.</p>';}}
+loadBlogPage();
+</script>
+<script src="/assets/js/analytics.js" defer></script>
+</body>
+</html>
