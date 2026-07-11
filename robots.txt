@@ -1,21 +1,4 @@
 User-agent: *
 Allow: /
 
-# Priority product landing pages for Google indexing.
-Allow: /traditional-kuzhalappam/
-Allow: /spicy-kuzhalappam/
-Allow: /sweet-kuzhalappam/
-Allow: /thatta/
-
-# Keep duplicate legacy product URLs out of crawl paths; Netlify redirects these to the canonical pages above.
-Disallow: /traditional-kuzhalappam.html
-Disallow: /spicy-kuzhalappam.html
-Disallow: /sweet-kuzhalappam.html
-Disallow: /thatta.html
-
-# Keep utility and serverless endpoints out of search results.
-Disallow: /netlify/
-Disallow: /.github/
-
 Sitemap: https://krizpia.com/sitemap.xml
-Host: https://krizpia.com
