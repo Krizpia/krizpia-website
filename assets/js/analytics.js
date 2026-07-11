@@ -33,7 +33,8 @@
       if(/^https?:\/\/(wa\.me|api\.whatsapp\.com)|^whatsapp:\/\//i.test(href)) return window.pushKrizpiaEvent('whatsapp_click',Object.assign(base,{contact_method:'whatsapp',link_url:cleanUrl(href)}));
       if(/^tel:/i.test(href)) return window.pushKrizpiaEvent('phone_click',Object.assign(base,{contact_method:'phone'}));
       if(/^mailto:/i.test(href)) return window.pushKrizpiaEvent('email_click',Object.assign(base,{contact_method:'email'}));
-      if(/instagram\.com/i.test(href)) return window.pushKrizpiaEvent('instagram_click',Object.assign(base,{social_platform:'instagram'}));
+      var socialPlatform=(a.dataset.social||a.getAttribute('aria-label')||a.textContent||href||'').toLowerCase();
+      if(/instagram\.com|instagram/i.test(href+' '+socialPlatform)) return window.pushKrizpiaEvent('instagram_click',Object.assign(base,{contact_method:'social',social_platform:'instagram',link_url:cleanUrl(href)}));
       if(p && /view_product|product|card/.test((text(a)||'')+' '+href)) return window.pushKrizpiaEvent('select_item',{item_list_id:'homepage_product_range',item_list_name:'Homepage Product Range',items:[{item_id:p.id,item_name:p.name,item_brand:'Krizpia',item_category:'Kerala Snacks',item_variant:p.variant,quantity:1}],product_id:p.id,product_name:p.name});
       if(/send_enquiry|open_video|explore_products|read_customer_feedback|view_all_blog_articles/.test(text(a)||'')) return window.pushKrizpiaEvent('cta_click',Object.assign(base,{cta_name:text(a),cta_location:base.button_location,link_url:cleanUrl(href)}));
     },true);}

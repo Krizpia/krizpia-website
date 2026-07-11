@@ -9,7 +9,7 @@ Website: https://krizpia.com/
 Language: English
 Standards: HTML5, CSS3, JSON-LD structured data, Web App Manifest
 Primary audience: Kerala snack customers, retailers, distributors, and food lovers
-SEO package: sitemap.xml, robots.txt, manifest.json, humans.txt, Organization schema, Product schema, Breadcrumb schema, FAQ schema
+SEO package: sitemap.xml, robots.txt, llms.txt, manifest.json, humans.txt, Organization schema, Product schema, Breadcrumb schema, FAQ schema
 Host: GitHub Pages compatible static website
 Canonical domain: https://krizpia.com/
 
