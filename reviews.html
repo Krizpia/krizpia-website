@@ -80,9 +80,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <a href="index.html" class="logo" aria-label="Krizpia Home"><img src="krizpia-logo.png" alt="Krizpia Kerala snacks logo" decoding="async" width="2048" height="768"></a>
       <nav class="links" aria-label="Main navigation">
         <a href="index.html#products">Products</a>
-        <a href="index.html#story">Our Story</a>
+        <a href="index.html#why-krizpia">Why Krizpia?</a>
         <a href="reviews.html" aria-current="page">Reviews</a>
-        <a href="index.html#blog">Blog</a>
+        <a href="blog/">Blog</a>
         <a href="index.html#order">Contact</a>
       </nav>
     </div>
@@ -91,7 +91,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <section class="review-hero">
       <span class="tag">Customer feedback</span>
       <h1>Krizpia Customer Reviews</h1>
-      <p>Customer testimonials are being verified before publication. You can leave public feedback on Google Maps or contact Krizpia directly.</p>
+      <p>Customer feedback, photos and public review links will be shown here when approved for use. You can leave public feedback on Google Maps or contact Krizpia directly.</p>
       <div class="hero-actions">
         <a class="btn" href="index.html#order">Contact Krizpia</a>
         <a class="btn secondary" id="writeGoogleReview" href="https://www.google.com/maps/place/Krizpia/@9.4453436,76.5401108,17z/data=!4m8!3m7!1s0x3b0627a2c11e21e5:0xf1c510a2018b698b!8m2!3d9.4453436!4d76.5426911!9m1!1b1!16s%2Fg%2F11nq1568c9?entry=ttu&g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Write a Google Review</a>
@@ -99,21 +99,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </section>
 
     <section class="reviews-wrap" aria-labelledby="reviewsTitle">
-      <div id="reviewStatus" class="status">Customer feedback will be shown after source, consent and accuracy checks are complete.</div>
+      <div id="reviewStatus" class="status">Customer feedback will be shown when approved for public use.</div>
       <div id="googleSummary" class="google-review-summary" hidden>
         <div class="google-review-meta">
           <span class="google-badge" aria-hidden="true">G</span>
           <div>
             <div id="googleRating" class="google-review-rating">Customer Feedback</div>
-            <p id="googleReviewCount">Verified Google reviews will appear after the Google Business Profile is active.</p>
+            <p id="googleReviewCount">Open the public map listing to read or leave feedback.</p>
           </div>
         </div>
         <a class="small-btn secondary" id="viewGoogleReviews" href="https://www.google.com/maps/place/Krizpia/@9.4453436,76.5401108,17z/data=!4m8!3m7!1s0x3b0627a2c11e21e5:0xf1c510a2018b698b!8m2!3d9.4453436!4d76.5426911!9m1!1b1!16s%2Fg%2F11nq1568c9?entry=ttu" target="_blank" rel="noopener noreferrer">Customer Feedback</a>
       </div>
       <h2 id="reviewsTitle" class="fallback-title">Customer feedback</h2>
       <div id="googleReviews" class="reviews">
-        <div class="review"><div class="stars">Pending</div><p>Customer testimonials are being checked for source, consent and accuracy before publication.</p><strong>Krizpia Team</strong><span class="review-source">Verification in progress</span><span class="review-link">Customer Feedback</span></div>
-        <div class="review"><div class="stars">Google</div><p>Verified Google reviews will appear after the Krizpia Google Business Profile review feed is active.</p><strong>Google Reviews</strong><span class="review-source">Not yet connected</span><span class="review-link">Google Reviews</span></div>
+        <div class="review"><div class="stars">Pending</div><p>Customer photos, verified reviews and public social posts can be added here once approved for use.</p><strong>Krizpia Team</strong><span class="review-source">Krizpia updates</span><span class="review-link">Customer Feedback</span></div>
+        <div class="review"><div class="stars">Google</div><p>Open the public map listing to read or leave customer feedback.</p><strong>Google Reviews</strong><span class="review-source">Google Maps</span><span class="review-link">Google Reviews</span></div>
         <div class="review"><div class="stars">Share</div><p>Customers can submit feedback through Google Maps or the enquiry form for review.</p><strong>Customer Feedback</strong><span class="review-source">Consent required</span><span class="review-link">Customer Feedback</span></div>
       </div>
     </section>
@@ -126,7 +126,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     const reviewStatus = document.getElementById('reviewStatus');
 
     if (googleSummary) googleSummary.hidden = true;
-    if (reviewStatus) reviewStatus.textContent = 'Customer feedback will be shown after source, consent and accuracy checks are complete.';
+    if (reviewStatus) reviewStatus.textContent = 'Customer feedback will be shown when approved for public use.';
   </script>
   <script src="assets/breadcrumbs.js" defer></script>
 <script src="/assets/js/analytics.js" defer></script>

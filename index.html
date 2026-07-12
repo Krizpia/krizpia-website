@@ -419,6 +419,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     .authority-inner{max-width:1250px;margin:auto}
 
+    .pricing-card{background:#111;color:#fff;border-radius:30px;padding:34px;display:flex;justify-content:space-between;gap:24px;align-items:center;box-shadow:0 18px 45px rgba(0,0,0,.14)}
+
+    .pricing-card h2{font-size:clamp(30px,4vw,42px);margin-bottom:10px}
+
+    .pricing-card p{color:#eee;font-size:17px;max-width:680px}
+
+    .price-actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+
+    .trust-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+
     .gallery img{width:100%;height:260px;object-fit:contain;background:#fff;border:1px solid #d9d9d9;border-radius:22px;padding:10px;box-shadow:0 10px 28px rgba(0,0,0,.07)}
 
     .reviews-modal,.blog-modal,.quality-modal{max-width:none;margin:0;position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:24px;background:rgba(17,17,17,.55);backdrop-filter:blur(4px)}
@@ -539,13 +549,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     .footer-links a{color:#fff;margin:0 7px;font-size:14px;white-space:nowrap}
 
-    @media(max-width:1100px){.products,.gallery,.reviews,.testimonial-strip,.category-strip,.recipe-grid,.process-grid,.distributor-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid,.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}}
+    @media(max-width:1100px){.products,.gallery,.reviews,.testimonial-strip,.category-strip,.recipe-grid,.process-grid,.distributor-grid,.trust-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.featured-video{grid-template-columns:1fr}.assurance-grid,.story-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero-inner{grid-template-columns:1fr;gap:32px}}
 
     @media(max-width:900px){.nav{align-items:flex-start;flex-direction:column;padding:10px 16px}.links{width:100%;overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;gap:14px;padding-bottom:4px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.logo img{height:56px}.about,.order{grid-template-columns:1fr}.blog-grid{grid-template-columns:1fr}}
 
     @media (prefers-reduced-motion:no-preference){.hero-inner,.card,.story-card,.assurance-card,.process-card,.distributor-card,.blog-card{animation:krizpiaFadeUp .55s ease both}@keyframes krizpiaFadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}}
 
-    @media(max-width:700px){header{position:static}.reviews,.testimonial-strip,.story-grid,.category-strip,.lifestyle-grid,.recipe-grid,.process-grid,.distributor-grid{grid-template-columns:1fr}.reviews-modal,.blog-modal,.quality-modal{padding:12px}.reviews-panel,.blog-panel,.quality-panel{padding:18px;max-height:92vh}.reviews-header,.blog-header,.quality-header{gap:12px}.reviews-close,.blog-close,.quality-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center;flex-wrap:wrap;overflow-x:visible;gap:8px 12px}.links a{padding:6px 3px}.contact-btn{padding:8px 12px!important}.hero{padding:32px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:30px 16px}.products,.gallery,.assurance-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:20px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-contact{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
+    @media(max-width:700px){header{position:static}.reviews,.testimonial-strip,.story-grid,.category-strip,.lifestyle-grid,.recipe-grid,.process-grid,.distributor-grid,.trust-grid{grid-template-columns:1fr}.pricing-card{display:block;text-align:center}.price-actions{justify-content:center;margin-top:18px}.reviews-modal,.blog-modal,.quality-modal{padding:12px}.reviews-panel,.blog-panel,.quality-panel{padding:18px;max-height:92vh}.reviews-header,.blog-header,.quality-header{gap:12px}.reviews-close,.blog-close,.quality-close{width:38px;height:38px}.nav{align-items:center;text-align:center}.links{font-size:13px;justify-content:center;flex-wrap:wrap;overflow-x:visible;gap:8px 12px}.links a{padding:6px 3px}.contact-btn{padding:8px 12px!important}.hero{padding:32px 16px;text-align:center}.hero p{font-size:16px;margin-left:auto;margin-right:auto}.btn{display:block;width:100%;max-width:310px;margin:8px auto;padding:12px 18px}.hero-image{padding:10px;border-radius:22px}.hero-image img{height:280px;border-radius:16px}.fresh-badge{left:18px;bottom:18px;font-size:13px;padding:8px 12px}section{padding:30px 16px}.products,.gallery,.assurance-grid{grid-template-columns:1fr}.video-showcase{padding:18px;border-radius:22px}.card img,.gallery img{height:230px}.section-title{margin-bottom:20px}.section-title p{font-size:15px}.about,.order{padding:22px;border-radius:22px}.about p,.order p{font-size:15px}.floating-contact{right:12px;bottom:12px;padding:12px 14px;font-size:14px}footer{padding:30px 16px 70px}.footer-links a{display:inline-block;margin:4px 6px}}
 
     @media(max-width:420px){h1{font-size:32px;letter-spacing:-.8px}.tag{font-size:12px;padding:7px 12px}.hero-image img{height:235px}.card img,.gallery img,.blog-card img{height:210px}.logo img{height:50px}.links{gap:10px;font-size:12px}}
 
@@ -564,8 +574,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </a>
 <nav aria-label="Main navigation" class="links">
 <a href="#products">Products</a>
-<a href="#about">About</a>
-<a href="#process-video">Video</a>
+<a href="#why-krizpia">Why Krizpia?</a>
+<a href="#pricing">Pricing</a>
 <a href="blog/" id="blogNavLink">Blog</a>
 <a aria-controls="reviews" aria-haspopup="dialog" href="#reviews" id="reviewsNavLink">Reviews</a>
 <!-- Cart hidden until the online sale portal is ready to launch. -->
@@ -578,14 +588,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <section class="hero">
 <div class="hero-inner">
 <div>
-<span class="tag">Made in Kerala • Crispy • Crunchy</span>
-<h1>Authentic Kerala Snacks</h1>
-<p>Crispy Kuzhalappam and Thatta from Changanacherry, Kottayam—made for tea time, sharing and retail enquiries.</p>
-<!-- Build Cart hidden until the online sale portal is ready to launch. -->
+<span class="tag">Small-batch Kerala snacks • 160 g packs</span>
+<h1>See the crunch. Choose your flavour. Order in minutes.</h1>
+<p>Kuzhalappam and Thatta from Changanacherry, Kottayam—packed in clear pouches so customers can see the snack, label and texture before they buy.</p>
+<a class="btn gold" href="#products">See Snacks</a>
+<a class="btn" href="#order">Order Now</a>
 </div>
 <div class="hero-image">
 <img alt="Krizpia authentic Kerala snack collection" decoding="async" fetchpriority="high" height="1086" loading="eager" src="/mix image.png" width="1448"/>
-<span class="fresh-badge">Fresh Kerala Taste</span>
+<span class="fresh-badge">Clear pouch • Real product</span>
 </div>
 </div>
 </section>
@@ -593,8 +604,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <section id="products">
 <div class="section-title">
-<h2>Our Snack Range</h2>
-<p>Explore the current Krizpia snack range and send us an enquiry for availability, pricing and bulk orders.</p>
+<h2>See the Snacks</h2>
+<p>Choose from four Kerala tea-time snacks, each packed in 160 g clear pouches and made for a crisp bite.</p>
 <div class="line"></div>
 </div>
 <div class="products">
@@ -602,7 +613,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <img alt="Traditional Kuzhalappam Kerala rice flour snack by Krizpia" decoding="async" height="1086" loading="lazy" src="/traditional-kuzhalappam.PNG" width="1448"/>
 <div class="card-body">
 <h3>Traditional Kuzhalappam</h3>
-<p>A crispy Kerala tea-time favourite made with rice flour, coconut, cumin, fennel and sesame seeds.</p>
+<p>A family-inspired Kuzhalappam with rice flour, coconut, cumin, fennel and sesame—rolled thin for a light tube-shaped crunch.</p>
 <div class="product-facts"><span>160 g pack</span><span>Best before 50 days</span><span>Vegetarian</span></div>
 <a class="small-btn" href="/traditional-kuzhalappam/">View Product</a>
 </div>
@@ -611,7 +622,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <img alt="Spicy Kuzhalappam crispy Kerala tea-time snack by Krizpia" decoding="async" height="1086" loading="lazy" src="/spicy-kuzhalappam.PNG" width="1448"/>
 <div class="card-body">
 <h3>Spicy Kuzhalappam</h3>
-<p>A bold and crispy Kerala snack with chilli, pepper, ginger and garlic for spicy snack lovers.</p>
+<p>A punchier Kuzhalappam seasoned with chilli, pepper, ginger and garlic, balanced for people who want heat without losing the classic crunch.</p>
 <div class="product-facts"><span>160 g pack</span><span>Best before 50 days</span><span>Vegetarian</span><span>Spicy</span></div>
 <a class="small-btn" href="/spicy-kuzhalappam/">View Product</a>
 </div>
@@ -620,7 +631,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <img alt="Sweet Kuzhalappam crunchy Kerala snack by Krizpia" decoding="async" height="1086" loading="lazy" src="/sweet-kuzhalappam.PNG" width="1448"/>
 <div class="card-body">
 <h3>Sweet Kuzhalappam</h3>
-<p>A sweet and crunchy variation of traditional Kuzhalappam, suitable for children and celebrations.</p>
+<p>A gentler Kuzhalappam with a light sweetness, made for children, guests and festive plates that need crunch without strong spice.</p>
 <div class="product-facts"><span>160 g pack</span><span>Best before 50 days</span><span>Vegetarian</span><span>Sweet flavour</span></div>
 <a class="small-btn" href="/sweet-kuzhalappam/">View Product</a>
 </div>
@@ -629,35 +640,60 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <img alt="Thatta traditional crispy Kerala savoury snack by Krizpia" decoding="async" height="1086" loading="lazy" src="/thatta-photo.PNG" width="1448"/>
 <div class="card-body">
 <h3>Thatta</h3>
-<p>A traditional Kerala savoury snack with crispy texture and mild spice, perfect for tea time.</p>
+<p>A flat, savoury Kerala-style bite with mild spice and a clean snap, easy to serve with tea, coffee or snack platters.</p>
 <div class="product-facts"><span>160 g pack</span><span>Best before 50 days</span><span>Vegetarian</span><span>Mild</span></div>
 <a class="small-btn" href="/thatta/">View Product</a>
 </div>
 </article>
 </div>
 </section>
-<section aria-labelledby="testimonialPreviewTitle" class="testimonial-preview">
+<section class="authority-section" id="why-krizpia">
+<div class="authority-inner">
 <div class="section-title">
-<h2 id="testimonialPreviewTitle">Customer Feedback</h2>
-<p>We are verifying customer comments before publishing them. Until then, please use the Reviews page or Google Maps link for public feedback.</p>
+<h2>Why Krizpia?</h2>
+<p>One clear promise: visible product quality, Kerala-style recipes and checks that protect crispness before every pack leaves us.</p>
 <div class="line"></div>
 </div>
-<div class="testimonial-strip">
-<article class="testimonial-card"><div class="stars">★★★★★</div><p>“Very crispy and authentic Kerala taste.”</p><strong>Anil</strong><span class="review-source">Customer feedback</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p>“Excellent taste, reminds me of homemade Kuzhalappam.”</p><strong>Anil, Kottayam</strong><span class="review-source">Customer feedback</span></article>
-<article class="testimonial-card"><div class="stars">★★★★★</div><p>“Very crispy and fresh. My children loved it.”</p><strong>Reshma, Kochi</strong><span class="review-source">Customer feedback</span></article>
+<div class="assurance-grid">
+<div class="assurance-card"><h3>Clear Pouch Confidence</h3><p>The pouch keeps the real snack and label visible, so customers can judge colour, shape and pack condition at a glance.</p></div>
+<div class="assurance-card"><h3>Small-Batch Care</h3><p>Recipes are prepared with careful batch handling instead of anonymous bulk presentation, helping maintain consistent texture and taste.</p></div>
+<div class="assurance-card"><h3>Crispness Protected</h3><p>Packs are checked for seal condition and handled to reduce moisture exposure. After opening, reseal or store airtight for best crunch.</p></div>
+<div class="assurance-card"><h3>Double Safety Checked</h3><p>Double checked means one check during preparation and a final check before dispatch for appearance, crispness, freshness and pack condition.</p></div>
+<div class="assurance-card"><h3>FSSAI Licensed</h3><p>Manufactured by Rangeela Products under FSSAI Licence No. 21326171000212 in Changanacherry, Kottayam, Kerala.</p></div>
+<div class="assurance-card"><h3>Made for Shops & Families</h3><p>160 g retail-friendly packs suit family tea time, gifting, events and shop shelves where visible packaging matters.</p></div>
 </div>
-<div style="text-align:center;margin-top:22px"><a aria-controls="reviews" aria-haspopup="dialog" class="small-btn" href="#reviews" id="reviewsPreviewLink">Read Customer Feedback</a></div>
+</div>
 </section>
-
+<section id="pricing">
+<div class="pricing-card">
+<div>
+<h2>See the Price</h2>
+<p>Current pack size: <strong>160 g</strong>. Prices can vary by quantity, delivery location and retail or wholesale requirement.</p>
+</div>
+<div class="price-actions">
+<a class="btn gold" href="#order">Ask Today's Price</a>
+<a class="small-btn" href="https://wa.me/919795679851" rel="noopener" target="_blank">WhatsApp for Bulk Rates</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="trustTitle" id="trust">
+<div class="section-title">
+<h2 id="trustTitle">Trust the Brand</h2>
+<p>We show licence, address and direct contact details now. Verified Google reviews, customer photos and retail-shop updates should be added here when real assets are available.</p>
+<div class="line"></div>
+</div>
+<div class="trust-grid">
+<div class="assurance-card"><h3>FSSAI Licence</h3><p>21326171000212</p></div>
+<div class="assurance-card"><h3>Manufacturer</h3><p>Rangeela Products, Perunna East P.O, Changanacherry, Kottayam, Kerala.</p></div>
+<div class="assurance-card"><h3>Direct Ordering</h3><p>Call or WhatsApp +91 9795679851 for product availability, pricing, retail supply and distribution enquiries.</p></div>
+</div>
+</section>
 <section id="about">
 <div class="about">
 <div>
 <h2>About Krizpia</h2>
-<p>Krizpia is a Kerala snack brand from Rangeela Products, created from family inspiration and a love for traditional Kerala recipes.</p>
-<p>Our product range includes Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta. We focus on authentic snack-making traditions, quality ingredients and crispy taste.</p>
-<p>Krizpia delivers authentic Kerala snack varieties made with quality ingredients, traditional recipes and a passion for great taste.</p>
-<p>Choose Krizpia for crispy Kerala snacks, rice flour snacks, traditional South Indian tea-time snacks, packaged Kerala snacks for families, Kerala festival snacks, travel snacks, retail shop snacks and wholesale snack enquiries.</p>
+<p>Krizpia is the snack brand of Rangeela Products in Changanacherry, Kottayam. The range is built around familiar Kerala recipes, crisp texture and retail-ready clear pouches.</p>
+<p>We make Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta for family orders, shops, events and distribution enquiries.</p>
 <a class="btn gold" href="#products">Explore Products</a>
 </div>
 <img alt="Krizpia Kerala snack production and traditional packaged snacks from Changanacherry" decoding="async" height="2048" loading="lazy" src="/About Krizpia Image.png" width="3072"/>
@@ -686,23 +722,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 </section>
-<section class="authority-section" id="authority">
-<div class="authority-inner">
-<div class="section-title">
-<h2>Why Choose Krizpia?</h2>
-<p>Krizpia is a Kerala snack brand from Rangeela Products, bringing crisp, carefully packed favourites like Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta.</p>
-<div class="line"></div>
-</div>
-<div class="assurance-grid">
-<div class="assurance-card"><h3>Authentic Kerala Taste</h3><p>Made with traditional Kerala-style recipes for a crispy, crunchy and home-style snack experience.</p></div>
-<div class="assurance-card"><h3>Double Safety Checked</h3><p>Prepared with care under food safety standards, then checked again before dispatch. FSSAI Licence No. 21326171000212.</p></div>
-<div class="assurance-card"><h3>Quality Ingredients</h3><p>Made using selected ingredients to deliver consistent taste and freshness in every pack.</p></div>
-<div class="assurance-card"><h3>Trusted Kerala Brand</h3><p>Krizpia focuses on dependable quality, crisp texture and familiar Kerala flavours for families, shops and tea-time moments.</p></div>
-<div class="assurance-card"><h3>Retail-Friendly Packs</h3><p>Attractive packed snacks suitable for retail shops, family orders, events and gifting.</p></div>
-<div class="assurance-card"><h3>Made in Kerala</h3><p>Prepared by Rangeela Products in Changanacherry, Kottayam, Kerala.</p></div>
-</div>
-</div>
-</section>
 <section aria-labelledby="processVideoTitle" id="process-video">
 <div class="section-title">
 <h2 id="processVideoTitle">Krizpia Process Video</h2>
@@ -725,31 +744,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 </section>
-<section aria-labelledby="blogPreviewTitle" id="blog-preview">
-<div class="section-title">
-<h2 id="blogPreviewTitle">Kerala Snack Guides</h2>
-<p>Start with helpful reads on Kuzhalappam, tea-time snacks and Thatta from Kerala. Open the full blog library for more product and storage guides.</p>
-<div class="line"></div>
-</div>
-<div aria-live="polite" class="blog-grid" id="featuredBlogs"></div>
-<div style="text-align:center;margin-top:22px"><a class="small-btn" href="blog/">View All Blog Articles</a></div>
-</section>
 <section aria-hidden="true" aria-labelledby="reviewsTitle" class="reviews-modal" id="reviews">
 <div aria-labelledby="reviewsTitle" aria-modal="true" class="reviews-panel" role="dialog">
 <div class="reviews-header">
 <div class="modal-title-row">
 <div>
 <h2 id="reviewsTitle">Customer Reviews</h2>
-<p>Customer feedback is shown here. Verified Google reviews will be displayed only after the Krizpia Google Business Profile is active.</p>
+<p>Customer feedback and public review links are collected here as they become available.</p>
 </div>
 <img alt="Krizpia logo" class="modal-brand-logo" decoding="async" height="768" loading="lazy" src="/krizpia-logo.png" width="2048"/>
 </div>
 <button aria-label="Close customer reviews" class="reviews-close" type="button">×</button>
 </div>
-<div class="google-review-summary" id="homeGoogleSummary"><div><div class="google-review-rating" id="homeGoogleRating">Customer Feedback</div><p id="homeGoogleReviewCount">Verified Google reviews will appear here after the Google Business Profile is active.</p></div><a class="small-btn secondary" href="https://www.google.com/maps/place/Krizpia/@9.4453436,76.5401108,17z/data=!4m8!3m7!1s0x3b0627a2c11e21e5:0xf1c510a2018b698b!8m2!3d9.4453436!4d76.5426911!9m1!1b1!16s%2Fg%2F11nq1568c9?entry=ttu&amp;g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" id="homeWriteGoogleReview" rel="noopener" target="_blank">Share Feedback</a></div>
+<div class="google-review-summary" id="homeGoogleSummary"><div><div class="google-review-rating" id="homeGoogleRating">Customer Feedback</div><p id="homeGoogleReviewCount">Public customer feedback</p></div><a class="small-btn secondary" href="https://www.google.com/maps/place/Krizpia/@9.4453436,76.5401108,17z/data=!4m8!3m7!1s0x3b0627a2c11e21e5:0xf1c510a2018b698b!8m2!3d9.4453436!4d76.5426911!9m1!1b1!16s%2Fg%2F11nq1568c9?entry=ttu&amp;g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" id="homeWriteGoogleReview" rel="noopener" target="_blank">Share Feedback</a></div>
 <div class="reviews" id="googleReviews">
-<div class="review"><div class="stars">Pending</div><p>Customer testimonials are being checked for source, consent and accuracy before publication.</p><strong>Krizpia Team</strong><span class="review-source">Verification in progress</span><span class="review-link">Customer Feedback</span></div>
-<div class="review"><div class="stars">Google</div><p>Verified Google reviews will appear here after the Google Business Profile feed is connected.</p><strong>Google Reviews</strong><span class="review-source">Not yet connected</span><span class="review-link">Google Reviews</span></div>
+<div class="review"><div class="stars">Pending</div><p>Customer photos, verified reviews and public social posts can be added here once approved for use.</p><strong>Krizpia Team</strong><span class="review-source">Krizpia updates</span><span class="review-link">Customer Feedback</span></div>
+<div class="review"><div class="stars">Google</div><p>Open the public map listing to read or leave customer feedback.</p><strong>Google Reviews</strong><span class="review-source">Google Maps</span><span class="review-link">Google Reviews</span></div>
 <div class="review"><div class="stars">Share</div><p>Customers can submit feedback through the enquiry form or Google Maps link for review.</p><strong>Customer Feedback</strong><span class="review-source">Consent required</span><span class="review-link">Customer Feedback</span></div>
 </div>
 </div>
