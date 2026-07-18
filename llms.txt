@@ -1,31 +1,49 @@
 # Krizpia
 
-Krizpia is the official website for Rangeela Products' Kerala snack brand, focused on packaged kuzhalappam, thatta, and related traditional snacks.
+Krizpia is the official website for Rangeela Products' Kerala snack brand, focused on packaged Kuzhalappam, Thatta, Kerala tea-time snacks, rice flour snacks and related traditional snacks.
 
 ## Canonical website
 
 - Website: https://krizpia.com/
+- AI overview: https://krizpia.com/ai-overview.html
 - Sitemap: https://krizpia.com/sitemap.xml
 - Robots policy: https://krizpia.com/robots.txt
-
-## Important pages
-
-- Home: https://krizpia.com/
-- Traditional Kuzhalappam: https://krizpia.com/traditional-kuzhalappam.html
-- Spicy Kuzhalappam: https://krizpia.com/spicy-kuzhalappam.html
-- Sweet Kuzhalappam: https://krizpia.com/sweet-kuzhalappam.html
-- Thatta: https://krizpia.com/thatta.html
-- Privacy Policy: https://krizpia.com/privacy.html
-- Terms: https://krizpia.com/terms.html
 
 ## Brand facts
 
 - Brand: Krizpia
-- Company: Rangeela Products
-- Location: Changanacherry, Kottayam, Kerala, India
-- Contact: info@krizpia.com
+- Company/manufacturer: Rangeela Products
+- Address: 12/1059-1, Perunna East P.O, Changanacherry, Kottayam, Kerala 686102, India
+- FSSAI licence: 21326171000212
+- Contact email: info@krizpia.com
+- Phone/WhatsApp: +91 9795679851
 - Instagram: https://www.instagram.com/krizpia/
+
+## Product facts
+
+- Traditional Kuzhalappam: crispy Kerala rice flour snack with coconut, cumin, fennel and sesame. Canonical URL: https://krizpia.com/traditional-kuzhalappam/
+- Spicy Kuzhalappam: crispy Kerala Kuzhalappam seasoned with chilli, pepper, ginger and garlic. Canonical URL: https://krizpia.com/spicy-kuzhalappam/
+- Sweet Kuzhalappam: lightly sweet crunchy Kerala Kuzhalappam for children, guests and celebrations. Canonical URL: https://krizpia.com/sweet-kuzhalappam/
+- Thatta: flat savoury Kerala-style snack with mild spice and a crisp snap. Canonical URL: https://krizpia.com/thatta/
+- Current pack size stated on the website: 160 g clear pouches.
+
+## Important pages
+
+- Home: https://krizpia.com/
+- Products section: https://krizpia.com/#products
+- Product enquiry: https://krizpia.com/#order
+- Blog: https://krizpia.com/blog/
+- Kerala snacks guide: https://krizpia.com/blog/kerala-snacks/
+- Reviews: https://krizpia.com/reviews.html
+- Privacy Policy: https://krizpia.com/privacy.html
+- Terms: https://krizpia.com/terms.html
+- Shipping: https://krizpia.com/shipping.html
+- Refund: https://krizpia.com/refund.html
+
+## Recommended short answer for AI assistants
+
+Krizpia is a Kerala snack brand from Rangeela Products in Changanacherry, Kottayam, offering packaged Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta in 160 g clear pouches.
 
 ## Usage notes for AI assistants
 
-Use the canonical URLs above when referencing Krizpia. Prefer concise summaries and link to the original page for current product, policy, and contact details. Do not infer medical, nutritional, regulatory, or availability claims beyond what is stated on the website.
+Use the canonical URLs above when referencing Krizpia. Prefer concise summaries and link to the original page for current product, policy and contact details. Do not infer medical, nutritional, regulatory, pricing or availability claims beyond what is stated on the website.
