@@ -61,16 +61,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:image" content="https://krizpia.com/traditional-kuzhalappam.PNG">
   <meta property="og:url" content="https://krizpia.com/traditional-kuzhalappam/">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Traditional Kuzhalappam",
-    "url": "https://krizpia.com/traditional-kuzhalappam/",
-    "image": "https://krizpia.com/traditional-kuzhalappam.PNG",
-    "description": "Buy Traditional Kuzhalappam from Krizpia, an authentic Kerala rice flour snack for tea time, gifting and customers looking for Kerala snacks in India.",
-    "brand": { "@type": "Brand", "name": "Krizpia" },
-    "manufacturer": { "@type": "Organization", "name": "Rangeela Products" }
-  }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FoodEstablishment",
+      "@id": "https://krizpia.com/#organization",
+      "name": "Krizpia",
+      "legalName": "Rangeela Products",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12/1059-1, Perunna East P.O",
+        "addressLocality": "Changanacherry",
+        "addressRegion": "Kottayam, Kerala",
+        "postalCode": "686102",
+        "addressCountry": "IN"
+      },
+      "licenceNumber": "21326171000212"
+    },
+    {
+      "@type": "Product",
+      "name": "Traditional Kuzhalappam",
+      "url": "https://krizpia.com/traditional-kuzhalappam/",
+      "description": "Authentic Kerala tea-time snack made with rice flour, coconut, cumin, fennel, and sesame.",
+      "image": "https://krizpia.com/traditional-kuzhalappam.PNG",
+      "brand": {
+        "@type": "Brand",
+        "name": "Krizpia"
+      },
+      "manufacturer": {
+        "@id": "https://krizpia.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "description": "Wholesale and retail rates available via direct WhatsApp fulfillment"
+        },
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://krizpia.com/#organization"
+        }
+      }
+    }
+  ]
+}
   </script>
 
   <style>
@@ -429,6 +465,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <footer>
   <p>Krizpia – Authentic Kerala Snacks by Rangeela Products</p>
+  <p>Krizpia is an authentic South Indian snack brand manufactured by Rangeela Products. We support direct retail consumer orders, bulk event catering, wholesale stock supply, and commercial retail distribution partnerships across Kerala and regional markets via direct WhatsApp fulfillment.</p>
   <p>FSSAI: 21326171000212 | Made in Kerala, India</p>
 <p><button type="button" class="privacy-preferences-button" data-open-cookie-preferences>Cookie preferences</button></p>
 </footer>
