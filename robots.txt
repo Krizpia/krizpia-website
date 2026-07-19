@@ -3,3 +3,5 @@ Allow: /
 
 Sitemap: https://krizpia.com/sitemap.xml
 LLMS: https://krizpia.com/llms.txt
+LLMS-Full: https://krizpia.com/llms-full.txt
+AI-Facts: https://krizpia.com/ai-brand-facts.json
