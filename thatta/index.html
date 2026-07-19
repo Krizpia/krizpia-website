@@ -54,23 +54,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="geo.position" content="9.4453436;76.5426911">
 <meta name="ICBM" content="9.4453436, 76.5426911">
 
-  <link rel="canonical" href="https://krizpia.com/thatta/">
+  <link rel="canonical" href="https://krizpia.com/kerala-snacks/thatta/">
   <meta property="og:type" content="product">
   <meta property="og:title" content="Thatta Snack | Authentic Kerala Tea-time Snack | Krizpia">
   <meta property="og:description" content="Krizpia Thatta is an authentic Kerala rice flour tea-time snack with crisp texture, mild spice and traditional flavour for Kerala snacks in India.">
   <meta property="og:image" content="https://krizpia.com/thatta-photo.PNG">
-  <meta property="og:url" content="https://krizpia.com/thatta/">
+  <meta property="og:url" content="https://krizpia.com/kerala-snacks/thatta/">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Thatta",
-    "url": "https://krizpia.com/thatta/",
-    "image": "https://krizpia.com/thatta-photo.PNG",
-    "description": "Krizpia Thatta is an authentic Kerala rice flour tea-time snack with crisp texture, mild spice and traditional flavour for Kerala snacks in India.",
-    "brand": { "@type": "Brand", "name": "Krizpia" },
-    "manufacturer": { "@type": "Organization", "name": "Rangeela Products" }
-  }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FoodEstablishment",
+      "@id": "https://krizpia.com/#organization",
+      "name": "Krizpia",
+      "legalName": "Rangeela Products",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "12/1059-1, Perunna East P.O",
+        "addressLocality": "Changanacherry",
+        "addressRegion": "Kottayam, Kerala",
+        "postalCode": "686102",
+        "addressCountry": "IN"
+      },
+      "licenceNumber": "21326171000212"
+    },
+    {
+      "@type": "Product",
+      "name": "Thatta",
+      "url": "https://krizpia.com/kerala-snacks/thatta/",
+      "description": "Authentic Kerala rice flour tea-time snack with crisp texture, mild spice and traditional flavour.",
+      "image": "https://krizpia.com/thatta-photo.PNG",
+      "brand": {
+        "@type": "Brand",
+        "name": "Krizpia"
+      },
+      "manufacturer": {
+        "@id": "https://krizpia.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "description": "Wholesale and retail rates available via direct WhatsApp fulfillment"
+        },
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@id": "https://krizpia.com/#organization"
+        }
+      }
+    }
+  ]
+}
   </script>
 
   <style>
@@ -134,7 +170,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "@type": "ListItem",
       "position": 2,
       "name": "Thatta Snack",
-      "item": "https://krizpia.com/thatta/"
+      "item": "https://krizpia.com/kerala-snacks/thatta/"
     }
   ]
 }
@@ -155,7 +191,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <a href="../traditional-kuzhalappam/">Traditional</a>
     <a href="../spicy-kuzhalappam/">Spicy</a>
     <a href="../sweet-kuzhalappam/">Sweet</a>
-    <a href="../thatta/">Thatta</a>
+    <a href="../kerala-snacks/thatta/">Thatta</a>
   </nav>
 </header>
 
@@ -248,6 +284,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <footer>
   <p>Krizpia – Authentic Kerala Snacks by Rangeela Products</p>
+  <p>Krizpia is an authentic South Indian snack brand manufactured by Rangeela Products. We support direct retail consumer orders, bulk event catering, wholesale stock supply, and commercial retail distribution partnerships across Kerala and regional markets via direct WhatsApp fulfillment.</p>
   <p>FSSAI: 21326171000212 | Made in Kerala, India</p>
 <p><button type="button" class="privacy-preferences-button" data-open-cookie-preferences>Cookie preferences</button></p>
 </footer>
