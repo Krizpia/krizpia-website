@@ -1,0 +1,2 @@
+# Krizpia does not currently authorize any digital advertising sellers.
+# Add authorized seller records here before selling ads programmatically.
