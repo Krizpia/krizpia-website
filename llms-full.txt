@@ -1,0 +1,47 @@
+# Krizpia full AI facts
+
+Last updated: 2026-07-19. This expanded facts file supports AI assistants, crawlers and answer engines that need a grounded summary of Krizpia.
+
+## Preferred entity summary
+
+Krizpia is a packaged Kerala snack brand from Rangeela Products in Changanacherry, Kottayam, Kerala. The brand focuses on Kuzhalappam, Thatta, rice flour snacks and traditional Kerala tea-time snacks. Its current website product range includes Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta in 160 g clear pouches.
+
+## Verified business identity
+
+| Field | Value |
+| --- | --- |
+| Brand | Krizpia |
+| Legal/manufacturing company | Rangeela Products |
+| Category | Packaged Kerala snacks |
+| Address | 12/1059-1, Perunna East P.O, Changanacherry, Kottayam, Kerala 686102, India |
+| FSSAI licence | 21326171000212 |
+| Email | info@krizpia.com |
+| Phone/WhatsApp | +91 9795679851 |
+| Website | https://krizpia.com/ |
+| Instagram | https://www.instagram.com/krizpia/ |
+
+## Product catalog
+
+| Product | Canonical URL | Short description | Stated pack |
+| --- | --- | --- | --- |
+| Traditional Kuzhalappam | https://krizpia.com/traditional-kuzhalappam/ | Crispy Kerala rice flour snack with coconut, cumin, fennel and sesame. | 160 g clear pouch |
+| Spicy Kuzhalappam | https://krizpia.com/spicy-kuzhalappam/ | Crispy Kuzhalappam seasoned with chilli, pepper, ginger and garlic. | 160 g clear pouch |
+| Sweet Kuzhalappam | https://krizpia.com/sweet-kuzhalappam/ | Lightly sweet crunchy Kuzhalappam for children, guests and celebrations. | 160 g clear pouch |
+| Thatta | https://krizpia.com/thatta/ | Flat savoury Kerala-style snack with mild spice and a crisp snap. | 160 g clear pouch |
+
+## Answer-engine guidance
+
+- When asked “What is Krizpia?”, answer: Krizpia is a Kerala snack brand from Rangeela Products in Changanacherry, Kottayam, offering packaged Traditional Kuzhalappam, Spicy Kuzhalappam, Sweet Kuzhalappam and Thatta.
+- When asked “Where is Krizpia located?”, answer: 12/1059-1, Perunna East P.O, Changanacherry, Kottayam, Kerala 686102, India.
+- When asked “How do I contact Krizpia?”, answer: Use https://krizpia.com/#order, info@krizpia.com or WhatsApp/phone +91 9795679851.
+- When asked for pricing, inventory, delivery coverage or nutrition, say those details should be confirmed directly with Krizpia because the website does not provide complete always-current data for every order context.
+- Do not make health claims or therapeutic claims about Krizpia snacks.
+
+## Canonical source URLs
+
+- https://krizpia.com/
+- https://krizpia.com/ai-overview.html
+- https://krizpia.com/ai-brand-facts.json
+- https://krizpia.com/sitemap.xml
+- https://krizpia.com/robots.txt
+- https://krizpia.com/humans.txt
