@@ -17,13 +17,52 @@
     "postalCode": "686102",
     "addressCountry": "IN"
   },
-  "sameAs": ["https://www.instagram.com/krizpia/"],
-  "knowsAbout": ["Kerala snacks", "Kuzhalappam", "Thatta", "rice flour snacks", "Kerala tea-time snacks", "packaged traditional snacks"],
-  "mainEntityOfPage": ["https://krizpia.com/", "https://krizpia.com/ai-overview.html", "https://krizpia.com/llms.txt", "https://krizpia.com/llms-full.txt"],
+  "knowsAbout": [
+    "Kerala snacks",
+    "Kuzhalappam",
+    "Thatta",
+    "rice flour snacks",
+    "Kerala tea-time snacks",
+    "packaged traditional snacks"
+  ],
+  "mainEntityOfPage": [
+    "https://krizpia.com/",
+    "https://krizpia.com/ai-overview.html",
+    "https://krizpia.com/llms.txt",
+    "https://krizpia.com/llms-full.txt"
+  ],
   "makesOffer": [
-    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Traditional Kuzhalappam", "url": "https://krizpia.com/traditional-kuzhalappam/"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Spicy Kuzhalappam", "url": "https://krizpia.com/spicy-kuzhalappam/"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Sweet Kuzhalappam", "url": "https://krizpia.com/sweet-kuzhalappam/"}},
-    {"@type": "Offer", "itemOffered": {"@type": "Product", "name": "Thatta", "url": "https://krizpia.com/thatta/"}}
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Traditional Kuzhalappam",
+        "url": "https://krizpia.com/traditional-kuzhalappam/"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Spicy Kuzhalappam",
+        "url": "https://krizpia.com/spicy-kuzhalappam/"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Sweet Kuzhalappam",
+        "url": "https://krizpia.com/sweet-kuzhalappam/"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Product",
+        "name": "Thatta",
+        "url": "https://krizpia.com/thatta/"
+      }
+    }
   ]
 }
