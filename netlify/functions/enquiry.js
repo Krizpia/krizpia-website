@@ -5,7 +5,6 @@ const ALLOWED_PRODUCTS = new Set([
   'Traditional Kuzhalappam',
   'Spicy Kuzhalappam',
   'Sweet Kuzhalappam',
-  'Thatta',
   'All Products',
   'Distribution Enquiry'
 ]);
