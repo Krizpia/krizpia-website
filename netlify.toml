@@ -27,3 +27,41 @@
   to = "https://krizpia.com/:splat"
   status = 301
   force = true
+
+# Consolidate overlapping Kuzhalappam articles into the educational guide.
+[[redirects]]
+  from = "/blog-traditional-kuzhalappam.html"
+  to = "/traditional-kuzhalappam-guide.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/scheduled-blogs/01-blog-Traditional Kuzhalappam.html"
+  to = "/traditional-kuzhalappam-guide.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/scheduled-blogs/01-blog-Traditional%20Kuzhalappam.html"
+  to = "/traditional-kuzhalappam-guide.html"
+  status = 301
+  force = true
+
+# Keep legacy numbered article URLs away from search results with clean permanent targets.
+[[redirects]]
+  from = "/scheduled-blogs/04-blog-06-blog-kerala-snacks-guide.html"
+  to = "/kerala-snacks-guide.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/scheduled-blogs/05-blog-07-blog-tea-time-snacks.html"
+  to = "/scheduled-blogs/kerala-snacks-that-pair-with-tea-coffee.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/scheduled-blogs/06-blog-08-blog-rice-flour-snacks.html"
+  to = "/rice-flour-snacks.html"
+  status = 301
+  force = true
