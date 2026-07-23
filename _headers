@@ -1,3 +1,4 @@
+# Global security headers for every route.
 /*
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
@@ -8,6 +9,7 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://consent.cookiebot.com; script-src-elem 'self' 'unsafe-inline' https://www.googletagmanager.com https://consent.cookiebot.com; style-src 'self' 'unsafe-inline' https://tagmanager.google.com; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https://consent.cookiebot.com https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net; frame-src 'self' https://www.googletagmanager.com https://consent.cookiebot.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://wa.me mailto:; upgrade-insecure-requests;
 
+# Long-lived caching for immutable image assets.
 /*.png
   Cache-Control: public, max-age=31536000, immutable
 
