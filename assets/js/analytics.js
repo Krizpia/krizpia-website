@@ -22,7 +22,17 @@
   window.pushKrizpiaEvent=function(eventName,parameters){try{ if(!allowedEvents.has(eventName)) return false; var payload=sanitize(parameters||{}); var key=eventName+JSON.stringify(payload); var now=Date.now(); if(recent[key]&&now-recent[key]<600)return false; recent[key]=now; window.dataLayer.push(Object.assign({event:eventName},payload)); return true;}catch(e){return false;}};
   function readConsent(){try{var raw=localStorage.getItem(CONSENT_KEY); if(!raw)return null; var c=JSON.parse(raw); return c.version===CONSENT_VERSION?c:null;}catch(e){return null;}}
   function saveConsent(choice){try{localStorage.setItem(CONSENT_KEY,JSON.stringify({choice:choice,version:CONSENT_VERSION,timestamp:new Date().toISOString()}));}catch(e){} }
-  function updateConsent(choice){var granted=choice==='analytics_on'; window.gtag('consent','update',{analytics_storage:granted?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted'}); window.dataLayer.push({event:'krizpia_consent_update',analytics_storage:granted?'granted':'denied'});}
+  function loadTagManager(){
+    if(window.krizpiaGtmLoaded)return;
+    window.krizpiaGtmLoaded=true;
+    window.dataLayer.push({'gtm.start':Date.now(),event:'gtm.js'});
+    var first=document.getElementsByTagName('script')[0];
+    var script=document.createElement('script');
+    script.async=true;
+    script.src='https://www.googletagmanager.com/gtm.js?id=GTM-NDGDVK2N';
+    first.parentNode.insertBefore(script,first);
+  }
+  function updateConsent(choice){var granted=choice==='analytics_on'; window.gtag('consent','update',{analytics_storage:granted?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',functionality_storage:'granted',security_storage:'granted'}); window.dataLayer.push({event:'krizpia_consent_update',analytics_storage:granted?'granted':'denied'}); if(granted)loadTagManager();}
   function setupConsent(){var banner=document.getElementById('cookieConsent'); if(!banner)return; var accept=banner.querySelector('[data-cookie-accept]'); var decline=banner.querySelector('[data-cookie-decline]'); var saved=readConsent(); if(saved){banner.hidden=true; updateConsent(saved.choice); } else {banner.hidden=false;}
     function choose(choice){saveConsent(choice); updateConsent(choice); banner.hidden=true;}
     if(accept)accept.addEventListener('click',function(){choose('analytics_on');}); if(decline)decline.addEventListener('click',function(){choose('analytics_off');});
